@@ -3,6 +3,7 @@
 ## Unreleased
 
 ### Added
+  - Added a new custom icon - items--search--empty
 
 ### Fixed
 
