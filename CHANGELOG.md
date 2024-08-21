@@ -3,6 +3,8 @@
 ## Unreleased
 
 ### Added
+- Added 3 new custom icons:
+  video--syncing, video--error, video--synced
 
 ### Fixed
 
