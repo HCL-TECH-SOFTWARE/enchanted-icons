@@ -3,6 +3,16 @@
 ## Unreleased
 
 ### Added
+
+### Fixed
+
+### Changed
+
+#### Breaking changes
+
+## 1.3.0
+
+### Added
 - Added 3 new custom icons:
   video--syncing, video--error, video--synced
 
