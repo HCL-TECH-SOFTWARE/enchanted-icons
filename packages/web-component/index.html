@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Enchanted Icons Web Component</title>
+  <script type="module" src="/src/dev.ts"></script>
+  <style>
+    #carbon-icons-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+      padding: 16px;
+      text-align: center;
+    }
+      [icon-name] {
+        display: inline-flex;
+        flex-direction: column;
+        align-items: center;
+      }
+  </style>
+</head>
+<body>
+  <h1>Enchanted Icons</h1>
+
+  <!-- Carbon Icons -->
+   <h2>Carbon Icons</h2>
+   <div id="carbon-icons-container"></div>
+</body>
+</html>

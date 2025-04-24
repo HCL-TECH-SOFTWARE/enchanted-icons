@@ -16,11 +16,11 @@
 /* auto generated file - do not edit */
 import { html, LitElement } from 'lit';
 import { customElement } from 'lit/decorators.js';
-import Icon from '@carbon/icons/es/cloud--internet-services/32';
+import Icon from '@carbon/icons/es/ibm-cloud--internet-services/32';
 import { toSVG } from '@carbon/icon-helpers';
 import { kebabCase } from 'lodash';
 
-const ICON_NAME = `icon-${kebabCase(Icon.name)}`;
+export const ICON_NAME = `icon-${kebabCase('cloud--internet-services')}`;
 @customElement(ICON_NAME)
 export class WebComponentIcon extends LitElement {
   render() {

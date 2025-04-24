@@ -20,7 +20,7 @@ import Icon from '@carbon/icons/es/tornado-warning/32';
 import { toSVG } from '@carbon/icon-helpers';
 import { kebabCase } from 'lodash';
 
-const ICON_NAME = `icon-${kebabCase(Icon.name)}`;
+export const ICON_NAME = `icon-${kebabCase('tornado-warning')}`;
 @customElement(ICON_NAME)
 export class WebComponentIcon extends LitElement {
   render() {

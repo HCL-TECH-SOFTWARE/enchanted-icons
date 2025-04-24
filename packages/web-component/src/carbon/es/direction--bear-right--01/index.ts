@@ -20,7 +20,7 @@ import Icon from '@carbon/icons/es/direction--bear-right--01/32';
 import { toSVG } from '@carbon/icon-helpers';
 import { kebabCase } from 'lodash';
 
-const ICON_NAME = `icon-${kebabCase(Icon.name)}`;
+export const ICON_NAME = `icon-${kebabCase('direction--bear-right--01')}`;
 @customElement(ICON_NAME)
 export class WebComponentIcon extends LitElement {
   render() {

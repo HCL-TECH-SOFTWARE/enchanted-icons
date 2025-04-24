@@ -20,7 +20,7 @@ import Icon from '@carbon/icons/es/virtual-private-cloud/32';
 import { toSVG } from '@carbon/icon-helpers';
 import { kebabCase } from 'lodash';
 
-const ICON_NAME = `icon-${kebabCase(Icon.name)}`;
+export const ICON_NAME = `icon-${kebabCase('virtual-private-cloud')}`;
 @customElement(ICON_NAME)
 export class WebComponentIcon extends LitElement {
   render() {

@@ -20,7 +20,7 @@ import Icon from '@carbon/icons/es/license--global/32';
 import { toSVG } from '@carbon/icon-helpers';
 import { kebabCase } from 'lodash';
 
-const ICON_NAME = `icon-${kebabCase(Icon.name)}`;
+export const ICON_NAME = `icon-${kebabCase('license--global')}`;
 @customElement(ICON_NAME)
 export class WebComponentIcon extends LitElement {
   render() {

@@ -30,6 +30,7 @@
     "Utkarsh Srivastava <utkarshsr@hcl.com>"
   ],
   "scripts": {
+    "dev": "vite",
     "build": "tsc",
     "generate": "node builder.js",
     "lint": "eslint --ext .ts,.tsx src",
@@ -53,7 +54,8 @@
   },
   "dependencies": {
     "@carbon/icon-helpers": "^10.58.0",
-    "@carbon/icons": "11.27.0"
+    "@carbon/icons": "11.27.0",
+    "vite": "^6.3.3"
   },
   "engines": {
     "node": ">=20.x"

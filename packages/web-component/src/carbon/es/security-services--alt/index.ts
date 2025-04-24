@@ -16,11 +16,11 @@
 /* auto generated file - do not edit */
 import { html, LitElement } from 'lit';
 import { customElement } from 'lit/decorators.js';
-import Icon from '@carbon/icons/es/security-services--alt/32';
+import Icon from '@carbon/icons/es/ibm-security--services/32';
 import { toSVG } from '@carbon/icon-helpers';
 import { kebabCase } from 'lodash';
 
-const ICON_NAME = `icon-${kebabCase(Icon.name)}`;
+export const ICON_NAME = `icon-${kebabCase('security-services--alt')}`;
 @customElement(ICON_NAME)
 export class WebComponentIcon extends LitElement {
   render() {
