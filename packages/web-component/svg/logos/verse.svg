@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 57.1 (83088) - https://sketch.com -->
+    <title>Verse-icon</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <polygon id="path-1" points="12.49 0.485 0 11.344 5.843 11.33 9.02 8.19 12.491 0.485"></polygon>
+        <linearGradient x1="0%" y1="49.9951275%" x2="100.004369%" y2="49.9951275%" id="linearGradient-3">
+            <stop stop-color="#BDD62F" offset="0%"></stop>
+            <stop stop-color="#00AFBC" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Verse-icon" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Group-5" transform="translate(4.000000, 3.000000)">
+            <polygon id="Fill-1" fill="#8D8D8D" points="12.4898 1.0004 9.0188 8.7054 9.0498 13.2114 13.5818 17.5154"></polygon>
+            <g id="Group-4" transform="translate(0.000000, 0.515400)">
+                <mask id="mask-2" fill="white">
+                    <use xlink:href="#path-1"></use>
+                </mask>
+                <g id="Clip-3"></g>
+                <polygon id="Fill-2" fill="url(#linearGradient-3)" mask="url(#mask-2)" points="12.49 0.485 0 11.344 5.843 11.33 9.02 8.19 12.491 0.485"></polygon>
+            </g>
+        </g>
+    </g>
+</svg>

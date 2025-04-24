@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 63.1 (92452) - https://sketch.com -->
+    <title>Artboard Copy</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M11.5605,4.5 L19.0605,12 L11.5605,19.5 L10.5,18.4395 L16.9395,12 L10.5,5.5605 L11.5605,4.5 Z M5.5605,4.5 L13.0605,12 L5.5605,19.5 L4.5,18.4395 L10.9395,12 L4.5,5.5605 L5.5605,4.5 Z" id="path-1"></path>
+    </defs>
+    <g id="Artboard-Copy" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="icon/navigation/chevron/double/left">
+            <mask id="mask-2" fill="white">
+                <use xlink:href="#path-1"></use>
+            </mask>
+            <use id="Combined-Shape" fill="currentColor" fill-rule="evenodd" transform="translate(11.780250, 12.000000) scale(-1, 1) translate(-11.780250, -12.000000) " xlink:href="#path-1"></use>
+        </g>
+    </g>
+</svg>

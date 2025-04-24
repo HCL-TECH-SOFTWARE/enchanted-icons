@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 57.1 (83088) - https://sketch.com -->
+    <title>Sametime-icon</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <polygon id="path-1" points="6.6 0.584 2.994 8.611 0 11 11.159 11 12.745 7.481 7.164 7.481 10.269 0.584"></polygon>
+        <linearGradient x1="0%" y1="50.0014766%" x2="100.000979%" y2="50.0014766%" id="linearGradient-3">
+            <stop stop-color="#EB1746" offset="0%"></stop>
+            <stop stop-color="#F48212" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Sametime-icon" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Group-5" transform="translate(2.000000, 5.000000)">
+            <polygon id="Fill-1" fill="#8D8D8D" points="11.8098 0.0006 10.2698 3.4476 15.8508 3.4476 12.7458 10.3456 18.3168 10.3336 16.8518 8.8196 20.8138 0.0006"></polygon>
+            <g id="Group-4" transform="translate(0.000000, 2.866900)">
+                <mask id="mask-2" fill="white">
+                    <use xlink:href="#path-1"></use>
+                </mask>
+                <g id="Clip-3"></g>
+                <polygon id="Fill-2" fill="url(#linearGradient-3)" mask="url(#mask-2)" points="6.6 0.584 2.994 8.611 0 11 11.159 11 12.745 7.481 7.164 7.481 10.269 0.584"></polygon>
+            </g>
+        </g>
+    </g>
+</svg>

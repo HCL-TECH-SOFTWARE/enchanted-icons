@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="32px" height="32px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>icon/digital experience/elements/form/input/32</title>
+    <g id="icon/digital-experience/elements/form/input/32" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <path d="M28,9 C29.1045695,9 30,9.8954305 30,11 L30,21 C30,22.1045695 29.1045695,23 28,23 L4,23 C2.8954305,23 2,22.1045695 2,21 L2,11 C2,9.8954305 2.8954305,9 4,9 L28,9 Z M28,11 L4,11 L4,21 L28,21 L28,11 Z M11,13 L11,15 L9.5,15 L9.5,19 L7.5,19 L7.5,15 L6,15 L6,13 L11,13 Z" id="icon-color" fill="#3D5466"></path>
+    </g>
+</svg>

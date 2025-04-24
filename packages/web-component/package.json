@@ -1,0 +1,63 @@
+{
+  "name": "@hcl-software/enchanted-icons-web-component",
+  "version": "1.0.0",
+  "description": "Enchanted Icons is a collection of web component icons that are used in HCL Software products.",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "author": "Nhicko Garachico <nhickojerome.garac@hcl.com>",
+  "license": "Apache-2.0",
+  "private": false,
+  "homepage": "https://github.com/HCL-TECH-SOFTWARE/enchanted-icons#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HCL-TECH-SOFTWARE/enchanted-icons.git"
+  },
+  "bugs": {
+    "url": "https://github.com/HCL-TECH-SOFTWARE/enchanted-icons/issues"
+  },
+  "keywords": [
+    "web-component",
+    "lit",
+    "carbon",
+    "ts"
+  ],
+  "contributors": [
+    "Angelo rick Asoy <angelorick.asoy@hcl.com>",
+    "Hanjo Hagemeier <hanjo.hagemeier@hcl.com>",
+    "Ruby ann Matias <rubyann.matias@hcl.com>",
+    "Felix Müller <felix.muller@hcl.com>",
+    "Elsa Pascual <elsa.pascual@hcl.com>",
+    "Utkarsh Srivastava <utkarshsr@hcl.com>"
+  ],
+  "scripts": {
+    "convert-svg-to-ts": "svgr --ext tsx -d src/apps/ svg/",
+    "build": "tsc",
+    "generate": "node builder.js",
+    "lint": "eslint --ext .ts,.tsx src",
+    "lint-fix": "eslint --ext .ts,.tsx --fix src"
+  },
+  "devDependencies": {
+    "@svgr/cli": "^8.1.0",
+    "@typescript-eslint/eslint-plugin": "^5.16.0",
+    "@typescript-eslint/parser": "^5.16.0",
+    "eslint": "^8.11.0",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.25.4",
+    "eslint-plugin-jest": "^26.1.2",
+    "eslint-plugin-jsx-a11y": "^6.5.1",
+    "eslint-plugin-promise": "^6.0.0",
+    "eslint-plugin-why": "^1.2.0",
+    "lodash": "^4.17.11",
+    "typescript": "^4.1.5"
+  },
+  "dependencies": {
+    "@carbon/icons": "11.27.0"
+  },
+  "engines": {
+    "node": ">=20.x"
+  },
+  "files": [
+    "dist/**/*"
+  ]
+}
