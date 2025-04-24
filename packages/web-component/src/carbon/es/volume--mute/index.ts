@@ -14,9 +14,22 @@
   * ======================================================================== */
 
 /* auto generated file - do not edit */
-import Icon from '@carbon/icons/es/add/32';
-import { toString } from '@carbon/icon-helpers';
-import { html } from 'lit';
-import { unsafeHTML } from 'lit/directives/unsafe-html.js';
+import { html, LitElement } from 'lit';
+import { customElement } from 'lit/decorators.js';
+import Icon from '@carbon/icons/es/volume--mute/32';
+import { toSVG } from '@carbon/icon-helpers';
+import { kebabCase } from 'lodash';
 
-export default html`${unsafeHTML(toString(Icon))}`;
+const ICON_NAME = `icon-${kebabCase(Icon.name)}`;
+@customElement(ICON_NAME)
+export class WebComponentIcon extends LitElement {
+  render() {
+    return html`${toSVG({...Icon, attrs: { ...Icon.attrs, preserveAspectRatio: 'xMidYMid'}})}`;
+  }
+} 
+
+declare global {
+  interface HTMLElementTagNameMap {
+    [ICON_NAME]: WebComponentIcon;
+  }
+}

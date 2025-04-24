@@ -36,6 +36,7 @@
     "lint-fix": "eslint --ext .ts,.tsx --fix src"
   },
   "devDependencies": {
+    "@types/lodash": "^4.17.16",
     "@typescript-eslint/eslint-plugin": "^5.16.0",
     "@typescript-eslint/parser": "^5.16.0",
     "eslint": "^8.11.0",
