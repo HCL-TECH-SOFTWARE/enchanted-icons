@@ -4,12 +4,8 @@ const fs = require('fs');
 const _ = require('lodash');
 
 const createIconContent = (iconName, size, subFolder, isRenamed, orignalName) => {
-  let utilsImport = `'../../../utils'`;
-  if (!_.isEmpty(subFolder)) {
-    utilsImport = `'../../../../utils'`;
-  }
   return `/* ======================================================================== *
-  * Copyright 2024 HCL America Inc.                                          *
+  * Copyright 2025 HCL America Inc.                                          *
   * Licensed under the Apache License, Version 2.0 (the "License");          *
   * you may not use this file except in compliance with the License.         *
   * You may obtain a copy of the License at                                  *
@@ -24,10 +20,12 @@ const createIconContent = (iconName, size, subFolder, isRenamed, orignalName) =>
   * ======================================================================== */
 
 /* auto generated file - do not edit */
-import Icon from '@carbon/icons/es${!_.isEmpty(subFolder) ? `/${subFolder}` : ''}/${isRenamed ? orignalName: iconName}/${size}';
-import { createSvgIcon } from ${utilsImport};
+import Icon from '@carbon/icons/es/add/32';
+import { toString } from '@carbon/icon-helpers';
+import { html } from 'lit';
+import { unsafeHTML } from 'lit/directives/unsafe-html.js';
 
-export default createSvgIcon(Icon.name, Icon.size, Icon.content, Icon.attrs);
+export default html\`\${unsafeHTML(toString(Icon))}\`;
 `;
 };
 
@@ -94,7 +92,7 @@ const createContent = (source, desitination, subFolder) => {
       }
       const filePath = path.join(desitinationPath, iconName);
       ensureDirSync(filePath);
-      const fileName = `${filePath}/index.tsx`;
+      const fileName = `${filePath}/index.ts`;
       const iconContent = createIconContent(iconName, iconSize, subFolder, isRenamed, orignalName);
       // console.info(`> create file ... - '${fileName}'`);
       try {
