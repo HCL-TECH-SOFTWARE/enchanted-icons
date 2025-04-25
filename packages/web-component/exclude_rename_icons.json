@@ -274,8 +274,9 @@
      "ibm-cloud--internet-services": "cloud--internet-services",
      "ibm-cloud--security-compliance-center": "cloud--security-compliance-center",
      "ibm-cloud--subnets": "cloud--subnets",
-     "ibm-security": "security--alt",
+     "ibm-security": "security--alt-carbon",
      "ibm-security--services": "security-services--alt",
-     "ibm-watson--orders": "orders"
+     "ibm-watson--orders": "orders",
+     "text-link": "text-link-carbon"
    }
 }
