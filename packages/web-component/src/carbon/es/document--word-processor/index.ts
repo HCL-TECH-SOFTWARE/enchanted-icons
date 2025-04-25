@@ -18,9 +18,8 @@ import { html, LitElement } from 'lit';
 import { customElement } from 'lit/decorators.js';
 import Icon from '@carbon/icons/es/document--word-processor/32';
 import { toSVG } from '@carbon/icon-helpers';
-import { kebabCase } from 'lodash';
 
-export const ICON_NAME = `icon-${kebabCase('document--word-processor')}`;
+export const ICON_NAME = `icon-${'document--word-processor'.toLowerCase().replace(/-+/g, '-')}`;
 @customElement(ICON_NAME)
 export class WebComponentIcon extends LitElement {
   render() {

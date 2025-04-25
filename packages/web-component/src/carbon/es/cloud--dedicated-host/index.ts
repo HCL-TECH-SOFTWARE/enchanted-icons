@@ -18,9 +18,8 @@ import { html, LitElement } from 'lit';
 import { customElement } from 'lit/decorators.js';
 import Icon from '@carbon/icons/es/ibm-cloud--dedicated-host/32';
 import { toSVG } from '@carbon/icon-helpers';
-import { kebabCase } from 'lodash';
 
-export const ICON_NAME = `icon-${kebabCase('cloud--dedicated-host')}`;
+export const ICON_NAME = `icon-${'cloud--dedicated-host'.toLowerCase().replace(/-+/g, '-')}`;
 @customElement(ICON_NAME)
 export class WebComponentIcon extends LitElement {
   render() {

@@ -18,9 +18,8 @@ import { html, LitElement } from 'lit';
 import { customElement } from 'lit/decorators.js';
 import Icon from '@carbon/icons/es/model-builder--reference/32';
 import { toSVG } from '@carbon/icon-helpers';
-import { kebabCase } from 'lodash';
 
-export const ICON_NAME = `icon-${kebabCase('model-builder--reference')}`;
+export const ICON_NAME = `icon-${'model-builder--reference'.toLowerCase().replace(/-+/g, '-')}`;
 @customElement(ICON_NAME)
 export class WebComponentIcon extends LitElement {
   render() {

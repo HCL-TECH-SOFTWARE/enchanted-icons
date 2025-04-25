@@ -18,9 +18,8 @@ import { html, LitElement } from 'lit';
 import { customElement } from 'lit/decorators.js';
 import Icon from '@carbon/icons/es/cloud-foundry--2/32';
 import { toSVG } from '@carbon/icon-helpers';
-import { kebabCase } from 'lodash';
 
-export const ICON_NAME = `icon-${kebabCase('cloud-foundry--2')}`;
+export const ICON_NAME = `icon-${'cloud-foundry--2'.toLowerCase().replace(/-+/g, '-')}`;
 @customElement(ICON_NAME)
 export class WebComponentIcon extends LitElement {
   render() {

@@ -18,9 +18,8 @@ import { html, LitElement } from 'lit';
 import { customElement } from 'lit/decorators.js';
 import Icon from '@carbon/icons/es/update-now/32';
 import { toSVG } from '@carbon/icon-helpers';
-import { kebabCase } from 'lodash';
 
-export const ICON_NAME = `icon-${kebabCase('update-now')}`;
+export const ICON_NAME = `icon-${'update-now'.toLowerCase().replace(/-+/g, '-')}`;
 @customElement(ICON_NAME)
 export class WebComponentIcon extends LitElement {
   render() {
