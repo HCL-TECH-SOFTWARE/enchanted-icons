@@ -1,5 +1,6 @@
 {
-  "excludes": [
+  "include": false,
+  "icons": [
     "bee",
     "bee-bat",
     "carbon-for-ibm-dotcom",

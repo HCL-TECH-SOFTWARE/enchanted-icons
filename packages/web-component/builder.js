@@ -74,11 +74,12 @@ const createContent = (source, desitination, subFolder) => {
   console.info(`sourcePath: ${sourcePath}`);
   console.info(`desitinationPath: ${desitinationPath}`);
 
-  // Fetch icons from exclude_rename_icons.json to be excluded and renamed
-  const excludedAndRenamedIcons = fs.readFileSync('./exclude_rename_icons.json', 'utf8');
-  const renames = JSON.parse(excludedAndRenamedIcons).renames;
+  const config = fs.readFileSync('./carbon-config.json', 'utf8');
+  const parsedConfig = JSON.parse(config);
+  const renames = parsedConfig.renames;
   const renamedMap = new Map(Object.entries(renames));
-  const excludedArray= JSON.parse(excludedAndRenamedIcons).excludes;
+  const isIncludeIcons = parsedConfig.include ?? true;
+  const iconsArray = parsedConfig.icons;
 
   removeDirSync(desitinationPath);
   ensureDirSync(desitinationPath);
@@ -87,7 +88,7 @@ const createContent = (source, desitination, subFolder) => {
   for (let i = 0; i < files.length; i++) {
     let iconName = files[i];
     // Not creating component for excluded icons
-    if (excludedArray.includes(iconName)) {
+    if (isIncludeIcons !== iconsArray.includes(iconName)) {
       continue;
     }
     const camelCaseIconName = `Icon${_.upperFirst(_.camelCase(subFolder))}${_.upperFirst(_.camelCase(iconName))}`;
