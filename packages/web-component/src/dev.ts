@@ -12,15 +12,22 @@
  * See the License for the specific language governing permissions and      *
  * limitations under the License.                                           *
  * ======================================================================== */
+import './apps/logos/connections'
+import './apps/logos/portal'
+import './apps/logos/sametime'
+import './apps/logos/verse'
 
 const carbonIconModules = import.meta.glob('./carbon/es/*/index.ts', { eager: true });
 const customIconModules = import.meta.glob('./apps/es/*/index.ts', { eager: true });
+const logoIconModules = import.meta.glob('./apps/logos/*.ts', { eager: true });
 
-console.log(customIconModules)
 console.log('Loaded Carbon icons:', carbonIconModules);
+console.log('Loaded Custom icons:', customIconModules)
+console.log('Loaded Logo icons:', logoIconModules);
 
 const carbonIconContainer = document.getElementById('carbon-icons-container');
 const customIconContainer = document.getElementById('custom-icons-container');
+const logosIconContainer = document.getElementById('logos-icons-container');
 
 const populateIconContainer = (iconModules: Record<string, { ICON_NAME: string }>, container: HTMLElement | null) => {
   if (container) {
@@ -52,3 +59,5 @@ const populateIconContainer = (iconModules: Record<string, { ICON_NAME: string }
 
 populateIconContainer(carbonIconModules, carbonIconContainer);
 populateIconContainer(customIconModules, customIconContainer);
+populateIconContainer(logoIconModules, logosIconContainer);
+
