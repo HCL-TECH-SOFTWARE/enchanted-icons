@@ -41,6 +41,7 @@ export abstract class BaseIcon extends LitElement {
     if (changedProperties.has('color')) {
       if (svgElement) {
         svgElement.style.fill = this.color;
+        svgElement.style.color = this.color;
       }
     }
   }
