@@ -13,12 +13,13 @@
  * limitations under the License.                                           *
  * ======================================================================== */
 
-import { css, html, LitElement } from 'lit';
+import { css, html } from 'lit';
 import { customElement } from 'lit/decorators.js';
+import { BaseIcon } from '../../utils/base-icon';
 
 export const ICON_NAME = 'svg-portal';
 @customElement(ICON_NAME)
-export class SvgPortal extends LitElement {
+export class SvgPortal extends BaseIcon {
   static styles = css`
     .portal_svg__gray_path {
       fill: var(--svg-portal-fill, #8D8D8D); /* Use CSS var with fallback */

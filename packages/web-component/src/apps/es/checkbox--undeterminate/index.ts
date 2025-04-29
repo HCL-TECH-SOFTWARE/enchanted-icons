@@ -13,9 +13,10 @@
  * limitations under the License.                                           *
  * ======================================================================== */
 
-import { html, LitElement } from 'lit';
+import { html } from 'lit';
 import { customElement } from 'lit/decorators.js';
 import { createSvgIcon, IIconAttrs, IIconContent } from '../../../utils';
+import { BaseIcon } from '../../../utils/base-icon';
 
 const attrs: IIconAttrs = {
   xmlns: 'http://www.w3.org/2000/svg',
@@ -51,7 +52,7 @@ const content: IIconContent[] = [
 
 export const ICON_NAME = 'icon-checkbox-undeterminate';
 @customElement(ICON_NAME)
-export class WebComponentIcon extends LitElement {
+export class WebComponentIcon extends BaseIcon {
   render() {
     return html`${createSvgIcon(content, attrs)}`;
   }

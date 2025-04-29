@@ -13,12 +13,13 @@
  * limitations under the License.                                           *
  * ======================================================================== */
 
-import { css, html, LitElement } from 'lit';
+import { css, html } from 'lit';
 import { customElement } from 'lit/decorators.js';
+import { BaseIcon } from '../../utils/base-icon';
 
 export const ICON_NAME = 'svg-verse';
 @customElement(ICON_NAME)
-export class SvgVerse extends LitElement {
+export class SvgVerse extends BaseIcon {
   static styles = css`
     .verse_svg__gray_path {
       fill: var(--svg-verse-fill, #8D8D8D); /* Use CSS var with fallback */

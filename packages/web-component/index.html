@@ -4,9 +4,18 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Enchanted Icons Web Component</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap" rel="stylesheet">
   <script type="module" src="/src/dev.ts"></script>
   <style>
-    #carbon-icons-container, #custom-icons-container, #logos-icons-container {
+    body {
+      font-family: "Nunito Sans", sans-serif;
+      padding: 5px;
+    }
+    #carbon-icons-container, 
+    #custom-icons-container, 
+    #logos-icons-container {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
       padding: 16px;
@@ -21,13 +30,15 @@
 </head>
 <body>
   <h1>Enchanted Icons</h1>
-  <h2>Carbon Icons</h2>
-  <div id="carbon-icons-container"></div>
+  <div id="icons-container">
+    <h2>Carbon Icons</h2>
+    <div id="carbon-icons-container"></div>
 
-  <h2>Custom Icons</h2>
-  <div id="custom-icons-container"></div>
+    <h2>Custom Icons</h2>
+    <div id="custom-icons-container"></div>
 
-  <h2>Logos</h2>
-  <div id="logos-icons-container"></div>
+    <h2>Logos</h2>
+    <div id="logos-icons-container"></div>
+  </div>
 </body>
 </html>

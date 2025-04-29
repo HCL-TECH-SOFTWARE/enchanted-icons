@@ -6,7 +6,7 @@
 
     "moduleResolution": "bundler",
     "experimentalDecorators": true,
-    "useDefineForClassFields": true,
+    "useDefineForClassFields": false,
 
     "declaration": true,
     "outDir": "./dist",
@@ -16,7 +16,8 @@
   },
   "exclude": [
     "node_modules",
-    "dist"
+    "dist",
+    "src/dev.ts"
   ],
   "include": [
     "src/**/*"

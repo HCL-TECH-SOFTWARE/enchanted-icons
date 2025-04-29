@@ -13,12 +13,13 @@
  * limitations under the License.                                           *
  * ======================================================================== */
 
-import { css, html, LitElement } from 'lit';
+import { css, html } from 'lit';
 import { customElement } from 'lit/decorators.js';
+import { BaseIcon } from '../../utils/base-icon';
 
 export const ICON_NAME = 'svg-connections';
 @customElement(ICON_NAME)
-export class SvgConnections extends LitElement {
+export class SvgConnections extends BaseIcon {
   static styles = css`
     .connections_svg__st0{
       fill-rule:evenodd;

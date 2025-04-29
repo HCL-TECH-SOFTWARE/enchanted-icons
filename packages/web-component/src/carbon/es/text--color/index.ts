@@ -18,10 +18,11 @@ import { html, LitElement } from 'lit';
 import { customElement } from 'lit/decorators.js';
 import Icon from '@carbon/icons/es/text--color/32';
 import { toSVG } from '@carbon/icon-helpers';
+import { BaseIcon } from '../../../utils/base-icon';
 
 export const ICON_NAME = `icon-${'text--color'.toLowerCase().replace(/-+/g, '-')}`;
 @customElement(ICON_NAME)
-export class WebComponentIcon extends LitElement {
+export class WebComponentIcon extends BaseIcon {
   render() {
     return html`${toSVG({...Icon, attrs: { ...Icon.attrs, preserveAspectRatio: 'xMidYMid'}})}`;
   }

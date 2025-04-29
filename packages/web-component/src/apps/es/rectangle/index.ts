@@ -13,9 +13,10 @@
  * limitations under the License.                                           *
  * ======================================================================== */
 
-import { html, LitElement } from 'lit';
+import { html } from 'lit';
 import { customElement } from 'lit/decorators.js';
 import { createSvgIcon, IIconAttrs, IIconContent } from '../../../utils';
+import { BaseIcon } from '../../../utils/base-icon';
 
 const attrs: IIconAttrs = {
   xmlns: 'http://www.w3.org/2000/svg',
@@ -30,13 +31,14 @@ const content: IIconContent[] = [
     attrs: {
       d:
         'M30,30H2V2H30ZM4,28H28V4H4Z',
+      fill: 'currentColor',
     },
   },
 ];
 
 export const ICON_NAME = 'icon-rectangle';
 @customElement(ICON_NAME)
-export class WebComponentIcon extends LitElement {
+export class WebComponentIcon extends BaseIcon {
   render() {
     return html`${createSvgIcon(content, attrs)}`;
   }

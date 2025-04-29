@@ -13,9 +13,10 @@
  * limitations under the License.                                           *
  * ======================================================================== */
 
-import { html, LitElement } from 'lit';
+import { html } from 'lit';
 import { customElement } from 'lit/decorators.js';
 import { createSvgIcon, IIconAttrs, IIconContent } from '../../../utils';
+import { BaseIcon } from '../../../utils/base-icon';
 
 const attrs: IIconAttrs = {
   xmlns: 'http://www.w3.org/2000/svg',
@@ -30,13 +31,14 @@ const content: IIconContent[] = [
     attrs: {
       d:
         'M16,30A14,14,0,1,1,30,16,14,14,0,0,1,16,30ZM16,4A12,12,0,1,0,28,16,12,12,0,0,0,16,4Z',
+      fill: 'currentColor',
     },
   },
 ];
 
 export const ICON_NAME = 'icon-circle';
 @customElement(ICON_NAME)
-export class WebComponentIcon extends LitElement {
+export class WebComponentIcon extends BaseIcon {
   render() {
     return html`${createSvgIcon(content, attrs)}`;
   }

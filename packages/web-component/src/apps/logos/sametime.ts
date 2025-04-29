@@ -13,12 +13,13 @@
  * limitations under the License.                                           *
  * ======================================================================== */
 
-import { css, html, LitElement } from 'lit';
+import { css, html } from 'lit';
 import { customElement } from 'lit/decorators.js';
+import { BaseIcon } from '../../utils/base-icon';
 
 export const ICON_NAME = 'svg-sametime';
 @customElement(ICON_NAME)
-export class SvgSametime extends LitElement {
+export class SvgSametime extends BaseIcon {
   static styles = css`
     .sametime_svg__gray_path {
       fill: var(--svg-sametime-fill, #8D8D8D); /* Use CSS var with fallback */
@@ -29,7 +30,7 @@ export class SvgSametime extends LitElement {
   <svg
         part="svg-root"
         width="24"
-        height="24}"
+        height="24"
         viewBox="0 0 24 24"
         xmlns="http://www.w3.org/2000/svg"
         xmlns:xlink="http://www.w3.org/1999/xlink"
