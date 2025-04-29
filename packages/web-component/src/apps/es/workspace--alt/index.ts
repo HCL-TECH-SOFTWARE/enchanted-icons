@@ -13,8 +13,8 @@
  * limitations under the License.                                           *
  * ======================================================================== */
 
-import { css, html, LitElement } from 'lit';
-import { customElement, property } from 'lit/decorators.js';
+import { html } from 'lit';
+import { customElement } from 'lit/decorators.js';
 import { createSvgIcon, IIconAttrs, IIconContent } from '../../../utils';
 import { BaseIcon } from '../../../utils/base-icon';
 
