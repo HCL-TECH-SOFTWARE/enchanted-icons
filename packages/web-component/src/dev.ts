@@ -43,7 +43,6 @@ const populateIconContainer = (iconModules: Record<string, { ICON_NAME: string }
         wrapper.style.padding = '5px';
         
         const iconElement = document.createElement(iconName);
-        // iconElement.style.color = "rgb(5, 80, 220)";
         const nameSpan: HTMLSpanElement = document.createElement('span');
         nameSpan.textContent = iconName;
         nameSpan.style.fontSize = '10px';
