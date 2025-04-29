@@ -3,6 +3,8 @@
 ## Unreleased
 
 ### Added
+- Added 2 new custom icons:
+  Sort--descending--alt, Sort-ascending--alt
 
 ### Fixed
 
@@ -14,8 +16,8 @@
 ## 1.3.0
 
 ### Added
-- Added 5 new custom icons:
-  video--syncing, video--error, video--synced, Sort--descending--alt, Sort-ascending--alt
+- Added 3 new custom icons:
+  video--syncing, video--error, video--synced
 
 ### Fixed
 
