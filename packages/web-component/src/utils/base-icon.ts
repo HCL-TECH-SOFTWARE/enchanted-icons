@@ -14,11 +14,14 @@
  * ======================================================================== */
 import { css, LitElement } from "lit";
 import { property } from "lit/decorators.js";
-import { DEFAULT_ICON_SIZE } from "../constants";
+import { DEFAULT_ICON_COLOR, DEFAULT_ICON_SIZE } from "../constants";
 
 export abstract class BaseIcon extends LitElement {
   @property({type: Number, reflect: true})
   size = DEFAULT_ICON_SIZE;
+
+  @property({type: String, reflect: true})
+  color = DEFAULT_ICON_COLOR;
 
   static styles = css`
     :host {
@@ -32,6 +35,12 @@ export abstract class BaseIcon extends LitElement {
       if (svgElement) {
         svgElement.setAttribute('width', this.size.toString());
         svgElement.setAttribute('height', this.size.toString());
+      }
+    }
+
+    if (changedProperties.has('color')) {
+      if (svgElement) {
+        svgElement.style.fill = this.color;
       }
     }
   }
