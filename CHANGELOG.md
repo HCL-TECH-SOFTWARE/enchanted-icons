@@ -14,8 +14,8 @@
 ## 1.3.0
 
 ### Added
-- Added 3 new custom icons:
-  video--syncing, video--error, video--synced
+- Added 5 new custom icons:
+  video--syncing, video--error, video--synced, Sort--descending--alt, Sort-ascending--alt
 
 ### Fixed
 
