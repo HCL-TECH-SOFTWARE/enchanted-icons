@@ -32,6 +32,7 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc",
+    "build-icons-page": "vite build",
     "generate": "node builder.js",
     "lint": "eslint --ext .ts,.tsx src",
     "lint-fix": "eslint --ext .ts,.tsx --fix src"
