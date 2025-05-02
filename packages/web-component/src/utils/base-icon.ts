@@ -27,12 +27,6 @@ export abstract class BaseIcon extends LitElement {
     :host {
       color: inherit;
     }
-
-    svg {
-      display: block;
-      width: 100%;
-      height: 100%;
-    }
   `
   
   updated(changedProperties: Map<string | number | symbol, unknown>) {
