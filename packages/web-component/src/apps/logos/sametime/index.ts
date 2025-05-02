@@ -15,19 +15,19 @@
 
 import { css, html } from 'lit';
 import { customElement } from 'lit/decorators.js';
-import { BaseIcon } from '../../utils/base-icon';
+import { BaseIcon } from '../../../utils/base-icon';
 
-export const ICON_NAME = 'svg-verse';
+export const ICON_NAME = 'svg-sametime';
 @customElement(ICON_NAME)
-export class SvgVerse extends BaseIcon {
+export class SvgSametime extends BaseIcon {
   static styles = css`
-    .verse_svg__gray_path {
-      fill: var(--svg-verse-fill, #8D8D8D); /* Use CSS var with fallback */
+    .sametime_svg__gray_path {
+      fill: var(--svg-sametime-fill, #8D8D8D); /* Use CSS var with fallback */
     }
   `
   render() {
     return html`
-<svg
+  <svg
         part="svg-root"
         width="24"
         height="24"
@@ -38,32 +38,32 @@ export class SvgVerse extends BaseIcon {
         <defs>
           <linearGradient
             x1="0%"
-            y1="49.995%"
-            x2="100.004%"
-            y2="49.995%"
-            id="verse_svg__b"
+            y1="50.001%"
+            x2="100.001%"
+            y2="50.001%"
+            id="sametime_svg__b"
           >
-            <stop stop-color="#BDD62F" offset="0%" />
-            <stop stop-color="#00AFBC" offset="100%" />
+            <stop stop-color="#EB1746" offset="0%" />
+            <stop stop-color="#F48212" offset="100%" />
           </linearGradient>
           <path
-            id="verse_svg__a"
-            d="M12.49.485L0 11.344l5.843-.014L9.02 8.19 12.491.485z"
+            id="sametime_svg__a"
+            d="M6.6.584L2.994 8.611 0 11h11.159l1.586-3.519H7.164L10.269.584z"
           />
         </defs>
         <g fill="none" fill-rule="evenodd">
           <path
-            class="verse_svg__gray_path"
-            d="M16.49 4l-3.471 7.705.03 4.506 4.533 4.304z"
+            class="sametime_svg__gray_path"
+            d="M13.81 5l-1.54 3.448h5.58l-3.104 6.898 5.57-.012-1.464-1.514L22.814 5z"
           />
-          <g transform="translate(4 3.515)">
-            <mask id="verse_svg__c" fill="#fff">
-              <use href="#verse_svg__a"></use>
+          <g transform="translate(2 7.867)">
+            <mask id="sametime_svg__c" fill="#fff">
+              <use href="#sametime_svg__a"></use>
               </mask>
             <path
-              fill="url(#verse_svg__b)"
-              mask="url(#verse_svg__c)"
-              d="M12.49.485L0 11.344l5.843-.014L9.02 8.19 12.491.485z"
+              fill="url(#sametime_svg__b)"
+              mask="url(#sametime_svg__c)"
+              d="M6.6.584L2.994 8.611 0 11h11.159l1.586-3.519H7.164L10.269.584z"
             />
           </g>
         </g>
@@ -74,7 +74,7 @@ export class SvgVerse extends BaseIcon {
 
 declare global {
   interface HTMLElementTagNameMap {
-    [ICON_NAME]: SvgVerse;
+    [ICON_NAME]: SvgSametime;
   }
 }
 

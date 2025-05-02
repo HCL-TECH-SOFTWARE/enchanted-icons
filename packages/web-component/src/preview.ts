@@ -12,14 +12,9 @@
  * See the License for the specific language governing permissions and      *
  * limitations under the License.                                           *
  * ======================================================================== */
-import './apps/logos/connections'
-import './apps/logos/portal'
-import './apps/logos/sametime'
-import './apps/logos/verse'
-
 const carbonIconModules = import.meta.glob('./carbon/es/*/index.ts', { eager: true });
 const customIconModules = import.meta.glob('./apps/es/*/index.ts', { eager: true });
-const logoIconModules = import.meta.glob('./apps/logos/*.ts', { eager: true });
+const logoIconModules = import.meta.glob('./apps/logos/*/index.ts', { eager: true });
 
 console.log('Loaded Carbon icons:', carbonIconModules);
 console.log('Loaded Custom icons:', customIconModules)

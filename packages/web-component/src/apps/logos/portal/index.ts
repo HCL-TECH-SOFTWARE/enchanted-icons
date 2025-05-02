@@ -15,19 +15,19 @@
 
 import { css, html } from 'lit';
 import { customElement } from 'lit/decorators.js';
-import { BaseIcon } from '../../utils/base-icon';
+import { BaseIcon } from '../../../utils/base-icon';
 
-export const ICON_NAME = 'svg-sametime';
+export const ICON_NAME = 'svg-portal';
 @customElement(ICON_NAME)
-export class SvgSametime extends BaseIcon {
+export class SvgPortal extends BaseIcon {
   static styles = css`
-    .sametime_svg__gray_path {
-      fill: var(--svg-sametime-fill, #8D8D8D); /* Use CSS var with fallback */
+    .portal_svg__gray_path {
+      fill: var(--svg-portal-fill, #8D8D8D); /* Use CSS var with fallback */
     }
   `
   render() {
     return html`
-  <svg
+<svg
         part="svg-root"
         width="24"
         height="24"
@@ -37,35 +37,39 @@ export class SvgSametime extends BaseIcon {
       >
         <defs>
           <linearGradient
-            x1="0%"
+            x1="3.941%"
             y1="50.001%"
-            x2="100.001%"
+            x2="99.998%"
             y2="50.001%"
-            id="sametime_svg__b"
+            id="portal_svg__b"
           >
-            <stop stop-color="#EB1746" offset="0%" />
-            <stop stop-color="#F48212" offset="100%" />
+            <stop stop-color="#6600AE" offset="0%" />
+            <stop stop-color="#EB1746" offset="100%" />
           </linearGradient>
           <path
-            id="sametime_svg__a"
-            d="M6.6.584L2.994 8.611 0 11h11.159l1.586-3.519H7.164L10.269.584z"
+            id="portal_svg__a"
+            d="M6.061.516l3.062 6.736L0 13.999h4.194l9.149-6.747L10.307.516z"
           />
         </defs>
         <g fill="none" fill-rule="evenodd">
-          <path
-            class="sametime_svg__gray_path"
-            d="M13.81 5l-1.54 3.448h5.58l-3.104 6.898 5.57-.012-1.464-1.514L22.814 5z"
-          />
-          <g transform="translate(2 7.867)">
-            <mask id="sametime_svg__c" fill="#fff">
-              <use href="#sametime_svg__a"></use>
+          <g transform="translate(1 5.484)">
+            <mask id="portal_svg__c" fill="#fff">
+              <use href="#portal_svg__a"></use>
               </mask>
             <path
-              fill="url(#sametime_svg__b)"
-              mask="url(#sametime_svg__c)"
-              d="M6.6.584L2.994 8.611 0 11h11.159l1.586-3.519H7.164L10.269.584z"
+              fill="url(#portal_svg__b)"
+              mask="url(#portal_svg__c)"
+              d="M6.061.516l3.062 6.736L0 13.999h4.194l9.149-6.747L10.307.516z"
             />
           </g>
+          <path
+            class="portal_svg__gray_path"
+            d="M14.703 6l2.14 4.804L23.369 6z"
+          />
+          <path
+            class="portal_svg__gray_path"
+            d="M9.546 19.484h7.833l-1.941-4.322z"
+          />
         </g>
       </svg>
     `;
@@ -74,7 +78,7 @@ export class SvgSametime extends BaseIcon {
 
 declare global {
   interface HTMLElementTagNameMap {
-    [ICON_NAME]: SvgSametime;
+    [ICON_NAME]: SvgPortal;
   }
 }
 

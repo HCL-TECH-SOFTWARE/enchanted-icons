@@ -15,14 +15,14 @@
 
 import { css, html } from 'lit';
 import { customElement } from 'lit/decorators.js';
-import { BaseIcon } from '../../utils/base-icon';
+import { BaseIcon } from '../../../utils/base-icon';
 
-export const ICON_NAME = 'svg-portal';
+export const ICON_NAME = 'svg-verse';
 @customElement(ICON_NAME)
-export class SvgPortal extends BaseIcon {
+export class SvgVerse extends BaseIcon {
   static styles = css`
-    .portal_svg__gray_path {
-      fill: var(--svg-portal-fill, #8D8D8D); /* Use CSS var with fallback */
+    .verse_svg__gray_path {
+      fill: var(--svg-verse-fill, #8D8D8D); /* Use CSS var with fallback */
     }
   `
   render() {
@@ -37,39 +37,35 @@ export class SvgPortal extends BaseIcon {
       >
         <defs>
           <linearGradient
-            x1="3.941%"
-            y1="50.001%"
-            x2="99.998%"
-            y2="50.001%"
-            id="portal_svg__b"
+            x1="0%"
+            y1="49.995%"
+            x2="100.004%"
+            y2="49.995%"
+            id="verse_svg__b"
           >
-            <stop stop-color="#6600AE" offset="0%" />
-            <stop stop-color="#EB1746" offset="100%" />
+            <stop stop-color="#BDD62F" offset="0%" />
+            <stop stop-color="#00AFBC" offset="100%" />
           </linearGradient>
           <path
-            id="portal_svg__a"
-            d="M6.061.516l3.062 6.736L0 13.999h4.194l9.149-6.747L10.307.516z"
+            id="verse_svg__a"
+            d="M12.49.485L0 11.344l5.843-.014L9.02 8.19 12.491.485z"
           />
         </defs>
         <g fill="none" fill-rule="evenodd">
-          <g transform="translate(1 5.484)">
-            <mask id="portal_svg__c" fill="#fff">
-              <use href="#portal_svg__a"></use>
+          <path
+            class="verse_svg__gray_path"
+            d="M16.49 4l-3.471 7.705.03 4.506 4.533 4.304z"
+          />
+          <g transform="translate(4 3.515)">
+            <mask id="verse_svg__c" fill="#fff">
+              <use href="#verse_svg__a"></use>
               </mask>
             <path
-              fill="url(#portal_svg__b)"
-              mask="url(#portal_svg__c)"
-              d="M6.061.516l3.062 6.736L0 13.999h4.194l9.149-6.747L10.307.516z"
+              fill="url(#verse_svg__b)"
+              mask="url(#verse_svg__c)"
+              d="M12.49.485L0 11.344l5.843-.014L9.02 8.19 12.491.485z"
             />
           </g>
-          <path
-            class="portal_svg__gray_path"
-            d="M14.703 6l2.14 4.804L23.369 6z"
-          />
-          <path
-            class="portal_svg__gray_path"
-            d="M9.546 19.484h7.833l-1.941-4.322z"
-          />
         </g>
       </svg>
     `;
@@ -78,7 +74,7 @@ export class SvgPortal extends BaseIcon {
 
 declare global {
   interface HTMLElementTagNameMap {
-    [ICON_NAME]: SvgPortal;
+    [ICON_NAME]: SvgVerse;
   }
 }
 

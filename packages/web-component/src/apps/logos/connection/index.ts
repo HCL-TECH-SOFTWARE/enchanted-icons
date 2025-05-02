@@ -15,7 +15,7 @@
 
 import { css, html } from 'lit';
 import { customElement } from 'lit/decorators.js';
-import { BaseIcon } from '../../utils/base-icon';
+import { BaseIcon } from '../../../utils/base-icon';
 
 export const ICON_NAME = 'svg-connections';
 @customElement(ICON_NAME)
