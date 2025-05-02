@@ -39,16 +39,26 @@ const populateIconContainer = (iconModules: Record<string, { ICON_NAME: string }
   
         const wrapper = document.createElement('div');
         wrapper.setAttribute('icon-name', iconName);
-        wrapper.style.border = '1px solid #eee';
-        wrapper.style.padding = '5px';
+        wrapper.setAttribute('class', 'icon-wrapper');
         
+        // Generate import string
+        let importString = path.replace(/^\.\//, '/');
+        importString = importString.replace(/\/index\.ts$/, '');
+
+        const importStringSpan = document.createElement('span');
+        importStringSpan.textContent = importString;
+        importStringSpan.setAttribute('class', 'icon-import-string copy-on-click');
+        importStringSpan.setAttribute('title', 'Copy');
+
         const iconElement = document.createElement(iconName);
+        iconElement.setAttribute('id', iconName);
+
         const nameSpan: HTMLSpanElement = document.createElement('span');
-        nameSpan.textContent = iconName;
-        nameSpan.style.fontSize = '10px';
-        nameSpan.style.display = 'block';
-        nameSpan.style.marginTop = '3px';
-  
+        nameSpan.setAttribute('class', 'icon-name copy-on-click')
+        nameSpan.textContent = `<${iconName}></${iconName}>`;
+        nameSpan.setAttribute('title', 'Copy');
+
+        wrapper.appendChild(importStringSpan);
         wrapper.appendChild(iconElement);
         wrapper.appendChild(nameSpan);
         container.appendChild(wrapper);
@@ -61,3 +71,22 @@ populateIconContainer(carbonIconModules, carbonIconContainer);
 populateIconContainer(customIconModules, customIconContainer);
 populateIconContainer(logoIconModules, logosIconContainer);
 
+// Add copy event handler
+const copyOnClickElements = document.querySelectorAll('.copy-on-click');
+
+copyOnClickElements.forEach(element => {
+  element.addEventListener('click', async (event) => {
+    const textToCopy = element.textContent?.trim() ?? '';
+
+    if (navigator.clipboard && window.isSecureContext) {
+      try {
+        await navigator.clipboard.writeText(textToCopy);
+        alert(`Copied "${textToCopy}"`);
+      } catch(error) {
+        console.error('Failed to copy text!');
+      }
+    } else {
+      console.error('Clipboard API is not available or context is insecure.');
+    }
+  })
+})
