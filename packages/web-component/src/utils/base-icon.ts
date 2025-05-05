@@ -26,7 +26,7 @@ export abstract class BaseIcon extends LitElement {
   static styles = css`
     :host {
       color: inherit;
-      display: flex;
+      display: inline-flex;
       align-items: center;
       justify-content: center;
     }
