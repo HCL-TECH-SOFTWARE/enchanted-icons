@@ -7,6 +7,7 @@
   "author": "Nhicko Garachico <nhickojerome.garac@hcl.com>",
   "license": "Apache-2.0",
   "private": false,
+  "type": "module",
   "homepage": "https://github.com/HCL-TECH-SOFTWARE/enchanted-icons#readme",
   "repository": {
     "type": "git",
@@ -21,21 +22,13 @@
     "carbon",
     "ts"
   ],
-  "contributors": [
-    "Angelo rick Asoy <angelorick.asoy@hcl.com>",
-    "Hanjo Hagemeier <hanjo.hagemeier@hcl.com>",
-    "Ruby ann Matias <rubyann.matias@hcl.com>",
-    "Felix Müller <felix.muller@hcl.com>",
-    "Elsa Pascual <elsa.pascual@hcl.com>",
-    "Utkarsh Srivastava <utkarshsr@hcl.com>"
-  ],
   "scripts": {
     "dev": "vite",
     "build": "tsc",
     "build-icons-page": "vite build",
-    "generate": "node builder.js",
-    "lint": "eslint --ext .ts,.tsx src",
-    "lint-fix": "eslint --ext .ts,.tsx --fix src"
+    "generate": "node builder.cjs",
+    "lint": "eslint src",
+    "lint-fix": "eslint --fix src"
   },
   "devDependencies": {
     "@types/lodash": "^4.17.16",
@@ -46,17 +39,19 @@
     "eslint-plugin-import": "^2.25.4",
     "eslint-plugin-jest": "^26.1.2",
     "eslint-plugin-lit": "^2.1.1",
+    "eslint-plugin-lit-a11y": "^4.1.4",
     "eslint-plugin-promise": "^6.0.0",
     "eslint-plugin-wc": "^3.0.0",
     "eslint-plugin-why": "^1.2.0",
     "lit": "^3.3.0",
     "lodash": "^4.17.11",
-    "typescript": "^5.8.3"
+    "typescript": "^5.8.3",
+    "typescript-eslint": "^8.31.1",
+    "vite": "^6.3.3"
   },
   "dependencies": {
     "@carbon/icon-helpers": "^10.58.0",
-    "@carbon/icons": "11.27.0",
-    "vite": "^6.3.3"
+    "@carbon/icons": "11.27.0"
   },
   "engines": {
     "node": ">=20.x"

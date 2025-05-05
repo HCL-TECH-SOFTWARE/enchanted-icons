@@ -14,7 +14,7 @@
   * ======================================================================== */
 
 /* auto generated file - do not edit */
-import { html, LitElement } from 'lit';
+import { html } from 'lit';
 import { customElement } from 'lit/decorators.js';
 import Icon from '@carbon/icons/es/number--9/32';
 import { toSVG } from '@carbon/icon-helpers';

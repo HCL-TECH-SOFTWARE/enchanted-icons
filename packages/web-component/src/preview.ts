@@ -70,7 +70,7 @@ populateIconContainer(logoIconModules, logosIconContainer);
 const copyOnClickElements = document.querySelectorAll('.copy-on-click');
 
 copyOnClickElements.forEach(element => {
-  element.addEventListener('click', async (event) => {
+  element.addEventListener('click', async () => {
     const textToCopy = element.textContent?.trim() ?? '';
 
     if (navigator.clipboard && window.isSecureContext) {
@@ -78,7 +78,7 @@ copyOnClickElements.forEach(element => {
         await navigator.clipboard.writeText(textToCopy);
         alert(`Copied "${textToCopy}"`);
       } catch(error) {
-        console.error('Failed to copy text!');
+        console.error('Failed to copy text! ', error);
       }
     } else {
       console.error('Clipboard API is not available or context is insecure.');

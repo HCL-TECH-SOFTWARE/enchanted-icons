@@ -20,7 +20,7 @@ const createIconContent = (iconName, size, subFolder, isRenamed, orignalName) =>
   * ======================================================================== */
 
 /* auto generated file - do not edit */
-import { html, LitElement } from 'lit';
+import { html } from 'lit';
 import { customElement } from 'lit/decorators.js';
 import Icon from '@carbon/icons/es/${orignalName}/32';
 import { toSVG } from '@carbon/icon-helpers';
