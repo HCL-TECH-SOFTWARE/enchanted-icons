@@ -25,14 +25,13 @@ export abstract class BaseIcon extends LitElement {
 
   static styles = css`
     :host {
-      color: inherit;
       display: inline-flex;
       align-items: center;
       justify-content: center;
+      color: var(--_icon-instance-color, var(--icon-theme-color, ${unsafeCSS(DEFAULT_ICON_COLOR)}));
     }
 
     svg {
-      fill: var(--_icon-instance-color, var(--icon-theme-color, ${unsafeCSS(DEFAULT_ICON_COLOR)}));
       width: var(--_icon-instance-size, var(--icon-theme-size, ${DEFAULT_ICON_SIZE}px));
       height: var(--_icon-instance-size, var(--icon-theme-size, ${DEFAULT_ICON_SIZE}px));
       display: block;
