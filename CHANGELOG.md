@@ -3,27 +3,27 @@
 ## Unreleased
 
 ### Added
-- Added 2 new custom icons:
-  Sort--descending--alt, Sort-ascending--alt
 
 ### Fixed
 
 ### Changed
--'The "page-add" icon is deprecated and will be removed in future releases. Please use "page--add" instead.'
 
 #### Breaking changes
+
+## 1.4.0
+
+### Added
+- Added 2 new custom icons:
+  Sort--descending--alt, Sort-ascending--alt
+
+### Changed
+-'The "page-add" icon is deprecated and will be removed in future releases. Please use "page--add" instead.'
 
 ## 1.3.0
 
 ### Added
 - Added 3 new custom icons:
   video--syncing, video--error, video--synced
-
-### Fixed
-
-### Changed
-
-#### Breaking changes
 
 ## 1.2.0
 
