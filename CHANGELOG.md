@@ -10,6 +10,12 @@
 
 #### Breaking changes
 
+## 1.5.0
+
+### Added
+- introduced an excluded icon:
+  return
+
 ## 1.4.0
 
 ### Added
