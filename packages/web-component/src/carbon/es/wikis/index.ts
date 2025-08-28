@@ -21,14 +21,13 @@ import { toSVG } from '@carbon/icon-helpers';
 import { BaseIcon } from '../../../utils/base-icon';
 
 export const ICON_NAME = `icon-${'wikis'.toLowerCase().replace(/-+/g, '-')}`;
-if (!customElements.get(ICON_NAME)) {
-  @customElement(ICON_NAME)
-    export class WebComponentIcon extends BaseIcon {
-      render() {
-        return html`${toSVG({...Icon, attrs: { ...Icon.attrs, preserveAspectRatio: 'xMidYMid'}})}`;
-      }
-    } 
-}
+@customElement(ICON_NAME)
+export class WebComponentIcon extends BaseIcon {
+  render() {
+    return html`${toSVG({...Icon, attrs: { ...Icon.attrs, preserveAspectRatio: 'xMidYMid'}})}`;
+  }
+} 
+
 declare global {
   interface HTMLElementTagNameMap {
     [ICON_NAME]: WebComponentIcon;

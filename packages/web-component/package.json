@@ -26,7 +26,7 @@
     "dev": "vite",
     "build": "tsc",
     "build-icons-page": "vite build",
-    "generate": "node builder.cjs",
+    "generate": "node ./scripts/builder.cjs",
     "lint": "eslint src",
     "lint-fix": "eslint --fix src"
   },
@@ -43,6 +43,7 @@
     "eslint-plugin-promise": "^6.0.0",
     "eslint-plugin-wc": "^3.0.0",
     "eslint-plugin-why": "^1.2.0",
+    "jsdom": "^26.1.0",
     "lit": "^3.3.0",
     "lodash": "^4.17.11",
     "typescript": "^5.8.3",
