@@ -14,40 +14,38 @@
  * ======================================================================== */
 
 import { html } from 'lit';
-import { customElement } from 'lit/decorators.js';
-import { createSvgIcon, IIconAttrs, IIconContent } from '../../../../../utils';
+import { createSvgIcon, IIconAttrs, IIconContent, canDefine } from '../../../../../utils';
 import { BaseIcon } from '../../../../../utils/base-icon';
 
 const attrs: IIconAttrs = {
-  xmlns: 'http://www.w3.org/2000/svg',
-  viewBox: '0 0 32 32',
-  width: 32,
-  height: 32,
+  "xmlns": "http://www.w3.org/2000/svg",
+  "viewBox": "0 0 32 32",
+  "width": 32,
+  "height": 32
 };
 
 const content: IIconContent[] = [
   {
-    elem: 'path',
-    attrs: {
-      d:
-        `M18,24 L18,26 L3,26 L3,24 L18,24 Z M29,18 L29,20 L3,20 L3,18 L29,18 Z M7,6 L7,7.34159342 C5.29481412,7.42781969 4.40942915,8.29348452 4.34384508,9.93858793 L4.342,10 
-          L7,10 L7,12 C7,13.1045695 6.1045695,14 5,14 L3,14 L3,10 L3.00367309,9.76616544 C3.08203245,7.25538848 4.41414141,6 7,6 Z M13,6 L13,7.34159342 C11.2948141,7.42781969 
-            10.4094291,8.29348452 10.3438451,9.93858793 L10.342,10 L13,10 L13,12 C13,13.1045695 12.1045695,14 11,14 L9,14 L9,10 L9.00367309,9.76616544 C9.08203245,7.25538848 
-              10.4141414,6 13,6 Z`,
-      fill: 'currentColor',
-      stroke: 'none',
-      strokeLinejoin: 'round',
-      strokeMiterlimit: 10,
-    },
-  },
+    "elem": "path",
+    "attrs": {
+      "d": "M18,24 L18,26 L3,26 L3,24 L18,24 Z M29,18 L29,20 L3,20 L3,18 L29,18 Z M7,6 L7,7.34159342 C5.29481412,7.42781969 4.40942915,8.29348452 4.34384508,9.93858793 L4.342,10            L7,10 L7,12 C7,13.1045695 6.1045695,14 5,14 L3,14 L3,10 L3.00367309,9.76616544 C3.08203245,7.25538848 4.41414141,6 7,6 Z M13,6 L13,7.34159342 C11.2948141,7.42781969              10.4094291,8.29348452 10.3438451,9.93858793 L10.342,10 L13,10 L13,12 C13,13.1045695 12.1045695,14 11,14 L9,14 L9,10 L9.00367309,9.76616544 C9.08203245,7.25538848                10.4141414,6 13,6 Z",
+      "fill": "currentColor",
+      "stroke": "none",
+      "strokeLinejoin": "round",
+      "strokeMiterlimit": "10"
+    }
+  }
 ];
 
 export const ICON_NAME = 'icon-quote';
-@customElement(ICON_NAME)
 export class WebComponentIcon extends BaseIcon {
   render() {
     return html`${createSvgIcon(content, attrs)}`;
   }
+}
+
+if (canDefine && !customElements.get(ICON_NAME)) {
+  customElements.define(ICON_NAME, WebComponentIcon);
 }
 
 declare global {

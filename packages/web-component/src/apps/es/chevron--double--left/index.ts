@@ -14,37 +14,38 @@
  * ======================================================================== */
 
 import { html } from 'lit';
-import { customElement } from 'lit/decorators.js';
-import { createSvgIcon, IIconAttrs, IIconContent } from '../../../utils';
+import { createSvgIcon, IIconAttrs, IIconContent, canDefine } from '../../../utils';
 import { BaseIcon } from '../../../utils/base-icon';
 
 const attrs: IIconAttrs = {
-  xmlns: 'http://www.w3.org/2000/svg',
-  viewBox: '0 0 24 24',
-  width: 24,
-  height: 24,
+  "xmlns": "http://www.w3.org/2000/svg",
+  "viewBox": "0 0 24 24",
+  "width": 24,
+  "height": 24
 };
 
 const content: IIconContent[] = [
   {
-    elem: 'path',
-    attrs: {
-      d:
-        'M12 5.02393L4.5 12.0827L12 19.1416L13.0605 18.1435L6.621 12.0827L13.0605 6.02204L12 5.02393ZM18 5.02393L10.5 12.0827L18 19.1416L19.0605 18.1435L12.621 12.0827L19.0605 6.02204L18 5.02393Z',
-      fill: 'currentColor',
-      stroke: 'none',
-      strokeLinejoin: 'round',
-      strokeMiterlimit: 10,
-    },
-  },
+    "elem": "path",
+    "attrs": {
+      "d": "M12 5.02393L4.5 12.0827L12 19.1416L13.0605 18.1435L6.621 12.0827L13.0605 6.02204L12 5.02393ZM18 5.02393L10.5 12.0827L18 19.1416L19.0605 18.1435L12.621 12.0827L19.0605 6.02204L18 5.02393Z",
+      "fill": "currentColor",
+      "stroke": "none",
+      "strokeLinejoin": "round",
+      "strokeMiterlimit": "10"
+    }
+  }
 ];
 
 export const ICON_NAME = 'icon-chevron-double-left';
-@customElement(ICON_NAME)
 export class WebComponentIcon extends BaseIcon {
   render() {
     return html`${createSvgIcon(content, attrs)}`;
   }
+}
+
+if (canDefine && !customElements.get(ICON_NAME)) {
+  customElements.define(ICON_NAME, WebComponentIcon);
 }
 
 declare global {

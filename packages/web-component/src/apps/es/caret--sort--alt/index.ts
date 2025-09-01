@@ -14,48 +14,48 @@
  * ======================================================================== */
 
 import { html } from 'lit';
-import { customElement } from 'lit/decorators.js';
-import { createSvgIcon, IIconAttrs, IIconContent } from '../../../utils';
+import { createSvgIcon, IIconAttrs, IIconContent, canDefine } from '../../../utils';
 import { BaseIcon } from '../../../utils/base-icon';
 
 const attrs: IIconAttrs = {
-  xmlns: 'http://www.w3.org/2000/svg',
-  viewBox: '0 0 24 24',
-  width: 24,
-  height: 24,
+  "xmlns": "http://www.w3.org/2000/svg",
+  "viewBox": "0 0 24 24",
+  "width": 24,
+  "height": 24
 };
 
 const content: IIconContent[] = [
   {
-    elem: 'path',
-    attrs: {
-      d:
-        'M12 3L6 9H18L12 3Z',
-      fill: 'currentColor',
-      stroke: 'none',
-      strokeLinejoin: 'round',
-      strokeMiterlimit: 10,
-    },
+    "elem": "path",
+    "attrs": {
+      "d": "M12 3L6 9H18L12 3Z",
+      "fill": "currentColor",
+      "stroke": "none",
+      "strokeLinejoin": "round",
+      "strokeMiterlimit": "10"
+    }
   },
   {
-    elem: 'path',
-    attrs: {
-      d:
-        'M12 21L18 15H6L12 21Z',
-      fill: 'currentColor',
-      stroke: 'none',
-      strokeLinejoin: 'round',
-      strokeMiterlimit: 10,
-    },
-  },
+    "elem": "path",
+    "attrs": {
+      "d": "M12 21L18 15H6L12 21Z",
+      "fill": "currentColor",
+      "stroke": "none",
+      "strokeLinejoin": "round",
+      "strokeMiterlimit": "10"
+    }
+  }
 ];
 
 export const ICON_NAME = 'icon-caret-sort-alt';
-@customElement(ICON_NAME)
 export class WebComponentIcon extends BaseIcon {
   render() {
     return html`${createSvgIcon(content, attrs)}`;
   }
+}
+
+if (canDefine && !customElements.get(ICON_NAME)) {
+  customElements.define(ICON_NAME, WebComponentIcon);
 }
 
 declare global {

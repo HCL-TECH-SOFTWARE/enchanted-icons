@@ -14,70 +14,68 @@
  * ======================================================================== */
 
 import { html } from 'lit';
-import { customElement } from 'lit/decorators.js';
-import { createSvgIcon, IIconAttrs, IIconContent } from '../../../utils';
+import { createSvgIcon, IIconAttrs, IIconContent, canDefine } from '../../../utils';
 import { BaseIcon } from '../../../utils/base-icon';
 
 const attrs: IIconAttrs = {
-  xmlns: 'http://www.w3.org/2000/svg',
-  viewBox: '0 0 24 24',
-  width: 24,
-  height: 24,
+  "xmlns": "http://www.w3.org/2000/svg",
+  "viewBox": "0 0 24 24",
+  "width": 24,
+  "height": 24
 };
 
 const content: IIconContent[] = [
   {
-    elem: 'path',
-    attrs: {
-      d:
-        'M9 1.5H1.5V9H3V3H9V1.5Z',
-      fill: 'currentColor',
-      stroke: 'none',
-      strokeLinejoin: 'round',
-      strokeMiterlimit: 10,
-    },
+    "elem": "path",
+    "attrs": {
+      "d": "M9 1.5H1.5V9H3V3H9V1.5Z",
+      "fill": "currentColor",
+      "stroke": "none",
+      "strokeLinejoin": "round",
+      "strokeMiterlimit": "10"
+    }
   },
   {
-    elem: 'path',
-    attrs: {
-      d:
-        'M15 1.5H22.5V9H21V3H15V1.5Z',
-      fill: 'currentColor',
-      stroke: 'none',
-      strokeLinejoin: 'round',
-      strokeMiterlimit: 10,
-    },
+    "elem": "path",
+    "attrs": {
+      "d": "M15 1.5H22.5V9H21V3H15V1.5Z",
+      "fill": "currentColor",
+      "stroke": "none",
+      "strokeLinejoin": "round",
+      "strokeMiterlimit": "10"
+    }
   },
   {
-    elem: 'path',
-    attrs: {
-      d:
-        'M9 22.5H1.5V15H3V21H9V22.5Z',
-      fill: 'currentColor',
-      stroke: 'none',
-      strokeLinejoin: 'round',
-      strokeMiterlimit: 10,
-    },
+    "elem": "path",
+    "attrs": {
+      "d": "M9 22.5H1.5V15H3V21H9V22.5Z",
+      "fill": "currentColor",
+      "stroke": "none",
+      "strokeLinejoin": "round",
+      "strokeMiterlimit": "10"
+    }
   },
   {
-    elem: 'path',
-    attrs: {
-      d:
-        'M15 22.5H22.5V15H21V21H15V22.5Z',
-      fill: 'currentColor',
-      stroke: 'none',
-      strokeLinejoin: 'round',
-      strokeMiterlimit: 10,
-    },
-  },
+    "elem": "path",
+    "attrs": {
+      "d": "M15 22.5H22.5V15H21V21H15V22.5Z",
+      "fill": "currentColor",
+      "stroke": "none",
+      "strokeLinejoin": "round",
+      "strokeMiterlimit": "10"
+    }
+  }
 ];
 
 export const ICON_NAME = 'icon-full-screen';
-@customElement(ICON_NAME)
 export class WebComponentIcon extends BaseIcon {
   render() {
     return html`${createSvgIcon(content, attrs)}`;
   }
+}
+
+if (canDefine && !customElements.get(ICON_NAME)) {
+  customElements.define(ICON_NAME, WebComponentIcon);
 }
 
 declare global {

@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 /* ======================================================================== *
  * Copyright 2025 HCL America Inc.                                          *
  * Licensed under the Apache License, Version 2.0 (the "License");          *
@@ -13,7 +14,7 @@
  * limitations under the License.                                           *
  * ======================================================================== */
 import { readFileSync, writeFileSync, existsSync, mkdirSync, lstatSync, readdirSync } from 'fs';
-import { join, basename, extname } from 'path';
+import path, { join, basename, extname, relative } from 'path';
 import { JSDOM } from 'jsdom';
 
 /**
@@ -22,9 +23,10 @@ import { JSDOM } from 'jsdom';
  *
  * @param {string} svgString - The SVG code as a string (e.g., '<svg ...><path ... /></svg>').
  * @param {string} iconName - The desired name for the icon (e.g., 'icon-app-switcher').
+ * @param {string} utilsImportPath - The relative path to the shared utils directory.
  * @returns {string} The complete JavaScript code for the Lit icon component.
  */
-const convertSvgToLitIcon = (svgString, iconName) => {
+const convertSvgToLitIcon = (svgString, iconName, utilsImportPath) => {
   const dom = new JSDOM(svgString, { contentType: 'image/svg+xml' });
   const svgElement = dom.window.document.querySelector('svg');
   
@@ -59,21 +61,38 @@ const convertSvgToLitIcon = (svgString, iconName) => {
     }
   });
 
-  return `import { html } from 'lit';
-import { customElement } from 'lit/decorators.js';
-import { createSvgIcon, IIconAttrs, IIconContent } from '../../../utils';
-import { BaseIcon } from '../../../utils/base-icon';
+  return `/* ======================================================================== *
+ * Copyright 2025 HCL America Inc.                                          *
+ * Licensed under the Apache License, Version 2.0 (the "License");          *
+ * you may not use this file except in compliance with the License.         *
+ * You may obtain a copy of the License at                                  *
+ *                                                                          *
+ * http://www.apache.org/licenses/LICENSE-2.0                               *
+ *                                                                          *
+ * Unless required by applicable law or agreed to in writing, software      *
+ * distributed under the License is distributed on an "AS IS" BASIS,        *
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. *
+ * See the License for the specific language governing permissions and      *
+ * limitations under the License.                                           *
+ * ======================================================================== */
+
+import { html } from 'lit';
+import { createSvgIcon, IIconAttrs, IIconContent, canDefine } from '${utilsImportPath}';
+import { BaseIcon } from '${utilsImportPath}/base-icon';
 
 const attrs: IIconAttrs = ${JSON.stringify(attrs, null, 2)};
 
 const content: IIconContent[] = ${JSON.stringify(content, null, 2)};
 
 export const ICON_NAME = '${iconName}';
-@customElement(ICON_NAME)
 export class WebComponentIcon extends BaseIcon {
   render() {
     return html\`\${createSvgIcon(content, attrs)}\`;
   }
+}
+
+if (canDefine && !customElements.get(ICON_NAME)) {
+  customElements.define(ICON_NAME, WebComponentIcon);
 }
 
 declare global {
@@ -89,18 +108,45 @@ declare global {
  * @param {string} inputFilePath - Path to the input SVG file.
  * @param {string} outputFilePath - Path to the output file.
  */
-const processFile = (inputFilePath, outputFilePath) => {
+const processFile = (inputFilePath, outputFilePath, utilsImportPath) => {
   const file = basename(inputFilePath);
   const iconName = `icon-${basename(file, '.svg').toLowerCase().replace(/-+/g, '-')}`;
 
   try {
     const svgContent = readFileSync(inputFilePath, 'utf-8');
-    const generatedCode = convertSvgToLitIcon(svgContent, iconName);
+    const generatedCode = convertSvgToLitIcon(svgContent, iconName, utilsImportPath);
     writeFileSync(outputFilePath, generatedCode);
     console.log(`Converted ${file} -> ${basename(outputFilePath)}`);
   } catch (error) {
     console.error(`Failed to convert ${file}:`, error.message);
   }
+}
+
+
+const processDirectoryRecursive = (currentPath, sourceRoot, outputRoot) => {
+  const items = readdirSync(currentPath);
+
+  items.forEach(item => {
+    const fullPath = join(currentPath, item);
+    const stats = lstatSync(fullPath);
+
+    if (stats.isDirectory()) {
+      processDirectoryRecursive(fullPath, sourceRoot, outputRoot);
+    } else if (stats.isFile() && extname(item) === '.svg') {
+      const relativePath = relative(sourceRoot, fullPath);
+      const outputDir = join(outputRoot, path.dirname(relativePath));
+      const outputFileName = `index.ts`;
+      const outputFilePath = join(outputDir, outputFileName);
+
+      if (!existsSync(outputDir)) {
+        mkdirSync(outputDir, { recursive: true });
+      }
+
+      const relativeImportPath = relative(outputDir, join(process.cwd(), 'src', 'utils')).replace(/\\/g, '/');
+
+      processFile(fullPath, outputFilePath, relativeImportPath);
+    }
+  })
 }
 
 // CLI script arguments and file processing
@@ -121,39 +167,19 @@ try {
   const stats = lstatSync(inputPath);
 
   if (stats.isDirectory()) {
-    // If outputDir is not provided, use a default for the directory
-    if (!outputDir) {
-      outputDir = join('src', 'apps', 'es');
-    }
+    outputDir = outputDir || join('src');
   
     if (!existsSync(outputDir)) {
       mkdirSync(outputDir, { recursive: true });
       console.log(`Created output directory: ${outputDir}`);
     }
 
-    const files = readdirSync(inputPath);
-    if (files.length === 0 ) {
-      console.warn(`No files found in input directory: ${inputPath}`);
-      process.exit(0);
-    }
-    console.log(`Found ${files.length} files in ${inputPath}. Starting conversion... `);
-
-    files.forEach(file => {
-      if (extname(file) === '.svg') {
-        const iconNameWithoutExt = basename(file, '.svg').toLowerCase();
-        const individualIconOutputDir = join(outputDir, iconNameWithoutExt);
-        if (!existsSync(individualIconOutputDir)) {
-          mkdirSync(individualIconOutputDir, { recursive: true });
-        }
-
-        const inputFilePath = join(inputPath, file);
-        const outputFilePath = join(individualIconOutputDir, 'index.ts');
-        processFile(inputFilePath, outputFilePath);
-      }
-    });
+    console.log(`Found a directory at ${inputPath}. Starting recursive conversion... `);
+    processDirectoryRecursive(inputPath, inputPath, outputDir);
+    console.log('\nConversion complete.');
   } else if (stats.isFile() && extname(inputPath) === '.svg') {
-    const iconNameWithoutExt = basename(inputPath, '.svg').toLowerCase();
-    outputDir = outputDir || join('src', 'apps', 'es', iconNameWithoutExt);
+    const iconNameWithoutExt = basename(inputPath, '.svg').toLowerCase().replace(/_|\s/g, '-');
+    outputDir = outputDir || join('src', iconNameWithoutExt);
 
     if (!existsSync(outputDir)) {
       mkdirSync(outputDir, { recursive: true });
@@ -162,14 +188,15 @@ try {
     
     const outputFilePath = join(outputDir, 'index.ts');
     
+    const relativeImportPath = relative(outputDir, join(process.cwd(), 'src', 'utils')).replace(/\\/g, '/');
+
     console.log(`Converting single file: ${inputPath}`);
-    processFile(inputPath, outputFilePath);
+    processFile(inputPath, outputFilePath, relativeImportPath);
+    console.log('\nConversion complete.');
   } else {
     console.error(`Invalid input: ${inputPath}. Please provide a valid .svg file or a directory.`);
     process.exit(1);
   }
-
-  console.log('\nConversion complete.');
 } catch (error) {
   console.error('An error occurred:', error.message);
   process.exit(1);

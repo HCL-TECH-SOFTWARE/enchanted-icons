@@ -14,50 +14,50 @@
  * ======================================================================== */
 
 import { html } from 'lit';
-import { customElement } from 'lit/decorators.js';
-import { createSvgIcon, IIconAttrs, IIconContent } from '../../../utils';
+import { createSvgIcon, IIconAttrs, IIconContent, canDefine } from '../../../utils';
 import { BaseIcon } from '../../../utils/base-icon';
 
 const attrs: IIconAttrs = {
-  xmlns: 'http://www.w3.org/2000/svg',
-  viewBox: '0 0 24 24',
-  width: 24,
-  height: 24,
+  "xmlns": "http://www.w3.org/2000/svg",
+  "viewBox": "0 0 24 24",
+  "width": 24,
+  "height": 24
 };
 
 const content: IIconContent[] = [
   {
-    elem: 'path',
-    attrs: {
-      d:
-        'M17.25 6.75H13.5V8.25H15.75V15.75H13.5V17.25H19.5V15.75H17.25V6.75Z',
-      fill: 'currentColor',
-      stroke: 'none',
-      strokeLinejoin: 'round',
-      strokeMiterlimit: 10,
-      fillRule: 'evenodd',
-      clipRule: 'evenodd',
-    },
+    "elem": "path",
+    "attrs": {
+      "d": "M17.25 6.75H13.5V8.25H15.75V15.75H13.5V17.25H19.5V15.75H17.25V6.75Z",
+      "fill": "currentColor",
+      "stroke": "none",
+      "strokeLinejoin": "round",
+      "strokeMiterlimit": "10",
+      "fillRule": "evenodd",
+      "clipRule": "evenodd"
+    }
   },
   {
-    elem: 'path',
-    attrs: {
-      d:
-        'M9 6.75V11.25H6V6.75H4.5V17.25H6V12.75H9V17.25H10.5V6.75H9Z',
-      fill: 'currentColor',
-      stroke: 'none',
-      strokeLinejoin: 'round',
-      strokeMiterlimit: 10,
-    },
-  },
+    "elem": "path",
+    "attrs": {
+      "d": "M9 6.75V11.25H6V6.75H4.5V17.25H6V12.75H9V17.25H10.5V6.75H9Z",
+      "fill": "currentColor",
+      "stroke": "none",
+      "strokeLinejoin": "round",
+      "strokeMiterlimit": "10"
+    }
+  }
 ];
 
 export const ICON_NAME = 'icon-page-elements-h1';
-@customElement(ICON_NAME)
 export class WebComponentIcon extends BaseIcon {
   render() {
     return html`${createSvgIcon(content, attrs)}`;
   }
+}
+
+if (canDefine && !customElements.get(ICON_NAME)) {
+  customElements.define(ICON_NAME, WebComponentIcon);
 }
 
 declare global {

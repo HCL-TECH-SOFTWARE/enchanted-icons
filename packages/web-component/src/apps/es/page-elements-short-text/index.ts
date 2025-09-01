@@ -14,36 +14,38 @@
  * ======================================================================== */
 
 import { html } from 'lit';
-import { customElement } from 'lit/decorators.js';
-import { createSvgIcon, IIconAttrs, IIconContent } from '../../../utils';
+import { createSvgIcon, IIconAttrs, IIconContent, canDefine } from '../../../utils';
 import { BaseIcon } from '../../../utils/base-icon';
 
 const attrs: IIconAttrs = {
-  xmlns: 'http://www.w3.org/2000/svg',
-  viewBox: '0 0 24 24',
-  width: 24,
-  height: 24,
+  "xmlns": "http://www.w3.org/2000/svg",
+  "viewBox": "0 0 24 24",
+  "width": 24,
+  "height": 24
 };
 
 const content: IIconContent[] = [
   {
-    elem: 'path',
-    attrs: {
-      d: 'M21.75 13.5V15H2.25V13.5H21.75ZM13.5 18V19.5H2.25V18H13.5ZM6.75 4.5V6H5.25V10.5H3.75V6H2.25V4.5H6.75Z',
-      fill: 'currentColor',
-      stroke: 'none',
-      strokeLinejoin: 'round',
-      strokeMiterlimit: 10,
-    },
-  },
+    "elem": "path",
+    "attrs": {
+      "d": "M21.75 13.5V15H2.25V13.5H21.75ZM13.5 18V19.5H2.25V18H13.5ZM6.75 4.5V6H5.25V10.5H3.75V6H2.25V4.5H6.75Z",
+      "fill": "currentColor",
+      "stroke": "none",
+      "strokeLinejoin": "round",
+      "strokeMiterlimit": "10"
+    }
+  }
 ];
 
 export const ICON_NAME = 'icon-page-elements-short-text';
-@customElement(ICON_NAME)
 export class WebComponentIcon extends BaseIcon {
   render() {
     return html`${createSvgIcon(content, attrs)}`;
   }
+}
+
+if (canDefine && !customElements.get(ICON_NAME)) {
+  customElements.define(ICON_NAME, WebComponentIcon);
 }
 
 declare global {

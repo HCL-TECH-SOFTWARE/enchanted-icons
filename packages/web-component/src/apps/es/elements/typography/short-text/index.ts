@@ -14,38 +14,38 @@
  * ======================================================================== */
 
 import { html } from 'lit';
-import { customElement } from 'lit/decorators.js';
-import { createSvgIcon, IIconAttrs, IIconContent } from '../../../../../utils';
+import { createSvgIcon, IIconAttrs, IIconContent, canDefine } from '../../../../../utils';
 import { BaseIcon } from '../../../../../utils/base-icon';
 
 const attrs: IIconAttrs = {
-  xmlns: 'http://www.w3.org/2000/svg',
-  viewBox: '0 0 24 24',
-  width: 24,
-  height: 24,
+  "xmlns": "http://www.w3.org/2000/svg",
+  "viewBox": "0 0 24 24",
+  "width": 24,
+  "height": 24
 };
 
 const content: IIconContent[] = [
   {
-    elem: 'path',
-    attrs: {
-      d:
-        `M13.5,18 L13.5,19.5 L2.25,19.5 L2.25,18 L13.5,18 Z M21.75,13.5 L21.75,15 L2.25,15 L2.25,13.5 L21.75,13.5 Z M6.75,4.5 L6.75,6 L5.25,6 L5.25,10.5 L3.75,10.5 L3.75,6 
-          L2.25,6 L2.25,4.5 L6.75,4.5 Z`,
-      fill: 'currentColor',
-      stroke: 'none',
-      strokeLinejoin: 'round',
-      strokeMiterlimit: 10,
-    },
-  },
+    "elem": "path",
+    "attrs": {
+      "d": "M13.5,18 L13.5,19.5 L2.25,19.5 L2.25,18 L13.5,18 Z M21.75,13.5 L21.75,15 L2.25,15 L2.25,13.5 L21.75,13.5 Z M6.75,4.5 L6.75,6 L5.25,6 L5.25,10.5 L3.75,10.5 L3.75,6            L2.25,6 L2.25,4.5 L6.75,4.5 Z",
+      "fill": "currentColor",
+      "stroke": "none",
+      "strokeLinejoin": "round",
+      "strokeMiterlimit": "10"
+    }
+  }
 ];
 
 export const ICON_NAME = 'icon-short-text';
-@customElement(ICON_NAME)
 export class WebComponentIcon extends BaseIcon {
   render() {
     return html`${createSvgIcon(content, attrs)}`;
   }
+}
+
+if (canDefine && !customElements.get(ICON_NAME)) {
+  customElements.define(ICON_NAME, WebComponentIcon);
 }
 
 declare global {
