@@ -59,6 +59,10 @@ const createSvgIcon = (content: IIconContent[], attrs: IIconAttrs) => {
   return svgElement;
 };
 
+const canDefine = typeof globalThis !== 'undefined' && 'customElements' in globalThis;
+
 export {
   createSvgIcon,
+  canDefine
 };
+

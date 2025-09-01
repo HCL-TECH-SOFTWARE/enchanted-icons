@@ -17,7 +17,7 @@ import { join, basename, extname } from 'path';
 import { JSDOM } from 'jsdom';
 
 /**
- * Converts an SVG string into a structured object format for a Lit-based icon library.
+ * Converts an SVG string/file into a structured object format for a Lit-based icon library.
  * This is a simplified parser and may not handle all complex SVG attributes or nested structures.
  *
  * @param {string} svgString - The SVG code as a string (e.g., '<svg ...><path ... /></svg>').

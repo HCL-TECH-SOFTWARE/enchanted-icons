@@ -15,19 +15,21 @@
 
 /* auto generated file - do not edit */
 import { html } from 'lit';
-import { customElement } from 'lit/decorators.js';
 import Icon from '@carbon/icons/es/face--activated--add/32';
 import { toSVG } from '@carbon/icon-helpers';
 import { BaseIcon } from '../../../utils/base-icon';
+import { canDefine } from '../../../utils';
 
 export const ICON_NAME = `icon-${'face--activated--add'.toLowerCase().replace(/-+/g, '-')}`;
-@customElement(ICON_NAME)
 export class WebComponentIcon extends BaseIcon {
   render() {
     return html`${toSVG({...Icon, attrs: { ...Icon.attrs, preserveAspectRatio: 'xMidYMid'}})}`;
   }
 } 
 
+if (canDefine && !customElements.get(ICON_NAME)) {
+  customElements.define(ICON_NAME, WebComponentIcon);
+}
 declare global {
   interface HTMLElementTagNameMap {
     [ICON_NAME]: WebComponentIcon;
