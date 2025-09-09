@@ -46,7 +46,7 @@ A common pattern is to use an icon in conjunction with an Enchanted `<IconButton
 import IconButton from '@hcl-software/enchanted-react-components/dist/IconButton';
 import RocketIcon from '@hcl-software/enchanted-icons/dist/carbon/es/rocket';
 ...
-<IconButton size="small"><RocketIcon /></IconButton>
+<IconButton size="small" aria-label="launch"><RocketIcon /></IconButton>
 ```
 Note: In this case the size of the icon is determined by the `size` prop of the `<IconButton>`. The icon color is controlled by the different button states (active, disabled, etc) and should not be overriden.
 
