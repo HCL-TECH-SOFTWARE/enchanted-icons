@@ -230,7 +230,6 @@
     "reference-architecture",
     "repo--artifact",
     "repo--source-code",
-    "return",
     "rule--data-quality",
     "run--mirror",
     "screen-map--set",
@@ -269,13 +268,13 @@
     "zos--sysplex",
     "zos"
   ],
-   "renames": {
-     "ibm-cloud--dedicated-host": "cloud--dedicated-host",
-     "ibm-cloud--internet-services": "cloud--internet-services",
-     "ibm-cloud--security-compliance-center": "cloud--security-compliance-center",
-     "ibm-cloud--subnets": "cloud--subnets",
-     "ibm-security": "security--alt",
-     "ibm-security--services": "security-services--alt",
-     "ibm-watson--orders": "orders"
-   }
+  "renames": {
+    "ibm-cloud--dedicated-host": "cloud--dedicated-host",
+    "ibm-cloud--internet-services": "cloud--internet-services",
+    "ibm-cloud--security-compliance-center": "cloud--security-compliance-center",
+    "ibm-cloud--subnets": "cloud--subnets",
+    "ibm-security": "security--alt",
+    "ibm-security--services": "security-services--alt",
+    "ibm-watson--orders": "orders"
+  }
 }
