@@ -1,11 +1,25 @@
 const path = require('path');
 const fs = require('fs');
+const _ = require('lodash');
+const { parse } = require('svg-parser');
+const { execSync } = require('child_process');
 const config = require('./config.json');
-const { createCarbonReactIcon, createCarbonWebComponentIcon } = require('./templates');
+const { 
+  createCarbonReactIcon, 
+  createCarbonWebComponentIcon,
+  createCustomReactIcon,
+  createCustomWebComponentIcon,
+} = require('./templates');
 
 const carbonSourcePath = path.resolve(process.cwd(), 'node_modules/@carbon/icons/es');
-const carbonReactDestPath = path.resolve(process.cwd(), '../../packages/react/src/carbon/es');
-const carbonWcDestPath = path.resolve(process.cwd(), '../../packages/web-component/src/carbon/es');
+const carbonReactDestPath = path.resolve(process.cwd(), '../react/src/carbon/es');
+const carbonWcDestPath = path.resolve(process.cwd(), '../web-component/src/carbon/es');
+
+const customSourcePath = path.resolve(process.cwd(), '../../svg');
+const customReactDestPath = path.resolve(process.cwd(), '../react/src/apps/es');
+const customWcDestPath = path.resolve(process.cwd(), '../web-component/src/apps/es');
+const reactUtilsPath = path.resolve(carbonReactDestPath, '../../utils');
+const wcUtilsPath = path.resolve(carbonWcDestPath, '../../utils');
 
 const ensureDirSync = (dirpath) => {
   try {
@@ -28,20 +42,141 @@ const removeDirSync = (dirpath) => {
   }
 };
 
+const transformSvgAst = (ast) => {
+  const svgElement = ast.children.find((n) => n.tagName === 'svg');
+  if (!svgElement) throw new Error('No <svg> tag found in AST');
+  
+  const camelCaseAttrs = (props) => {
+    return Object.keys(props).reduce((acc, key) => {
+      let value = props[key];
+      if (typeof value === 'string') {
+        // Replace all newlines, tabs, and multiple spaces with single space
+        value = value.replace(/\s+/g, ' ').trim();
+      }
+      acc[_.camelCase(key)] = value;
+      return acc;
+    }, {});
+  };
+
+  const attrs = camelCaseAttrs(svgElement.properties);
+
+  const content = svgElement.children
+    .filter((n) => n.type === 'element')
+    .map((n) => ({
+      elem: n.tagName,
+      attrs: camelCaseAttrs(n.properties),
+    }));
+
+  return { attrs, content };
+}
+
+// Recursively scans the custom icon source directory
+const processCustomIconDirectory = (
+  currentDir,
+  configs,
+) => {
+  const { reactExcludes, wcExcludes, counters } = configs;
+  const entries = fs.readdirSync(currentDir, { withFileTypes: true });
+
+  const svgFile = entries.find(e => e.isFile() && e.name.endsWith('.svg'));
+
+  if (svgFile) {
+    const svgFileName = svgFile.name;
+    const fullSvgPath = path.join(currentDir, svgFileName);
+
+    // Get the iconName from the directory name (e.g., "button")
+    const iconName = path.basename(currentDir);
+
+    // Get the relative path for the output (e.g., "elements/basic/button")
+    const relativeDir = path.relative(customSourcePath, currentDir);
+
+    // Parse the SVG file
+    let ast, attrs, content;
+    try {
+      const svgText = fs.readFileSync(fullSvgPath, 'utf8');
+      ast = parse(svgText);
+      ({ attrs, content } = transformSvgAst(ast));
+    } catch (err) {
+      console.error(`[BUILDER] Failed to parse SVG ${fullSvgPath}: ${err.message}`);
+      counters.reactFailed += 1;
+      counters.wcFailed += 1;
+      counters.failedIcons.push(`${iconName} (SVG Parse Error)`);
+      return;
+    }
+
+    const sizeInt = attrs.width;
+    if (!sizeInt || typeof sizeInt !== 'number') {
+      // This will fail if the <svg> tag has no width="32" attribute
+      console.warn(`[BUILDER] Skipping dir: Could not find valid 'width' attribute in SVG: ${fullSvgPath}`);
+      return; // Skip if size isn't valid
+    }
+    
+    if (!reactExcludes.has(iconName)) {
+      try {
+        // Output path is just the relativeDir
+        // e.g., .../custom/es/elements/basic/button/
+        const reactIconDir = path.join(customReactDestPath, relativeDir);
+        const reactUtilsImportPath = path.relative(reactIconDir, reactUtilsPath).replace(/\\/g, '/');
+
+        const reactContent = createCustomReactIcon(iconName, sizeInt, content, attrs, reactUtilsImportPath);
+        ensureDirSync(reactIconDir);
+        fs.writeFileSync(path.join(reactIconDir, 'index.tsx'), reactContent);
+        counters.reactSuccess += 1;
+      } catch (err) {
+        counters.reactFailed += 1;
+        counters.failedIcons.push(`${iconName} (Custom React)`);
+        console.error(`[BUILDER] Failed to create custom React icon ${iconName}: ${err.message}`);
+      }
+    }
+
+    if (!wcExcludes.has(iconName)) {
+      try {
+        const wcIconDir = path.join(customWcDestPath, relativeDir);
+        const wcUtilsImportPath = path.relative(wcIconDir, wcUtilsPath).replace(/\\/g, '/');
+
+        const wcContent = createCustomWebComponentIcon(iconName, sizeInt, content, attrs, wcUtilsImportPath);
+        ensureDirSync(wcIconDir);
+        fs.writeFileSync(path.join(wcIconDir, 'index.ts'), wcContent);
+        counters.wcSuccess += 1;
+      } catch (err) {
+        counters.wcFailed += 1;
+        counters.failedIcons.push(`${iconName} (Custom WC)`);
+        console.error(`[BUILDER] Failed to create custom WC icon ${iconName}: ${err.message}`);
+      }
+    }
+  } else {
+    // This is a container directory
+    // No .svg file here (e.g., "elements").
+    // Scan its children directories.
+    for (const entry of entries) {
+      if (entry.isDirectory()) {
+        processCustomIconDirectory(path.join(currentDir, entry.name), configs);
+      }
+    }
+  }
+}
+
 const buildIcons = () => {
   console.log('START - Generating icons...');
 
-  let reactSuccess = 0;
-  let reactFailed = 0;
-  let wcSuccess = 0;
-  let wcFailed = 0;
-  const failedIcons = [];
+  const counters = {
+    reactSuccess: 0,
+    reactFailed: 0,
+    wcSuccess: 0,
+    wcFailed: 0,
+    failedIcons: [],
+  };
   
   // Clear old icons
   removeDirSync(carbonReactDestPath);
   removeDirSync(carbonWcDestPath);
+  removeDirSync(customReactDestPath);
+  removeDirSync(customWcDestPath);
+
   ensureDirSync(carbonReactDestPath);
   ensureDirSync(carbonWcDestPath);
+  ensureDirSync(customReactDestPath);
+  ensureDirSync(customWcDestPath);
 
   const reactRenames = new Map(Object.entries({
     ...config.common.renames,
@@ -79,10 +214,10 @@ const buildIcons = () => {
         const reactFilePath = path.join(carbonReactDestPath, iconName);
         ensureDirSync(reactFilePath);
         fs.writeFileSync(path.join(reactFilePath, 'index.tsx'), reactContent);
-        reactSuccess += 1;
+        counters.reactSuccess += 1;
       } catch (err) {
-        reactFailed += 1;
-        failedIcons.push(`${originalName} (React)`);
+        counters.reactFailed += 1;
+        counters.failedIcons.push(`${originalName} (React)`);
         console.error(`[BUILDER] Failed to create React icon ${originalName}: ${err.message}`);
       }
     }
@@ -101,25 +236,44 @@ const buildIcons = () => {
         const wcFilePath = path.join(carbonWcDestPath, iconName);
         ensureDirSync(wcFilePath);
         fs.writeFileSync(path.join(wcFilePath, 'index.ts'), wcContent);
-        wcSuccess += 1;
+        counters.wcSuccess += 1;
       } catch (err) {
-        wcFailed += 1;
-        failedIcons.push(`${originalName} (WC)`);
+        counters.wcFailed += 1;
+        counters.failedIcons.push(`${originalName} (WC)`);
         console.error(`[BUILDER] Failed to create WC icon ${originalName}: ${err.message}`);
       }
     }
   }
 
-  console.log('\n-- Build Summary ---');
-  console.info(`✅ React Icons: ${reactSuccess} created, ${reactFailed} failed.`);
-  console.info(`✅ Web Components: ${wcSuccess} created, ${wcFailed} failed.`);
+  // Generate Custom icons
+  processCustomIconDirectory(customSourcePath, {
+    reactExcludes,
+    wcExcludes,
+    counters,
+  });
 
-  if (failedIcons.length > 0) {
+  console.log('\n-- Build Summary ---');
+  console.info(`✅ React Icons: ${counters.reactSuccess} created, ${counters.reactFailed} failed.`);
+  console.info(`✅ Web Components: ${counters.wcSuccess} created, ${counters.wcFailed} failed.`);
+
+  if (counters.failedIcons.length > 0) {
     console.error('\n❌ Failed icons:');
-    failedIcons.forEach(iconName => console.error(` - ${iconName}`));
+    counters.failedIcons.forEach(iconName => console.error(` - ${iconName}`));
   }
 
   console.log('\nDONE- Icon generation complete');
+
+  try {
+    // Get the paths to the generated code
+    const reactCustomDir = path.relative(process.cwd(), customReactDestPath);
+    const wcCustomDir = path.relative(process.cwd(), customWcDestPath);
+
+    console.log('Formatting React customs icons...');
+    execSync(`npx prettier --write --single-quote --trailing-comma all "${reactCustomDir}/**/*.tsx"`);
+    console.log('✅ Formatting complete.');
+  } catch (err) {
+    console.error('❌ Error during formatting:', err.message);
+  }
 }
 
 buildIcons();

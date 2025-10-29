@@ -1,5 +1,5 @@
 /* ======================================================================== *
- * Copyright 2024 HCL America Inc.                                          *
+ * Copyright 2025 HCL America Inc.                                          *
  * Licensed under the Apache License, Version 2.0 (the "License");          *
  * you may not use this file except in compliance with the License.         *
  * You may obtain a copy of the License at                                  *
@@ -13,6 +13,7 @@
  * limitations under the License.                                           *
  * ======================================================================== */
 
+/* auto generated file - do not edit */
 import { createSvgIcon, IIconAttrs, IIconContent } from '../../../utils';
 
 const attrs: IIconAttrs = {
@@ -26,30 +27,30 @@ const content: IIconContent[] = [
   {
     elem: 'circle',
     attrs: {
-      cx: '16',
-      cy: '16',
+      cx: 16,
+      cy: 16,
       fill: 'currentColor',
-      r: '14',
+      r: 14,
     },
   },
   {
     elem: 'circle',
     attrs: {
-      cx: '16',
-      cy: '16',
+      cx: 16,
+      cy: 16,
       fill: '#FFF',
-      r: '11',
+      r: 11,
     },
   },
   {
     elem: 'line',
     attrs: {
       stroke: 'currentColor',
-      strokeWidth: '3',
-      x1: '7',
-      x2: '25',
-      y1: '25',
-      y2: '7',
+      strokeWidth: 3,
+      x1: 7,
+      x2: 25,
+      y1: 25,
+      y2: 7,
     },
   },
 ];

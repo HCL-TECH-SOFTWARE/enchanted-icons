@@ -1,5 +1,5 @@
 /* ======================================================================== *
- * Copyright 2024 HCL America Inc.                                          *
+ * Copyright 2025 HCL America Inc.                                          *
  * Licensed under the Apache License, Version 2.0 (the "License");          *
  * you may not use this file except in compliance with the License.         *
  * You may obtain a copy of the License at                                  *
@@ -13,6 +13,7 @@
  * limitations under the License.                                           *
  * ======================================================================== */
 
+/* auto generated file - do not edit */
 import { createSvgIcon, IIconAttrs, IIconContent } from '../../../utils';
 
 const attrs: IIconAttrs = {
@@ -26,9 +27,7 @@ const content: IIconContent[] = [
   {
     elem: 'path',
     attrs: {
-      d: `M26 4H22V2H20V4H12V2H10V4H6C5.46957 4 4.96086 4.21071 4.58578 4.58578C4.21071 4.96086 4 5.46957 4 6V26C4 26.5304 4.21071 27.0391 4.58578 27.4142C4.96086 27.7893 5.46957 28 6 28H26C26.5304
-       28 27.0391 27.7893 27.4142 27.4142C27.7893 27.0391 28 26.5304 28 26V6C28 5.46957 27.7893 4.96086 27.4142 4.58578C27.0391 4.21071 26.5304 4 26 4ZM26 26H6V12H26V26ZM26
-       10H6V6H10V8H12V6H20V8H22V6H26V10Z`,
+      d: 'M26 4H22V2H20V4H12V2H10V4H6C5.46957 4 4.96086 4.21071 4.58578 4.58578C4.21071 4.96086 4 5.46957 4 6V26C4 26.5304 4.21071 27.0391 4.58578 27.4142C4.96086 27.7893 5.46957 28 6 28H26C26.5304 28 27.0391 27.7893 27.4142 27.4142C27.7893 27.0391 28 26.5304 28 26V6C28 5.46957 27.7893 4.96086 27.4142 4.58578C27.0391 4.21071 26.5304 4 26 4ZM26 26H6V12H26V26ZM26 10H6V6H10V8H12V6H20V8H22V6H26V10Z',
     },
   },
   {

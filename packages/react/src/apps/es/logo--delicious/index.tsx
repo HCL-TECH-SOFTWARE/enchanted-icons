@@ -1,5 +1,5 @@
 /* ======================================================================== *
- * Copyright 2024 HCL America Inc.                                          *
+ * Copyright 2025 HCL America Inc.                                          *
  * Licensed under the Apache License, Version 2.0 (the "License");          *
  * you may not use this file except in compliance with the License.         *
  * You may obtain a copy of the License at                                  *
@@ -13,6 +13,7 @@
  * limitations under the License.                                           *
  * ======================================================================== */
 
+/* auto generated file - do not edit */
 import { createSvgIcon, IIconAttrs, IIconContent } from '../../../utils';
 
 const attrs: IIconAttrs = {
@@ -26,8 +27,7 @@ const content: IIconContent[] = [
   {
     elem: 'path',
     attrs: {
-      d:
-        'M4 16H16V28H4zM16 4H28V16H16z',
+      d: 'M4 16H16V28H4zM16 4H28V16H16z',
       fill: 'currentColor',
       stroke: 'none',
       strokeLinejoin: 'round',

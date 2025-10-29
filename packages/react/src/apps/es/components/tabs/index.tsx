@@ -1,5 +1,5 @@
 /* ======================================================================== *
- * Copyright 2024 HCL America Inc.                                          *
+ * Copyright 2025 HCL America Inc.                                          *
  * Licensed under the Apache License, Version 2.0 (the "License");          *
  * you may not use this file except in compliance with the License.         *
  * You may obtain a copy of the License at                                  *
@@ -13,6 +13,7 @@
  * limitations under the License.                                           *
  * ======================================================================== */
 
+/* auto generated file - do not edit */
 import { createSvgIcon, IIconAttrs, IIconContent } from '../../../../utils';
 
 const attrs: IIconAttrs = {
@@ -26,9 +27,7 @@ const content: IIconContent[] = [
   {
     elem: 'path',
     attrs: {
-      d:
-        `M10,5 C11.1045695,5 12,5.8954305 12,7 L12,9 L28,9 C29.1045695,9 30,9.8954305 30,11 L30,25 C30,26.1045695 29.1045695,27 28,27 L4,27 C2.8954305,27 2,26.1045695 2,25 
-          L2,7 C2,5.8954305 2.8954305,5 4,5 L10,5 Z M10,7 L4,7 L4,25 L28,25 L28,11 L10,11 L10,7 Z M28,5 L28,7 L22,7 L22,5 L28,5 Z M20,5 L20,7 L14,7 L14,5 L20,5 Z`,
+      d: 'M10,5 C11.1045695,5 12,5.8954305 12,7 L12,9 L28,9 C29.1045695,9 30,9.8954305 30,11 L30,25 C30,26.1045695 29.1045695,27 28,27 L4,27 C2.8954305,27 2,26.1045695 2,25 L2,7 C2,5.8954305 2.8954305,5 4,5 L10,5 Z M10,7 L4,7 L4,25 L28,25 L28,11 L10,11 L10,7 Z M28,5 L28,7 L22,7 L22,5 L28,5 Z M20,5 L20,7 L14,7 L14,5 L20,5 Z',
       fill: 'currentColor',
       stroke: 'none',
       strokeLinejoin: 'round',

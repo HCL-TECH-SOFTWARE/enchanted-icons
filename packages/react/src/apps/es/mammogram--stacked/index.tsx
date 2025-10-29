@@ -1,5 +1,5 @@
 /* ======================================================================== *
- * Copyright 2024 HCL America Inc.                                          *
+ * Copyright 2025 HCL America Inc.                                          *
  * Licensed under the Apache License, Version 2.0 (the "License");          *
  * you may not use this file except in compliance with the License.         *
  * You may obtain a copy of the License at                                  *
@@ -13,6 +13,7 @@
  * limitations under the License.                                           *
  * ======================================================================== */
 
+/* auto generated file - do not edit */
 import { createSvgIcon, IIconAttrs, IIconContent } from '../../../utils';
 
 const attrs: IIconAttrs = {
@@ -26,8 +27,7 @@ const content: IIconContent[] = [
   {
     elem: 'path',
     attrs: {
-      d:
-        'M30,16H28V4H16V2H28a2.0023,2.0023,0,0,1,2,2Z',
+      d: 'M30,16H28V4H16V2H28a2.0023,2.0023,0,0,1,2,2Z',
       fill: 'currentColor',
       stroke: 'none',
       strokeLinejoin: 'round',
@@ -37,8 +37,7 @@ const content: IIconContent[] = [
   {
     elem: 'path',
     attrs: {
-      d:
-        'M25,23H23V9H9V7H23a2.0023,2.0023,0,0,1,2,2Z',
+      d: 'M25,23H23V9H9V7H23a2.0023,2.0023,0,0,1,2,2Z',
       fill: 'currentColor',
       stroke: 'none',
       strokeLinejoin: 'round',
@@ -48,8 +47,7 @@ const content: IIconContent[] = [
   {
     elem: 'path',
     attrs: {
-      d:
-        'M18,30H4a2.0023,2.0023,0,0,1-2-2V14a2.002,2.002,0,0,1,2-2H18a2.0023,2.0023,0,0,1,2,2V28A2.0027,2.0027,0,0,1,18,30ZM4,14V28H18.002L18,14Z',
+      d: 'M18,30H4a2.0023,2.0023,0,0,1-2-2V14a2.002,2.002,0,0,1,2-2H18a2.0023,2.0023,0,0,1,2,2V28A2.0027,2.0027,0,0,1,18,30ZM4,14V28H18.002L18,14Z',
       fill: 'currentColor',
       stroke: 'none',
       strokeLinejoin: 'round',
@@ -59,8 +57,7 @@ const content: IIconContent[] = [
   {
     elem: 'path',
     attrs: {
-      d:
-        'M13,18h1V16H13a5.0083,5.0083,0,0,0-4.8989,4H7v2H8.1011A5.0083,5.0083,0,0,0,13,26h1V24H13a3,3,0,0,1,0-6Z',
+      d: 'M13,18h1V16H13a5.0083,5.0083,0,0,0-4.8989,4H7v2H8.1011A5.0083,5.0083,0,0,0,13,26h1V24H13a3,3,0,0,1,0-6Z',
       fill: 'currentColor',
       stroke: 'none',
       strokeLinejoin: 'round',
