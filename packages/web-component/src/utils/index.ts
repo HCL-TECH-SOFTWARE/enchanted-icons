@@ -27,6 +27,13 @@ export interface IIconAttrs {
   height: number;
 }
 
+const toKebabCase = (str: string) => {
+  if (str === 'viewBox' || str === 'xmlns') {
+    return str;
+  }
+  return str.replace(/([a-z0-9]|(?=[A-Z]))([A-Z])/g, '$1-$2').toLowerCase();
+};
+
 const applySvgAttributes = (element: Element, attrs: IIconAttrs) => {
   for (const key in attrs) {
     if (Object.hasOwnProperty.call(attrs, key)) {
@@ -48,7 +55,7 @@ const createSvgIcon = (content: IIconContent[], attrs: IIconAttrs) => {
         if (Object.hasOwnProperty.call(item.attrs, key)) {
           const value = item.attrs[key as keyof IIconContent];
           if (value !== undefined) {
-            childElement.setAttribute(key, String(value));
+            childElement.setAttribute(toKebabCase(key), String(value));
           }
         }
       }

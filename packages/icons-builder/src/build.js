@@ -15,7 +15,7 @@ const carbonSourcePath = path.resolve(process.cwd(), 'node_modules/@carbon/icons
 const carbonReactDestPath = path.resolve(process.cwd(), '../react/src/carbon/es');
 const carbonWcDestPath = path.resolve(process.cwd(), '../web-component/src/carbon/es');
 
-const customSourcePath = path.resolve(process.cwd(), '../../svg');
+const customSourcePath = path.resolve(process.cwd(), 'svg');
 const customReactDestPath = path.resolve(process.cwd(), '../react/src/apps/es');
 const customWcDestPath = path.resolve(process.cwd(), '../web-component/src/apps/es');
 const reactUtilsPath = path.resolve(carbonReactDestPath, '../../utils');
