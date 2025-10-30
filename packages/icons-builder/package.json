@@ -3,9 +3,9 @@
   "version": "1.0.0",
   "private": true,
   "description": "Internal build script for generating React and Web Component icons.",
-  "main": "src/build.js",
+  "main": "src/generate.js",
   "scripts": {
-    "build": "node src/build.js"
+    "generate": "node src/generate.js"
   },
   "dependencies": {
     "@carbon/icon-helpers": "^10.58.0",

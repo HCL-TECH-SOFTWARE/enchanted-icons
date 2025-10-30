@@ -11,6 +11,12 @@
 ### Changed
 
 #### Breaking changes
+- The repository has been converted to a monorepo structure to support multiple packages.
+- Introduced a new package, @hcl-software/enchanted-icons-web-component, to provide icons as standard Web Components. The original React package is still @hcl-software/enchanted-icons.
+- Created a new unified build script (packages/icons-builder/generate.js) that generates both React and Web Component packages from a single source.
+- Added raw .svg files located in packages/icons-builder/svg used for generating custom icons.
+- All Carbon icon exclusions and renames are now managed in a single packages/icons-builder/config.json file.
+- A root makefile has been added to simplify common development tasks like install, build, and generate.
 
 ## 1.5.0
 
