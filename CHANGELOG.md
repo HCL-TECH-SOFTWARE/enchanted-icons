@@ -12,6 +12,12 @@
 
 #### Breaking changes
 
+## 1.6.0
+
+### Added
+- Added a new custom icon:
+  ai--sparkle
+
 ## 1.5.0
 
 ### Added
