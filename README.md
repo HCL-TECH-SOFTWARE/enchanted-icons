@@ -166,6 +166,8 @@ To exclude or rename an icon from `@carbon/icons`, edit the `packages/icons-buil
   - `common.renames`: Renames the icon for both React and Web Components.
   - `react.renames`: Renames the icon for React *only*.
   - `wc.renames`: Renames the icon for Web Components *only*.
+
+  **Note on Precedence**: If a rename key exists in both `common.renames` and a platform-specific object (e.g., `react.renames` or `wc.renames`), the **platform-specific rename will be used** for that platform, overriding the `common` setting.
 ```json
 "common": {
   "renames": {
@@ -182,5 +184,4 @@ To exclude or rename an icon from `@carbon/icons`, edit the `packages/icons-buil
     "ibm-security": "security--alt-carbon"
   }
 }
-
 ```
