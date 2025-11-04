@@ -17,15 +17,24 @@
 install:
 	(cd packages/react && npm ci)
 	(cd packages/web-component && npm ci)
+	(cd packages/icons-builder && npm ci)
 
 lint:
 	(cd packages/react && npm run lint)
 	(cd packages/web-component && npm run lint)
 	
 build:
-	(cd packages/react && npm run build)
-	(cd packages/web-component && npm run build)
+	(cd packages/react && rm -rf dist && npm run build)
+	(cd packages/web-component && rm -rf dist && npm run build)
 
 publish:
 	(cd packages/react && npm publish --access public)
 	(cd packages/web-component && npm publish --access public)
+
+generate:
+	cd packages/icons-builder && npm run generate
+
+clean:
+	(cd packages/react && rm -rf dist && rm -rf node_modules)
+	(cd packages/web-component && rm -rf dist && rm -rf node_modules)
+	(cd packages/icons-builder && rm -rf node_modules)

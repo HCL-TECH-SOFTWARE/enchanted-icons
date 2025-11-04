@@ -13,50 +13,45 @@
  * limitations under the License.                                           *
  * ======================================================================== */
 
+/* auto generated file - do not edit */
 import { createSvgIcon, IIconAttrs, IIconContent } from '../../../utils';
 
 const attrs: IIconAttrs = {
+  width: 16,
+  height: 16,
+  viewBox: '0 0 16 16',
   xmlns: 'http://www.w3.org/2000/svg',
-  viewBox: '0 0 32 32',
-  width: 32,
-  height: 32,
 };
 
 const content: IIconContent[] = [
   {
     elem: 'path',
     attrs: {
-      d: 'M18 22L19.414 20.586L23 24.172V4H25V24.172L28.586 20.586L30 22L24 28L18 22Z',
+      d: 'M7 5.5H6V8.5H7V5.5Z',
       fill: 'currentColor',
-      stroke: 'none',
-      strokeLinejoin: 'round',
-      strokeMiterlimit: 10,
     },
   },
   {
     elem: 'path',
     attrs: {
-      d: 'M16 6H2V8H16V6Z',
+      d: 'M4.5 6.5H3.5V8.5H4.5V6.5Z',
       fill: 'currentColor',
-      stroke: 'none',
     },
   },
   {
     elem: 'path',
     attrs: {
-      d: 'M12 12H2V14H12V12Z',
+      d: 'M2 3.5H1V8.5H2V3.5Z',
       fill: 'currentColor',
-      stroke: 'none',
     },
   },
   {
     elem: 'path',
     attrs: {
-      d: 'M8 18H2V20H8V18Z',
+      d: 'M15 14.2929L11.2239 10.5169C12.0198 9.56275 12.5 8.33665 12.5 7C12.5 3.9673 10.0327 1.5 7 1.5C5.7987 1.5 4.65735 1.88035 3.69935 2.6001L4.29995 3.39965C5.0834 2.81105 6.0171 2.5 7 2.5C9.4813 2.5 11.5 4.51855 11.5 7C11.5 9.48145 9.4813 11.5 7 11.5C5.5713 11.5 4.25905 10.844 3.39965 9.69995L2.6001 10.3008C3.65015 11.6982 5.2539 12.5 7 12.5C8.33665 12.5 9.56275 12.0198 10.5168 11.2239L14.2929 15L15 14.2929Z',
       fill: 'currentColor',
-      stroke: 'none',
     },
   },
 ];
 
-export default createSvgIcon('app-switcher', 32, content, attrs);
+export default createSvgIcon('data-analytics', 16, content, attrs);

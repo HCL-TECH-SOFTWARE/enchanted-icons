@@ -13,6 +13,7 @@
  * limitations under the License.                                           *
  * ======================================================================== */
 
+/* auto generated file - do not edit */
 import { createSvgIcon, IIconAttrs, IIconContent } from '../../../utils';
 
 const attrs: IIconAttrs = {
@@ -57,4 +58,4 @@ const content: IIconContent[] = [
   },
 ];
 
-export default createSvgIcon('app-switcher', 32, content, attrs);
+export default createSvgIcon('Sort-ascending--alt', 32, content, attrs);

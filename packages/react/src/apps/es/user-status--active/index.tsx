@@ -1,5 +1,5 @@
 /* ======================================================================== *
- * Copyright 2024 HCL America Inc.                                          *
+ * Copyright 2025 HCL America Inc.                                          *
  * Licensed under the Apache License, Version 2.0 (the "License");          *
  * you may not use this file except in compliance with the License.         *
  * You may obtain a copy of the License at                                  *
@@ -13,6 +13,7 @@
  * limitations under the License.                                           *
  * ======================================================================== */
 
+/* auto generated file - do not edit */
 import { createSvgIcon, IIconAttrs, IIconContent } from '../../../utils';
 
 const attrs: IIconAttrs = {
@@ -26,10 +27,10 @@ const content: IIconContent[] = [
   {
     elem: 'circle',
     attrs: {
-      cx: '16',
-      cy: '16',
+      cx: 16,
+      cy: 16,
       fill: 'currentColor',
-      r: '14',
+      r: 14,
     },
   },
   {
@@ -37,7 +38,7 @@ const content: IIconContent[] = [
     attrs: {
       d: 'M14 21.5l-5-5 1.6-1.5 3.4 3.4 7.4-7.4 1.6 1.6-9 8.9z',
       stroke: '#FFF',
-      strokeWidth: '3',
+      strokeWidth: 3,
     },
   },
 ];

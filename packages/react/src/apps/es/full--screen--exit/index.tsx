@@ -1,5 +1,5 @@
 /* ======================================================================== *
- * Copyright 2024 HCL America Inc.                                          *
+ * Copyright 2025 HCL America Inc.                                          *
  * Licensed under the Apache License, Version 2.0 (the "License");          *
  * you may not use this file except in compliance with the License.         *
  * You may obtain a copy of the License at                                  *
@@ -13,6 +13,7 @@
  * limitations under the License.                                           *
  * ======================================================================== */
 
+/* auto generated file - do not edit */
 import { createSvgIcon, IIconAttrs, IIconContent } from '../../../utils';
 
 const attrs: IIconAttrs = {
@@ -26,8 +27,7 @@ const content: IIconContent[] = [
   {
     elem: 'path',
     attrs: {
-      d:
-        'M22.5 15H15V22.5H16.5V16.5H22.5V15Z',
+      d: 'M22.5 15H15V22.5H16.5V16.5H22.5V15Z',
       fill: 'currentColor',
       stroke: 'none',
       strokeLinejoin: 'round',
@@ -37,8 +37,7 @@ const content: IIconContent[] = [
   {
     elem: 'path',
     attrs: {
-      d:
-        'M1.5 15H9V22.5H7.5V16.5H1.5V15Z',
+      d: 'M1.5 15H9V22.5H7.5V16.5H1.5V15Z',
       fill: 'currentColor',
       stroke: 'none',
       strokeLinejoin: 'round',
@@ -48,8 +47,7 @@ const content: IIconContent[] = [
   {
     elem: 'path',
     attrs: {
-      d:
-        'M22.5 9H15V1.5H16.5V7.5H22.5V9Z',
+      d: 'M22.5 9H15V1.5H16.5V7.5H22.5V9Z',
       fill: 'currentColor',
       stroke: 'none',
       strokeLinejoin: 'round',
@@ -59,8 +57,7 @@ const content: IIconContent[] = [
   {
     elem: 'path',
     attrs: {
-      d:
-        'M1.5 9H9V1.5H7.5V7.5H1.5V9Z',
+      d: 'M1.5 9H9V1.5H7.5V7.5H1.5V9Z',
       fill: 'currentColor',
       stroke: 'none',
       strokeLinejoin: 'round',

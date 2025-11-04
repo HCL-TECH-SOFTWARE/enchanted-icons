@@ -36,6 +36,12 @@ export abstract class BaseIcon extends LitElement {
       height: var(--_icon-instance-size, var(--icon-theme-size, ${DEFAULT_ICON_SIZE}px));
       display: block;
     }
+
+    svg path:not([fill]),
+    svg rect:not([fill]) 
+    {
+      fill: currentColor;
+    }
   `
   
   protected firstUpdated(changedProperties: Map<string | number | symbol, unknown>) {

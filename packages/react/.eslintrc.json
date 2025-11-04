@@ -62,7 +62,7 @@
     "react/jsx-no-useless-fragment": ["error", { "allowExpressions": true }],
     "react/no-unstable-nested-components": ["error", { "allowAsProps": true }],
     "react/require-default-props": "off",
-    "max-len": ["error", { "code": 200 }],
+    "max-len": "off",
     "no-async-promise-executor": [ "error" ],
     "no-unused-vars": [ "off" ],
     "no-shadow": "off",
