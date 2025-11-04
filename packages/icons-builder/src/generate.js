@@ -1,15 +1,15 @@
-const path = require('path');
-const fs = require('fs');
-const _ = require('lodash');
-const { parse } = require('svg-parser');
-const { execSync } = require('child_process');
-const config = require('./config.json');
-const { 
+import path from 'path';
+import fs from 'fs';
+import _ from 'lodash';
+import { parse } from 'svg-parser';
+import { execSync } from 'child_process';
+import config from './config.json' with { type: 'json' };
+import { 
   createCarbonReactIcon, 
   createCarbonWebComponentIcon,
   createCustomReactIcon,
   createCustomWebComponentIcon,
-} = require('./templates');
+} from './templates.js';
 
 const carbonSourcePath = path.resolve(process.cwd(), 'node_modules/@carbon/icons/es');
 const carbonReactDestPath = path.resolve(process.cwd(), '../react/src/carbon/es');
