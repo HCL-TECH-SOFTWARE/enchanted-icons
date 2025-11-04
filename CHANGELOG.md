@@ -3,7 +3,7 @@
 ## Unreleased
 
 ### Added
-- Added a new custom icons:
+- Added a new custom icon:
   ai--sparkle
 
 ### Fixed
@@ -17,6 +17,12 @@
 - Added raw .svg files located in packages/icons-builder/svg used for generating custom icons.
 - All Carbon icon exclusions and renames are now managed in a single packages/icons-builder/config.json file.
 - A root makefile has been added to simplify common development tasks like install, build, and generate.
+
+## 1.6.0
+
+### Added
+- Added a new custom icon:
+  ai--sparkle
 
 ## 1.5.0
 
