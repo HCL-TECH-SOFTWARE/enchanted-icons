@@ -78,9 +78,19 @@ const processCustomIconDirectory = (
   const { reactExcludes, wcExcludes, counters } = configs;
   const entries = fs.readdirSync(currentDir, { withFileTypes: true });
 
-  const svgFile = entries.find(e => e.isFile() && e.name.endsWith('.svg'));
+  const svgFiles = entries.filter(e => e.isFile() && e.name.endsWith('.svg'));
 
-  if (svgFile) {
+  if (svgFiles.length > 1) {
+    console.error(`[BUILDER] ERROR: Found multiple .svg files in directory: ${currentDir}`);
+    console.error('       Only one .svg file is allowed per icon directory.');
+
+    counters.failedIcons.push(`${path.basename(currentDir)} (Build Error)`);
+    counters.reactFailed += 1;
+    counters.wcFailed += 1;
+    return;
+
+  } else if (svgFiles.length === 1) {
+    const svgFile = svgFiles[0];
     const svgFileName = svgFile.name;
     const fullSvgPath = path.join(currentDir, svgFileName);
 
@@ -108,7 +118,7 @@ const processCustomIconDirectory = (
     if (!sizeInt || typeof sizeInt !== 'number') {
       // This will fail if the <svg> tag has no width="32" attribute
       console.warn(`[BUILDER] Skipping dir: Could not find valid 'width' attribute in SVG: ${fullSvgPath}`);
-      return; // Skip if size isn't valid
+      return;
     }
     
     if (!reactExcludes.has(iconName)) {
@@ -262,7 +272,8 @@ const buildIcons = () => {
   }
 
   console.log('\nDONE- Icon generation complete');
-
+  
+  // Format React custom icons to use single quotes and add trailing comma to the code
   try {
     // Get the paths to the generated code
     const reactCustomDir = path.relative(process.cwd(), customReactDestPath);

@@ -22,6 +22,18 @@
     "carbon",
     "ts"
   ],
+  "contributors": [
+    "Kristine Gazeline Apalla <kristinegazel.apall@hcl.com>",
+    "Angelo rick Asoy <angelorick.asoy@hcl.com>",
+    "Jan Carlo Cardama <jancarlo.cardama@hcl.com>",
+    "Jeff Clifford Gatchalian <jeffclifford.gatch@hcl.com>",
+    "Hanjo Hagemeier <hanjo.hagemeier@hcl.com>",
+    "Ruby ann Matias <rubyann.matias@hcl.com>",
+    "Felix Müller <felix.muller@hcl.com>",
+    "Elsa Pascual <elsa.pascual@hcl.com>",
+    "Mridul Shrivastava <mridul.shrivastava@hcl.com>",
+    "Utkarsh Srivastava <utkarshsr@hcl.com>"
+  ],
   "scripts": {
     "dev": "vite",
     "build": "tsc",

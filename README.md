@@ -151,6 +151,8 @@ The `make generate` command (which runs `packages/icons-builder/generate.js`) pe
     - `packages/react/src/apps/es/my-new-icon/index.tsx`
     - `packages/web-component/src/apps/es/my-new-icon/index.ts`
 
+**CRITICAL:** Each icon directory must contain only one `.svg` file (e.g., `my-new-icon/my-new-icon.svg`). The build script is not designed to handle multiple SVGs in a single directory.
+
 **How to Manage Carbon Icons (Exclude or Rename)**
 To exclude or rename an icon from `@carbon/icons`, edit the `packages/icons-builder/config.json` file.
 - **To Exclude an Icon:** Add the icon's original name (e.g., `"bee"`) to the `common.excludes` array. This will prevent it from being built for both React and Web Components.
