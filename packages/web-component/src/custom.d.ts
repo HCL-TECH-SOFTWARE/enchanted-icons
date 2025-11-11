@@ -13,50 +13,10 @@
  * limitations under the License.                                           *
  * ======================================================================== */
 
-import { createSvgIcon, IIconAttrs, IIconContent } from '../../../utils';
-
-const attrs: IIconAttrs = {
-  xmlns: 'http://www.w3.org/2000/svg',
-  viewBox: '0 0 32 32',
-  width: 32,
-  height: 32,
-};
-
-const content: IIconContent[] = [
-  {
-    elem: 'path',
-    attrs: {
-      d: 'M18 22L19.414 20.586L23 24.172V4H25V24.172L28.586 20.586L30 22L24 28L18 22Z',
-      fill: 'currentColor',
-      stroke: 'none',
-      strokeLinejoin: 'round',
-      strokeMiterlimit: 10,
-    },
-  },
-  {
-    elem: 'path',
-    attrs: {
-      d: 'M16 6H2V8H16V6Z',
-      fill: 'currentColor',
-      stroke: 'none',
-    },
-  },
-  {
-    elem: 'path',
-    attrs: {
-      d: 'M12 12H2V14H12V12Z',
-      fill: 'currentColor',
-      stroke: 'none',
-    },
-  },
-  {
-    elem: 'path',
-    attrs: {
-      d: 'M8 18H2V20H8V18Z',
-      fill: 'currentColor',
-      stroke: 'none',
-    },
-  },
-];
-
-export default createSvgIcon('app-switcher', 32, content, attrs);
+// utility function to consume carbon icons with typescript
+declare module '@carbon/icons/es/*' {
+  // eslint-why - because content is a unknown type
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const content: any;
+  export default content;
+}
