@@ -5,4 +5,5 @@ coverage
 .DS_Store
 .npmrc
 *.tgz
-svg
+packages/react/svg
+packages/web-component/src/carbon
