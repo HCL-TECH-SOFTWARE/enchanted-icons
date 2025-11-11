@@ -31,7 +31,6 @@
   "scripts": {
     "convert-svg-to-ts": "svgr --ext tsx -d src/apps/ svg/",
     "build": "tsc",
-    "generate": "node builder.js",
     "lint": "eslint --ext .ts,.tsx src",
     "lint-fix": "eslint --ext .ts,.tsx --fix src"
   },
