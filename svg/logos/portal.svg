@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 57.1 (83088) - https://sketch.com -->
+    <title>DX-icon</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <polygon id="path-1" points="6.061 0.516 9.123 7.252 0 13.999 4.194 13.999 13.343 7.252 10.307 0.516"></polygon>
+        <linearGradient x1="3.94089785%" y1="50.0012282%" x2="99.9978438%" y2="50.0012282%" id="linearGradient-3">
+            <stop stop-color="#6600AE" offset="0%"></stop>
+            <stop stop-color="#EB1746" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="DX-icon" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Group-6" transform="translate(1.000000, 5.000000)">
+            <g id="Group-3" transform="translate(0.000000, 0.483900)">
+                <mask id="mask-2" fill="white">
+                    <use xlink:href="#path-1"></use>
+                </mask>
+                <g id="Clip-2"></g>
+                <polygon id="Fill-1" fill="url(#linearGradient-3)" mask="url(#mask-2)" points="6.061 0.516 9.123 7.252 0 13.999 4.194 13.999 13.343 7.252 10.307 0.516"></polygon>
+            </g>
+            <polygon id="Fill-4" fill="#8D8D8D" points="13.7025 1.0001 15.8425 5.8041 22.3685 1.0001"></polygon>
+            <polygon id="Fill-5" fill="#8D8D8D" points="8.5458 14.4839 16.3788 14.4839 14.4378 10.1619"></polygon>
+        </g>
+    </g>
+</svg>

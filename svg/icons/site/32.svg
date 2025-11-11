@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="32px" height="32px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>icon/digital experience/site/32</title>
+    <g id="icon/digital-experience/site/32" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <path d="M27,3 C28.1045695,3 29,3.8954305 29,5 L29,27 C29,28.1045695 28.1045695,29 27,29 L5,29 C3.8954305,29 3,28.1045695 3,27 L3,5 C3,3.8954305 3.8954305,3 5,3 L27,3 Z M27,25 L5,25 L5,27 L27,27 L27,25 Z M27,13 L5,13 L5,23 L27,23 L27,13 Z M27,5 L5,5 L5,11 L27,11 L27,5 Z M25,7 L25,9 L19,9 L19,7 L25,7 Z M9,7 L9,9 L7,9 L7,7 L9,7 Z" id="icon-color" fill="#3D5466"></path>
+    </g>
+</svg>

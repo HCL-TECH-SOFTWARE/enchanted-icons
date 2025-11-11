@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="32px" height="32px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>icon/digital experience/elements/basic/list/32</title>
+    <g id="icon/digital-experience/elements/basic/list/32" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <path d="M27,3 C28.1045695,3 29,3.8954305 29,5 L29,27 C29,28.1045695 28.1045695,29 27,29 L5,29 C3.8954305,29 3,28.1045695 3,27 L3,5 C3,3.8954305 3.8954305,3 5,3 L27,3 Z M27,5 L5,5 L5,27 L27,27 L27,5 Z M11,17 C12.1045695,17 13,17.8954305 13,19 L13,21 C13,22.1045695 12.1045695,23 11,23 L9,23 C7.8954305,23 7,22.1045695 7,21 L7,19 C7,17.8954305 7.8954305,17 9,17 L11,17 Z M25,19 L25,21 L15,21 L15,19 L25,19 Z M11,19 L9,19 L9,21 L11,21 L11,19 Z M11,9 C12.1045695,9 13,9.8954305 13,11 L13,13 C13,14.1045695 12.1045695,15 11,15 L9,15 C7.8954305,15 7,14.1045695 7,13 L7,11 C7,9.8954305 7.8954305,9 9,9 L11,9 Z M25,11 L25,13 L15,13 L15,11 L25,11 Z M11,11 L9,11 L9,13 L11,13 L11,11 Z" id="icon-color" fill="#3D5466"></path>
+    </g>
+</svg>

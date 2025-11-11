@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>icon/action/status/success</title>
+    <defs>
+        <path d="M3.75,12 C3.74904193,15.6521356 6.1499677,18.8700601 9.65114591,19.9092166 C13.1523241,20.9483732 16.92002,19.5613077 18.911625,16.5 L18.911625,16.5 L15,16.5 L15,15 L21,15 L21,21 L19.5,21 L19.5,18.236325 C16.8726494,21.3927196 12.5496296,22.5652371 8.68747602,21.1689678 C4.82532244,19.7726986 2.25151667,16.1067987 2.25,12 L2.25,12 Z M4.5,5.763675 C7.12735056,2.60728035 11.4503704,1.43476288 15.312524,2.83103215 C19.1746776,4.22730143 21.7484833,7.89320127 21.75,12 L21.75,12 L20.25,12 C20.2509581,8.34786442 17.8500323,5.12993991 14.3488541,4.09078336 C10.8476759,3.05162681 7.07998004,4.43869234 5.088375,7.5 L5.088375,7.5 L9,7.5 L9,9 L3,9 L3,3 L4.5,3 Z" id="path-1"></path>
+        <polygon id="path-3" points="17.5 9.05 16.45 8 10.75 13.7 8.05 11 7 12.05 10.75 15.8"></polygon>
+    </defs>
+    <g id="icon/action/status/success" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <mask id="mask-2" fill="white">
+            <use xlink:href="#path-1"></use>
+        </mask>
+        <use id="icon-color" fill="#000000" xlink:href="#path-1"></use>
+        <mask id="mask-4" fill="white">
+            <use xlink:href="#path-3"></use>
+        </mask>
+        <use id="icon-color" fill="#000000" xlink:href="#path-3"></use>
+    </g>
+</svg>
