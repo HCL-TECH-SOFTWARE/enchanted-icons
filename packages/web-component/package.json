@@ -28,11 +28,11 @@
     "Jan Carlo Cardama <jancarlo.cardama@hcl.com>",
     "Jeff Clifford Gatchalian <jeffclifford.gatch@hcl.com>",
     "Hanjo Hagemeier <hanjo.hagemeier@hcl.com>",
+    "Mehboobalikhan Karmadi <mehboobalikha.karma@hcl.com>",
+    "Satish Kumar <kumarsati@hcl.com>",
     "Ruby ann Matias <rubyann.matias@hcl.com>",
     "Felix Müller <felix.muller@hcl.com>",
-    "Elsa Pascual <elsa.pascual@hcl.com>",
-    "Mridul Shrivastava <mridul.shrivastava@hcl.com>",
-    "Utkarsh Srivastava <utkarshsr@hcl.com>"
+    "Mridul Shrivastava <mridul.shrivastava@hcl.com>"
   ],
   "scripts": {
     "dev": "vite",
