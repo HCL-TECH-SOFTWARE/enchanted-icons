@@ -1,0 +1,14 @@
+{
+  "name": "root",
+  "private": true,
+  "scripts": {
+    "ci": "npx lerna exec -- npm ci",
+    "build": "npx lerna run build",
+    "lint": "npx lerna run lint",
+    "generate": "npx lerna run generate"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "lerna": "^9.0.0"
+  }
+}
