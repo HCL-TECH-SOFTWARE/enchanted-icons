@@ -1,0 +1,74 @@
+{
+  "name": "@hcl-software/enchanted-icons-web-component",
+  "version": "1.7.0",
+  "description": "Enchanted Icons is a collection of web component icons that are used in HCL Software products.",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "author": "Nhicko Garachico <nhickojerome.garac@hcl.com>",
+  "license": "Apache-2.0",
+  "private": false,
+  "type": "module",
+  "homepage": "https://github.com/HCL-TECH-SOFTWARE/enchanted-icons#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HCL-TECH-SOFTWARE/enchanted-icons.git"
+  },
+  "bugs": {
+    "url": "https://github.com/HCL-TECH-SOFTWARE/enchanted-icons/issues"
+  },
+  "keywords": [
+    "web-component",
+    "lit",
+    "carbon",
+    "ts"
+  ],
+  "contributors": [
+    "Kristine Gazeline Apalla <kristinegazel.apall@hcl.com>",
+    "Angelo rick Asoy <angelorick.asoy@hcl.com>",
+    "Jan Carlo Cardama <jancarlo.cardama@hcl.com>",
+    "Jeff Clifford Gatchalian <jeffclifford.gatch@hcl.com>",
+    "Hanjo Hagemeier <hanjo.hagemeier@hcl.com>",
+    "Mehboobalikhan Karmadi <mehboobalikha.karma@hcl.com>",
+    "Satish Kumar <kumarsati@hcl.com>",
+    "Ruby ann Matias <rubyann.matias@hcl.com>",
+    "Felix Müller <felix.muller@hcl.com>",
+    "Mridul Shrivastava <mridul.shrivastava@hcl.com>"
+  ],
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc",
+    "build-icons-page": "vite build",
+    "lint": "eslint src",
+    "lint-fix": "eslint --fix src"
+  },
+  "devDependencies": {
+    "@types/lodash": "^4.17.16",
+    "@typescript-eslint/eslint-plugin": "^5.16.0",
+    "@typescript-eslint/parser": "^5.16.0",
+    "eslint": "^8.11.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.25.4",
+    "eslint-plugin-jest": "^26.1.2",
+    "eslint-plugin-lit": "^2.1.1",
+    "eslint-plugin-lit-a11y": "^4.1.4",
+    "eslint-plugin-promise": "^6.0.0",
+    "eslint-plugin-wc": "^3.0.0",
+    "eslint-plugin-why": "^1.2.0",
+    "jsdom": "^26.1.0",
+    "lit": "^3.3.0",
+    "lodash": "^4.17.11",
+    "typescript": "^5.8.3",
+    "typescript-eslint": "^8.31.1",
+    "vite": "^6.3.3"
+  },
+  "dependencies": {
+    "@carbon/icon-helpers": "^10.58.0",
+    "@carbon/icons": "11.27.0"
+  },
+  "engines": {
+    "node": ">=20.x"
+  },
+  "files": [
+    "dist/**/*"
+  ]
+}

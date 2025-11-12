@@ -1,0 +1,19 @@
+{
+  "name": "@hcl-software/icons-builder",
+  "version": "1.7.0",
+  "private": true,
+  "description": "Internal build script for generating React and Web Component icons.",
+  "main": "src/generate.js",
+  "type": "module",
+  "scripts": {
+    "generate": "node src/generate.js"
+  },
+  "dependencies": {
+    "@carbon/icon-helpers": "^10.58.0",
+    "@carbon/icons": "11.27.0",
+    "lit": "^3.3.0",
+    "lodash": "^4.17.11",
+    "stringify-object": "^6.0.0",
+    "svg-parser": "^2.0.4"
+  }
+}

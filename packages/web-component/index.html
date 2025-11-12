@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Enchanted Icons Preview</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap" rel="stylesheet">
+  <script type="module" src="/src/preview.ts"></script>
+  <style>
+    body {
+      font-family: "Nunito Sans", sans-serif;
+      padding: 5px;
+    }
+    #carbon-icons-container, 
+    #custom-icons-container, 
+    #logos-icons-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
+      gap: 20px;
+      padding: 16px;
+      text-align: center;
+    }
+    .icon-wrapper {
+      padding: 8px;
+      box-shadow: rgba(0, 0, 0, 0.12) 0px 4px 10px 0px;
+    }
+    .icon-import-string, [id*="icon-"] {
+      margin-bottom: 10px;
+    }
+    [icon-name] {
+      display: inline-flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .icon-import-string, .icon-name {
+      cursor: pointer;
+      display: block;
+      font-size: 10px;
+    }
+    .icon-import-string {
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Enchanted Icons</h1>
+  <span>Click on the import or icon name to copy them.</span>
+  <div id="icons-container">
+    <h2>Carbon Icons</h2>
+    <div id="carbon-icons-container"></div>
+
+    <h2>Custom Icons</h2>
+    <div id="custom-icons-container"></div>
+
+    <h2>Logos</h2>
+    <div id="logos-icons-container"></div>
+  </div>
+</body>
+</html>
