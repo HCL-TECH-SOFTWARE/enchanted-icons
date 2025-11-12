@@ -10,6 +10,11 @@
 
 #### Breaking changes
 
+## 1.7.1
+
+### Fixed
+- Fixed the README.md files so they render properly on npmjs.com.
+
 ## 1.7.0
 
 ### Added
