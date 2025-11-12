@@ -9,6 +9,9 @@ This package exposes HCL Software's own creations as well as icons from the [Car
 
 (C) 2024 HCL America Inc. Apache-2.0 license [https://www.apache.org/licenses/LICENSE-2.0](https://www.apache.org/licenses/LICENSE-2.0)
 
+[![npm](https://nodei.co/npm/@hcl-software/enchanted-icons.png)](https://www.npmjs.com/package/@hcl-software/enchanted-icons)
+[![npm](https://nodei.co/npm/@hcl-software/enchanted-icons-web-component.png)](https://www.npmjs.com/package/@hcl-software/enchanted-icons-web-component)
+
 ## Packages
 
 This repository contains the following packages:
