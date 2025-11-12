@@ -3,11 +3,18 @@
 ## Unreleased
 
 ### Added
-- Added a new custom icon:
-  ai--sparkle
-  items--search--initial
 
 ### Fixed
+
+### Changed
+
+#### Breaking changes
+
+## 1.7.0
+
+### Added
+- Added a new custom icon:
+  items--search--initial
 
 ### Changed
 - The repository has been converted to a monorepo structure to support multiple packages.
@@ -16,8 +23,6 @@
 - Added raw .svg files located in packages/icons-builder/svg used for generating custom icons.
 - All Carbon icon exclusions and renames are now managed in a single packages/icons-builder/config.json file.
 - Introduced lerna for managing the monorepo structure.
-
-#### Breaking changes
 
 ## 1.6.0
 
