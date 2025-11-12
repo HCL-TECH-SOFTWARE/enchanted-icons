@@ -12,26 +12,22 @@
 # See the License for the specific language governing permissions and      #
 # limitations under the License.                                           #
 # ======================================================================== #
-name: Publish Package to npmjs
+name: Run check if all generated files are up to date for a PR
 on:
   workflow_dispatch:
-  release:
-    types: [published]
-permissions:
-  id-token: write  # Required for OIDC
-  contents: read
+  pull_request:
+
 jobs:
   build:
+    name: PR check if all generated files are up to date
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      # Setup .npmrc file to publish to npm
       - uses: actions/setup-node@v4
         with:
           node-version: '20.x'
           registry-url: 'https://registry.npmjs.org'
-      # Ensure npm 11.5.1 or later is installed to support OIDC
-      - run: npm install -g npm@latest
-      - run: make install
-      - run: make build
-      - run: make publish
+      - run: npm ci
+      - run: npm run ci # runs ci via lerna in all directories
+      - run: make generate # regenerate files
+      - run: git diff --exit-code # check if any files were changed
