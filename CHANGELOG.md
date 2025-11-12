@@ -10,6 +10,11 @@
 
 #### Breaking changes
 
+## 1.7.2
+
+### Fixed
+- Fixed again the items--search--initial SVG
+
 ## 1.7.1
 
 ### Fixed

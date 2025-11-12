@@ -18,9 +18,9 @@ import { createSvgIcon, IIconAttrs, IIconContent } from '../../../utils';
 
 const attrs: IIconAttrs = {
   xmlns: 'http://www.w3.org/2000/svg',
-  viewBox: '0 0 32 32',
-  width: 32,
-  height: 32,
+  viewBox: '0 0 128 128',
+  width: 128,
+  height: 128,
 };
 
 const content: IIconContent[] = [
@@ -35,4 +35,4 @@ const content: IIconContent[] = [
   },
 ];
 
-export default createSvgIcon('items--search--initial', 32, content, attrs);
+export default createSvgIcon('items--search--initial', 128, content, attrs);
