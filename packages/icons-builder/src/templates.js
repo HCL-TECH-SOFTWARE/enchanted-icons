@@ -43,6 +43,7 @@ export default createSvgIcon(Icon.name, Icon.size, Icon.content, Icon.attrs);
 };
 
 export const createCarbonWebComponentIcon = (iconName, size, originalName) => {
+  const iconNameConstant = `icon-${iconName.toLowerCase().replace(/-+/g, '-')}`;
   return `/* ======================================================================== *
   * Copyright 2025 HCL America Inc.                                          *
   * Licensed under the Apache License, Version 2.0 (the "License");          *
@@ -65,7 +66,7 @@ import { toSVG } from '@carbon/icon-helpers';
 import { BaseIcon } from '../../../utils/base-icon';
 import { canDefine } from '../../../utils';
 
-export const ICON_NAME = \`icon-\${'${iconName}'.toLowerCase().replace(/-+/g, '-')}\`;
+export const ICON_NAME = '${iconNameConstant}';
 export class WebComponentIcon extends BaseIcon {
   render() {
     return html\`\${toSVG({...Icon, attrs: { ...Icon.attrs, preserveAspectRatio: 'xMidYMid'}})}\`;

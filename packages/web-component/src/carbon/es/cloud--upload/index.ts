@@ -20,7 +20,7 @@ import { toSVG } from '@carbon/icon-helpers';
 import { BaseIcon } from '../../../utils/base-icon';
 import { canDefine } from '../../../utils';
 
-export const ICON_NAME = `icon-${'cloud--upload'.toLowerCase().replace(/-+/g, '-')}`;
+export const ICON_NAME = 'icon-cloud-upload';
 export class WebComponentIcon extends BaseIcon {
   render() {
     return html`${toSVG({...Icon, attrs: { ...Icon.attrs, preserveAspectRatio: 'xMidYMid'}})}`;

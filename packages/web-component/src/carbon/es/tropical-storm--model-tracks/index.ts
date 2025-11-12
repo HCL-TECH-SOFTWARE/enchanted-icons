@@ -20,7 +20,7 @@ import { toSVG } from '@carbon/icon-helpers';
 import { BaseIcon } from '../../../utils/base-icon';
 import { canDefine } from '../../../utils';
 
-export const ICON_NAME = `icon-${'tropical-storm--model-tracks'.toLowerCase().replace(/-+/g, '-')}`;
+export const ICON_NAME = 'icon-tropical-storm-model-tracks';
 export class WebComponentIcon extends BaseIcon {
   render() {
     return html`${toSVG({...Icon, attrs: { ...Icon.attrs, preserveAspectRatio: 'xMidYMid'}})}`;

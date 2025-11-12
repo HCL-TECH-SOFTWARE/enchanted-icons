@@ -20,7 +20,7 @@ import { toSVG } from '@carbon/icon-helpers';
 import { BaseIcon } from '../../../utils/base-icon';
 import { canDefine } from '../../../utils';
 
-export const ICON_NAME = `icon-${'recently-viewed'.toLowerCase().replace(/-+/g, '-')}`;
+export const ICON_NAME = 'icon-recently-viewed';
 export class WebComponentIcon extends BaseIcon {
   render() {
     return html`${toSVG({...Icon, attrs: { ...Icon.attrs, preserveAspectRatio: 'xMidYMid'}})}`;
