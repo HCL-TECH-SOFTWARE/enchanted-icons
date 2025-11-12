@@ -29,5 +29,5 @@ jobs:
           registry-url: 'https://registry.npmjs.org'
       - run: npm ci
       - run: npm run ci # runs ci via lerna in all directories
-      - run: make generate # regenerate files
+      - run: npm run generate # regenerate files
       - run: git diff --exit-code # check if any files were changed
