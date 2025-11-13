@@ -3,5 +3,10 @@
   "version": "1.7.1",
   "packages": [
     "packages/*"
-  ]
+  ],
+   "command": {
+    "version": {
+      "gitTag": false
+    }
+  }
 }
