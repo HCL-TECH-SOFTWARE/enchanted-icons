@@ -3,6 +3,9 @@
 ## Unreleased
 
 ### Added
+- Added a new custom icons:
+  context-preview
+  context-preview--view
 
 ### Fixed
 
