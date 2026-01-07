@@ -25,6 +25,7 @@ export interface IIconAttrs {
   viewBox: string;
   width: number;
   height: number;
+  fill?: string;
 }
 
 const toKebabCase = (str: string) => {
