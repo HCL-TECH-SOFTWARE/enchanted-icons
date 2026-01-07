@@ -28,6 +28,7 @@ export interface IIconAttrs {
   viewBox: string;
   width: number;
   height: number;
+  fill?: string;
 }
 
 const createElements = (id: string, content: IIconContent[]): JSX.Element => {
