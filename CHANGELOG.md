@@ -3,7 +3,7 @@
 ## Unreleased
 
 ### Added
-- Added a new custom icons:
+- Added new custom icons:
   context-preview
   context-preview--view
 
