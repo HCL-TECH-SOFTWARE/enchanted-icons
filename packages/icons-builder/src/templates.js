@@ -16,11 +16,14 @@
 
 import stringifyObject from 'stringify-object';
 
+const currentYear = new Date().getFullYear();
+const licenseYearRange = `2024-${currentYear}`;
+
 export const createCarbonReactIcon = (iconName, size, subFolder, isRenamed, originalName) => {
   const iconImportPath = `@carbon/icons/es${subFolder ? `/${subFolder}` : ''}/${isRenamed ? originalName : iconName}/${size}`;
   const utilsImport = '../../../utils';
   return `/* ======================================================================== *
-  * Copyright 2025 HCL America Inc.                                          *
+  * Copyright ${licenseYearRange} HCL America Inc.                               *
   * Licensed under the Apache License, Version 2.0 (the "License");          *
   * you may not use this file except in compliance with the License.         *
   * You may obtain a copy of the License at                                  *
@@ -35,8 +38,6 @@ export const createCarbonReactIcon = (iconName, size, subFolder, isRenamed, orig
   * ======================================================================== */
 
 /* auto generated file - do not edit */
-import Icon from '${iconImportPath}';
-import { createSvgIcon } from '${utilsImport}';
 
 export default createSvgIcon(Icon.name, Icon.size, Icon.content, Icon.attrs);
 `;
@@ -45,7 +46,7 @@ export default createSvgIcon(Icon.name, Icon.size, Icon.content, Icon.attrs);
 export const createCarbonWebComponentIcon = (iconName, size, originalName) => {
   const iconNameConstant = `icon-${iconName.toLowerCase().replace(/-+/g, '-')}`;
   return `/* ======================================================================== *
-  * Copyright 2025 HCL America Inc.                                          *
+  * Copyright ${licenseYearRange} HCL America Inc.                                          *
   * Licensed under the Apache License, Version 2.0 (the "License");          *
   * you may not use this file except in compliance with the License.         *
   * You may obtain a copy of the License at                                  *
@@ -92,7 +93,7 @@ export const createCustomReactIcon = (iconName, size, content, attrs, utilsImpor
   const attrsString = stringifyObject(attrs, stringifyOptions);
   const contentString = stringifyObject(content, stringifyOptions);
   return`/* ======================================================================== *
- * Copyright 2025 HCL America Inc.                                          *
+ * Copyright ${licenseYearRange} HCL America Inc.                                          *
  * Licensed under the Apache License, Version 2.0 (the "License");          *
  * you may not use this file except in compliance with the License.         *
  * You may obtain a copy of the License at                                  *
@@ -127,7 +128,7 @@ export const createCustomWebComponentIcon = (iconName, size, content, attrs, uti
   const attrsString = stringifyObject(attrs, stringifyOptions);
   let contentString = stringifyObject(content, stringifyOptions);
   return`/* ======================================================================== *
-  * Copyright 2025 HCL America Inc.                                          *
+  * Copyright ${licenseYearRange} HCL America Inc.                                          *
   * Licensed under the Apache License, Version 2.0 (the "License");          *
   * you may not use this file except in compliance with the License.         *
   * You may obtain a copy of the License at                                  *
@@ -145,6 +146,8 @@ export const createCustomWebComponentIcon = (iconName, size, content, attrs, uti
 import { html } from 'lit';
 import { createSvgIcon, IIconAttrs, IIconContent, canDefine } from '${utilsImportPath}';
 import { BaseIcon } from '${utilsImportPath}/base-icon';
+import Icon from '${iconImportPath}';
+import { createSvgIcon } from '${utilsImport}';
 
 const attrs: IIconAttrs = ${attrsString};
 
