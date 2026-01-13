@@ -14,5 +14,7 @@
   * ======================================================================== */
 
 /* auto generated file - do not edit */
+import Icon from '@carbon/icons/es/error--filled/32';
+import { createSvgIcon } from '../../../utils';
 
 export default createSvgIcon(Icon.name, Icon.size, Icon.content, Icon.attrs);

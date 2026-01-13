@@ -38,6 +38,8 @@ export const createCarbonReactIcon = (iconName, size, subFolder, isRenamed, orig
   * ======================================================================== */
 
 /* auto generated file - do not edit */
+import Icon from '${iconImportPath}';
+import { createSvgIcon } from '${utilsImport}';
 
 export default createSvgIcon(Icon.name, Icon.size, Icon.content, Icon.attrs);
 `;

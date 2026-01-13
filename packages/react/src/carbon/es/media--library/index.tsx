@@ -14,5 +14,7 @@
   * ======================================================================== */
 
 /* auto generated file - do not edit */
+import Icon from '@carbon/icons/es/media--library/32';
+import { createSvgIcon } from '../../../utils';
 
 export default createSvgIcon(Icon.name, Icon.size, Icon.content, Icon.attrs);
