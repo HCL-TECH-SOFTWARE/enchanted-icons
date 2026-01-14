@@ -10,6 +10,7 @@
 ### Fixed
 
 ### Changed
+- Update copyright license header year
 
 #### Breaking changes
 
