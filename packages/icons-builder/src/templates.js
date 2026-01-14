@@ -148,8 +148,6 @@ export const createCustomWebComponentIcon = (iconName, size, content, attrs, uti
 import { html } from 'lit';
 import { createSvgIcon, IIconAttrs, IIconContent, canDefine } from '${utilsImportPath}';
 import { BaseIcon } from '${utilsImportPath}/base-icon';
-import Icon from '${iconImportPath}';
-import { createSvgIcon } from '${utilsImport}';
 
 const attrs: IIconAttrs = ${attrsString};
 
