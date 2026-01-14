@@ -3,10 +3,14 @@
 ## Unreleased
 
 ### Added
+- Added new custom icons:
+  context-preview
+  context-preview--view
 
 ### Fixed
 
 ### Changed
+- Update copyright license header year
 
 #### Breaking changes
 
