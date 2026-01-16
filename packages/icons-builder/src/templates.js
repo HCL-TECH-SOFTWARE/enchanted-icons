@@ -1,5 +1,5 @@
 /* ======================================================================== *
- * Copyright 2025 HCL America Inc.                                          *
+ * Copyright 2025, 2026 HCL America Inc.                                    *
  * Licensed under the Apache License, Version 2.0 (the "License");          *
  * you may not use this file except in compliance with the License.         *
  * You may obtain a copy of the License at                                  *
@@ -16,14 +16,12 @@
 
 import stringifyObject from 'stringify-object';
 
-const currentYear = new Date().getFullYear();
-const licenseYearRange = `2024-${currentYear}`;
 
-export const createCarbonReactIcon = (iconName, size, subFolder, isRenamed, originalName) => {
+export const createCarbonReactIcon = (iconName, size, subFolder, isRenamed, originalName, copyrightYear) => {
   const iconImportPath = `@carbon/icons/es${subFolder ? `/${subFolder}` : ''}/${isRenamed ? originalName : iconName}/${size}`;
   const utilsImport = '../../../utils';
   return `/* ======================================================================== *
-  * Copyright ${licenseYearRange} HCL America Inc.                               *
+  * Copyright ${copyrightYear} HCL America Inc.                                          *
   * Licensed under the Apache License, Version 2.0 (the "License");          *
   * you may not use this file except in compliance with the License.         *
   * You may obtain a copy of the License at                                  *
@@ -45,10 +43,10 @@ export default createSvgIcon(Icon.name, Icon.size, Icon.content, Icon.attrs);
 `;
 };
 
-export const createCarbonWebComponentIcon = (iconName, size, originalName) => {
+export const createCarbonWebComponentIcon = (iconName, size, originalName, copyrightYear) => {
   const iconNameConstant = `icon-${iconName.toLowerCase().replace(/-+/g, '-')}`;
   return `/* ======================================================================== *
-  * Copyright ${licenseYearRange} HCL America Inc.                                          *
+  * Copyright ${copyrightYear} HCL America Inc.                                          *
   * Licensed under the Apache License, Version 2.0 (the "License");          *
   * you may not use this file except in compliance with the License.         *
   * You may obtain a copy of the License at                                  *

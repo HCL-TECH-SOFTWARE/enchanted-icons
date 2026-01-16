@@ -1,5 +1,5 @@
 /* ======================================================================== *
- * Copyright 2025 HCL America Inc.                                          *
+ * Copyright 2025, 2026 HCL America Inc.                                    *
  * Licensed under the Apache License, Version 2.0 (the "License");          *
  * you may not use this file except in compliance with the License.         *
  * You may obtain a copy of the License at                                  *
@@ -57,7 +57,47 @@ const removeDirSync = (dirpath) => {
   }
 };
 
+// Get existing copyright year or default to current
+const getCopyrightYear = (filePath, defaultYear) => {
+  if (!fs.existsSync(filePath)) {
+    return defaultYear;
+  }
+  try {
+    const content = fs.readFileSync(filePath, 'utf8');
+    // Regex to find "Copyright <YEAR>" or "Copyright <YEAR>-..."
+    // We capture the first 4 digits found after "Copyright "
+    const match = content.match(/Copyright\s+(\d{4})/);
+    if (match && match[1]) {
+      return match[1];
+    }
+  } catch (e) {
+    // ignore error, return default
+  }
+  return defaultYear;
+};
+
+// Remove files in directory that are not in the generated list
+const cleanOrphanedFiles = (directory, generatedFiles) => {
+  if (!fs.existsSync(directory)) return;
+
+  const entries = fs.readdirSync(directory, { withFileTypes: true });
+  for (const entry of entries) {
+    const fullPath = path.join(directory, entry.name);
+    if (entry.isDirectory()) {
+      // If it's a directory, check if it was generated (the whole folder is a component)
+      if (!generatedFiles.has(fullPath)) {
+        removeDirSync(fullPath);
+      }
+    } else {
+      if (!generatedFiles.has(fullPath)) {
+        fs.rmSync(fullPath);
+      }
+    }
+  }
+};
+
 const transformSvgAst = (ast) => {
+  // ... (Existing code remains same)
   const svgElement = ast.children.find((n) => n.tagName === 'svg');
   if (!svgElement) throw new Error('No <svg> tag found in AST');
   
@@ -65,7 +105,6 @@ const transformSvgAst = (ast) => {
     return Object.keys(props).reduce((acc, key) => {
       let value = props[key];
       if (typeof value === 'string') {
-        // Replace all newlines, tabs, and multiple spaces with single space
         value = value.replace(/\s+/g, ' ').trim();
       }
       acc[_.camelCase(key)] = value;
@@ -192,9 +231,12 @@ const buildIcons = () => {
     failedIcons: [],
   };
   
-  // Clear old icons
-  removeDirSync(carbonReactDestPath);
-  removeDirSync(carbonWcDestPath);
+  // 1. DO NOT Remove Carbon directories anymore
+  // removeDirSync(carbonReactDestPath);
+  // removeDirSync(carbonWcDestPath);
+
+  // You can still clean Custom if you want, or apply the same logic. 
+  // Per requirements, we focus on Carbon first.
   removeDirSync(customReactDestPath);
   removeDirSync(customWcDestPath);
 
@@ -220,6 +262,10 @@ const buildIcons = () => {
     ...(config.wc.excludes || []),
   ]);
 
+  // Track generated folders so we can clean up orphans later
+  const generatedReactCarbonPaths = new Set();
+  const generatedWCCarbonPaths = new Set();
+
   // Generate Carbon Icons
   console.log('Generating Carbon icons...');
   const files = fs.readdirSync(carbonSourcePath);
@@ -235,10 +281,20 @@ const buildIcons = () => {
       }
 
       try {
-        const reactContent = createCarbonReactIcon(iconName, 32, '', isRenamed, originalName);
         const reactFilePath = path.join(carbonReactDestPath, iconName);
+        const indexFile = path.join(reactFilePath, 'index.tsx');
+
+        // Try to get year from existing file, otherwise default to 2024
+        // New icons will default to current year if not found
+        const existingYear = getCopyrightYear(indexFile, null);
+      
+        const year = existingYear || new Date().getFullYear().toString();
+
+        const reactContent = createCarbonReactIcon(iconName, 32, '', isRenamed, originalName, year);
         ensureDirSync(reactFilePath);
-        fs.writeFileSync(path.join(reactFilePath, 'index.tsx'), reactContent);
+        fs.writeFileSync(indexFile, reactContent);
+        
+        generatedReactCarbonPaths.add(reactFilePath);
         counters.reactSuccess += 1;
       } catch (err) {
         counters.reactFailed += 1;
@@ -257,10 +313,17 @@ const buildIcons = () => {
       }
       
       try {
-        const wcContent = createCarbonWebComponentIcon(iconName, 32, originalName);
         const wcFilePath = path.join(carbonWcDestPath, iconName);
+        const indexFile = path.join(wcFilePath, 'index.ts');
+        
+        const existingYear = getCopyrightYear(indexFile, null);
+        const year = existingYear || new Date().getFullYear().toString();
+
+        const wcContent = createCarbonWebComponentIcon(iconName, 32, originalName, year);
         ensureDirSync(wcFilePath);
-        fs.writeFileSync(path.join(wcFilePath, 'index.ts'), wcContent);
+        fs.writeFileSync(indexFile, wcContent);
+
+        generatedWCCarbonPaths.add(wcFilePath);
         counters.wcSuccess += 1;
       } catch (err) {
         counters.wcFailed += 1;
@@ -269,6 +332,11 @@ const buildIcons = () => {
       }
     }
   }
+
+  // Clean up orphans in Carbon directories
+  console.log('Cleaning up orphaned Carbon icons...');
+  cleanOrphanedFiles(carbonReactDestPath, generatedReactCarbonPaths);
+  cleanOrphanedFiles(carbonWcDestPath, generatedWCCarbonPaths);
 
   // Generate Custom icons
   processCustomIconDirectory(customSourcePath, {
@@ -288,12 +356,9 @@ const buildIcons = () => {
 
   console.log('\nDONE- Icon generation complete');
   
-  // Format React custom icons to use single quotes and add trailing comma to the code
+  // Format React custom icons
   try {
-    // Get the paths to the generated code
     const reactCustomDir = path.relative(process.cwd(), customReactDestPath);
-    const wcCustomDir = path.relative(process.cwd(), customWcDestPath);
-
     console.log('Formatting React customs icons...');
     execSync(`npx prettier --write --single-quote --trailing-comma all "${reactCustomDir}/**/*.tsx"`);
     console.log('✅ Formatting complete.');
