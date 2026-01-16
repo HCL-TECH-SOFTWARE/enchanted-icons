@@ -89,11 +89,8 @@ const getCreationYearFromGit = (filePath) => {
 
     // If git returns multiple lines (renames), take the last one (oldest)
     const years = output.split('\n').filter(Boolean);
-    const returnYears = years.length > 0 ? years[years.length - 1] : new Date().getFullYear().toString();
-    console.log(returnYears);
-    return returnYears;
+    return years.length > 0 ? years[years.length - 1] : new Date().getFullYear().toString();
   } catch (e) {
-    console.log('fallback');
     // Fallback if git fails or no git repo
     return new Date().getFullYear().toString();
   }
