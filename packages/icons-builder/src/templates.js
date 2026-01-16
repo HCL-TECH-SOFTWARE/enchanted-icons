@@ -85,7 +85,7 @@ declare global {
 `;
 };
 
-export const createCustomReactIcon = (iconName, size, content, attrs, utilsImportPath) => {
+export const createCustomReactIcon = (iconName, size, content, attrs, utilsImportPath, copyrightString) => {
   const stringifyOptions = {
     indent: '  ',
   };
@@ -93,7 +93,7 @@ export const createCustomReactIcon = (iconName, size, content, attrs, utilsImpor
   const attrsString = stringifyObject(attrs, stringifyOptions);
   const contentString = stringifyObject(content, stringifyOptions);
   return`/* ======================================================================== *
- * Copyright ${licenseYearRange} HCL America Inc.                                          *
+ * Copyright ${copyrightString} HCL America Inc.                                          *
  * Licensed under the Apache License, Version 2.0 (the "License");          *
  * you may not use this file except in compliance with the License.         *
  * You may obtain a copy of the License at                                  *
@@ -118,7 +118,7 @@ export default createSvgIcon('${iconName}', ${size}, content, attrs);
 `;
 };
 
-export const createCustomWebComponentIcon = (iconName, size, content, attrs, utilsImportPath) => {
+export const createCustomWebComponentIcon = (iconName, size, content, attrs, utilsImportPath, copyrightString) => {
   const iconNameConstant = `icon-${iconName.toLowerCase().replace(/-+/g, '-')}`;
 
   const stringifyOptions = {
@@ -127,8 +127,9 @@ export const createCustomWebComponentIcon = (iconName, size, content, attrs, uti
 
   const attrsString = stringifyObject(attrs, stringifyOptions);
   let contentString = stringifyObject(content, stringifyOptions);
+  
   return`/* ======================================================================== *
-  * Copyright ${licenseYearRange} HCL America Inc.                                          *
+  * Copyright ${copyrightString} HCL America Inc.                                          *
   * Licensed under the Apache License, Version 2.0 (the "License");          *
   * you may not use this file except in compliance with the License.         *
   * You may obtain a copy of the License at                                  *

@@ -76,6 +76,34 @@ const getCopyrightYear = (filePath, defaultYear) => {
   return defaultYear;
 };
 
+// Get creation year from git history
+const getCreationYearFromGit = (filePath) => {
+  try {
+    // --diff-filter=A : Only look for the commit where it was Added
+    // --format=%ad : Format as date
+    // --date=format:%Y : Output only the Year
+    const output = execSync(
+      `git log --diff-filter=A --format=%ad --date=format:%Y -- "${filePath}"`,
+      { encoding: 'utf8', stdio: ['pipe', 'pipe', 'ignore'] }
+    ).trim();
+
+    // If git returns multiple lines (renames), take the last one (oldest)
+    const years = output.split('\n').filter(Boolean);
+    return years.length > 0 ? years[years.length - 1] : new Date().getFullYear().toString();
+  } catch (e) {
+    // Fallback if git fails or no git repo
+    return new Date().getFullYear().toString();
+  }
+};
+
+// Normalize content for comparison (ignores comments/whitespace)
+const normalizeContent = (str) => {
+  // Remove block comments (Copyright headers)
+  const noComments = str.replace(/\/\*[\s\S]*?\*\//g, '');
+  // Remove all whitespace
+  return noComments.replace(/\s+/g, '');
+};
+
 // Remove files in directory that are not in the generated list
 const cleanOrphanedFiles = (directory, generatedFiles) => {
   if (!fs.existsSync(directory)) return;
@@ -97,7 +125,6 @@ const cleanOrphanedFiles = (directory, generatedFiles) => {
 };
 
 const transformSvgAst = (ast) => {
-  // ... (Existing code remains same)
   const svgElement = ast.children.find((n) => n.tagName === 'svg');
   if (!svgElement) throw new Error('No <svg> tag found in AST');
   
@@ -153,6 +180,10 @@ const processCustomIconDirectory = (
 
     // Get the relative path for the output (e.g., "elements/basic/button")
     const relativeDir = path.relative(customSourcePath, currentDir);
+    const currentYear = new Date().getFullYear().toString();
+
+    // get true creation year from git
+    const creationYear = getCreationYearFromGit(fullSvgPath);
 
     // Parse the SVG file
     let ast, attrs, content;
@@ -180,11 +211,34 @@ const processCustomIconDirectory = (
         // Output path is just the relativeDir
         // e.g., .../custom/es/elements/basic/button/
         const reactIconDir = path.join(customReactDestPath, relativeDir);
+        const reactDestFile = path.join(reactIconDir, 'index.tsx');
         const reactUtilsImportPath = path.relative(reactIconDir, reactUtilsPath).replace(/\\/g, '/');
 
-        const reactContent = createCustomReactIcon(iconName, sizeInt, content, attrs, reactUtilsImportPath);
+        // Generate "candidate" content using creationYear to check for code changes
+        const candidateContent = createCustomReactIcon(iconName, sizeInt, content, attrs, reactUtilsImportPath, creationYear);
+        
+        let finalCopyright = creationYear;
+
+        // Compare with existing file
+        if (fs.existsSync(reactDestFile)) {
+          const existingContent = fs.readFileSync(reactDestFile, 'utf8');
+          
+          if (normalizeContent(candidateContent) !== normalizeContent(existingContent)) {
+            // Content changed -> "Creation, Current"
+            finalCopyright = `${creationYear}, ${currentYear}`;
+          } else {
+            // Content same -> Preserve old modified year if it exists
+            const match = existingContent.match(/Copyright\s+(\d{4})(?:,\s*(\d{4}))?/);
+            if (match && match[2]) {
+               finalCopyright = `${creationYear}, ${match[2]}`;
+            }
+          }
+        }
+
+        // Generate Final Content
+        const reactContent = createCustomReactIcon(iconName, sizeInt, content, attrs, reactUtilsImportPath, finalCopyright);
         ensureDirSync(reactIconDir);
-        fs.writeFileSync(path.join(reactIconDir, 'index.tsx'), reactContent);
+        fs.writeFileSync(reactDestFile, reactContent);
         counters.reactSuccess += 1;
       } catch (err) {
         counters.reactFailed += 1;
@@ -196,11 +250,32 @@ const processCustomIconDirectory = (
     if (!wcExcludes.has(iconName)) {
       try {
         const wcIconDir = path.join(customWcDestPath, relativeDir);
+        const wcDestFile = path.join(wcIconDir, 'index.ts');
         const wcUtilsImportPath = path.relative(wcIconDir, wcUtilsPath).replace(/\\/g, '/');
 
-        const wcContent = createCustomWebComponentIcon(iconName, sizeInt, content, attrs, wcUtilsImportPath);
+        // Generate "candidate" content
+        const candidateContent = createCustomWebComponentIcon(iconName, sizeInt, content, attrs, wcUtilsImportPath, creationYear);
+        
+        let finalCopyright = creationYear;
+
+        // Compare with existing file
+        if (fs.existsSync(wcDestFile)) {
+          const existingContent = fs.readFileSync(wcDestFile, 'utf8');
+          
+          if (normalizeContent(candidateContent) !== normalizeContent(existingContent)) {
+             finalCopyright = `${creationYear}, ${currentYear}`;
+          } else {
+             const match = existingContent.match(/Copyright\s+(\d{4})(?:,\s*(\d{4}))?/);
+             if (match && match[2]) {
+                finalCopyright = `${creationYear}, ${match[2]}`;
+             }
+          }
+        }
+
+        // Generate Final Content
+        const wcContent = createCustomWebComponentIcon(iconName, sizeInt, content, attrs, wcUtilsImportPath, finalCopyright);
         ensureDirSync(wcIconDir);
-        fs.writeFileSync(path.join(wcIconDir, 'index.ts'), wcContent);
+        fs.writeFileSync(wcDestFile, wcContent);
         counters.wcSuccess += 1;
       } catch (err) {
         counters.wcFailed += 1;
@@ -231,12 +306,6 @@ const buildIcons = () => {
     failedIcons: [],
   };
   
-  // 1. DO NOT Remove Carbon directories anymore
-  // removeDirSync(carbonReactDestPath);
-  // removeDirSync(carbonWcDestPath);
-
-  // You can still clean Custom if you want, or apply the same logic. 
-  // Per requirements, we focus on Carbon first.
   removeDirSync(customReactDestPath);
   removeDirSync(customWcDestPath);
 
