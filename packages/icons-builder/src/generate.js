@@ -123,9 +123,8 @@ const processCustomIconDirectory = (
 
     // Get the relative path for the output (e.g., "elements/basic/button")
     const relativeDir = path.relative(customSourcePath, currentDir);
-    const currentYear = new Date().getFullYear().toString();
 
-    // get true creation year from git
+    // Get true creation year from git
     const creationYear = getCreationYearFromGit(fullSvgPath);
 
     // Parse the SVG file
@@ -248,10 +247,8 @@ const buildIcons = () => {
         const reactFilePath = path.join(carbonReactDestPath, iconName);
         const indexFile = path.join(reactFilePath, 'index.tsx');
 
-        // Try to get year from existing file, otherwise default to 2024
         // New icons will default to current year if not found
         const existingYear = getCopyrightYear(indexFile, null);
-      
         const year = existingYear || new Date().getFullYear().toString();
 
         const reactContent = createCarbonReactIcon(iconName, 32, '', isRenamed, originalName, year);
@@ -278,6 +275,7 @@ const buildIcons = () => {
         const wcFilePath = path.join(carbonWcDestPath, iconName);
         const indexFile = path.join(wcFilePath, 'index.ts');
         
+        // New icons will default to current year if not found
         const existingYear = getCopyrightYear(indexFile, null);
         const year = existingYear || new Date().getFullYear().toString();
 
