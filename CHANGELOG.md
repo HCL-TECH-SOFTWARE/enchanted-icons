@@ -10,7 +10,7 @@
 ### Fixed
 
 ### Changed
-- Update copyright license header year
+- Updated copyright license header years to be dynamic for both creation and modified years.
 
 #### Breaking changes
 
