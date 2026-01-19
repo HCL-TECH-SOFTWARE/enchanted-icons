@@ -25,6 +25,11 @@ import {
   createCustomReactIcon,
   createCustomWebComponentIcon,
 } from './templates.js';
+import {
+  getCopyrightYear,
+  getCreationYearFromGit,
+  getLastModifiedYearFromGit,
+} from './utils/copyrightYears.js';
 
 const carbonSourcePath = path.resolve(process.cwd(), 'node_modules/@carbon/icons/es');
 const carbonReactDestPath = path.resolve(process.cwd(), '../react/src/carbon/es');
@@ -45,67 +50,6 @@ const ensureDirSync = (dirpath) => {
     if (err.code !== 'EEXIST') throw err;
   }
 }
-
-const getCopyrightYear = (filePath, defaultYear) => {
-  if (!fs.existsSync(filePath)) {
-    return defaultYear;
-  }
-  try {
-    const content = fs.readFileSync(filePath, 'utf8');
-    // Regex to find "Copyright <YEAR>" or "Copyright <YEAR>-..."
-    // We capture the first 4 digits found after "Copyright "
-    const match = content.match(/Copyright\s+(\d{4})/);
-    if (match && match[1]) {
-      return match[1];
-    }
-  } catch (e) {
-    // ignore error, return default
-  }
-  return defaultYear;
-};
-
-// Get creation year from git history
-const getCreationYearFromGit = (filePath) => {
-  try {
-    // --diff-filter=A : Only look for the commit where it was Added
-    // --format=%ad : Format as date
-    // --date=format:%Y : Output only the Year
-    const output = execSync(
-      `git log --diff-filter=A --format=%ad --date=format:%Y -- "${filePath}"`,
-      { encoding: 'utf8', stdio: ['pipe', 'pipe', 'ignore'] }
-    ).trim();
-
-    // If git returns multiple lines (renames), take the last one (oldest)
-    const years = output.split('\n').filter(Boolean);
-    return years.length > 0 ? years[years.length - 1] : new Date().getFullYear().toString();
-  } catch (e) {
-    return new Date().getFullYear().toString();
-  }
-};
-
-const getLastModifiedYearFromGit = (filePath) => {
-  try {
-    // Check if file has uncommitted changes
-    const statusOutput = execSync(
-      `git status --porcelain -- "${filePath}"`,
-      { encoding: 'utf8', stdio: ['pipe', 'pipe', 'ignore'] }
-    ).trim();
-    
-    // If file is modified in working directory, use current year
-    if (statusOutput && statusOutput.startsWith('M')) {
-      return new Date().getFullYear().toString();
-    }
-    
-    // Otherwise get last commit year from git history
-    const output = execSync(
-      `git log -1 --format=%ad --date=format:%Y -- "${filePath}"`,
-      { encoding: 'utf8', stdio: ['pipe', 'pipe', 'ignore'] }
-    ).trim();
-    return output || new Date().getFullYear().toString();
-  } catch (e) {
-    return new Date().getFullYear().toString();
-  }
-};
 
 // Normalize content for comparison (ignores comments/whitespace)
 const normalizeContent = (str) => {
