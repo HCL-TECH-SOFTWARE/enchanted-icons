@@ -51,14 +51,6 @@ const ensureDirSync = (dirpath) => {
   }
 }
 
-// Normalize content for comparison (ignores comments/whitespace)
-const normalizeContent = (str) => {
-  return str
-    .replace(/\/\*\s*=+\s*\*[\s\S]*?\*\s*=+\s*\*\//g, '') // Remove copyright header
-    .replace(/\s+/g, '') // Remove whitespace
-    .replace(/,([}\])])/g, '$1'); // Remove trailing commas
-};
-
 const cleanOrphanedFiles = (directory, generatedFiles) => {
   if (!fs.existsSync(directory)) return;
 
