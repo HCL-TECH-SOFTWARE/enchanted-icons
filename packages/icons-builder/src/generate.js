@@ -1,5 +1,5 @@
 /* ======================================================================== *
- * Copyright 2025 HCL America Inc.                                          *
+ * Copyright 2025, 2026 HCL America Inc.                                    *
  * Licensed under the Apache License, Version 2.0 (the "License");          *
  * you may not use this file except in compliance with the License.         *
  * You may obtain a copy of the License at                                  *
@@ -25,6 +25,11 @@ import {
   createCustomReactIcon,
   createCustomWebComponentIcon,
 } from './templates.js';
+import {
+  getCopyrightYear,
+  getCreationYearFromGit,
+  getLastModifiedYearFromGit,
+} from './utils/copyrightYears.js';
 
 const carbonSourcePath = path.resolve(process.cwd(), 'node_modules/@carbon/icons/es');
 const carbonReactDestPath = path.resolve(process.cwd(), '../react/src/carbon/es');
@@ -46,14 +51,23 @@ const ensureDirSync = (dirpath) => {
   }
 }
 
-const removeDirSync = (dirpath) => {
-  try {
-    fs.rmSync(dirpath, {
-      recursive: true,
-      force: true,
-    });
-  } catch (err) {
-    if (err.code !== 'EEXIST') throw err;
+const cleanOrphanedFiles = (directory, generatedFiles) => {
+  if (!fs.existsSync(directory)) return;
+
+  const entries = fs.readdirSync(directory, { withFileTypes: true });
+  for (const entry of entries) {
+    const fullPath = path.resolve(directory, entry.name);
+    
+    if (entry.isDirectory()) {
+      cleanOrphanedFiles(fullPath, generatedFiles);
+      if (fs.readdirSync(fullPath).length === 0) {
+        fs.rmdirSync(fullPath);
+      }
+    } else {
+      if (!generatedFiles.has(fullPath)) {
+        fs.rmSync(fullPath);
+      }
+    }
   }
 };
 
@@ -65,7 +79,6 @@ const transformSvgAst = (ast) => {
     return Object.keys(props).reduce((acc, key) => {
       let value = props[key];
       if (typeof value === 'string') {
-        // Replace all newlines, tabs, and multiple spaces with single space
         value = value.replace(/\s+/g, ' ').trim();
       }
       acc[_.camelCase(key)] = value;
@@ -89,6 +102,7 @@ const transformSvgAst = (ast) => {
 const processCustomIconDirectory = (
   currentDir,
   configs,
+  generatedPaths
 ) => {
   const { reactExcludes, wcExcludes, counters } = configs;
   const entries = fs.readdirSync(currentDir, { withFileTypes: true });
@@ -97,8 +111,6 @@ const processCustomIconDirectory = (
 
   if (svgFiles.length > 1) {
     console.error(`[BUILDER] ERROR: Found multiple .svg files in directory: ${currentDir}`);
-    console.error('       Only one .svg file is allowed per icon directory.');
-
     counters.failedIcons.push(`${path.basename(currentDir)} (Build Error)`);
     counters.reactFailed += 1;
     counters.wcFailed += 1;
@@ -106,14 +118,14 @@ const processCustomIconDirectory = (
 
   } else if (svgFiles.length === 1) {
     const svgFile = svgFiles[0];
-    const svgFileName = svgFile.name;
-    const fullSvgPath = path.join(currentDir, svgFileName);
-
-    // Get the iconName from the directory name (e.g., "button")
+    const fullSvgPath = path.join(currentDir, svgFile.name);
     const iconName = path.basename(currentDir);
 
     // Get the relative path for the output (e.g., "elements/basic/button")
     const relativeDir = path.relative(customSourcePath, currentDir);
+
+    // Get true creation year from git
+    const creationYear = getCreationYearFromGit(fullSvgPath);
 
     // Parse the SVG file
     let ast, attrs, content;
@@ -124,8 +136,6 @@ const processCustomIconDirectory = (
     } catch (err) {
       console.error(`[BUILDER] Failed to parse SVG ${fullSvgPath}: ${err.message}`);
       counters.reactFailed += 1;
-      counters.wcFailed += 1;
-      counters.failedIcons.push(`${iconName} (SVG Parse Error)`);
       return;
     }
 
@@ -138,14 +148,19 @@ const processCustomIconDirectory = (
     
     if (!reactExcludes.has(iconName)) {
       try {
-        // Output path is just the relativeDir
-        // e.g., .../custom/es/elements/basic/button/
         const reactIconDir = path.join(customReactDestPath, relativeDir);
+        const reactDestFile = path.join(reactIconDir, 'index.tsx');
         const reactUtilsImportPath = path.relative(reactIconDir, reactUtilsPath).replace(/\\/g, '/');
 
-        const reactContent = createCustomReactIcon(iconName, sizeInt, content, attrs, reactUtilsImportPath);
+        const lastModifiedYear = getLastModifiedYearFromGit(fullSvgPath);
+        const finalCopyright = (creationYear === lastModifiedYear) 
+          ? creationYear 
+          : `${creationYear}, ${lastModifiedYear}`;
+
+        const reactContent = createCustomReactIcon(iconName, sizeInt, content, attrs, reactUtilsImportPath, finalCopyright);
         ensureDirSync(reactIconDir);
-        fs.writeFileSync(path.join(reactIconDir, 'index.tsx'), reactContent);
+        fs.writeFileSync(reactDestFile, reactContent);
+        generatedPaths.react.add(path.resolve(reactDestFile)); 
         counters.reactSuccess += 1;
       } catch (err) {
         counters.reactFailed += 1;
@@ -157,11 +172,18 @@ const processCustomIconDirectory = (
     if (!wcExcludes.has(iconName)) {
       try {
         const wcIconDir = path.join(customWcDestPath, relativeDir);
+        const wcDestFile = path.join(wcIconDir, 'index.ts');
         const wcUtilsImportPath = path.relative(wcIconDir, wcUtilsPath).replace(/\\/g, '/');
 
-        const wcContent = createCustomWebComponentIcon(iconName, sizeInt, content, attrs, wcUtilsImportPath);
+        const lastModifiedYear = getLastModifiedYearFromGit(fullSvgPath);
+        const finalCopyright = (creationYear === lastModifiedYear) 
+          ? creationYear 
+          : `${creationYear}, ${lastModifiedYear}`;
+
+        const wcContent = createCustomWebComponentIcon(iconName, sizeInt, content, attrs, wcUtilsImportPath, finalCopyright);
         ensureDirSync(wcIconDir);
-        fs.writeFileSync(path.join(wcIconDir, 'index.ts'), wcContent);
+        fs.writeFileSync(wcDestFile, wcContent);
+        generatedPaths.wc.add(path.resolve(wcDestFile));
         counters.wcSuccess += 1;
       } catch (err) {
         counters.wcFailed += 1;
@@ -175,7 +197,7 @@ const processCustomIconDirectory = (
     // Scan its children directories.
     for (const entry of entries) {
       if (entry.isDirectory()) {
-        processCustomIconDirectory(path.join(currentDir, entry.name), configs);
+        processCustomIconDirectory(path.join(currentDir, entry.name), configs, generatedPaths);
       }
     }
   }
@@ -192,33 +214,20 @@ const buildIcons = () => {
     failedIcons: [],
   };
   
-  // Clear old icons
-  removeDirSync(carbonReactDestPath);
-  removeDirSync(carbonWcDestPath);
-  removeDirSync(customReactDestPath);
-  removeDirSync(customWcDestPath);
-
   ensureDirSync(carbonReactDestPath);
   ensureDirSync(carbonWcDestPath);
   ensureDirSync(customReactDestPath);
   ensureDirSync(customWcDestPath);
 
-  const reactRenames = new Map(Object.entries({
-    ...config.common.renames,
-    ...config.react.renames
-  }));
-  const reactExcludes = new Set([
-    ...config.common.excludes,
-    ...(config.react.excludes || []),
-  ]);
-  const wcRenames = new Map(Object.entries({
-    ...config.common.renames,
-    ...config.wc.renames
-  }));
-  const wcExcludes = new Set([
-    ...config.common.excludes,
-    ...(config.wc.excludes || []),
-  ]);
+  const reactRenames = new Map(Object.entries({ ...config.common.renames, ...config.react.renames }));
+  const reactExcludes = new Set([ ...config.common.excludes, ...(config.react.excludes || []) ]);
+  const wcRenames = new Map(Object.entries({ ...config.common.renames, ...config.wc.renames }));
+  const wcExcludes = new Set([ ...config.common.excludes, ...(config.wc.excludes || []) ]);
+
+  const generatedReactCarbonPaths = new Set();
+  const generatedWCCarbonPaths = new Set();
+  const generatedCustomReactPaths = new Set();
+  const generatedCustomWCPaths = new Set();
 
   // Generate Carbon Icons
   console.log('Generating Carbon icons...');
@@ -235,15 +244,21 @@ const buildIcons = () => {
       }
 
       try {
-        const reactContent = createCarbonReactIcon(iconName, 32, '', isRenamed, originalName);
         const reactFilePath = path.join(carbonReactDestPath, iconName);
+        const indexFile = path.join(reactFilePath, 'index.tsx');
+
+        // New icons will default to current year if not found
+        const existingYear = getCopyrightYear(indexFile, null);
+        const year = existingYear || new Date().getFullYear().toString();
+
+        const reactContent = createCarbonReactIcon(iconName, 32, '', isRenamed, originalName, year);
         ensureDirSync(reactFilePath);
-        fs.writeFileSync(path.join(reactFilePath, 'index.tsx'), reactContent);
+        fs.writeFileSync(indexFile, reactContent);
+        
+        generatedReactCarbonPaths.add(path.resolve(indexFile));
         counters.reactSuccess += 1;
       } catch (err) {
         counters.reactFailed += 1;
-        counters.failedIcons.push(`${originalName} (React)`);
-        console.error(`[BUILDER] Failed to create React icon ${originalName}: ${err.message}`);
       }
     }
 
@@ -257,25 +272,42 @@ const buildIcons = () => {
       }
       
       try {
-        const wcContent = createCarbonWebComponentIcon(iconName, 32, originalName);
         const wcFilePath = path.join(carbonWcDestPath, iconName);
+        const indexFile = path.join(wcFilePath, 'index.ts');
+        
+        // New icons will default to current year if not found
+        const existingYear = getCopyrightYear(indexFile, null);
+        const year = existingYear || new Date().getFullYear().toString();
+
+        const wcContent = createCarbonWebComponentIcon(iconName, 32, originalName, year);
         ensureDirSync(wcFilePath);
-        fs.writeFileSync(path.join(wcFilePath, 'index.ts'), wcContent);
+        fs.writeFileSync(indexFile, wcContent);
+
+        generatedWCCarbonPaths.add(path.resolve(indexFile));
         counters.wcSuccess += 1;
       } catch (err) {
         counters.wcFailed += 1;
-        counters.failedIcons.push(`${originalName} (WC)`);
-        console.error(`[BUILDER] Failed to create WC icon ${originalName}: ${err.message}`);
       }
     }
   }
 
-  // Generate Custom icons
+  console.log('Cleaning up orphaned Carbon icons...');
+  cleanOrphanedFiles(carbonReactDestPath, generatedReactCarbonPaths);
+  cleanOrphanedFiles(carbonWcDestPath, generatedWCCarbonPaths);
+
+  console.log('Generating Custom icons...');
   processCustomIconDirectory(customSourcePath, {
     reactExcludes,
     wcExcludes,
     counters,
+  }, {
+    react: generatedCustomReactPaths,
+    wc: generatedCustomWCPaths
   });
+
+  console.log('Cleaning up orphaned Custom icons...');
+  cleanOrphanedFiles(customReactDestPath, generatedCustomReactPaths);
+  cleanOrphanedFiles(customWcDestPath, generatedCustomWCPaths);
 
   console.log('\n-- Build Summary ---');
   console.info(`✅ React Icons: ${counters.reactSuccess} created, ${counters.reactFailed} failed.`);
@@ -288,12 +320,9 @@ const buildIcons = () => {
 
   console.log('\nDONE- Icon generation complete');
   
-  // Format React custom icons to use single quotes and add trailing comma to the code
+  // Format React custom icons
   try {
-    // Get the paths to the generated code
     const reactCustomDir = path.relative(process.cwd(), customReactDestPath);
-    const wcCustomDir = path.relative(process.cwd(), customWcDestPath);
-
     console.log('Formatting React customs icons...');
     execSync(`npx prettier --write --single-quote --trailing-comma all "${reactCustomDir}/**/*.tsx"`);
     console.log('✅ Formatting complete.');
