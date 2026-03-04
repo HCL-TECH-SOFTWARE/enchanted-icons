@@ -3,16 +3,22 @@
 ## Unreleased
 
 ### Added
-- Added new custom icons:
-  context-preview
-  context-preview--view
 
 ### Fixed
 
 ### Changed
-- Updated copyright license header years to be dynamic for both creation and modified years.
 
 #### Breaking changes
+
+## 1.8.0
+
+### Added
+- Added new custom icons:
+  context-preview
+  context-preview--view
+
+### Changed
+- Updated copyright license header years to be dynamic for both creation and modified years.
 
 ## 1.7.2
 
