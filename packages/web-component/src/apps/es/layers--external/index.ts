@@ -17,6 +17,7 @@
 import { html } from 'lit';
 import { createSvgIcon, IIconAttrs, IIconContent, canDefine } from '../../../utils';
 import { BaseIcon } from '../../../utils/base-icon';
+import { ICON_PREFIX } from '../../../utils/tags';
 
 const attrs: IIconAttrs = {
   width: 16,
@@ -56,7 +57,7 @@ const content: IIconContent[] = [
   }
 ];
 
-export const ICON_NAME = 'icon-layers-external';
+export const ICON_NAME = `${ICON_PREFIX}icon-layers-external`;
 export class WebComponentIcon extends BaseIcon {
   render() {
     return html`${createSvgIcon(content, attrs)}`;

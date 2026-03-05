@@ -19,8 +19,9 @@ import Icon from '@carbon/icons/es/forecast--hail-30/32';
 import { toSVG } from '@carbon/icon-helpers';
 import { BaseIcon } from '../../../utils/base-icon';
 import { canDefine } from '../../../utils';
+import { ICON_PREFIX } from '../../../utils/tags';
 
-export const ICON_NAME = 'icon-forecast-hail-30';
+export const ICON_NAME = `${ICON_PREFIX}icon-forecast-hail-30`;
 export class WebComponentIcon extends BaseIcon {
   render() {
     return html`${toSVG({...Icon, attrs: { ...Icon.attrs, preserveAspectRatio: 'xMidYMid'}})}`;

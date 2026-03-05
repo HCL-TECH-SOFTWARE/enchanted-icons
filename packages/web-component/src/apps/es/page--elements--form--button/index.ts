@@ -17,6 +17,7 @@
 import { html } from 'lit';
 import { createSvgIcon, IIconAttrs, IIconContent, canDefine } from '../../../utils';
 import { BaseIcon } from '../../../utils/base-icon';
+import { ICON_PREFIX } from '../../../utils/tags';
 
 const attrs: IIconAttrs = {
   xmlns: 'http://www.w3.org/2000/svg',
@@ -70,7 +71,7 @@ const content: IIconContent[] = [
   }
 ];
 
-export const ICON_NAME = 'icon-page-elements-form-button';
+export const ICON_NAME = `${ICON_PREFIX}icon-page-elements-form-button`;
 export class WebComponentIcon extends BaseIcon {
   render() {
     return html`${createSvgIcon(content, attrs)}`;

@@ -95,8 +95,9 @@ import Icon from '@carbon/icons/es/${originalName}/${size}';
 import { toSVG } from '@carbon/icon-helpers';
 import { BaseIcon } from '../../../utils/base-icon';
 import { canDefine } from '../../../utils';
+import { ICON_PREFIX } from '../../../utils/tags';
 
-export const ICON_NAME = '${iconNameConstant}';
+export const ICON_NAME = \`\${ICON_PREFIX}${iconNameConstant}\`;
 export class WebComponentIcon extends BaseIcon {
   render() {
     return html\`\${toSVG({...Icon, attrs: { ...Icon.attrs, preserveAspectRatio: 'xMidYMid'}})}\`;
@@ -198,12 +199,13 @@ ${copyrightLine}
 import { html } from 'lit';
 import { createSvgIcon, IIconAttrs, IIconContent, canDefine } from '${utilsImportPath}';
 import { BaseIcon } from '${utilsImportPath}/base-icon';
+import { ICON_PREFIX } from '${utilsImportPath}/tags';
 
 const attrs: IIconAttrs = ${attrsString};
 
 const content: IIconContent[] = ${contentString};
 
-export const ICON_NAME = '${iconNameConstant}';
+export const ICON_NAME = \`\${ICON_PREFIX}${iconNameConstant}\`;
 export class WebComponentIcon extends BaseIcon {
   render() {
     return html\`\${createSvgIcon(content, attrs)}\`;
