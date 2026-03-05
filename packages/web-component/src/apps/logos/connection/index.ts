@@ -16,8 +16,9 @@
 import { css, html } from 'lit';
 import { customElement } from 'lit/decorators.js';
 import { BaseIcon } from '../../../utils/base-icon';
+import { ICON_PREFIX } from '../../../utils/tags';
 
-export const ICON_NAME = 'svg-connections';
+export const ICON_NAME = `${ICON_PREFIX}svg-connections`;
 @customElement(ICON_NAME)
 export class SvgConnections extends BaseIcon {
   static styles = css`
