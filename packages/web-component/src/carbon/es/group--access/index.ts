@@ -19,8 +19,9 @@ import Icon from '@carbon/icons/es/group--access/32';
 import { toSVG } from '@carbon/icon-helpers';
 import { BaseIcon } from '../../../utils/base-icon';
 import { canDefine } from '../../../utils';
+import { ICON_PREFIX } from '../../../utils/tags';
 
-export const ICON_NAME = 'icon-group-access';
+export const ICON_NAME = `${ICON_PREFIX}icon-group-access`;
 export class WebComponentIcon extends BaseIcon {
   render() {
     return html`${toSVG({...Icon, attrs: { ...Icon.attrs, preserveAspectRatio: 'xMidYMid'}})}`;

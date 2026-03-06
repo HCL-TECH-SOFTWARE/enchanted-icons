@@ -19,8 +19,9 @@ import Icon from '@carbon/icons/es/gui--management/32';
 import { toSVG } from '@carbon/icon-helpers';
 import { BaseIcon } from '../../../utils/base-icon';
 import { canDefine } from '../../../utils';
+import { ICON_PREFIX } from '../../../utils/tags';
 
-export const ICON_NAME = 'icon-gui-management';
+export const ICON_NAME = `${ICON_PREFIX}icon-gui-management`;
 export class WebComponentIcon extends BaseIcon {
   render() {
     return html`${toSVG({...Icon, attrs: { ...Icon.attrs, preserveAspectRatio: 'xMidYMid'}})}`;

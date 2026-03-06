@@ -19,8 +19,9 @@ import Icon from '@carbon/icons/es/wifi--controller/32';
 import { toSVG } from '@carbon/icon-helpers';
 import { BaseIcon } from '../../../utils/base-icon';
 import { canDefine } from '../../../utils';
+import { ICON_PREFIX } from '../../../utils/tags';
 
-export const ICON_NAME = 'icon-wifi-controller';
+export const ICON_NAME = `${ICON_PREFIX}icon-wifi-controller`;
 export class WebComponentIcon extends BaseIcon {
   render() {
     return html`${toSVG({...Icon, attrs: { ...Icon.attrs, preserveAspectRatio: 'xMidYMid'}})}`;

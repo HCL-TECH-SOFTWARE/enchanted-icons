@@ -19,8 +19,9 @@ import Icon from '@carbon/icons/es/arrow--up/32';
 import { toSVG } from '@carbon/icon-helpers';
 import { BaseIcon } from '../../../utils/base-icon';
 import { canDefine } from '../../../utils';
+import { ICON_PREFIX } from '../../../utils/tags';
 
-export const ICON_NAME = 'icon-arrow-up';
+export const ICON_NAME = `${ICON_PREFIX}icon-arrow-up`;
 export class WebComponentIcon extends BaseIcon {
   render() {
     return html`${toSVG({...Icon, attrs: { ...Icon.attrs, preserveAspectRatio: 'xMidYMid'}})}`;

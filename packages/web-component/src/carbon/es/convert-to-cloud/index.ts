@@ -19,8 +19,9 @@ import Icon from '@carbon/icons/es/convert-to-cloud/32';
 import { toSVG } from '@carbon/icon-helpers';
 import { BaseIcon } from '../../../utils/base-icon';
 import { canDefine } from '../../../utils';
+import { ICON_PREFIX } from '../../../utils/tags';
 
-export const ICON_NAME = 'icon-convert-to-cloud';
+export const ICON_NAME = `${ICON_PREFIX}icon-convert-to-cloud`;
 export class WebComponentIcon extends BaseIcon {
   render() {
     return html`${toSVG({...Icon, attrs: { ...Icon.attrs, preserveAspectRatio: 'xMidYMid'}})}`;
