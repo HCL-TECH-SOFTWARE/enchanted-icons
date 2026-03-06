@@ -34,6 +34,9 @@ import '@hcl-software/enchanted-icons-web-component/dist/carbon/es/chevron--up';
 
 // Usage
 <icon-chevron-up></icon-chevron-up>
+
+// Usage by using the 'VITE_COMPONENT_PREFIX=prefix-' env parameter
+<prefix-icon-chevron-up></prefix-icon-chevron-up>
 ```
 
 **Styling (Size and Color)**
