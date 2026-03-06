@@ -20,4 +20,5 @@ try {
   console.error('Error accessing environment variable for component prefix:', error);
   ICON_PREFIX = '';
 }
+// eslint-disable-next-line no-console
 console.log(`Icon prefix is '${ICON_PREFIX}'`);
