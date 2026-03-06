@@ -13,7 +13,8 @@
 ## 1.9.0
 
 ### Added
-- Adding a scoping logic for all web-component icons. Via the `VITE_COMPONENT_PREFIX` environment parameter the prefix will be applied.
+- Adding a scoping logic for all `@hcl-software/enchanted-icons-web-component` icons. Via the `VITE_COMPONENT_PREFIX` environment parameter the prefix will be applied.
+- Adding `debug` as logging framework to the `@hcl-software/enchanted-icons-web-component` package.
 
 ## 1.8.0
 
