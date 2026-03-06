@@ -12,12 +12,15 @@
  * See the License for the specific language governing permissions and      *
  * limitations under the License.                                           *
  * ======================================================================== */
+import createDebug from 'debug';
+
+const debug = createDebug('enchanted-icons-web-component:utils:tags.ts');
 
 export let ICON_PREFIX = '';
 try {
   ICON_PREFIX = import.meta.env.VITE_COMPONENT_PREFIX ? import.meta.env.VITE_COMPONENT_PREFIX : '';
 } catch (error) {
-  console.error('Error accessing environment variable for component prefix:', error);
+  debug('Error accessing environment variable for icon prefix:', error);
   ICON_PREFIX = '';
 }
-console.log(`Icon prefix is '${ICON_PREFIX}'`);
+debug(`Icon prefix is '${ICON_PREFIX}'`);
