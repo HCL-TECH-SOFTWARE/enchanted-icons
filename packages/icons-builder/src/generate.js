@@ -279,7 +279,11 @@ const buildIcons = async () => {
         const existingYear = getCopyrightYear(indexFile, null);
         const year = existingYear || new Date().getFullYear().toString();
 
-        const wcContent = createCarbonWebComponentIcon(iconName, 32, originalName, year);
+        // Read carbon icon data at build time to inline it in the generated file
+        const carbonIconModule = await import(`@carbon/icons/es/${originalName}/32.js`);
+        const carbonIconData = carbonIconModule.default;
+
+        const wcContent = createCarbonWebComponentIcon(iconName, 32, carbonIconData.content, carbonIconData.attrs, year);
         ensureDirSync(wcFilePath);
         fs.writeFileSync(indexFile, wcContent);
 
