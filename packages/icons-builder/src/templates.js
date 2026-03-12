@@ -67,13 +67,22 @@ export default createSvgIcon(Icon.name, Icon.size, Icon.content, Icon.attrs);
  * Creates a Web Component carbon icon template.
  * @param {string} iconName - The name of the icon.
  * @param {string} size - The size of the icon.
- * @param {string} originalName - The original name of the icon.
+ * @param {object} content - The SVG content array from the carbon icon descriptor.
+ * @param {object} attrs - The SVG attributes from the carbon icon descriptor.
  * @param {string} copyrightYear - The copyright year.
  * @returns {string} The Web Component icon template.
  */
-export const createCarbonWebComponentIcon = (iconName, size, originalName, copyrightYear) => {
+export const createCarbonWebComponentIcon = (iconName, size, content, attrs, copyrightYear) => {
   const iconNameConstant = `icon-${iconName.toLowerCase().replace(/-+/g, '-')}`;
   const copyrightLine = formatCopyrightLine(copyrightYear);
+
+  const stringifyOptions = {
+    indent: '  ',
+  };
+
+  const attrsString = stringifyObject(attrs, stringifyOptions);
+  const contentString = stringifyObject(content, stringifyOptions);
+
   return `/* ======================================================================== *
 ${copyrightLine}
  * Licensed under the Apache License, Version 2.0 (the "License");          *
@@ -91,22 +100,25 @@ ${copyrightLine}
 
 /* auto generated file - do not edit */
 import { html } from 'lit';
-import Icon from '@carbon/icons/es/${originalName}/${size}';
-import { toSVG } from '@carbon/icon-helpers';
+import { createSvgIcon, IIconAttrs, IIconContent, canDefine } from '../../../utils';
 import { BaseIcon } from '../../../utils/base-icon';
-import { canDefine } from '../../../utils';
 import { ICON_PREFIX } from '../../../utils/tags';
+
+const attrs: IIconAttrs = ${attrsString};
+
+const content: IIconContent[] = ${contentString};
 
 export const ICON_NAME = \`\${ICON_PREFIX}${iconNameConstant}\`;
 export class WebComponentIcon extends BaseIcon {
   render() {
-    return html\`\${toSVG({...Icon, attrs: { ...Icon.attrs, preserveAspectRatio: 'xMidYMid'}})}\`;
+    return html\`\${createSvgIcon(content, attrs)}\`;
   }
-} 
+}
 
 if (canDefine && !customElements.get(ICON_NAME)) {
   customElements.define(ICON_NAME, WebComponentIcon);
 }
+
 declare global {
   interface HTMLElementTagNameMap {
     [ICON_NAME]: WebComponentIcon;

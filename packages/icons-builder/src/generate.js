@@ -203,7 +203,7 @@ const processCustomIconDirectory = (
   }
 }
 
-const buildIcons = () => {
+const buildIcons = async () => {
   console.log('START - Generating icons...');
 
   const counters = {

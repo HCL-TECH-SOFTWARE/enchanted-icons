@@ -18,6 +18,7 @@ export interface IIconContent {
   attrs: {
     [key: string]: string | number;
   };
+  content?: IIconContent[];
 }
 
 export interface IIconAttrs {
@@ -46,11 +47,9 @@ const applySvgAttributes = (element: Element, attrs: IIconAttrs) => {
   }
 }
 
-const createSvgIcon = (content: IIconContent[], attrs: IIconAttrs) => {
-  const svgElement = document.createElementNS(attrs.xmlns, 'svg') as SVGSVGElement;
-  applySvgAttributes(svgElement, attrs)
-  content.forEach(item => {
-    const childElement = document.createElementNS(attrs.xmlns, item.elem);
+const appendChildren = (parent: Element, children: IIconContent[], xmlns: string) => {
+  children.forEach(item => {
+    const childElement = document.createElementNS(xmlns, item.elem);
     if (item.attrs) {
       for (const key in item.attrs) {
         if (Object.hasOwnProperty.call(item.attrs, key)) {
@@ -61,8 +60,17 @@ const createSvgIcon = (content: IIconContent[], attrs: IIconAttrs) => {
         }
       }
     }
-    svgElement.appendChild(childElement);
+    if (item.content) {
+      appendChildren(childElement, item.content, xmlns);
+    }
+    parent.appendChild(childElement);
   });
+};
+
+const createSvgIcon = (content: IIconContent[], attrs: IIconAttrs) => {
+  const svgElement = document.createElementNS(attrs.xmlns, 'svg') as SVGSVGElement;
+  applySvgAttributes(svgElement, attrs)
+  appendChildren(svgElement, content, attrs.xmlns);
 
   return svgElement;
 };
@@ -73,4 +81,3 @@ export {
   createSvgIcon,
   canDefine
 };
-
