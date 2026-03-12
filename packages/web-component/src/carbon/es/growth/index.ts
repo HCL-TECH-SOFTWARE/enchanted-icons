@@ -1,5 +1,5 @@
 /* ======================================================================== *
- * Copyright 2025 HCL America Inc.                                          *
+ * Copyright 2026 HCL America Inc.                                          *
  * Licensed under the Apache License, Version 2.0 (the "License");          *
  * you may not use this file except in compliance with the License.         *
  * You may obtain a copy of the License at                                  *
@@ -15,22 +15,38 @@
 
 /* auto generated file - do not edit */
 import { html } from 'lit';
-import Icon from '@carbon/icons/es/growth/32';
-import { toSVG } from '@carbon/icon-helpers';
+import { createSvgIcon, IIconAttrs, IIconContent, canDefine } from '../../../utils';
 import { BaseIcon } from '../../../utils/base-icon';
-import { canDefine } from '../../../utils';
 import { ICON_PREFIX } from '../../../utils/tags';
+
+const attrs: IIconAttrs = {
+  xmlns: 'http://www.w3.org/2000/svg',
+  viewBox: '0 0 32 32',
+  fill: 'currentColor',
+  width: 32,
+  height: 32
+};
+
+const content: IIconContent[] = [
+  {
+    elem: 'path',
+    attrs: {
+      d: 'M20,8v2h6.5859L18,18.5859,13.707,14.293a.9994.9994,0,0,0-1.414,0L2,24.5859,3.4141,26,13,16.4141l4.293,4.2929a.9994.9994,0,0,0,1.414,0L28,11.4141V18h2V8Z'
+    }
+  }
+];
 
 export const ICON_NAME = `${ICON_PREFIX}icon-growth`;
 export class WebComponentIcon extends BaseIcon {
   render() {
-    return html`${toSVG({...Icon, attrs: { ...Icon.attrs, preserveAspectRatio: 'xMidYMid'}})}`;
+    return html`${createSvgIcon(content, attrs)}`;
   }
-} 
+}
 
 if (canDefine && !customElements.get(ICON_NAME)) {
   customElements.define(ICON_NAME, WebComponentIcon);
 }
+
 declare global {
   interface HTMLElementTagNameMap {
     [ICON_NAME]: WebComponentIcon;

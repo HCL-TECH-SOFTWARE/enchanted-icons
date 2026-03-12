@@ -1,5 +1,5 @@
 /* ======================================================================== *
- * Copyright 2025 HCL America Inc.                                          *
+ * Copyright 2026 HCL America Inc.                                          *
  * Licensed under the Apache License, Version 2.0 (the "License");          *
  * you may not use this file except in compliance with the License.         *
  * You may obtain a copy of the License at                                  *
@@ -15,22 +15,38 @@
 
 /* auto generated file - do not edit */
 import { html } from 'lit';
-import Icon from '@carbon/icons/es/traffic--flow/32';
-import { toSVG } from '@carbon/icon-helpers';
+import { createSvgIcon, IIconAttrs, IIconContent, canDefine } from '../../../utils';
 import { BaseIcon } from '../../../utils/base-icon';
-import { canDefine } from '../../../utils';
 import { ICON_PREFIX } from '../../../utils/tags';
+
+const attrs: IIconAttrs = {
+  xmlns: 'http://www.w3.org/2000/svg',
+  viewBox: '0 0 32 32',
+  fill: 'currentColor',
+  width: 32,
+  height: 32
+};
+
+const content: IIconContent[] = [
+  {
+    elem: 'path',
+    attrs: {
+      d: 'M26 8L22 4 18 8 19.41 9.42 21 7.83 21 18 23 18 23 7.83 24.58 9.41 26 8zM12.59 22.58L11 24.17 11 14 9 14 9 24.17 7.42 22.59 6 24 10 28 14 24 12.59 22.58zM2 2H4V30H2zM28 2H30V30H28zM15 2H17V6H15zM15 10H17V14H15zM15 18H17V22H15zM15 26H17V30H15z'
+    }
+  }
+];
 
 export const ICON_NAME = `${ICON_PREFIX}icon-traffic-flow`;
 export class WebComponentIcon extends BaseIcon {
   render() {
-    return html`${toSVG({...Icon, attrs: { ...Icon.attrs, preserveAspectRatio: 'xMidYMid'}})}`;
+    return html`${createSvgIcon(content, attrs)}`;
   }
-} 
+}
 
 if (canDefine && !customElements.get(ICON_NAME)) {
   customElements.define(ICON_NAME, WebComponentIcon);
 }
+
 declare global {
   interface HTMLElementTagNameMap {
     [ICON_NAME]: WebComponentIcon;

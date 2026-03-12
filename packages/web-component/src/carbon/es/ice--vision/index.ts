@@ -1,5 +1,5 @@
 /* ======================================================================== *
- * Copyright 2025 HCL America Inc.                                          *
+ * Copyright 2026 HCL America Inc.                                          *
  * Licensed under the Apache License, Version 2.0 (the "License");          *
  * you may not use this file except in compliance with the License.         *
  * You may obtain a copy of the License at                                  *
@@ -15,22 +15,44 @@
 
 /* auto generated file - do not edit */
 import { html } from 'lit';
-import Icon from '@carbon/icons/es/ice--vision/32';
-import { toSVG } from '@carbon/icon-helpers';
+import { createSvgIcon, IIconAttrs, IIconContent, canDefine } from '../../../utils';
 import { BaseIcon } from '../../../utils/base-icon';
-import { canDefine } from '../../../utils';
 import { ICON_PREFIX } from '../../../utils/tags';
+
+const attrs: IIconAttrs = {
+  xmlns: 'http://www.w3.org/2000/svg',
+  viewBox: '0 0 32 32',
+  fill: 'currentColor',
+  width: 32,
+  height: 32
+};
+
+const content: IIconContent[] = [
+  {
+    elem: 'path',
+    attrs: {
+      d: 'M19 14L19 21 20 23 21 21 21 14 19 14zM17 14H13a2 2 0 00-2 2v4l1 2 1-2V16h2v7l1 2 1-2z'
+    }
+  },
+  {
+    elem: 'path',
+    attrs: {
+      d: 'M4,18A12,12,0,1,0,16,6H12V1L6,7l6,6V8h4A10,10,0,1,1,6,18Z'
+    }
+  }
+];
 
 export const ICON_NAME = `${ICON_PREFIX}icon-ice-vision`;
 export class WebComponentIcon extends BaseIcon {
   render() {
-    return html`${toSVG({...Icon, attrs: { ...Icon.attrs, preserveAspectRatio: 'xMidYMid'}})}`;
+    return html`${createSvgIcon(content, attrs)}`;
   }
-} 
+}
 
 if (canDefine && !customElements.get(ICON_NAME)) {
   customElements.define(ICON_NAME, WebComponentIcon);
 }
+
 declare global {
   interface HTMLElementTagNameMap {
     [ICON_NAME]: WebComponentIcon;

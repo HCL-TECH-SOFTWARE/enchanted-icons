@@ -1,5 +1,5 @@
 /* ======================================================================== *
- * Copyright 2025 HCL America Inc.                                          *
+ * Copyright 2026 HCL America Inc.                                          *
  * Licensed under the Apache License, Version 2.0 (the "License");          *
  * you may not use this file except in compliance with the License.         *
  * You may obtain a copy of the License at                                  *
@@ -15,22 +15,65 @@
 
 /* auto generated file - do not edit */
 import { html } from 'lit';
-import Icon from '@carbon/icons/es/brightness-contrast/32';
-import { toSVG } from '@carbon/icon-helpers';
+import { createSvgIcon, IIconAttrs, IIconContent, canDefine } from '../../../utils';
 import { BaseIcon } from '../../../utils/base-icon';
-import { canDefine } from '../../../utils';
 import { ICON_PREFIX } from '../../../utils/tags';
+
+const attrs: IIconAttrs = {
+  xmlns: 'http://www.w3.org/2000/svg',
+  viewBox: '0 0 32 32',
+  fill: 'currentColor',
+  width: 32,
+  height: 32
+};
+
+const content: IIconContent[] = [
+  {
+    elem: 'path',
+    attrs: {
+      d: 'M15 2H17V5H15zM27 15H30V17H27zM15 27H17V30H15zM2 15H5V17H2z'
+    }
+  },
+  {
+    elem: 'path',
+    attrs: {
+      d: 'M6.22 5.73H8.219999999999999V8.73H6.22z',
+      transform: 'rotate(-45 7.227 7.236)'
+    }
+  },
+  {
+    elem: 'path',
+    attrs: {
+      d: 'M23.27 6.23H26.27V8.23H23.27z',
+      transform: 'rotate(-45 24.766 7.232)'
+    }
+  },
+  {
+    elem: 'path',
+    attrs: {
+      d: 'M23.77 23.27H25.77V26.27H23.77z',
+      transform: 'rotate(-45 24.77 24.77)'
+    }
+  },
+  {
+    elem: 'path',
+    attrs: {
+      d: 'M5.47 25.13L7.59 23 9 24.42 6.88 26.54 5.47 25.13zM16 8a8 8 0 108 8A8 8 0 0016 8zm0 14a6 6 0 010-12z'
+    }
+  }
+];
 
 export const ICON_NAME = `${ICON_PREFIX}icon-brightness-contrast`;
 export class WebComponentIcon extends BaseIcon {
   render() {
-    return html`${toSVG({...Icon, attrs: { ...Icon.attrs, preserveAspectRatio: 'xMidYMid'}})}`;
+    return html`${createSvgIcon(content, attrs)}`;
   }
-} 
+}
 
 if (canDefine && !customElements.get(ICON_NAME)) {
   customElements.define(ICON_NAME, WebComponentIcon);
 }
+
 declare global {
   interface HTMLElementTagNameMap {
     [ICON_NAME]: WebComponentIcon;

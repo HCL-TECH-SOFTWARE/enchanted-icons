@@ -1,5 +1,5 @@
 /* ======================================================================== *
- * Copyright 2025 HCL America Inc.                                          *
+ * Copyright 2026 HCL America Inc.                                          *
  * Licensed under the Apache License, Version 2.0 (the "License");          *
  * you may not use this file except in compliance with the License.         *
  * You may obtain a copy of the License at                                  *
@@ -15,22 +15,38 @@
 
 /* auto generated file - do not edit */
 import { html } from 'lit';
-import Icon from '@carbon/icons/es/CDA/32';
-import { toSVG } from '@carbon/icon-helpers';
+import { createSvgIcon, IIconAttrs, IIconContent, canDefine } from '../../../utils';
 import { BaseIcon } from '../../../utils/base-icon';
-import { canDefine } from '../../../utils';
 import { ICON_PREFIX } from '../../../utils/tags';
+
+const attrs: IIconAttrs = {
+  xmlns: 'http://www.w3.org/2000/svg',
+  viewBox: '0 0 32 32',
+  fill: 'currentColor',
+  width: 32,
+  height: 32
+};
+
+const content: IIconContent[] = [
+  {
+    elem: 'path',
+    attrs: {
+      d: 'M28 9H24a2.002 2.002 0 00-2 2V23h2V18h4v5h2V11A2.0023 2.0023 0 0028 9zm-4 7V11h4v5zM16 23H12V9h4a4.0042 4.0042 0 014 4v6A4.0039 4.0039 0 0116 23zm-2-2h2a2.0027 2.0027 0 002-2V13a2.0023 2.0023 0 00-2-2H14zM10 23H4a2.0023 2.0023 0 01-2-2V11A2.002 2.002 0 014 9h6v2H4V21h6z'
+    }
+  }
+];
 
 export const ICON_NAME = `${ICON_PREFIX}icon-cda`;
 export class WebComponentIcon extends BaseIcon {
   render() {
-    return html`${toSVG({...Icon, attrs: { ...Icon.attrs, preserveAspectRatio: 'xMidYMid'}})}`;
+    return html`${createSvgIcon(content, attrs)}`;
   }
-} 
+}
 
 if (canDefine && !customElements.get(ICON_NAME)) {
   customElements.define(ICON_NAME, WebComponentIcon);
 }
+
 declare global {
   interface HTMLElementTagNameMap {
     [ICON_NAME]: WebComponentIcon;

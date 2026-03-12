@@ -1,5 +1,5 @@
 /* ======================================================================== *
- * Copyright 2025 HCL America Inc.                                          *
+ * Copyright 2026 HCL America Inc.                                          *
  * Licensed under the Apache License, Version 2.0 (the "License");          *
  * you may not use this file except in compliance with the License.         *
  * You may obtain a copy of the License at                                  *
@@ -15,22 +15,44 @@
 
 /* auto generated file - do not edit */
 import { html } from 'lit';
-import Icon from '@carbon/icons/es/reminder--medical/32';
-import { toSVG } from '@carbon/icon-helpers';
+import { createSvgIcon, IIconAttrs, IIconContent, canDefine } from '../../../utils';
 import { BaseIcon } from '../../../utils/base-icon';
-import { canDefine } from '../../../utils';
 import { ICON_PREFIX } from '../../../utils/tags';
+
+const attrs: IIconAttrs = {
+  xmlns: 'http://www.w3.org/2000/svg',
+  viewBox: '0 0 32 32',
+  fill: 'currentColor',
+  width: 32,
+  height: 32
+};
+
+const content: IIconContent[] = [
+  {
+    elem: 'path',
+    attrs: {
+      d: 'M27,12v2h1v4a3,3,0,0,1-6,0V14h1V12H20v6a5.0083,5.0083,0,0,0,4,4.8989V24a4,4,0,0,1-8,0V21.8157a3,3,0,1,0-2,0V24a6,6,0,0,0,12,0V22.8989A5.0083,5.0083,0,0,0,30,18V12ZM15,18a1,1,0,1,1-1,1A1.0009,1.0009,0,0,1,15,18Z'
+    }
+  },
+  {
+    elem: 'path',
+    attrs: {
+      d: 'M26,4H22V2H20V4H12V2H10V4H6A2,2,0,0,0,4,6V26a2,2,0,0,0,2,2l4,0V26L6,26V6h4V8h2V6h8V8h2V6h4v4h2V6A2,2,0,0,0,26,4Z'
+    }
+  }
+];
 
 export const ICON_NAME = `${ICON_PREFIX}icon-reminder-medical`;
 export class WebComponentIcon extends BaseIcon {
   render() {
-    return html`${toSVG({...Icon, attrs: { ...Icon.attrs, preserveAspectRatio: 'xMidYMid'}})}`;
+    return html`${createSvgIcon(content, attrs)}`;
   }
-} 
+}
 
 if (canDefine && !customElements.get(ICON_NAME)) {
   customElements.define(ICON_NAME, WebComponentIcon);
 }
+
 declare global {
   interface HTMLElementTagNameMap {
     [ICON_NAME]: WebComponentIcon;

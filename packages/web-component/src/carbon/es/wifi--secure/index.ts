@@ -1,5 +1,5 @@
 /* ======================================================================== *
- * Copyright 2025 HCL America Inc.                                          *
+ * Copyright 2026 HCL America Inc.                                          *
  * Licensed under the Apache License, Version 2.0 (the "License");          *
  * you may not use this file except in compliance with the License.         *
  * You may obtain a copy of the License at                                  *
@@ -15,22 +15,44 @@
 
 /* auto generated file - do not edit */
 import { html } from 'lit';
-import Icon from '@carbon/icons/es/wifi--secure/32';
-import { toSVG } from '@carbon/icon-helpers';
+import { createSvgIcon, IIconAttrs, IIconContent, canDefine } from '../../../utils';
 import { BaseIcon } from '../../../utils/base-icon';
-import { canDefine } from '../../../utils';
 import { ICON_PREFIX } from '../../../utils/tags';
+
+const attrs: IIconAttrs = {
+  xmlns: 'http://www.w3.org/2000/svg',
+  viewBox: '0 0 32 32',
+  fill: 'currentColor',
+  width: 32,
+  height: 32
+};
+
+const content: IIconContent[] = [
+  {
+    elem: 'path',
+    attrs: {
+      d: 'M20 20V17a4 4 0 00-8 0v3a2.0025 2.0025 0 00-2 2v6a2.0025 2.0025 0 002 2h8a2.0025 2.0025 0 002-2V22A2.0025 2.0025 0 0020 20zm-6-3a2 2 0 014 0v3H14zM12 28V22h8v6zM6.105 7.105L7.5188 8.5186a11.9808 11.9808 0 0116.9624 0L25.8949 7.105a13.9782 13.9782 0 00-19.79 0z'
+    }
+  },
+  {
+    elem: 'path',
+    attrs: {
+      d: 'M16,8a8.9709,8.9709,0,0,0-6.3608,2.6392l1.4133,1.4135a6.9887,6.9887,0,0,1,9.895,0l1.4135-1.4135A8.9717,8.9717,0,0,0,16,8Z'
+    }
+  }
+];
 
 export const ICON_NAME = `${ICON_PREFIX}icon-wifi-secure`;
 export class WebComponentIcon extends BaseIcon {
   render() {
-    return html`${toSVG({...Icon, attrs: { ...Icon.attrs, preserveAspectRatio: 'xMidYMid'}})}`;
+    return html`${createSvgIcon(content, attrs)}`;
   }
-} 
+}
 
 if (canDefine && !customElements.get(ICON_NAME)) {
   customElements.define(ICON_NAME, WebComponentIcon);
 }
+
 declare global {
   interface HTMLElementTagNameMap {
     [ICON_NAME]: WebComponentIcon;

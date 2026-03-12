@@ -1,5 +1,5 @@
 /* ======================================================================== *
- * Copyright 2025 HCL America Inc.                                          *
+ * Copyright 2026 HCL America Inc.                                          *
  * Licensed under the Apache License, Version 2.0 (the "License");          *
  * you may not use this file except in compliance with the License.         *
  * You may obtain a copy of the License at                                  *
@@ -15,22 +15,74 @@
 
 /* auto generated file - do not edit */
 import { html } from 'lit';
-import Icon from '@carbon/icons/es/fish--multiple/32';
-import { toSVG } from '@carbon/icon-helpers';
+import { createSvgIcon, IIconAttrs, IIconContent, canDefine } from '../../../utils';
 import { BaseIcon } from '../../../utils/base-icon';
-import { canDefine } from '../../../utils';
 import { ICON_PREFIX } from '../../../utils/tags';
+
+const attrs: IIconAttrs = {
+  xmlns: 'http://www.w3.org/2000/svg',
+  viewBox: '0 0 32 32',
+  fill: 'currentColor',
+  width: 32,
+  height: 32
+};
+
+const content: IIconContent[] = [
+  {
+    elem: 'path',
+    attrs: {
+      d: 'M30,14a12.9845,12.9845,0,0,0-3.8286-9.2427L24.4143,3,23,4.4138l1.7573,1.7574a11.0713,11.0713,0,0,1,0,15.6572L22,24.5857,23.4143,26l2.7571-2.7573A12.9845,12.9845,0,0,0,30,14Z'
+    }
+  },
+  {
+    elem: 'circle',
+    attrs: {
+      cx: '17',
+      cy: '11',
+      r: '1'
+    }
+  },
+  {
+    elem: 'path',
+    attrs: {
+      d: 'M22,14a12.9845,12.9845,0,0,0-3.8286-9.2427L16.4143,3,15,4.4138l1.7573,1.7574a11.0713,11.0713,0,0,1,0,15.6572L14,24.5857,15.4143,26l2.7571-2.7573A12.9845,12.9845,0,0,0,22,14Z'
+    }
+  },
+  {
+    elem: 'circle',
+    attrs: {
+      cx: '25',
+      cy: '11',
+      r: '1'
+    }
+  },
+  {
+    elem: 'circle',
+    attrs: {
+      cx: '9',
+      cy: '11',
+      r: '1'
+    }
+  },
+  {
+    elem: 'path',
+    attrs: {
+      d: 'M9.4141,24l.7573-.7573a13.0708,13.0708,0,0,0,0-18.4854L8,2.5857,5.8286,4.7571a13.0708,13.0708,0,0,0,0,18.4854L6.5859,24,2.293,28.2928A1,1,0,0,0,3,30H13a1,1,0,0,0,.707-1.707ZM4,14A10.9988,10.9988,0,0,1,7.2427,6.1712L8,5.4138l.7573.7574a11.0713,11.0713,0,0,1,0,15.6572L8,22.5857l-.7573-.7573A10.9988,10.9988,0,0,1,4,14ZM5.4141,28,8,25.4138,10.5859,28Z'
+    }
+  }
+];
 
 export const ICON_NAME = `${ICON_PREFIX}icon-fish-multiple`;
 export class WebComponentIcon extends BaseIcon {
   render() {
-    return html`${toSVG({...Icon, attrs: { ...Icon.attrs, preserveAspectRatio: 'xMidYMid'}})}`;
+    return html`${createSvgIcon(content, attrs)}`;
   }
-} 
+}
 
 if (canDefine && !customElements.get(ICON_NAME)) {
   customElements.define(ICON_NAME, WebComponentIcon);
 }
+
 declare global {
   interface HTMLElementTagNameMap {
     [ICON_NAME]: WebComponentIcon;

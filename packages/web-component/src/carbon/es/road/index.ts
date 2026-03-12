@@ -1,5 +1,5 @@
 /* ======================================================================== *
- * Copyright 2025 HCL America Inc.                                          *
+ * Copyright 2026 HCL America Inc.                                          *
  * Licensed under the Apache License, Version 2.0 (the "License");          *
  * you may not use this file except in compliance with the License.         *
  * You may obtain a copy of the License at                                  *
@@ -15,22 +15,50 @@
 
 /* auto generated file - do not edit */
 import { html } from 'lit';
-import Icon from '@carbon/icons/es/road/32';
-import { toSVG } from '@carbon/icon-helpers';
+import { createSvgIcon, IIconAttrs, IIconContent, canDefine } from '../../../utils';
 import { BaseIcon } from '../../../utils/base-icon';
-import { canDefine } from '../../../utils';
 import { ICON_PREFIX } from '../../../utils/tags';
+
+const attrs: IIconAttrs = {
+  xmlns: 'http://www.w3.org/2000/svg',
+  viewBox: '0 0 32 32',
+  fill: 'currentColor',
+  width: 32,
+  height: 32
+};
+
+const content: IIconContent[] = [
+  {
+    elem: 'path',
+    attrs: {
+      d: 'M13 13H19V15H13z'
+    }
+  },
+  {
+    elem: 'path',
+    attrs: {
+      d: 'M25.4409 8L24.1687 3.45A2.009 2.009 0 0022.2456 2H9.7544A2.0089 2.0089 0 007.8313 3.4507L6.5315 8H4v2H6v7a2.0025 2.0025 0 002 2v3h2V19H22v3h2V19a2.0025 2.0025 0 002-2V10h2V8zM9.7544 4H22.2458l1.4285 5H8.3257zM24 13H22v2h2v2H8V15h2V13H8V11H24zM2 16H4V30H2zM28 16H30V30H28z'
+    }
+  },
+  {
+    elem: 'path',
+    attrs: {
+      d: 'M15 21H17V24H15zM15 26H17V30H15z'
+    }
+  }
+];
 
 export const ICON_NAME = `${ICON_PREFIX}icon-road`;
 export class WebComponentIcon extends BaseIcon {
   render() {
-    return html`${toSVG({...Icon, attrs: { ...Icon.attrs, preserveAspectRatio: 'xMidYMid'}})}`;
+    return html`${createSvgIcon(content, attrs)}`;
   }
-} 
+}
 
 if (canDefine && !customElements.get(ICON_NAME)) {
   customElements.define(ICON_NAME, WebComponentIcon);
 }
+
 declare global {
   interface HTMLElementTagNameMap {
     [ICON_NAME]: WebComponentIcon;

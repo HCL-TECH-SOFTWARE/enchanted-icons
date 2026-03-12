@@ -1,5 +1,5 @@
 /* ======================================================================== *
- * Copyright 2025 HCL America Inc.                                          *
+ * Copyright 2026 HCL America Inc.                                          *
  * Licensed under the Apache License, Version 2.0 (the "License");          *
  * you may not use this file except in compliance with the License.         *
  * You may obtain a copy of the License at                                  *
@@ -15,22 +15,70 @@
 
 /* auto generated file - do not edit */
 import { html } from 'lit';
-import Icon from '@carbon/icons/es/chart--logistic-regression/32';
-import { toSVG } from '@carbon/icon-helpers';
+import { createSvgIcon, IIconAttrs, IIconContent, canDefine } from '../../../utils';
 import { BaseIcon } from '../../../utils/base-icon';
-import { canDefine } from '../../../utils';
 import { ICON_PREFIX } from '../../../utils/tags';
+
+const attrs: IIconAttrs = {
+  xmlns: 'http://www.w3.org/2000/svg',
+  viewBox: '0 0 32 32',
+  fill: 'currentColor',
+  width: 32,
+  height: 32
+};
+
+const content: IIconContent[] = [
+  {
+    elem: 'circle',
+    attrs: {
+      cx: '26',
+      cy: '22',
+      r: '2'
+    }
+  },
+  {
+    elem: 'circle',
+    attrs: {
+      cx: '20',
+      cy: '22',
+      r: '2'
+    }
+  },
+  {
+    elem: 'circle',
+    attrs: {
+      cx: '14',
+      cy: '6',
+      r: '2'
+    }
+  },
+  {
+    elem: 'circle',
+    attrs: {
+      cx: '8',
+      cy: '6',
+      r: '2'
+    }
+  },
+  {
+    elem: 'path',
+    attrs: {
+      d: 'm8.2339,24c3.8799,0,7.311-2.4731,8.5383-6.1543l2.353-7.0591c.9543-2.8628,3.6233-4.7866,6.6409-4.7866h4.2339v-2h-4.2339c-3.8799,0-7.311,2.4731-8.5383,6.1543l-2.353,7.0591c-.9543,2.8628-3.6233,4.7866-6.6409,4.7866h-4.2339V2h-2v26c0,1.1025.897,2,2,2h26v-2H4v-4h4.2339Z'
+    }
+  }
+];
 
 export const ICON_NAME = `${ICON_PREFIX}icon-chart-logistic-regression`;
 export class WebComponentIcon extends BaseIcon {
   render() {
-    return html`${toSVG({...Icon, attrs: { ...Icon.attrs, preserveAspectRatio: 'xMidYMid'}})}`;
+    return html`${createSvgIcon(content, attrs)}`;
   }
-} 
+}
 
 if (canDefine && !customElements.get(ICON_NAME)) {
   customElements.define(ICON_NAME, WebComponentIcon);
 }
+
 declare global {
   interface HTMLElementTagNameMap {
     [ICON_NAME]: WebComponentIcon;

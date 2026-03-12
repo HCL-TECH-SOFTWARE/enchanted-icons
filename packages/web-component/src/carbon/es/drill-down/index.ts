@@ -1,5 +1,5 @@
 /* ======================================================================== *
- * Copyright 2025 HCL America Inc.                                          *
+ * Copyright 2026 HCL America Inc.                                          *
  * Licensed under the Apache License, Version 2.0 (the "License");          *
  * you may not use this file except in compliance with the License.         *
  * You may obtain a copy of the License at                                  *
@@ -15,22 +15,50 @@
 
 /* auto generated file - do not edit */
 import { html } from 'lit';
-import Icon from '@carbon/icons/es/drill-down/32';
-import { toSVG } from '@carbon/icon-helpers';
+import { createSvgIcon, IIconAttrs, IIconContent, canDefine } from '../../../utils';
 import { BaseIcon } from '../../../utils/base-icon';
-import { canDefine } from '../../../utils';
 import { ICON_PREFIX } from '../../../utils/tags';
+
+const attrs: IIconAttrs = {
+  xmlns: 'http://www.w3.org/2000/svg',
+  viewBox: '0 0 32 32',
+  fill: 'currentColor',
+  width: 32,
+  height: 32
+};
+
+const content: IIconContent[] = [
+  {
+    elem: 'path',
+    attrs: {
+      d: 'M10 6L11.414 4.586 15 8.172 15 0 17 0 17 8.172 20.586 4.586 22 6 16 12 10 6z'
+    }
+  },
+  {
+    elem: 'path',
+    attrs: {
+      d: 'M22,16a5.9815,5.9815,0,0,0-1.7573-4.2427L16,16l-4.2427-4.2427A6,6,0,1,0,22,16Z'
+    }
+  },
+  {
+    elem: 'path',
+    attrs: {
+      d: 'M30,16a13.9581,13.9581,0,0,0-4.105-9.895L24.4814,7.5188a12,12,0,1,1-16.9628,0L6.105,6.105A13.9974,13.9974,0,1,0,30,16Z'
+    }
+  }
+];
 
 export const ICON_NAME = `${ICON_PREFIX}icon-drill-down`;
 export class WebComponentIcon extends BaseIcon {
   render() {
-    return html`${toSVG({...Icon, attrs: { ...Icon.attrs, preserveAspectRatio: 'xMidYMid'}})}`;
+    return html`${createSvgIcon(content, attrs)}`;
   }
-} 
+}
 
 if (canDefine && !customElements.get(ICON_NAME)) {
   customElements.define(ICON_NAME, WebComponentIcon);
 }
+
 declare global {
   interface HTMLElementTagNameMap {
     [ICON_NAME]: WebComponentIcon;

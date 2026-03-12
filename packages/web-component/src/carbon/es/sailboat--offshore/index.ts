@@ -1,5 +1,5 @@
 /* ======================================================================== *
- * Copyright 2025 HCL America Inc.                                          *
+ * Copyright 2026 HCL America Inc.                                          *
  * Licensed under the Apache License, Version 2.0 (the "License");          *
  * you may not use this file except in compliance with the License.         *
  * You may obtain a copy of the License at                                  *
@@ -15,22 +15,44 @@
 
 /* auto generated file - do not edit */
 import { html } from 'lit';
-import Icon from '@carbon/icons/es/sailboat--offshore/32';
-import { toSVG } from '@carbon/icon-helpers';
+import { createSvgIcon, IIconAttrs, IIconContent, canDefine } from '../../../utils';
 import { BaseIcon } from '../../../utils/base-icon';
-import { canDefine } from '../../../utils';
 import { ICON_PREFIX } from '../../../utils/tags';
+
+const attrs: IIconAttrs = {
+  xmlns: 'http://www.w3.org/2000/svg',
+  viewBox: '0 0 32 32',
+  fill: 'currentColor',
+  width: 32,
+  height: 32
+};
+
+const content: IIconContent[] = [
+  {
+    elem: 'path',
+    attrs: {
+      d: 'M6.9692,25H9.0308l-.75-3H23.7192l-.75,3h2.0616l.9394-3.7578A1,1,0,0,0,25,20H20V17h5a1,1,0,0,0,.9082-1.4189l-6-13a1.0006,1.0006,0,0,0-1.7021-.19L8.2075,15.3906A1,1,0,0,0,9,17h9v3H7a1,1,0,0,0-.97,1.2422ZM20,7.5527,23.437,15H20ZM11.0308,15,18,5.94V15Z'
+    }
+  },
+  {
+    elem: 'path',
+    attrs: {
+      d: 'M26.9058,25.751A2.998,2.998,0,0,1,24,28a3.4376,3.4376,0,0,1-3.0513-2.3164A1.007,1.007,0,0,0,20,25a.9894.9894,0,0,0-.9468.6787A3.44,3.44,0,0,1,16,28a3.4376,3.4376,0,0,1-3.0513-2.3164A1.007,1.007,0,0,0,12,25a.971.971,0,0,0-.9468.6787A3.44,3.44,0,0,1,8,28a2.998,2.998,0,0,1-2.9058-2.249l-1.9365.498A4.9965,4.9965,0,0,0,8,30a4.9316,4.9316,0,0,0,4-1.9873,5.0192,5.0192,0,0,0,8,0A4.9316,4.9316,0,0,0,24,30a4.9965,4.9965,0,0,0,4.8423-3.751Z'
+    }
+  }
+];
 
 export const ICON_NAME = `${ICON_PREFIX}icon-sailboat-offshore`;
 export class WebComponentIcon extends BaseIcon {
   render() {
-    return html`${toSVG({...Icon, attrs: { ...Icon.attrs, preserveAspectRatio: 'xMidYMid'}})}`;
+    return html`${createSvgIcon(content, attrs)}`;
   }
-} 
+}
 
 if (canDefine && !customElements.get(ICON_NAME)) {
   customElements.define(ICON_NAME, WebComponentIcon);
 }
+
 declare global {
   interface HTMLElementTagNameMap {
     [ICON_NAME]: WebComponentIcon;

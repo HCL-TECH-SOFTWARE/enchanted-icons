@@ -1,5 +1,5 @@
 /* ======================================================================== *
- * Copyright 2025 HCL America Inc.                                          *
+ * Copyright 2026 HCL America Inc.                                          *
  * Licensed under the Apache License, Version 2.0 (the "License");          *
  * you may not use this file except in compliance with the License.         *
  * You may obtain a copy of the License at                                  *
@@ -15,22 +15,61 @@
 
 /* auto generated file - do not edit */
 import { html } from 'lit';
-import Icon from '@carbon/icons/es/support-vector-machine/32';
-import { toSVG } from '@carbon/icon-helpers';
+import { createSvgIcon, IIconAttrs, IIconContent, canDefine } from '../../../utils';
 import { BaseIcon } from '../../../utils/base-icon';
-import { canDefine } from '../../../utils';
 import { ICON_PREFIX } from '../../../utils/tags';
+
+const attrs: IIconAttrs = {
+  xmlns: 'http://www.w3.org/2000/svg',
+  viewBox: '0 0 32 32',
+  fill: 'currentColor',
+  width: 32,
+  height: 32
+};
+
+const content: IIconContent[] = [
+  {
+    elem: 'circle',
+    attrs: {
+      cx: '26',
+      cy: '18',
+      r: '4'
+    }
+  },
+  {
+    elem: 'circle',
+    attrs: {
+      cx: '18',
+      cy: '26',
+      r: '4'
+    }
+  },
+  {
+    elem: 'path',
+    attrs: {
+      d: 'M-2.799 15H34.799V17H-2.799z',
+      transform: 'rotate(-45 16 16)'
+    }
+  },
+  {
+    elem: 'path',
+    attrs: {
+      d: 'M14 10c-2.2056 0-4-1.7944-4-4s1.7944-4 4-4 4 1.7944 4 4-1.7944 4-4 4zm0-6c-1.1028 0-2 .8972-2 2s.8972 2 2 2 2-.8972 2-2-.8972-2-2-2zM6 18c-2.2056 0-4-1.7944-4-4s1.7944-4 4-4 4 1.7944 4 4-1.7944 4-4 4zm0-6c-1.1028 0-2 .8972-2 2s.8972 2 2 2 2-.8972 2-2-.8972-2-2-2z'
+    }
+  }
+];
 
 export const ICON_NAME = `${ICON_PREFIX}icon-support-vector-machine`;
 export class WebComponentIcon extends BaseIcon {
   render() {
-    return html`${toSVG({...Icon, attrs: { ...Icon.attrs, preserveAspectRatio: 'xMidYMid'}})}`;
+    return html`${createSvgIcon(content, attrs)}`;
   }
-} 
+}
 
 if (canDefine && !customElements.get(ICON_NAME)) {
   customElements.define(ICON_NAME, WebComponentIcon);
 }
+
 declare global {
   interface HTMLElementTagNameMap {
     [ICON_NAME]: WebComponentIcon;

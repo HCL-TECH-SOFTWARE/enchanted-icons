@@ -1,5 +1,5 @@
 /* ======================================================================== *
- * Copyright 2025 HCL America Inc.                                          *
+ * Copyright 2026 HCL America Inc.                                          *
  * Licensed under the Apache License, Version 2.0 (the "License");          *
  * you may not use this file except in compliance with the License.         *
  * You may obtain a copy of the License at                                  *
@@ -15,22 +15,38 @@
 
 /* auto generated file - do not edit */
 import { html } from 'lit';
-import Icon from '@carbon/icons/es/chart--3D/32';
-import { toSVG } from '@carbon/icon-helpers';
+import { createSvgIcon, IIconAttrs, IIconContent, canDefine } from '../../../utils';
 import { BaseIcon } from '../../../utils/base-icon';
-import { canDefine } from '../../../utils';
 import { ICON_PREFIX } from '../../../utils/tags';
+
+const attrs: IIconAttrs = {
+  xmlns: 'http://www.w3.org/2000/svg',
+  viewBox: '0 0 32 32',
+  fill: 'currentColor',
+  width: 32,
+  height: 32
+};
+
+const content: IIconContent[] = [
+  {
+    elem: 'path',
+    attrs: {
+      d: 'M28,23v3.5859l-5-5V15a1,1,0,0,0-.5527-.8945L17,11.3818V5.8281l2.5859,2.586L21,7,16,2,11,7l1.4141,1.4141L15,5.8281v5.5537L9.5527,14.1055A1,1,0,0,0,9,15v6.5859l-5,5V23H2v7H9V28H5.4141l4.7832-4.7832,5.3554,2.6777a1.001,1.001,0,0,0,.8946,0l5.3554-2.6777L26.5859,28H23v2h7V23Zm-13,.3818-4-2V16.6182l4,2Zm1-6.5L12.2363,15,16,13.1182,19.7637,15Zm5,4.5-4,2V18.6182l4-2Z'
+    }
+  }
+];
 
 export const ICON_NAME = `${ICON_PREFIX}icon-chart-3d`;
 export class WebComponentIcon extends BaseIcon {
   render() {
-    return html`${toSVG({...Icon, attrs: { ...Icon.attrs, preserveAspectRatio: 'xMidYMid'}})}`;
+    return html`${createSvgIcon(content, attrs)}`;
   }
-} 
+}
 
 if (canDefine && !customElements.get(ICON_NAME)) {
   customElements.define(ICON_NAME, WebComponentIcon);
 }
+
 declare global {
   interface HTMLElementTagNameMap {
     [ICON_NAME]: WebComponentIcon;
