@@ -15,31 +15,14 @@
 
 /* auto generated file - do not edit */
 import { html } from 'lit';
-import { createSvgIcon, IIconAttrs, IIconContent, canDefine } from '../../../utils';
 import { BaseIcon } from '../../../utils/base-icon';
+import { canDefine } from '../../../utils';
 import { ICON_PREFIX } from '../../../utils/tags';
-
-const attrs: IIconAttrs = {
-  xmlns: 'http://www.w3.org/2000/svg',
-  viewBox: '0 0 32 32',
-  fill: 'currentColor',
-  width: 32,
-  height: 32
-};
-
-const content: IIconContent[] = [
-  {
-    elem: 'path',
-    attrs: {
-      d: 'M4 6H15V8H4zM18 6H28V8H18zM21 12H28V14H21zM11 12H18V14H11zM4 12H8V14H4zM4 18H28V20H4zM4 24H21V26H4zM24 24H28V26H24z'
-    }
-  }
-];
 
 export const ICON_NAME = `${ICON_PREFIX}icon-data-2`;
 export class WebComponentIcon extends BaseIcon {
   render() {
-    return html`${createSvgIcon(content, attrs)}`;
+    return html`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="currentColor" width="32" height="32" preserveAspectRatio="xMidYMid"><path d="M4 6H15V8H4zM18 6H28V8H18zM21 12H28V14H21zM11 12H18V14H11zM4 12H8V14H4zM4 18H28V20H4zM4 24H21V26H4zM24 24H28V26H24z" /></svg>`;
   }
 }
 

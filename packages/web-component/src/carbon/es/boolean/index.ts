@@ -15,39 +15,14 @@
 
 /* auto generated file - do not edit */
 import { html } from 'lit';
-import { createSvgIcon, IIconAttrs, IIconContent, canDefine } from '../../../utils';
 import { BaseIcon } from '../../../utils/base-icon';
+import { canDefine } from '../../../utils';
 import { ICON_PREFIX } from '../../../utils/tags';
-
-const attrs: IIconAttrs = {
-  xmlns: 'http://www.w3.org/2000/svg',
-  viewBox: '0 0 32 32',
-  fill: 'currentColor',
-  width: 32,
-  height: 32
-};
-
-const content: IIconContent[] = [
-  {
-    elem: 'path',
-    attrs: {
-      d: 'M23,23a7,7,0,1,1,7-7A7.0078,7.0078,0,0,1,23,23Zm0-12a5,5,0,1,0,5,5A5.0055,5.0055,0,0,0,23,11Z'
-    }
-  },
-  {
-    elem: 'circle',
-    attrs: {
-      cx: '9',
-      cy: '16',
-      r: '7'
-    }
-  }
-];
 
 export const ICON_NAME = `${ICON_PREFIX}icon-boolean`;
 export class WebComponentIcon extends BaseIcon {
   render() {
-    return html`${createSvgIcon(content, attrs)}`;
+    return html`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="currentColor" width="32" height="32" preserveAspectRatio="xMidYMid"><path d="M23,23a7,7,0,1,1,7-7A7.0078,7.0078,0,0,1,23,23Zm0-12a5,5,0,1,0,5,5A5.0055,5.0055,0,0,0,23,11Z" /><circle cx="9" cy="16" r="7" /></svg>`;
   }
 }
 

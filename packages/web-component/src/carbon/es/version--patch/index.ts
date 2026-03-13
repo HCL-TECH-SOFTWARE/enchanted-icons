@@ -15,37 +15,14 @@
 
 /* auto generated file - do not edit */
 import { html } from 'lit';
-import { createSvgIcon, IIconAttrs, IIconContent, canDefine } from '../../../utils';
 import { BaseIcon } from '../../../utils/base-icon';
+import { canDefine } from '../../../utils';
 import { ICON_PREFIX } from '../../../utils/tags';
-
-const attrs: IIconAttrs = {
-  xmlns: 'http://www.w3.org/2000/svg',
-  viewBox: '0 0 32 32',
-  fill: 'currentColor',
-  width: 32,
-  height: 32
-};
-
-const content: IIconContent[] = [
-  {
-    elem: 'path',
-    attrs: {
-      d: 'M18.5859 18.4141L16 15.8345 16 15.8345 13.4125 18.4156 12 17 16 13 20 17 18.5859 18.4141z'
-    }
-  },
-  {
-    elem: 'path',
-    attrs: {
-      d: 'm1.5858,17.4142c-.3905-.3905-.5858-.9024-.5858-1.4142s.1953-1.0237.5858-1.4142L14.5858,1.5858c.3905-.3905.9023-.5858,1.4142-.5858s1.0237.1953,1.4142.5858l13,13c.3905.3905.5858.9024.5858,1.4142s-.1953,1.0237-.5858,1.4142l-13,13c-.3905.3905-.9024.5858-1.4142.5858s-1.0237-.1953-1.4142-.5858L1.5858,17.4142ZM16,3L3,16l13,13,13-13L16,3Z'
-    }
-  }
-];
 
 export const ICON_NAME = `${ICON_PREFIX}icon-version-patch`;
 export class WebComponentIcon extends BaseIcon {
   render() {
-    return html`${createSvgIcon(content, attrs)}`;
+    return html`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="currentColor" width="32" height="32" preserveAspectRatio="xMidYMid"><path d="M18.5859 18.4141L16 15.8345 16 15.8345 13.4125 18.4156 12 17 16 13 20 17 18.5859 18.4141z" /><path d="m1.5858,17.4142c-.3905-.3905-.5858-.9024-.5858-1.4142s.1953-1.0237.5858-1.4142L14.5858,1.5858c.3905-.3905.9023-.5858,1.4142-.5858s1.0237.1953,1.4142.5858l13,13c.3905.3905.5858.9024.5858,1.4142s-.1953,1.0237-.5858,1.4142l-13,13c-.3905.3905-.9024.5858-1.4142.5858s-1.0237-.1953-1.4142-.5858L1.5858,17.4142ZM16,3L3,16l13,13,13-13L16,3Z" /></svg>`;
   }
 }
 

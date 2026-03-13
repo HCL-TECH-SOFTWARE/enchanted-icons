@@ -15,31 +15,14 @@
 
 /* auto generated file - do not edit */
 import { html } from 'lit';
-import { createSvgIcon, IIconAttrs, IIconContent, canDefine } from '../../../utils';
 import { BaseIcon } from '../../../utils/base-icon';
+import { canDefine } from '../../../utils';
 import { ICON_PREFIX } from '../../../utils/tags';
-
-const attrs: IIconAttrs = {
-  xmlns: 'http://www.w3.org/2000/svg',
-  viewBox: '0 0 32 32',
-  fill: 'currentColor',
-  width: 32,
-  height: 32
-};
-
-const content: IIconContent[] = [
-  {
-    elem: 'path',
-    attrs: {
-      d: 'M28.316 13.949L27.684 12.051 17 15.612 17 4 15 4 15 15.612 4.316 12.051 3.684 13.949 14.368 17.51 7.2 27.066 8.8 28.267 16 18.667 23.2 28.267 24.8 27.066 17.632 17.51 28.316 13.949z'
-    }
-  }
-];
 
 export const ICON_NAME = `${ICON_PREFIX}icon-asterisk`;
 export class WebComponentIcon extends BaseIcon {
   render() {
-    return html`${createSvgIcon(content, attrs)}`;
+    return html`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="currentColor" width="32" height="32" preserveAspectRatio="xMidYMid"><path d="M28.316 13.949L27.684 12.051 17 15.612 17 4 15 4 15 15.612 4.316 12.051 3.684 13.949 14.368 17.51 7.2 27.066 8.8 28.267 16 18.667 23.2 28.267 24.8 27.066 17.632 17.51 28.316 13.949z" /></svg>`;
   }
 }
 

@@ -15,37 +15,14 @@
 
 /* auto generated file - do not edit */
 import { html } from 'lit';
-import { createSvgIcon, IIconAttrs, IIconContent, canDefine } from '../../../utils';
 import { BaseIcon } from '../../../utils/base-icon';
+import { canDefine } from '../../../utils';
 import { ICON_PREFIX } from '../../../utils/tags';
-
-const attrs: IIconAttrs = {
-  xmlns: 'http://www.w3.org/2000/svg',
-  viewBox: '0 0 32 32',
-  fill: 'currentColor',
-  width: 32,
-  height: 32
-};
-
-const content: IIconContent[] = [
-  {
-    elem: 'path',
-    attrs: {
-      d: 'M9 2H11V12H9z'
-    }
-  },
-  {
-    elem: 'path',
-    attrs: {
-      d: 'M14 11a4 4 0 01-8 0V2H4v9a6 6 0 005 5.91V30h2V16.91A6 6 0 0016 11V2H14zM22 2H21V30h2V20h3a2 2 0 002-2V8A5.78 5.78 0 0022 2zm4 16H23V4.09c2.88.56 3 3.54 3 3.91z'
-    }
-  }
-];
 
 export const ICON_NAME = `${ICON_PREFIX}icon-restaurant`;
 export class WebComponentIcon extends BaseIcon {
   render() {
-    return html`${createSvgIcon(content, attrs)}`;
+    return html`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="currentColor" width="32" height="32" preserveAspectRatio="xMidYMid"><path d="M9 2H11V12H9z" /><path d="M14 11a4 4 0 01-8 0V2H4v9a6 6 0 005 5.91V30h2V16.91A6 6 0 0016 11V2H14zM22 2H21V30h2V20h3a2 2 0 002-2V8A5.78 5.78 0 0022 2zm4 16H23V4.09c2.88.56 3 3.54 3 3.91z" /></svg>`;
   }
 }
 

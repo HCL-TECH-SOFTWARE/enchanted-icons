@@ -15,31 +15,14 @@
 
 /* auto generated file - do not edit */
 import { html } from 'lit';
-import { createSvgIcon, IIconAttrs, IIconContent, canDefine } from '../../../utils';
 import { BaseIcon } from '../../../utils/base-icon';
+import { canDefine } from '../../../utils';
 import { ICON_PREFIX } from '../../../utils/tags';
-
-const attrs: IIconAttrs = {
-  xmlns: 'http://www.w3.org/2000/svg',
-  viewBox: '0 0 32 32',
-  fill: 'currentColor',
-  width: 32,
-  height: 32
-};
-
-const content: IIconContent[] = [
-  {
-    elem: 'path',
-    attrs: {
-      d: 'M25 11L25 9 17 9 17 23 19 23 19 17 24 17 24 15 19 15 19 11 25 11zM15 23H9a2 2 0 01-2-2V11A2 2 0 019 9h6v2H9V21h6z'
-    }
-  }
-];
 
 export const ICON_NAME = `${ICON_PREFIX}icon-cloud-foundry-2`;
 export class WebComponentIcon extends BaseIcon {
   render() {
-    return html`${createSvgIcon(content, attrs)}`;
+    return html`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="currentColor" width="32" height="32" preserveAspectRatio="xMidYMid"><path d="M25 11L25 9 17 9 17 23 19 23 19 17 24 17 24 15 19 15 19 11 25 11zM15 23H9a2 2 0 01-2-2V11A2 2 0 019 9h6v2H9V21h6z" /></svg>`;
   }
 }
 

@@ -15,31 +15,14 @@
 
 /* auto generated file - do not edit */
 import { html } from 'lit';
-import { createSvgIcon, IIconAttrs, IIconContent, canDefine } from '../../../utils';
 import { BaseIcon } from '../../../utils/base-icon';
+import { canDefine } from '../../../utils';
 import { ICON_PREFIX } from '../../../utils/tags';
-
-const attrs: IIconAttrs = {
-  xmlns: 'http://www.w3.org/2000/svg',
-  viewBox: '0 0 32 32',
-  fill: 'currentColor',
-  width: 32,
-  height: 32
-};
-
-const content: IIconContent[] = [
-  {
-    elem: 'path',
-    attrs: {
-      d: 'M2 6H4V28H2zM12 6H14V26H12zM6 6H10V26H6zM16 6H20V26H16zM22 6H26V26H22zM28 6H30V28H28z'
-    }
-  }
-];
 
 export const ICON_NAME = `${ICON_PREFIX}icon-barcode`;
 export class WebComponentIcon extends BaseIcon {
   render() {
-    return html`${createSvgIcon(content, attrs)}`;
+    return html`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="currentColor" width="32" height="32" preserveAspectRatio="xMidYMid"><path d="M2 6H4V28H2zM12 6H14V26H12zM6 6H10V26H6zM16 6H20V26H16zM22 6H26V26H22zM28 6H30V28H28z" /></svg>`;
   }
 }
 

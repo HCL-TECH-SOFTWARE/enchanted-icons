@@ -15,37 +15,14 @@
 
 /* auto generated file - do not edit */
 import { html } from 'lit';
-import { createSvgIcon, IIconAttrs, IIconContent, canDefine } from '../../../utils';
 import { BaseIcon } from '../../../utils/base-icon';
+import { canDefine } from '../../../utils';
 import { ICON_PREFIX } from '../../../utils/tags';
-
-const attrs: IIconAttrs = {
-  xmlns: 'http://www.w3.org/2000/svg',
-  viewBox: '0 0 32 32',
-  fill: 'currentColor',
-  width: 32,
-  height: 32
-};
-
-const content: IIconContent[] = [
-  {
-    elem: 'path',
-    attrs: {
-      d: 'M15 8L12 8 12 6 10 6 10 20 7 20 7 22 10 22 10 24 12 24 12 10 15 10 15 8zM27 10L24 10 24 6 22 6 22 18 19 18 19 20 22 20 22 24 24 24 24 12 27 12 27 10z'
-    }
-  },
-  {
-    elem: 'path',
-    attrs: {
-      d: 'M30,30H4a2,2,0,0,1-2-2V2H4V28H30Z'
-    }
-  }
-];
 
 export const ICON_NAME = `${ICON_PREFIX}icon-chart-high-low`;
 export class WebComponentIcon extends BaseIcon {
   render() {
-    return html`${createSvgIcon(content, attrs)}`;
+    return html`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="currentColor" width="32" height="32" preserveAspectRatio="xMidYMid"><path d="M15 8L12 8 12 6 10 6 10 20 7 20 7 22 10 22 10 24 12 24 12 10 15 10 15 8zM27 10L24 10 24 6 22 6 22 18 19 18 19 20 22 20 22 24 24 24 24 12 27 12 27 10z" /><path d="M30,30H4a2,2,0,0,1-2-2V2H4V28H30Z" /></svg>`;
   }
 }
 

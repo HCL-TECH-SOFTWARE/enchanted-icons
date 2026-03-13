@@ -15,31 +15,14 @@
 
 /* auto generated file - do not edit */
 import { html } from 'lit';
-import { createSvgIcon, IIconAttrs, IIconContent, canDefine } from '../../../utils';
 import { BaseIcon } from '../../../utils/base-icon';
+import { canDefine } from '../../../utils';
 import { ICON_PREFIX } from '../../../utils/tags';
-
-const attrs: IIconAttrs = {
-  xmlns: 'http://www.w3.org/2000/svg',
-  viewBox: '0 0 32 32',
-  fill: 'currentColor',
-  width: 32,
-  height: 32
-};
-
-const content: IIconContent[] = [
-  {
-    elem: 'path',
-    attrs: {
-      d: 'M8 30H2V24H8zM4 28H6V26H4zM19 30H13V24h6zm-4-2h2V26H15zM30 30H24V24h6zm-4-2h2V26H26zM16 10a4 4 0 114-4A4.0045 4.0045 0 0116 10zm0-6a2 2 0 102 2A2.002 2.002 0 0016 4zM26 16H21a4.0045 4.0045 0 01-4-4H15a4.0045 4.0045 0 01-4 4H6a2.0023 2.0023 0 00-2 2v4H6V18h5A5.9694 5.9694 0 0015 16.46V22h2V16.46A5.9694 5.9694 0 0021 18h5v4h2V18A2.0023 2.0023 0 0026 16z'
-    }
-  }
-];
 
 export const ICON_NAME = `${ICON_PREFIX}icon-load-balancer-vpc`;
 export class WebComponentIcon extends BaseIcon {
   render() {
-    return html`${createSvgIcon(content, attrs)}`;
+    return html`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="currentColor" width="32" height="32" preserveAspectRatio="xMidYMid"><path d="M8 30H2V24H8zM4 28H6V26H4zM19 30H13V24h6zm-4-2h2V26H15zM30 30H24V24h6zm-4-2h2V26H26zM16 10a4 4 0 114-4A4.0045 4.0045 0 0116 10zm0-6a2 2 0 102 2A2.002 2.002 0 0016 4zM26 16H21a4.0045 4.0045 0 01-4-4H15a4.0045 4.0045 0 01-4 4H6a2.0023 2.0023 0 00-2 2v4H6V18h5A5.9694 5.9694 0 0015 16.46V22h2V16.46A5.9694 5.9694 0 0021 18h5v4h2V18A2.0023 2.0023 0 0026 16z" /></svg>`;
   }
 }
 

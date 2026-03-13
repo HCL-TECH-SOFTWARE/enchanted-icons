@@ -15,75 +15,14 @@
 
 /* auto generated file - do not edit */
 import { html } from 'lit';
-import { createSvgIcon, IIconAttrs, IIconContent, canDefine } from '../../../utils';
 import { BaseIcon } from '../../../utils/base-icon';
+import { canDefine } from '../../../utils';
 import { ICON_PREFIX } from '../../../utils/tags';
-
-const attrs: IIconAttrs = {
-  xmlns: 'http://www.w3.org/2000/svg',
-  viewBox: '0 0 32 32',
-  fill: 'currentColor',
-  width: 32,
-  height: 32
-};
-
-const content: IIconContent[] = [
-  {
-    elem: 'path',
-    attrs: {
-      d: 'M22 6H26V10H22z'
-    }
-  },
-  {
-    elem: 'circle',
-    attrs: {
-      cx: '7',
-      cy: '7',
-      r: '1'
-    }
-  },
-  {
-    elem: 'circle',
-    attrs: {
-      cx: '25',
-      cy: '25',
-      r: '1'
-    }
-  },
-  {
-    elem: 'circle',
-    attrs: {
-      cx: '25',
-      cy: '21',
-      r: '1'
-    }
-  },
-  {
-    elem: 'circle',
-    attrs: {
-      cx: '25',
-      cy: '17',
-      r: '1'
-    }
-  },
-  {
-    elem: 'path',
-    attrs: {
-      d: 'M22,17V15H20V14a2.0023,2.0023,0,0,0-2-2H17V10H15v2H13V10H11v2H10a2.0023,2.0023,0,0,0-2,2v1H6v2H8v2H6v2H8v1a2.0023,2.0023,0,0,0,2,2h1v2h2V24h2v2h2V24h1a2.0023,2.0023,0,0,0,2-2V21h2V19H20V17Zm-4,5H10V14h8Z'
-    }
-  },
-  {
-    elem: 'path',
-    attrs: {
-      d: 'M28,30H4a2.0021,2.0021,0,0,1-2-2V4A2.0021,2.0021,0,0,1,4,2H28a2.0021,2.0021,0,0,1,2,2V28A2.0021,2.0021,0,0,1,28,30ZM4,4V28H28V4Z'
-    }
-  }
-];
 
 export const ICON_NAME = `${ICON_PREFIX}icon-edge-node`;
 export class WebComponentIcon extends BaseIcon {
   render() {
-    return html`${createSvgIcon(content, attrs)}`;
+    return html`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="currentColor" width="32" height="32" preserveAspectRatio="xMidYMid"><path d="M22 6H26V10H22z" /><circle cx="7" cy="7" r="1" /><circle cx="25" cy="25" r="1" /><circle cx="25" cy="21" r="1" /><circle cx="25" cy="17" r="1" /><path d="M22,17V15H20V14a2.0023,2.0023,0,0,0-2-2H17V10H15v2H13V10H11v2H10a2.0023,2.0023,0,0,0-2,2v1H6v2H8v2H6v2H8v1a2.0023,2.0023,0,0,0,2,2h1v2h2V24h2v2h2V24h1a2.0023,2.0023,0,0,0,2-2V21h2V19H20V17Zm-4,5H10V14h8Z" /><path d="M28,30H4a2.0021,2.0021,0,0,1-2-2V4A2.0021,2.0021,0,0,1,4,2H28a2.0021,2.0021,0,0,1,2,2V28A2.0021,2.0021,0,0,1,28,30ZM4,4V28H28V4Z" /></svg>`;
   }
 }
 

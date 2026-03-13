@@ -15,31 +15,14 @@
 
 /* auto generated file - do not edit */
 import { html } from 'lit';
-import { createSvgIcon, IIconAttrs, IIconContent, canDefine } from '../../../utils';
 import { BaseIcon } from '../../../utils/base-icon';
+import { canDefine } from '../../../utils';
 import { ICON_PREFIX } from '../../../utils/tags';
-
-const attrs: IIconAttrs = {
-  xmlns: 'http://www.w3.org/2000/svg',
-  viewBox: '0 0 32 32',
-  fill: 'currentColor',
-  width: 32,
-  height: 32
-};
-
-const content: IIconContent[] = [
-  {
-    elem: 'path',
-    attrs: {
-      d: 'M17,19.9307a8,8,0,1,0-2,0V22H10v2h5v4h2V24h5V22H17ZM10,12a6,6,0,1,1,6,6A6.0066,6.0066,0,0,1,10,12Z'
-    }
-  }
-];
 
 export const ICON_NAME = `${ICON_PREFIX}icon-gender-female`;
 export class WebComponentIcon extends BaseIcon {
   render() {
-    return html`${createSvgIcon(content, attrs)}`;
+    return html`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="currentColor" width="32" height="32" preserveAspectRatio="xMidYMid"><path d="M17,19.9307a8,8,0,1,0-2,0V22H10v2h5v4h2V24h5V22H17ZM10,12a6,6,0,1,1,6,6A6.0066,6.0066,0,0,1,10,12Z" /></svg>`;
   }
 }
 

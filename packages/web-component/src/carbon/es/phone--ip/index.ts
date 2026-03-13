@@ -15,37 +15,14 @@
 
 /* auto generated file - do not edit */
 import { html } from 'lit';
-import { createSvgIcon, IIconAttrs, IIconContent, canDefine } from '../../../utils';
 import { BaseIcon } from '../../../utils/base-icon';
+import { canDefine } from '../../../utils';
 import { ICON_PREFIX } from '../../../utils/tags';
-
-const attrs: IIconAttrs = {
-  xmlns: 'http://www.w3.org/2000/svg',
-  viewBox: '0 0 32 32',
-  fill: 'currentColor',
-  width: 32,
-  height: 32
-};
-
-const content: IIconContent[] = [
-  {
-    elem: 'path',
-    attrs: {
-      d: 'M16 14H18V16H16zM20 14H22V16H20zM24 14H26V16H24zM16 18H18V20H16zM20 18H22V20H20zM24 18H26V20H24zM16 22H18V24H16zM20 22H22V24H20zM24 22H26V24H24zM16 10H26V12H16z'
-    }
-  },
-  {
-    elem: 'path',
-    attrs: {
-      d: 'M28,6H14V5a2.0025,2.0025,0,0,0-2-2H8A2.0025,2.0025,0,0,0,6,5V6H4A2.0025,2.0025,0,0,0,2,8V26a2.0025,2.0025,0,0,0,2,2H28a2.0025,2.0025,0,0,0,2-2V8A2.0025,2.0025,0,0,0,28,6ZM8,5h4V22H8ZM28,26H4V8H6V22a2.0025,2.0025,0,0,0,2,2h4a2.0025,2.0025,0,0,0,2-2V8H28Z'
-    }
-  }
-];
 
 export const ICON_NAME = `${ICON_PREFIX}icon-phone-ip`;
 export class WebComponentIcon extends BaseIcon {
   render() {
-    return html`${createSvgIcon(content, attrs)}`;
+    return html`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="currentColor" width="32" height="32" preserveAspectRatio="xMidYMid"><path d="M16 14H18V16H16zM20 14H22V16H20zM24 14H26V16H24zM16 18H18V20H16zM20 18H22V20H20zM24 18H26V20H24zM16 22H18V24H16zM20 22H22V24H20zM24 22H26V24H24zM16 10H26V12H16z" /><path d="M28,6H14V5a2.0025,2.0025,0,0,0-2-2H8A2.0025,2.0025,0,0,0,6,5V6H4A2.0025,2.0025,0,0,0,2,8V26a2.0025,2.0025,0,0,0,2,2H28a2.0025,2.0025,0,0,0,2-2V8A2.0025,2.0025,0,0,0,28,6ZM8,5h4V22H8ZM28,26H4V8H6V22a2.0025,2.0025,0,0,0,2,2h4a2.0025,2.0025,0,0,0,2-2V8H28Z" /></svg>`;
   }
 }
 

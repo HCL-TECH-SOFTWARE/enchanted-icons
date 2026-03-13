@@ -15,37 +15,14 @@
 
 /* auto generated file - do not edit */
 import { html } from 'lit';
-import { createSvgIcon, IIconAttrs, IIconContent, canDefine } from '../../../utils';
 import { BaseIcon } from '../../../utils/base-icon';
+import { canDefine } from '../../../utils';
 import { ICON_PREFIX } from '../../../utils/tags';
-
-const attrs: IIconAttrs = {
-  xmlns: 'http://www.w3.org/2000/svg',
-  viewBox: '0 0 32 32',
-  fill: 'currentColor',
-  width: 32,
-  height: 32
-};
-
-const content: IIconContent[] = [
-  {
-    elem: 'path',
-    attrs: {
-      d: 'M24 13H26V19H24z'
-    }
-  },
-  {
-    elem: 'path',
-    attrs: {
-      d: 'M30,7V25a2.0023,2.0023,0,0,1-2,2H4a2.002,2.002,0,0,1-2-2V7A2.0023,2.0023,0,0,1,4,5H28A2.0027,2.0027,0,0,1,30,7ZM4,25H28V7H4Z'
-    }
-  }
-];
 
 export const ICON_NAME = `${ICON_PREFIX}icon-tablet-landscape`;
 export class WebComponentIcon extends BaseIcon {
   render() {
-    return html`${createSvgIcon(content, attrs)}`;
+    return html`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="currentColor" width="32" height="32" preserveAspectRatio="xMidYMid"><path d="M24 13H26V19H24z" /><path d="M30,7V25a2.0023,2.0023,0,0,1-2,2H4a2.002,2.002,0,0,1-2-2V7A2.0023,2.0023,0,0,1,4,5H28A2.0027,2.0027,0,0,1,30,7ZM4,25H28V7H4Z" /></svg>`;
   }
 }
 

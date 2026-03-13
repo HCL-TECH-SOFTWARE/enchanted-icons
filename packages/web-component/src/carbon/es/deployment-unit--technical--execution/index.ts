@@ -15,31 +15,14 @@
 
 /* auto generated file - do not edit */
 import { html } from 'lit';
-import { createSvgIcon, IIconAttrs, IIconContent, canDefine } from '../../../utils';
 import { BaseIcon } from '../../../utils/base-icon';
+import { canDefine } from '../../../utils';
 import { ICON_PREFIX } from '../../../utils/tags';
-
-const attrs: IIconAttrs = {
-  xmlns: 'http://www.w3.org/2000/svg',
-  viewBox: '0 0 32 32',
-  fill: 'currentColor',
-  width: 32,
-  height: 32
-};
-
-const content: IIconContent[] = [
-  {
-    elem: 'path',
-    attrs: {
-      d: 'M25 11L25 9 17 9 17 23 25 23 25 21 19 21 19 17 24 17 24 15 19 15 19 11 25 11zM7 11L10 11 10 23 12 23 12 11 15 11 15 9 7 9 7 11z'
-    }
-  }
-];
 
 export const ICON_NAME = `${ICON_PREFIX}icon-deployment-unit-technical-execution`;
 export class WebComponentIcon extends BaseIcon {
   render() {
-    return html`${createSvgIcon(content, attrs)}`;
+    return html`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="currentColor" width="32" height="32" preserveAspectRatio="xMidYMid"><path d="M25 11L25 9 17 9 17 23 25 23 25 21 19 21 19 17 24 17 24 15 19 15 19 11 25 11zM7 11L10 11 10 23 12 23 12 11 15 11 15 9 7 9 7 11z" /></svg>`;
   }
 }
 

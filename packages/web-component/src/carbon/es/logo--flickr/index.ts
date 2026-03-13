@@ -15,41 +15,14 @@
 
 /* auto generated file - do not edit */
 import { html } from 'lit';
-import { createSvgIcon, IIconAttrs, IIconContent, canDefine } from '../../../utils';
 import { BaseIcon } from '../../../utils/base-icon';
+import { canDefine } from '../../../utils';
 import { ICON_PREFIX } from '../../../utils/tags';
-
-const attrs: IIconAttrs = {
-  xmlns: 'http://www.w3.org/2000/svg',
-  viewBox: '0 0 32 32',
-  fill: 'currentColor',
-  width: 32,
-  height: 32
-};
-
-const content: IIconContent[] = [
-  {
-    elem: 'circle',
-    attrs: {
-      cx: '8',
-      cy: '16',
-      r: '6'
-    }
-  },
-  {
-    elem: 'circle',
-    attrs: {
-      cx: '24',
-      cy: '16',
-      r: '6'
-    }
-  }
-];
 
 export const ICON_NAME = `${ICON_PREFIX}icon-logo-flickr`;
 export class WebComponentIcon extends BaseIcon {
   render() {
-    return html`${createSvgIcon(content, attrs)}`;
+    return html`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="currentColor" width="32" height="32" preserveAspectRatio="xMidYMid"><circle cx="8" cy="16" r="6" /><circle cx="24" cy="16" r="6" /></svg>`;
   }
 }
 

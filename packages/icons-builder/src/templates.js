@@ -64,24 +64,62 @@ export default createSvgIcon(Icon.name, Icon.size, Icon.content, Icon.attrs);
 };
 
 /**
- * Creates a Web Component carbon icon template.
+ * Converts a carbon icon descriptor attribute name to kebab-case for SVG output.
+ * Preserves viewBox and xmlns as-is.
+ * @param {string} str - The attribute name to convert.
+ * @returns {string} The kebab-case attribute name.
+ */
+const toKebabCase = (str) => {
+  if (str === 'viewBox' || str === 'xmlns' || str === 'preserveAspectRatio') {
+    return str;
+  }
+  return str.replace(/([a-z0-9]|(?=[A-Z]))([A-Z])/g, '$1-$2').toLowerCase();
+};
+
+/**
+ * Formats SVG attributes as an HTML attribute string.
+ * @param {object} attrs - The attributes object.
+ * @returns {string} The formatted attribute string.
+ */
+const formatSvgAttributes = (attrs) => {
+  return Object.entries(attrs)
+    .map(([key, value]) => `${toKebabCase(key)}="${value}"`)
+    .join(' ');
+};
+
+/**
+ * Recursively renders carbon icon content elements as an SVG markup string.
+ * @param {Array} content - The content array from the carbon icon descriptor.
+ * @returns {string} The SVG child elements as a markup string.
+ */
+const renderContentElements = (content) => {
+  return content.map(item => {
+    const attrsStr = item.attrs ? formatSvgAttributes(item.attrs) : '';
+    const children = item.content ? renderContentElements(item.content) : '';
+    if (children) {
+      return `<${item.elem}${attrsStr ? ' ' + attrsStr : ''}>${children}</${item.elem}>`;
+    }
+    return `<${item.elem}${attrsStr ? ' ' + attrsStr : ''} />`;
+  }).join('');
+};
+
+/**
+ * Creates a Web Component carbon icon template with pre-rendered SVG markup.
+ * The SVG is generated at build time, eliminating runtime dependencies on
+ * @carbon/icons and @carbon/icon-helpers.
  * @param {string} iconName - The name of the icon.
- * @param {string} size - The size of the icon.
- * @param {object} content - The SVG content array from the carbon icon descriptor.
- * @param {object} attrs - The SVG attributes from the carbon icon descriptor.
+ * @param {object} iconDescriptor - The full carbon icon descriptor ({ elem, attrs, content }).
  * @param {string} copyrightYear - The copyright year.
  * @returns {string} The Web Component icon template.
  */
-export const createCarbonWebComponentIcon = (iconName, size, content, attrs, copyrightYear) => {
+export const createCarbonWebComponentIcon = (iconName, iconDescriptor, copyrightYear) => {
   const iconNameConstant = `icon-${iconName.toLowerCase().replace(/-+/g, '-')}`;
   const copyrightLine = formatCopyrightLine(copyrightYear);
 
-  const stringifyOptions = {
-    indent: '  ',
-  };
-
-  const attrsString = stringifyObject(attrs, stringifyOptions);
-  const contentString = stringifyObject(content, stringifyOptions);
+  // Build SVG attributes, adding preserveAspectRatio
+  const svgAttrs = { ...iconDescriptor.attrs, preserveAspectRatio: 'xMidYMid' };
+  const svgAttrsStr = formatSvgAttributes(svgAttrs);
+  const svgChildren = renderContentElements(iconDescriptor.content);
 
   return `/* ======================================================================== *
 ${copyrightLine}
@@ -100,18 +138,14 @@ ${copyrightLine}
 
 /* auto generated file - do not edit */
 import { html } from 'lit';
-import { createSvgIcon, IIconAttrs, IIconContent, canDefine } from '../../../utils';
 import { BaseIcon } from '../../../utils/base-icon';
+import { canDefine } from '../../../utils';
 import { ICON_PREFIX } from '../../../utils/tags';
-
-const attrs: IIconAttrs = ${attrsString};
-
-const content: IIconContent[] = ${contentString};
 
 export const ICON_NAME = \`\${ICON_PREFIX}${iconNameConstant}\`;
 export class WebComponentIcon extends BaseIcon {
   render() {
-    return html\`\${createSvgIcon(content, attrs)}\`;
+    return html\`<svg ${svgAttrsStr}>${svgChildren}</svg>\`;
   }
 }
 

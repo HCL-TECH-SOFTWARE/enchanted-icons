@@ -15,31 +15,14 @@
 
 /* auto generated file - do not edit */
 import { html } from 'lit';
-import { createSvgIcon, IIconAttrs, IIconContent, canDefine } from '../../../utils';
 import { BaseIcon } from '../../../utils/base-icon';
+import { canDefine } from '../../../utils';
 import { ICON_PREFIX } from '../../../utils/tags';
-
-const attrs: IIconAttrs = {
-  xmlns: 'http://www.w3.org/2000/svg',
-  viewBox: '0 0 32 32',
-  fill: 'currentColor',
-  width: 32,
-  height: 32
-};
-
-const content: IIconContent[] = [
-  {
-    elem: 'path',
-    attrs: {
-      d: 'M24,7V5H8V7h5.5a4.4906,4.4906,0,0,1,4.45,4H8v2h9.95A4.4906,4.4906,0,0,1,13.5,17H8v2.3452L17.6169,28l1.3379-1.4863L10.606,19H13.5a6.5041,6.5041,0,0,0,6.4746-6H24V11H19.9746A6.4719,6.4719,0,0,0,18.18,7Z'
-    }
-  }
-];
 
 export const ICON_NAME = `${ICON_PREFIX}icon-currency-rupee`;
 export class WebComponentIcon extends BaseIcon {
   render() {
-    return html`${createSvgIcon(content, attrs)}`;
+    return html`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="currentColor" width="32" height="32" preserveAspectRatio="xMidYMid"><path d="M24,7V5H8V7h5.5a4.4906,4.4906,0,0,1,4.45,4H8v2h9.95A4.4906,4.4906,0,0,1,13.5,17H8v2.3452L17.6169,28l1.3379-1.4863L10.606,19H13.5a6.5041,6.5041,0,0,0,6.4746-6H24V11H19.9746A6.4719,6.4719,0,0,0,18.18,7Z" /></svg>`;
   }
 }
 

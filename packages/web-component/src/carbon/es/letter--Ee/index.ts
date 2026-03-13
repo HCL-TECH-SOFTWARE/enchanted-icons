@@ -15,31 +15,14 @@
 
 /* auto generated file - do not edit */
 import { html } from 'lit';
-import { createSvgIcon, IIconAttrs, IIconContent, canDefine } from '../../../utils';
 import { BaseIcon } from '../../../utils/base-icon';
+import { canDefine } from '../../../utils';
 import { ICON_PREFIX } from '../../../utils/tags';
-
-const attrs: IIconAttrs = {
-  xmlns: 'http://www.w3.org/2000/svg',
-  viewBox: '0 0 32 32',
-  fill: 'currentColor',
-  width: 32,
-  height: 32
-};
-
-const content: IIconContent[] = [
-  {
-    elem: 'path',
-    attrs: {
-      d: 'M25 19V15a2.0023 2.0023 0 00-2-2H19a2.0023 2.0023 0 00-2 2v6a2.0077 2.0077 0 002 2h5V21H19V19zm-6-4h4v2H19zM15 11L15 9 7 9 7 23 15 23 15 21 9 21 9 17 14 17 14 15 9 15 9 11 15 11z'
-    }
-  }
-];
 
 export const ICON_NAME = `${ICON_PREFIX}icon-letter-ee`;
 export class WebComponentIcon extends BaseIcon {
   render() {
-    return html`${createSvgIcon(content, attrs)}`;
+    return html`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="currentColor" width="32" height="32" preserveAspectRatio="xMidYMid"><path d="M25 19V15a2.0023 2.0023 0 00-2-2H19a2.0023 2.0023 0 00-2 2v6a2.0077 2.0077 0 002 2h5V21H19V19zm-6-4h4v2H19zM15 11L15 9 7 9 7 23 15 23 15 21 9 21 9 17 14 17 14 15 9 15 9 11 15 11z" /></svg>`;
   }
 }
 

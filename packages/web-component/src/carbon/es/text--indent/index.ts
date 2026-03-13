@@ -15,31 +15,14 @@
 
 /* auto generated file - do not edit */
 import { html } from 'lit';
-import { createSvgIcon, IIconAttrs, IIconContent, canDefine } from '../../../utils';
 import { BaseIcon } from '../../../utils/base-icon';
+import { canDefine } from '../../../utils';
 import { ICON_PREFIX } from '../../../utils/tags';
-
-const attrs: IIconAttrs = {
-  xmlns: 'http://www.w3.org/2000/svg',
-  viewBox: '0 0 32 32',
-  fill: 'currentColor',
-  width: 32,
-  height: 32
-};
-
-const content: IIconContent[] = [
-  {
-    elem: 'path',
-    attrs: {
-      d: 'M14 6H28V8H14zM14 12H28V14H14zM7 18H28V20H7zM7 24H28V26H7zM4 13.59L7.29 10 4 6.41 5.42 5 10.04 10 5.42 15 4 13.59z'
-    }
-  }
-];
 
 export const ICON_NAME = `${ICON_PREFIX}icon-text-indent`;
 export class WebComponentIcon extends BaseIcon {
   render() {
-    return html`${createSvgIcon(content, attrs)}`;
+    return html`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="currentColor" width="32" height="32" preserveAspectRatio="xMidYMid"><path d="M14 6H28V8H14zM14 12H28V14H14zM7 18H28V20H7zM7 24H28V26H7zM4 13.59L7.29 10 4 6.41 5.42 5 10.04 10 5.42 15 4 13.59z" /></svg>`;
   }
 }
 

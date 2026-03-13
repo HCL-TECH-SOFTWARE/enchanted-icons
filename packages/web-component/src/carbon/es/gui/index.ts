@@ -15,55 +15,14 @@
 
 /* auto generated file - do not edit */
 import { html } from 'lit';
-import { createSvgIcon, IIconAttrs, IIconContent, canDefine } from '../../../utils';
 import { BaseIcon } from '../../../utils/base-icon';
+import { canDefine } from '../../../utils';
 import { ICON_PREFIX } from '../../../utils/tags';
-
-const attrs: IIconAttrs = {
-  xmlns: 'http://www.w3.org/2000/svg',
-  viewBox: '0 0 32 32',
-  fill: 'currentColor',
-  width: 32,
-  height: 32
-};
-
-const content: IIconContent[] = [
-  {
-    elem: 'circle',
-    attrs: {
-      cx: '20',
-      cy: '8',
-      r: '1'
-    }
-  },
-  {
-    elem: 'circle',
-    attrs: {
-      cx: '23',
-      cy: '8',
-      r: '1'
-    }
-  },
-  {
-    elem: 'circle',
-    attrs: {
-      cx: '26',
-      cy: '8',
-      r: '1'
-    }
-  },
-  {
-    elem: 'path',
-    attrs: {
-      d: 'M28,4H4A2.0023,2.0023,0,0,0,2,6V26a2.0023,2.0023,0,0,0,2,2H28a2.0023,2.0023,0,0,0,2-2V6A2.0023,2.0023,0,0,0,28,4Zm0,2v4H4V6ZM4,12h6V26H4Zm8,14V12H28V26Z'
-    }
-  }
-];
 
 export const ICON_NAME = `${ICON_PREFIX}icon-gui`;
 export class WebComponentIcon extends BaseIcon {
   render() {
-    return html`${createSvgIcon(content, attrs)}`;
+    return html`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="currentColor" width="32" height="32" preserveAspectRatio="xMidYMid"><circle cx="20" cy="8" r="1" /><circle cx="23" cy="8" r="1" /><circle cx="26" cy="8" r="1" /><path d="M28,4H4A2.0023,2.0023,0,0,0,2,6V26a2.0023,2.0023,0,0,0,2,2H28a2.0023,2.0023,0,0,0,2-2V6A2.0023,2.0023,0,0,0,28,4Zm0,2v4H4V6ZM4,12h6V26H4Zm8,14V12H28V26Z" /></svg>`;
   }
 }
 

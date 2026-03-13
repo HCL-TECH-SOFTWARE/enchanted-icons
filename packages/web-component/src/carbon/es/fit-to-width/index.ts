@@ -15,37 +15,14 @@
 
 /* auto generated file - do not edit */
 import { html } from 'lit';
-import { createSvgIcon, IIconAttrs, IIconContent, canDefine } from '../../../utils';
 import { BaseIcon } from '../../../utils/base-icon';
+import { canDefine } from '../../../utils';
 import { ICON_PREFIX } from '../../../utils/tags';
-
-const attrs: IIconAttrs = {
-  xmlns: 'http://www.w3.org/2000/svg',
-  viewBox: '0 0 32 32',
-  fill: 'currentColor',
-  width: 32,
-  height: 32
-};
-
-const content: IIconContent[] = [
-  {
-    elem: 'path',
-    attrs: {
-      d: 'M22 11L20.59 12.41 23.17 15 8.83 15 11.41 12.41 10 11 5 16 10 21 11.41 19.59 8.83 17 23.17 17 20.59 19.59 22 21 27 16 22 11z'
-    }
-  },
-  {
-    elem: 'path',
-    attrs: {
-      d: 'M28,30H4a2.0023,2.0023,0,0,1-2-2V4A2.0023,2.0023,0,0,1,4,2H28a2.0021,2.0021,0,0,1,2,2V28A2.0021,2.0021,0,0,1,28,30ZM4,4V28H28V4Z'
-    }
-  }
-];
 
 export const ICON_NAME = `${ICON_PREFIX}icon-fit-to-width`;
 export class WebComponentIcon extends BaseIcon {
   render() {
-    return html`${createSvgIcon(content, attrs)}`;
+    return html`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="currentColor" width="32" height="32" preserveAspectRatio="xMidYMid"><path d="M22 11L20.59 12.41 23.17 15 8.83 15 11.41 12.41 10 11 5 16 10 21 11.41 19.59 8.83 17 23.17 17 20.59 19.59 22 21 27 16 22 11z" /><path d="M28,30H4a2.0023,2.0023,0,0,1-2-2V4A2.0023,2.0023,0,0,1,4,2H28a2.0021,2.0021,0,0,1,2,2V28A2.0021,2.0021,0,0,1,28,30ZM4,4V28H28V4Z" /></svg>`;
   }
 }
 

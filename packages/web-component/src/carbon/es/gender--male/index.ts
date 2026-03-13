@@ -15,31 +15,14 @@
 
 /* auto generated file - do not edit */
 import { html } from 'lit';
-import { createSvgIcon, IIconAttrs, IIconContent, canDefine } from '../../../utils';
 import { BaseIcon } from '../../../utils/base-icon';
+import { canDefine } from '../../../utils';
 import { ICON_PREFIX } from '../../../utils/tags';
-
-const attrs: IIconAttrs = {
-  xmlns: 'http://www.w3.org/2000/svg',
-  viewBox: '0 0 32 32',
-  fill: 'currentColor',
-  width: 32,
-  height: 32
-};
-
-const content: IIconContent[] = [
-  {
-    elem: 'path',
-    attrs: {
-      d: 'M18,4V6h6.5859l-7.6884,7.6885a8.028,8.028,0,1,0,1.414,1.414L26,7.4141V14h2V4ZM12,26a6,6,0,1,1,6-6A6.0066,6.0066,0,0,1,12,26Z'
-    }
-  }
-];
 
 export const ICON_NAME = `${ICON_PREFIX}icon-gender-male`;
 export class WebComponentIcon extends BaseIcon {
   render() {
-    return html`${createSvgIcon(content, attrs)}`;
+    return html`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="currentColor" width="32" height="32" preserveAspectRatio="xMidYMid"><path d="M18,4V6h6.5859l-7.6884,7.6885a8.028,8.028,0,1,0,1.414,1.414L26,7.4141V14h2V4ZM12,26a6,6,0,1,1,6-6A6.0066,6.0066,0,0,1,12,26Z" /></svg>`;
   }
 }
 

@@ -15,31 +15,14 @@
 
 /* auto generated file - do not edit */
 import { html } from 'lit';
-import { createSvgIcon, IIconAttrs, IIconContent, canDefine } from '../../../utils';
 import { BaseIcon } from '../../../utils/base-icon';
+import { canDefine } from '../../../utils';
 import { ICON_PREFIX } from '../../../utils/tags';
-
-const attrs: IIconAttrs = {
-  xmlns: 'http://www.w3.org/2000/svg',
-  viewBox: '0 0 32 32',
-  fill: 'currentColor',
-  width: 32,
-  height: 32
-};
-
-const content: IIconContent[] = [
-  {
-    elem: 'path',
-    attrs: {
-      d: 'M28 8H25.4141L30 3.4141 28.5859 2 2 28.5859 3.4141 30l2-2H28a2 2 0 002-2V10A2 2 0 0028 8zm0 18H7.4141l16-16H28zM4 6h7.1716l3.4141 3.4141L15.1716 10H18V8H16L12.5859 4.5859A2.0007 2.0007 0 0011.1716 4H4A2 2 0 002 6V24H4z'
-    }
-  }
-];
 
 export const ICON_NAME = `${ICON_PREFIX}icon-folder-off`;
 export class WebComponentIcon extends BaseIcon {
   render() {
-    return html`${createSvgIcon(content, attrs)}`;
+    return html`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="currentColor" width="32" height="32" preserveAspectRatio="xMidYMid"><path d="M28 8H25.4141L30 3.4141 28.5859 2 2 28.5859 3.4141 30l2-2H28a2 2 0 002-2V10A2 2 0 0028 8zm0 18H7.4141l16-16H28zM4 6h7.1716l3.4141 3.4141L15.1716 10H18V8H16L12.5859 4.5859A2.0007 2.0007 0 0011.1716 4H4A2 2 0 002 6V24H4z" /></svg>`;
   }
 }
 

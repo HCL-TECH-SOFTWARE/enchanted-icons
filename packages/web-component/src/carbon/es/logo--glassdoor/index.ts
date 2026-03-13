@@ -15,37 +15,14 @@
 
 /* auto generated file - do not edit */
 import { html } from 'lit';
-import { createSvgIcon, IIconAttrs, IIconContent, canDefine } from '../../../utils';
 import { BaseIcon } from '../../../utils/base-icon';
+import { canDefine } from '../../../utils';
 import { ICON_PREFIX } from '../../../utils/tags';
-
-const attrs: IIconAttrs = {
-  xmlns: 'http://www.w3.org/2000/svg',
-  viewBox: '0 0 32 32',
-  fill: 'currentColor',
-  width: 32,
-  height: 32
-};
-
-const content: IIconContent[] = [
-  {
-    elem: 'path',
-    attrs: {
-      d: 'M10.8281,28H21.1719a3.43,3.43,0,0,0,3.43-3.43V10.3306h-3.43V24.57H7.3981A3.43,3.43,0,0,0,10.8281,28Z'
-    }
-  },
-  {
-    elem: 'path',
-    attrs: {
-      d: 'M21.1719,4H10.8281a3.43,3.43,0,0,0-3.43,3.43v14.24h3.43V7.43H24.6019A3.43,3.43,0,0,0,21.1719,4Z'
-    }
-  }
-];
 
 export const ICON_NAME = `${ICON_PREFIX}icon-logo-glassdoor`;
 export class WebComponentIcon extends BaseIcon {
   render() {
-    return html`${createSvgIcon(content, attrs)}`;
+    return html`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="currentColor" width="32" height="32" preserveAspectRatio="xMidYMid"><path d="M10.8281,28H21.1719a3.43,3.43,0,0,0,3.43-3.43V10.3306h-3.43V24.57H7.3981A3.43,3.43,0,0,0,10.8281,28Z" /><path d="M21.1719,4H10.8281a3.43,3.43,0,0,0-3.43,3.43v14.24h3.43V7.43H24.6019A3.43,3.43,0,0,0,21.1719,4Z" /></svg>`;
   }
 }
 

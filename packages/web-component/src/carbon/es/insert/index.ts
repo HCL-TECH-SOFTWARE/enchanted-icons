@@ -15,31 +15,14 @@
 
 /* auto generated file - do not edit */
 import { html } from 'lit';
-import { createSvgIcon, IIconAttrs, IIconContent, canDefine } from '../../../utils';
 import { BaseIcon } from '../../../utils/base-icon';
+import { canDefine } from '../../../utils';
 import { ICON_PREFIX } from '../../../utils/tags';
-
-const attrs: IIconAttrs = {
-  xmlns: 'http://www.w3.org/2000/svg',
-  viewBox: '0 0 32 32',
-  fill: 'currentColor',
-  width: 32,
-  height: 32
-};
-
-const content: IIconContent[] = [
-  {
-    elem: 'path',
-    attrs: {
-      d: 'M2 9h9V2H2zM4 4H9V7H4zM2 19h9V12H2zm2-5H9v3H4zM2 29h9V22H2zm2-5H9v3H4zM27 9H18l3.41-3.59L20 4l-6 6 6 6 1.41-1.41L18 11h9a1 1 0 011 1V24a1 1 0 01-1 1H15v2H27a3 3 0 003-3V12A3 3 0 0027 9z'
-    }
-  }
-];
 
 export const ICON_NAME = `${ICON_PREFIX}icon-insert`;
 export class WebComponentIcon extends BaseIcon {
   render() {
-    return html`${createSvgIcon(content, attrs)}`;
+    return html`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="currentColor" width="32" height="32" preserveAspectRatio="xMidYMid"><path d="M2 9h9V2H2zM4 4H9V7H4zM2 19h9V12H2zm2-5H9v3H4zM2 29h9V22H2zm2-5H9v3H4zM27 9H18l3.41-3.59L20 4l-6 6 6 6 1.41-1.41L18 11h9a1 1 0 011 1V24a1 1 0 01-1 1H15v2H27a3 3 0 003-3V12A3 3 0 0027 9z" /></svg>`;
   }
 }
 

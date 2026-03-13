@@ -15,71 +15,14 @@
 
 /* auto generated file - do not edit */
 import { html } from 'lit';
-import { createSvgIcon, IIconAttrs, IIconContent, canDefine } from '../../../utils';
 import { BaseIcon } from '../../../utils/base-icon';
+import { canDefine } from '../../../utils';
 import { ICON_PREFIX } from '../../../utils/tags';
-
-const attrs: IIconAttrs = {
-  xmlns: 'http://www.w3.org/2000/svg',
-  viewBox: '0 0 32 32',
-  fill: 'currentColor',
-  width: 32,
-  height: 32
-};
-
-const content: IIconContent[] = [
-  {
-    elem: 'path',
-    attrs: {
-      d: 'M28 22H30V30H28zM24 18H26V30H24zM20 26H22V30H20zM9 16a7 7 0 107 7A7.0078 7.0078 0 009 16zm4.8989 6H10V18.1011A5.0145 5.0145 0 0113.8989 22zM9 28a5 5 0 01-1-9.8989V22a2 2 0 002 2h3.8989A5.0081 5.0081 0 019 28zM22.5352 12l4-6H30V4H25.4648l-4 6H18V2H16V14a2 2 0 002 2H30V14H18V12z'
-    }
-  },
-  {
-    elem: 'circle',
-    attrs: {
-      cx: '11',
-      cy: '7',
-      r: '1'
-    }
-  },
-  {
-    elem: 'circle',
-    attrs: {
-      cx: '9',
-      cy: '11',
-      r: '1'
-    }
-  },
-  {
-    elem: 'circle',
-    attrs: {
-      cx: '7',
-      cy: '5',
-      r: '1'
-    }
-  },
-  {
-    elem: 'circle',
-    attrs: {
-      cx: '5',
-      cy: '9',
-      r: '1'
-    }
-  },
-  {
-    elem: 'circle',
-    attrs: {
-      cx: '3',
-      cy: '13',
-      r: '1'
-    }
-  }
-];
 
 export const ICON_NAME = `${ICON_PREFIX}icon-chart-multitype`;
 export class WebComponentIcon extends BaseIcon {
   render() {
-    return html`${createSvgIcon(content, attrs)}`;
+    return html`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="currentColor" width="32" height="32" preserveAspectRatio="xMidYMid"><path d="M28 22H30V30H28zM24 18H26V30H24zM20 26H22V30H20zM9 16a7 7 0 107 7A7.0078 7.0078 0 009 16zm4.8989 6H10V18.1011A5.0145 5.0145 0 0113.8989 22zM9 28a5 5 0 01-1-9.8989V22a2 2 0 002 2h3.8989A5.0081 5.0081 0 019 28zM22.5352 12l4-6H30V4H25.4648l-4 6H18V2H16V14a2 2 0 002 2H30V14H18V12z" /><circle cx="11" cy="7" r="1" /><circle cx="9" cy="11" r="1" /><circle cx="7" cy="5" r="1" /><circle cx="5" cy="9" r="1" /><circle cx="3" cy="13" r="1" /></svg>`;
   }
 }
 

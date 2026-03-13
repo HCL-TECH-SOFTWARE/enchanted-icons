@@ -15,43 +15,14 @@
 
 /* auto generated file - do not edit */
 import { html } from 'lit';
-import { createSvgIcon, IIconAttrs, IIconContent, canDefine } from '../../../utils';
 import { BaseIcon } from '../../../utils/base-icon';
+import { canDefine } from '../../../utils';
 import { ICON_PREFIX } from '../../../utils/tags';
-
-const attrs: IIconAttrs = {
-  xmlns: 'http://www.w3.org/2000/svg',
-  viewBox: '0 0 32 32',
-  fill: 'currentColor',
-  width: 32,
-  height: 32
-};
-
-const content: IIconContent[] = [
-  {
-    elem: 'path',
-    attrs: {
-      d: 'M16,12a3.0033,3.0033,0,0,0-3,3v3h6V15A3.0033,3.0033,0,0,0,16,12Z'
-    }
-  },
-  {
-    elem: 'path',
-    attrs: {
-      d: 'M16,6a9.0092,9.0092,0,0,0-9,9V28H25V15A9.01,9.01,0,0,0,16,6Zm5,14H11V15a5,5,0,0,1,10,0Z'
-    }
-  },
-  {
-    elem: 'path',
-    attrs: {
-      d: 'M29,15H27A11,11,0,0,0,5,15H3a13,13,0,0,1,26,0Z'
-    }
-  }
-];
 
 export const ICON_NAME = `${ICON_PREFIX}icon-touch-2-filled`;
 export class WebComponentIcon extends BaseIcon {
   render() {
-    return html`${createSvgIcon(content, attrs)}`;
+    return html`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="currentColor" width="32" height="32" preserveAspectRatio="xMidYMid"><path d="M16,12a3.0033,3.0033,0,0,0-3,3v3h6V15A3.0033,3.0033,0,0,0,16,12Z" /><path d="M16,6a9.0092,9.0092,0,0,0-9,9V28H25V15A9.01,9.01,0,0,0,16,6Zm5,14H11V15a5,5,0,0,1,10,0Z" /><path d="M29,15H27A11,11,0,0,0,5,15H3a13,13,0,0,1,26,0Z" /></svg>`;
   }
 }
 

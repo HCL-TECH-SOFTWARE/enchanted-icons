@@ -15,37 +15,14 @@
 
 /* auto generated file - do not edit */
 import { html } from 'lit';
-import { createSvgIcon, IIconAttrs, IIconContent, canDefine } from '../../../utils';
 import { BaseIcon } from '../../../utils/base-icon';
+import { canDefine } from '../../../utils';
 import { ICON_PREFIX } from '../../../utils/tags';
-
-const attrs: IIconAttrs = {
-  xmlns: 'http://www.w3.org/2000/svg',
-  viewBox: '0 0 32 32',
-  fill: 'currentColor',
-  width: 32,
-  height: 32
-};
-
-const content: IIconContent[] = [
-  {
-    elem: 'path',
-    attrs: {
-      d: 'M8 19H6V17a3.0033 3.0033 0 013-3h5v2H9a1.0011 1.0011 0 00-1 1zM12 13a4 4 0 114-4A4.0045 4.0045 0 0112 13zm0-6a2 2 0 102 2A2.0021 2.0021 0 0012 7zM20 20a4 4 0 114-4A4.0045 4.0045 0 0120 20zm0-6a2 2 0 102 2A2.0021 2.0021 0 0020 14zM26 26H24V24a1.0011 1.0011 0 00-1-1H17a1.0011 1.0011 0 00-1 1v2H14V24a3.0033 3.0033 0 013-3h6a3.0033 3.0033 0 013 3z'
-    }
-  },
-  {
-    elem: 'path',
-    attrs: {
-      d: 'M8 30H4a2.0021 2.0021 0 01-2-2V4A2.0021 2.0021 0 014 2H8V4H4V28H8zM28 30H24V28h4V4H24V2h4a2.0021 2.0021 0 012 2V28A2.0021 2.0021 0 0128 30z'
-    }
-  }
-];
 
 export const ICON_NAME = `${ICON_PREFIX}icon-group-access`;
 export class WebComponentIcon extends BaseIcon {
   render() {
-    return html`${createSvgIcon(content, attrs)}`;
+    return html`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="currentColor" width="32" height="32" preserveAspectRatio="xMidYMid"><path d="M8 19H6V17a3.0033 3.0033 0 013-3h5v2H9a1.0011 1.0011 0 00-1 1zM12 13a4 4 0 114-4A4.0045 4.0045 0 0112 13zm0-6a2 2 0 102 2A2.0021 2.0021 0 0012 7zM20 20a4 4 0 114-4A4.0045 4.0045 0 0120 20zm0-6a2 2 0 102 2A2.0021 2.0021 0 0020 14zM26 26H24V24a1.0011 1.0011 0 00-1-1H17a1.0011 1.0011 0 00-1 1v2H14V24a3.0033 3.0033 0 013-3h6a3.0033 3.0033 0 013 3z" /><path d="M8 30H4a2.0021 2.0021 0 01-2-2V4A2.0021 2.0021 0 014 2H8V4H4V28H8zM28 30H24V28h4V4H24V2h4a2.0021 2.0021 0 012 2V28A2.0021 2.0021 0 0128 30z" /></svg>`;
   }
 }
 

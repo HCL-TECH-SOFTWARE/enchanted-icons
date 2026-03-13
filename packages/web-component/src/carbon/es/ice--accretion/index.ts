@@ -15,37 +15,14 @@
 
 /* auto generated file - do not edit */
 import { html } from 'lit';
-import { createSvgIcon, IIconAttrs, IIconContent, canDefine } from '../../../utils';
 import { BaseIcon } from '../../../utils/base-icon';
+import { canDefine } from '../../../utils';
 import { ICON_PREFIX } from '../../../utils/tags';
-
-const attrs: IIconAttrs = {
-  xmlns: 'http://www.w3.org/2000/svg',
-  viewBox: '0 0 32 32',
-  fill: 'currentColor',
-  width: 32,
-  height: 32
-};
-
-const content: IIconContent[] = [
-  {
-    elem: 'path',
-    attrs: {
-      d: 'M4 2A2 2 0 002 4V20l1 2 1-2V4H8V14l1 2 1-2V2zM28 2H14v8l1 2 1-2V4h2V17l1 2 1-2V4h4V14l1 2 1-2V4h2V24l1 2 1-2V4A2 2 0 0028 2zM14 28L13 30 12 28 12 16 14 16 14 28z'
-    }
-  },
-  {
-    elem: 'path',
-    attrs: {
-      d: 'M24 26L23 28 22 26 22 20 24 20 24 26zM8 24L7 26 6 24 6 18 8 18 8 24z'
-    }
-  }
-];
 
 export const ICON_NAME = `${ICON_PREFIX}icon-ice-accretion`;
 export class WebComponentIcon extends BaseIcon {
   render() {
-    return html`${createSvgIcon(content, attrs)}`;
+    return html`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="currentColor" width="32" height="32" preserveAspectRatio="xMidYMid"><path d="M4 2A2 2 0 002 4V20l1 2 1-2V4H8V14l1 2 1-2V2zM28 2H14v8l1 2 1-2V4h2V17l1 2 1-2V4h4V14l1 2 1-2V4h2V24l1 2 1-2V4A2 2 0 0028 2zM14 28L13 30 12 28 12 16 14 16 14 28z" /><path d="M24 26L23 28 22 26 22 20 24 20 24 26zM8 24L7 26 6 24 6 18 8 18 8 24z" /></svg>`;
   }
 }
 

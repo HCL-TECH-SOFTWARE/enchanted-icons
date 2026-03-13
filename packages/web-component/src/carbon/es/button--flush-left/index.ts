@@ -15,37 +15,14 @@
 
 /* auto generated file - do not edit */
 import { html } from 'lit';
-import { createSvgIcon, IIconAttrs, IIconContent, canDefine } from '../../../utils';
 import { BaseIcon } from '../../../utils/base-icon';
+import { canDefine } from '../../../utils';
 import { ICON_PREFIX } from '../../../utils/tags';
-
-const attrs: IIconAttrs = {
-  xmlns: 'http://www.w3.org/2000/svg',
-  viewBox: '0 0 32 32',
-  fill: 'currentColor',
-  width: 32,
-  height: 32
-};
-
-const content: IIconContent[] = [
-  {
-    elem: 'path',
-    attrs: {
-      d: 'M6 15H20V17H6z'
-    }
-  },
-  {
-    elem: 'path',
-    attrs: {
-      d: 'M28,22H4c-1.103,0-2-0.897-2-2v-8c0-1.103,0.897-2,2-2h24c1.103,0,2,0.897,2,2v8C30,21.103,29.103,22,28,22z M4,12v8h24v-8\tH4z'
-    }
-  }
-];
 
 export const ICON_NAME = `${ICON_PREFIX}icon-button-flush-left`;
 export class WebComponentIcon extends BaseIcon {
   render() {
-    return html`${createSvgIcon(content, attrs)}`;
+    return html`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="currentColor" width="32" height="32" preserveAspectRatio="xMidYMid"><path d="M6 15H20V17H6z" /><path d="M28,22H4c-1.103,0-2-0.897-2-2v-8c0-1.103,0.897-2,2-2h24c1.103,0,2,0.897,2,2v8C30,21.103,29.103,22,28,22z M4,12v8h24v-8	H4z" /></svg>`;
   }
 }
 

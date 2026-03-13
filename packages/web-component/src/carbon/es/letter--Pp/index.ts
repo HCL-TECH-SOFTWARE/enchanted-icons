@@ -15,31 +15,14 @@
 
 /* auto generated file - do not edit */
 import { html } from 'lit';
-import { createSvgIcon, IIconAttrs, IIconContent, canDefine } from '../../../utils';
 import { BaseIcon } from '../../../utils/base-icon';
+import { canDefine } from '../../../utils';
 import { ICON_PREFIX } from '../../../utils/tags';
-
-const attrs: IIconAttrs = {
-  xmlns: 'http://www.w3.org/2000/svg',
-  viewBox: '0 0 32 32',
-  fill: 'currentColor',
-  width: 32,
-  height: 32
-};
-
-const content: IIconContent[] = [
-  {
-    elem: 'path',
-    attrs: {
-      d: 'M23 13H17V27h2V23h4a2 2 0 002-2V15A2 2 0 0023 13zm-4 8V15h4v6zM9 23H7V9h6a2 2 0 012 2v5a2 2 0 01-2 2H9zm0-7h4V11H9z'
-    }
-  }
-];
 
 export const ICON_NAME = `${ICON_PREFIX}icon-letter-pp`;
 export class WebComponentIcon extends BaseIcon {
   render() {
-    return html`${createSvgIcon(content, attrs)}`;
+    return html`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="currentColor" width="32" height="32" preserveAspectRatio="xMidYMid"><path d="M23 13H17V27h2V23h4a2 2 0 002-2V15A2 2 0 0023 13zm-4 8V15h4v6zM9 23H7V9h6a2 2 0 012 2v5a2 2 0 01-2 2H9zm0-7h4V11H9z" /></svg>`;
   }
 }
 

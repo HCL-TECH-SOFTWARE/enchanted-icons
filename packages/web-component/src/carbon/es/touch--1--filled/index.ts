@@ -15,37 +15,14 @@
 
 /* auto generated file - do not edit */
 import { html } from 'lit';
-import { createSvgIcon, IIconAttrs, IIconContent, canDefine } from '../../../utils';
 import { BaseIcon } from '../../../utils/base-icon';
+import { canDefine } from '../../../utils';
 import { ICON_PREFIX } from '../../../utils/tags';
-
-const attrs: IIconAttrs = {
-  xmlns: 'http://www.w3.org/2000/svg',
-  viewBox: '0 0 32 32',
-  fill: 'currentColor',
-  width: 32,
-  height: 32
-};
-
-const content: IIconContent[] = [
-  {
-    elem: 'path',
-    attrs: {
-      d: 'M13,2A6.0067,6.0067,0,0,0,7,8H9a4,4,0,0,1,8,0h2A6.0067,6.0067,0,0,0,13,2Z'
-    }
-  },
-  {
-    elem: 'path',
-    attrs: {
-      d: 'M21,30H16.5606a4,4,0,0,1-2.7088-1.0566L4.6513,20.4771A2.0018,2.0018,0,0,1,4.77,17.4219a2.0743,2.0743,0,0,1,2.6578.1728L11,20.8569V8a2,2,0,0,1,4,0v7a2,2,0,0,1,4,0v1a2,2,0,0,1,4,0v1a2,2,0,0,1,4,0v7A6,6,0,0,1,21,30Z'
-    }
-  }
-];
 
 export const ICON_NAME = `${ICON_PREFIX}icon-touch-1-filled`;
 export class WebComponentIcon extends BaseIcon {
   render() {
-    return html`${createSvgIcon(content, attrs)}`;
+    return html`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="currentColor" width="32" height="32" preserveAspectRatio="xMidYMid"><path d="M13,2A6.0067,6.0067,0,0,0,7,8H9a4,4,0,0,1,8,0h2A6.0067,6.0067,0,0,0,13,2Z" /><path d="M21,30H16.5606a4,4,0,0,1-2.7088-1.0566L4.6513,20.4771A2.0018,2.0018,0,0,1,4.77,17.4219a2.0743,2.0743,0,0,1,2.6578.1728L11,20.8569V8a2,2,0,0,1,4,0v7a2,2,0,0,1,4,0v1a2,2,0,0,1,4,0v1a2,2,0,0,1,4,0v7A6,6,0,0,1,21,30Z" /></svg>`;
   }
 }
 

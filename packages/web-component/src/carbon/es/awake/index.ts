@@ -15,83 +15,14 @@
 
 /* auto generated file - do not edit */
 import { html } from 'lit';
-import { createSvgIcon, IIconAttrs, IIconContent, canDefine } from '../../../utils';
 import { BaseIcon } from '../../../utils/base-icon';
+import { canDefine } from '../../../utils';
 import { ICON_PREFIX } from '../../../utils/tags';
-
-const attrs: IIconAttrs = {
-  xmlns: 'http://www.w3.org/2000/svg',
-  viewBox: '0 0 32 32',
-  fill: 'currentColor',
-  width: 32,
-  height: 32
-};
-
-const content: IIconContent[] = [
-  {
-    elem: 'path',
-    attrs: {
-      d: 'M15 2H17V6.96H15z'
-    }
-  },
-  {
-    elem: 'path',
-    attrs: {
-      d: 'M21.67 6.85H26.630000000000003V8.85H21.67z',
-      transform: 'rotate(-45 24.142 7.85)'
-    }
-  },
-  {
-    elem: 'path',
-    attrs: {
-      d: 'M25.04 15H30V17H25.04z'
-    }
-  },
-  {
-    elem: 'path',
-    attrs: {
-      d: 'M23.15 21.67H25.15V26.630000000000003H23.15z',
-      transform: 'rotate(-45 24.152 24.146)'
-    }
-  },
-  {
-    elem: 'path',
-    attrs: {
-      d: 'M15 25.04H17V30H15z'
-    }
-  },
-  {
-    elem: 'path',
-    attrs: {
-      d: 'M5.37 23.15H10.33V25.15H5.37z',
-      transform: 'rotate(-45 7.86 24.144)'
-    }
-  },
-  {
-    elem: 'path',
-    attrs: {
-      d: 'M2 15H6.96V17H2z'
-    }
-  },
-  {
-    elem: 'path',
-    attrs: {
-      d: 'M6.85 5.37H8.85V10.33H6.85z',
-      transform: 'rotate(-45 7.85 7.848)'
-    }
-  },
-  {
-    elem: 'path',
-    attrs: {
-      d: 'M16,12a4,4,0,1,1-4,4,4,4,0,0,1,4-4m0-2a6,6,0,1,0,6,6,6,6,0,0,0-6-6Z'
-    }
-  }
-];
 
 export const ICON_NAME = `${ICON_PREFIX}icon-awake`;
 export class WebComponentIcon extends BaseIcon {
   render() {
-    return html`${createSvgIcon(content, attrs)}`;
+    return html`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="currentColor" width="32" height="32" preserveAspectRatio="xMidYMid"><path d="M15 2H17V6.96H15z" /><path d="M21.67 6.85H26.630000000000003V8.85H21.67z" transform="rotate(-45 24.142 7.85)" /><path d="M25.04 15H30V17H25.04z" /><path d="M23.15 21.67H25.15V26.630000000000003H23.15z" transform="rotate(-45 24.152 24.146)" /><path d="M15 25.04H17V30H15z" /><path d="M5.37 23.15H10.33V25.15H5.37z" transform="rotate(-45 7.86 24.144)" /><path d="M2 15H6.96V17H2z" /><path d="M6.85 5.37H8.85V10.33H6.85z" transform="rotate(-45 7.85 7.848)" /><path d="M16,12a4,4,0,1,1-4,4,4,4,0,0,1,4-4m0-2a6,6,0,1,0,6,6,6,6,0,0,0-6-6Z" /></svg>`;
   }
 }
 

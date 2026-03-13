@@ -15,37 +15,14 @@
 
 /* auto generated file - do not edit */
 import { html } from 'lit';
-import { createSvgIcon, IIconAttrs, IIconContent, canDefine } from '../../../utils';
 import { BaseIcon } from '../../../utils/base-icon';
+import { canDefine } from '../../../utils';
 import { ICON_PREFIX } from '../../../utils/tags';
-
-const attrs: IIconAttrs = {
-  xmlns: 'http://www.w3.org/2000/svg',
-  viewBox: '0 0 32 32',
-  fill: 'currentColor',
-  width: 32,
-  height: 32
-};
-
-const content: IIconContent[] = [
-  {
-    elem: 'path',
-    attrs: {
-      d: 'M17 27.172L17 22 15 22 15 27.172 12.414 24.586 11 26 16 31 21 26 19.586 24.586 17 27.172z'
-    }
-  },
-  {
-    elem: 'path',
-    attrs: {
-      d: 'M30 12H2v8H4V30H6V20H26V30h2V20h2zm-2 6H4V14H28zM15 4.828L15 10 17 10 17 4.828 19.586 7.414 21 6 16 1 11 6 12.414 7.414 15 4.828z'
-    }
-  }
-];
 
 export const ICON_NAME = `${ICON_PREFIX}icon-desk-adjustable`;
 export class WebComponentIcon extends BaseIcon {
   render() {
-    return html`${createSvgIcon(content, attrs)}`;
+    return html`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="currentColor" width="32" height="32" preserveAspectRatio="xMidYMid"><path d="M17 27.172L17 22 15 22 15 27.172 12.414 24.586 11 26 16 31 21 26 19.586 24.586 17 27.172z" /><path d="M30 12H2v8H4V30H6V20H26V30h2V20h2zm-2 6H4V14H28zM15 4.828L15 10 17 10 17 4.828 19.586 7.414 21 6 16 1 11 6 12.414 7.414 15 4.828z" /></svg>`;
   }
 }
 

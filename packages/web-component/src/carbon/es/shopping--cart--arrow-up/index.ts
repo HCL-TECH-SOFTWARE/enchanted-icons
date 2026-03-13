@@ -15,53 +15,14 @@
 
 /* auto generated file - do not edit */
 import { html } from 'lit';
-import { createSvgIcon, IIconAttrs, IIconContent, canDefine } from '../../../utils';
 import { BaseIcon } from '../../../utils/base-icon';
+import { canDefine } from '../../../utils';
 import { ICON_PREFIX } from '../../../utils/tags';
-
-const attrs: IIconAttrs = {
-  xmlns: 'http://www.w3.org/2000/svg',
-  viewBox: '0 0 32 32',
-  fill: 'currentColor',
-  width: 32,
-  height: 32
-};
-
-const content: IIconContent[] = [
-  {
-    elem: 'circle',
-    attrs: {
-      cx: '10',
-      cy: '28',
-      r: '2'
-    }
-  },
-  {
-    elem: 'circle',
-    attrs: {
-      cx: '24',
-      cy: '28',
-      r: '2'
-    }
-  },
-  {
-    elem: 'path',
-    attrs: {
-      d: 'M4.9806,2.8039A1,1,0,0,0,4,2H0V4H3.18L7.0194,23.1961A1,1,0,0,0,8,24H26V22H8.82l-.8-4H26a1,1,0,0,0,.9762-.783L29.2445,7H27.1971l-1.9989,9H7.62Z'
-    }
-  },
-  {
-    elem: 'path',
-    attrs: {
-      d: 'M21.586 9.414L18 5.828 18 14 16 14 16 5.828 12.414 9.414 11 8 17 2 23 8 21.586 9.414z'
-    }
-  }
-];
 
 export const ICON_NAME = `${ICON_PREFIX}icon-shopping-cart-arrow-up`;
 export class WebComponentIcon extends BaseIcon {
   render() {
-    return html`${createSvgIcon(content, attrs)}`;
+    return html`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="currentColor" width="32" height="32" preserveAspectRatio="xMidYMid"><circle cx="10" cy="28" r="2" /><circle cx="24" cy="28" r="2" /><path d="M4.9806,2.8039A1,1,0,0,0,4,2H0V4H3.18L7.0194,23.1961A1,1,0,0,0,8,24H26V22H8.82l-.8-4H26a1,1,0,0,0,.9762-.783L29.2445,7H27.1971l-1.9989,9H7.62Z" /><path d="M21.586 9.414L18 5.828 18 14 16 14 16 5.828 12.414 9.414 11 8 17 2 23 8 21.586 9.414z" /></svg>`;
   }
 }
 

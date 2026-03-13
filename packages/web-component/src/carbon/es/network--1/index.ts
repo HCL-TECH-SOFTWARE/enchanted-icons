@@ -15,31 +15,14 @@
 
 /* auto generated file - do not edit */
 import { html } from 'lit';
-import { createSvgIcon, IIconAttrs, IIconContent, canDefine } from '../../../utils';
 import { BaseIcon } from '../../../utils/base-icon';
+import { canDefine } from '../../../utils';
 import { ICON_PREFIX } from '../../../utils/tags';
-
-const attrs: IIconAttrs = {
-  xmlns: 'http://www.w3.org/2000/svg',
-  viewBox: '0 0 32 32',
-  fill: 'currentColor',
-  width: 32,
-  height: 32
-};
-
-const content: IIconContent[] = [
-  {
-    elem: 'path',
-    attrs: {
-      d: 'M16 20a4 4 0 114-4A4.0045 4.0045 0 0116 20zm0-6a2 2 0 102 2A2.0021 2.0021 0 0016 14zM5 20a4 4 0 114-4A4.0045 4.0045 0 015 20zm0-6a2 2 0 102 2A2.0023 2.0023 0 005 14zM10 31a4 4 0 114-4A4.0045 4.0045 0 0110 31zm0-6a2 2 0 102 2A2.0021 2.0021 0 0010 25zM22 31a4 4 0 114-4A4.0045 4.0045 0 0122 31zm0-6a2 2 0 102 2A2.0021 2.0021 0 0022 25zM27 20a4 4 0 114-4A4.0045 4.0045 0 0127 20zm0-6a2 2 0 102 2A2.0021 2.0021 0 0027 14zM22 9a4 4 0 114-4A4.0045 4.0045 0 0122 9zm0-6a2 2 0 102 2A2.0021 2.0021 0 0022 3zM10 9a4 4 0 114-4A4.0045 4.0045 0 0110 9zm0-6a2 2 0 102 2A2.0021 2.0021 0 0010 3z'
-    }
-  }
-];
 
 export const ICON_NAME = `${ICON_PREFIX}icon-network-1`;
 export class WebComponentIcon extends BaseIcon {
   render() {
-    return html`${createSvgIcon(content, attrs)}`;
+    return html`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="currentColor" width="32" height="32" preserveAspectRatio="xMidYMid"><path d="M16 20a4 4 0 114-4A4.0045 4.0045 0 0116 20zm0-6a2 2 0 102 2A2.0021 2.0021 0 0016 14zM5 20a4 4 0 114-4A4.0045 4.0045 0 015 20zm0-6a2 2 0 102 2A2.0023 2.0023 0 005 14zM10 31a4 4 0 114-4A4.0045 4.0045 0 0110 31zm0-6a2 2 0 102 2A2.0021 2.0021 0 0010 25zM22 31a4 4 0 114-4A4.0045 4.0045 0 0122 31zm0-6a2 2 0 102 2A2.0021 2.0021 0 0022 25zM27 20a4 4 0 114-4A4.0045 4.0045 0 0127 20zm0-6a2 2 0 102 2A2.0021 2.0021 0 0027 14zM22 9a4 4 0 114-4A4.0045 4.0045 0 0122 9zm0-6a2 2 0 102 2A2.0021 2.0021 0 0022 3zM10 9a4 4 0 114-4A4.0045 4.0045 0 0110 9zm0-6a2 2 0 102 2A2.0021 2.0021 0 0010 3z" /></svg>`;
   }
 }
 

@@ -15,51 +15,14 @@
 
 /* auto generated file - do not edit */
 import { html } from 'lit';
-import { createSvgIcon, IIconAttrs, IIconContent, canDefine } from '../../../utils';
 import { BaseIcon } from '../../../utils/base-icon';
+import { canDefine } from '../../../utils';
 import { ICON_PREFIX } from '../../../utils/tags';
-
-const attrs: IIconAttrs = {
-  xmlns: 'http://www.w3.org/2000/svg',
-  viewBox: '0 0 32 32',
-  fill: 'currentColor',
-  width: 32,
-  height: 32
-};
-
-const content: IIconContent[] = [
-  {
-    elem: 'path',
-    attrs: {
-      d: 'M16,28A11,11,0,1,1,27,17,11,11,0,0,1,16,28ZM16,8a9,9,0,1,0,9,9A9,9,0,0,0,16,8Z'
-    }
-  },
-  {
-    elem: 'path',
-    attrs: {
-      d: 'M18.59 21L15 17.41 15 11 17 11 17 16.58 20 19.59 18.59 21z'
-    }
-  },
-  {
-    elem: 'path',
-    attrs: {
-      d: 'M3.96 5.5H9.030000000000001V7.5H3.96z',
-      transform: 'rotate(-45.06 6.502 6.497)'
-    }
-  },
-  {
-    elem: 'path',
-    attrs: {
-      d: 'M24.5 3.96H26.5V9.030000000000001H24.5z',
-      transform: 'rotate(-44.94 25.5 6.498)'
-    }
-  }
-];
 
 export const ICON_NAME = `${ICON_PREFIX}icon-alarm`;
 export class WebComponentIcon extends BaseIcon {
   render() {
-    return html`${createSvgIcon(content, attrs)}`;
+    return html`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="currentColor" width="32" height="32" preserveAspectRatio="xMidYMid"><path d="M16,28A11,11,0,1,1,27,17,11,11,0,0,1,16,28ZM16,8a9,9,0,1,0,9,9A9,9,0,0,0,16,8Z" /><path d="M18.59 21L15 17.41 15 11 17 11 17 16.58 20 19.59 18.59 21z" /><path d="M3.96 5.5H9.030000000000001V7.5H3.96z" transform="rotate(-45.06 6.502 6.497)" /><path d="M24.5 3.96H26.5V9.030000000000001H24.5z" transform="rotate(-44.94 25.5 6.498)" /></svg>`;
   }
 }
 

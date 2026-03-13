@@ -15,39 +15,14 @@
 
 /* auto generated file - do not edit */
 import { html } from 'lit';
-import { createSvgIcon, IIconAttrs, IIconContent, canDefine } from '../../../utils';
 import { BaseIcon } from '../../../utils/base-icon';
+import { canDefine } from '../../../utils';
 import { ICON_PREFIX } from '../../../utils/tags';
-
-const attrs: IIconAttrs = {
-  xmlns: 'http://www.w3.org/2000/svg',
-  viewBox: '0 0 32 32',
-  fill: 'currentColor',
-  width: 32,
-  height: 32
-};
-
-const content: IIconContent[] = [
-  {
-    elem: 'circle',
-    attrs: {
-      cx: '23',
-      cy: '12',
-      r: '2'
-    }
-  },
-  {
-    elem: 'path',
-    attrs: {
-      d: 'M28,5H16.24A8,8,0,1,0,6,16.92V27a2,2,0,0,0,2,2H28a2,2,0,0,0,2-2V7A2,2,0,0,0,28,5ZM4,10A6,6,0,0,1,15.19,7H8V9h7.91A6.64,6.64,0,0,1,16,10a6.64,6.64,0,0,1-.09,1H10v2h5.19A6,6,0,0,1,4,10ZM28,27H8l5-5,1.59,1.59a2,2,0,0,0,2.82,0L23,18l5,5Zm0-6.83-3.59-3.59a2,2,0,0,0-2.82,0L16,22.17l-1.59-1.59a2,2,0,0,0-2.82,0L8,24.17V17.74A8.24,8.24,0,0,0,10,18a8,8,0,0,0,8-8,7.9,7.9,0,0,0-.59-3H28Z'
-    }
-  }
-];
 
 export const ICON_NAME = `${ICON_PREFIX}icon-visual-recognition`;
 export class WebComponentIcon extends BaseIcon {
   render() {
-    return html`${createSvgIcon(content, attrs)}`;
+    return html`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="currentColor" width="32" height="32" preserveAspectRatio="xMidYMid"><circle cx="23" cy="12" r="2" /><path d="M28,5H16.24A8,8,0,1,0,6,16.92V27a2,2,0,0,0,2,2H28a2,2,0,0,0,2-2V7A2,2,0,0,0,28,5ZM4,10A6,6,0,0,1,15.19,7H8V9h7.91A6.64,6.64,0,0,1,16,10a6.64,6.64,0,0,1-.09,1H10v2h5.19A6,6,0,0,1,4,10ZM28,27H8l5-5,1.59,1.59a2,2,0,0,0,2.82,0L23,18l5,5Zm0-6.83-3.59-3.59a2,2,0,0,0-2.82,0L16,22.17l-1.59-1.59a2,2,0,0,0-2.82,0L8,24.17V17.74A8.24,8.24,0,0,0,10,18a8,8,0,0,0,8-8,7.9,7.9,0,0,0-.59-3H28Z" /></svg>`;
   }
 }
 

@@ -15,37 +15,14 @@
 
 /* auto generated file - do not edit */
 import { html } from 'lit';
-import { createSvgIcon, IIconAttrs, IIconContent, canDefine } from '../../../utils';
 import { BaseIcon } from '../../../utils/base-icon';
+import { canDefine } from '../../../utils';
 import { ICON_PREFIX } from '../../../utils/tags';
-
-const attrs: IIconAttrs = {
-  xmlns: 'http://www.w3.org/2000/svg',
-  viewBox: '0 0 32 32',
-  fill: 'currentColor',
-  width: 32,
-  height: 32
-};
-
-const content: IIconContent[] = [
-  {
-    elem: 'path',
-    attrs: {
-      d: 'M26,4V28H6V4H26m0-2H6A2,2,0,0,0,4,4V28a2,2,0,0,0,2,2H26a2,2,0,0,0,2-2V4A2,2,0,0,0,26,2Z'
-    }
-  },
-  {
-    elem: 'path',
-    attrs: {
-      d: 'M9 23H11V25H9zM21 23H23V25H21zM9 18H11V20H9zM21 18H23V20H21zM9 13H11V15H9zM15 23H17V25H15zM15 18H17V20H15zM15 13H17V15H15zM21 13H23V15H21zM9 7H23V10H9z'
-    }
-  }
-];
 
 export const ICON_NAME = `${ICON_PREFIX}icon-calculator`;
 export class WebComponentIcon extends BaseIcon {
   render() {
-    return html`${createSvgIcon(content, attrs)}`;
+    return html`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="currentColor" width="32" height="32" preserveAspectRatio="xMidYMid"><path d="M26,4V28H6V4H26m0-2H6A2,2,0,0,0,4,4V28a2,2,0,0,0,2,2H26a2,2,0,0,0,2-2V4A2,2,0,0,0,26,2Z" /><path d="M9 23H11V25H9zM21 23H23V25H21zM9 18H11V20H9zM21 18H23V20H21zM9 13H11V15H9zM15 23H17V25H15zM15 18H17V20H15zM15 13H17V15H15zM21 13H23V15H21zM9 7H23V10H9z" /></svg>`;
   }
 }
 

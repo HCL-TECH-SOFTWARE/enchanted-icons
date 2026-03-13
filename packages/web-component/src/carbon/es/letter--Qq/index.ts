@@ -15,31 +15,14 @@
 
 /* auto generated file - do not edit */
 import { html } from 'lit';
-import { createSvgIcon, IIconAttrs, IIconContent, canDefine } from '../../../utils';
 import { BaseIcon } from '../../../utils/base-icon';
+import { canDefine } from '../../../utils';
 import { ICON_PREFIX } from '../../../utils/tags';
-
-const attrs: IIconAttrs = {
-  xmlns: 'http://www.w3.org/2000/svg',
-  viewBox: '0 0 32 32',
-  fill: 'currentColor',
-  width: 32,
-  height: 32
-};
-
-const content: IIconContent[] = [
-  {
-    elem: 'path',
-    attrs: {
-      d: 'M19 13a2 2 0 00-2 2v6a2 2 0 002 2h4v4h2V13zm4 8H19V15h4zM13 9H9a2 2 0 00-2 2V21a2 2 0 002 2h1v2a2 2 0 002 2h2V25H12V23h1a2 2 0 002-2V11A2 2 0 0013 9zM9 21V11h4V21z'
-    }
-  }
-];
 
 export const ICON_NAME = `${ICON_PREFIX}icon-letter-qq`;
 export class WebComponentIcon extends BaseIcon {
   render() {
-    return html`${createSvgIcon(content, attrs)}`;
+    return html`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="currentColor" width="32" height="32" preserveAspectRatio="xMidYMid"><path d="M19 13a2 2 0 00-2 2v6a2 2 0 002 2h4v4h2V13zm4 8H19V15h4zM13 9H9a2 2 0 00-2 2V21a2 2 0 002 2h1v2a2 2 0 002 2h2V25H12V23h1a2 2 0 002-2V11A2 2 0 0013 9zM9 21V11h4V21z" /></svg>`;
   }
 }
 

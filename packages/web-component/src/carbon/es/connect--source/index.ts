@@ -15,31 +15,14 @@
 
 /* auto generated file - do not edit */
 import { html } from 'lit';
-import { createSvgIcon, IIconAttrs, IIconContent, canDefine } from '../../../utils';
 import { BaseIcon } from '../../../utils/base-icon';
+import { canDefine } from '../../../utils';
 import { ICON_PREFIX } from '../../../utils/tags';
-
-const attrs: IIconAttrs = {
-  xmlns: 'http://www.w3.org/2000/svg',
-  viewBox: '0 0 32 32',
-  fill: 'currentColor',
-  width: 32,
-  height: 32
-};
-
-const content: IIconContent[] = [
-  {
-    elem: 'path',
-    attrs: {
-      d: 'M24,10l-1.4141,1.4141L26.1719,15H11.8989A5.0145,5.0145,0,0,0,8,11.1011V2H6v9.1011a5,5,0,0,0,0,9.7978V30H8V20.8989A5.0145,5.0145,0,0,0,11.8989,17h14.273l-3.586,3.5859L24,22l6-6ZM7,19a3,3,0,1,1,3-3A3.0033,3.0033,0,0,1,7,19Z'
-    }
-  }
-];
 
 export const ICON_NAME = `${ICON_PREFIX}icon-connect-source`;
 export class WebComponentIcon extends BaseIcon {
   render() {
-    return html`${createSvgIcon(content, attrs)}`;
+    return html`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="currentColor" width="32" height="32" preserveAspectRatio="xMidYMid"><path d="M24,10l-1.4141,1.4141L26.1719,15H11.8989A5.0145,5.0145,0,0,0,8,11.1011V2H6v9.1011a5,5,0,0,0,0,9.7978V30H8V20.8989A5.0145,5.0145,0,0,0,11.8989,17h14.273l-3.586,3.5859L24,22l6-6ZM7,19a3,3,0,1,1,3-3A3.0033,3.0033,0,0,1,7,19Z" /></svg>`;
   }
 }
 

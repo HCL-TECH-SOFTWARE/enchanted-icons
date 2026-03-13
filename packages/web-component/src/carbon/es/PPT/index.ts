@@ -15,31 +15,14 @@
 
 /* auto generated file - do not edit */
 import { html } from 'lit';
-import { createSvgIcon, IIconAttrs, IIconContent, canDefine } from '../../../utils';
 import { BaseIcon } from '../../../utils/base-icon';
+import { canDefine } from '../../../utils';
 import { ICON_PREFIX } from '../../../utils/tags';
-
-const attrs: IIconAttrs = {
-  xmlns: 'http://www.w3.org/2000/svg',
-  viewBox: '0 0 32 32',
-  fill: 'currentColor',
-  width: 32,
-  height: 32
-};
-
-const content: IIconContent[] = [
-  {
-    elem: 'path',
-    attrs: {
-      d: 'M22 11L25 11 25 23 27 23 27 11 30 11 30 9 22 9 22 11zM14 23H12V9h6a2.002 2.002 0 012 2v5a2.002 2.002 0 01-2 2H14zm0-7h4V10.9985H14zM4 23H2V9H8a2.002 2.002 0 012 2v5a2.002 2.002 0 01-2 2H4zm0-7H8V10.9985H4z'
-    }
-  }
-];
 
 export const ICON_NAME = `${ICON_PREFIX}icon-ppt`;
 export class WebComponentIcon extends BaseIcon {
   render() {
-    return html`${createSvgIcon(content, attrs)}`;
+    return html`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="currentColor" width="32" height="32" preserveAspectRatio="xMidYMid"><path d="M22 11L25 11 25 23 27 23 27 11 30 11 30 9 22 9 22 11zM14 23H12V9h6a2.002 2.002 0 012 2v5a2.002 2.002 0 01-2 2H14zm0-7h4V10.9985H14zM4 23H2V9H8a2.002 2.002 0 012 2v5a2.002 2.002 0 01-2 2H4zm0-7H8V10.9985H4z" /></svg>`;
   }
 }
 

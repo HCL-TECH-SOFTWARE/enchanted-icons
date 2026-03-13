@@ -15,44 +15,14 @@
 
 /* auto generated file - do not edit */
 import { html } from 'lit';
-import { createSvgIcon, IIconAttrs, IIconContent, canDefine } from '../../../utils';
 import { BaseIcon } from '../../../utils/base-icon';
+import { canDefine } from '../../../utils';
 import { ICON_PREFIX } from '../../../utils/tags';
-
-const attrs: IIconAttrs = {
-  xmlns: 'http://www.w3.org/2000/svg',
-  viewBox: '0 0 32 32',
-  fill: 'currentColor',
-  width: 32,
-  height: 32
-};
-
-const content: IIconContent[] = [
-  {
-    elem: 'path',
-    attrs: {
-      d: 'M23,22a1.0037,1.0037,0,0,1-.4858-.1257l-9-5a1,1,0,0,1,0-1.7485l9-5A1,1,0,0,1,24,11V21a1,1,0,0,1-1,1Z'
-    }
-  },
-  {
-    elem: 'path',
-    attrs: {
-      d: 'M9 10H11V22H9z',
-      transform: 'rotate(-180 10 16)'
-    }
-  },
-  {
-    elem: 'path',
-    attrs: {
-      d: 'M16,30A14,14,0,1,1,30,16,14.0158,14.0158,0,0,1,16,30ZM16,4A12,12,0,1,0,28,16,12.0137,12.0137,0,0,0,16,4Z'
-    }
-  }
-];
 
 export const ICON_NAME = `${ICON_PREFIX}icon-skip-back-outline-solid`;
 export class WebComponentIcon extends BaseIcon {
   render() {
-    return html`${createSvgIcon(content, attrs)}`;
+    return html`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="currentColor" width="32" height="32" preserveAspectRatio="xMidYMid"><path d="M23,22a1.0037,1.0037,0,0,1-.4858-.1257l-9-5a1,1,0,0,1,0-1.7485l9-5A1,1,0,0,1,24,11V21a1,1,0,0,1-1,1Z" /><path d="M9 10H11V22H9z" transform="rotate(-180 10 16)" /><path d="M16,30A14,14,0,1,1,30,16,14.0158,14.0158,0,0,1,16,30ZM16,4A12,12,0,1,0,28,16,12.0137,12.0137,0,0,0,16,4Z" /></svg>`;
   }
 }
 

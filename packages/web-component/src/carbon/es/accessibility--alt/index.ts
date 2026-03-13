@@ -15,45 +15,14 @@
 
 /* auto generated file - do not edit */
 import { html } from 'lit';
-import { createSvgIcon, IIconAttrs, IIconContent, canDefine } from '../../../utils';
 import { BaseIcon } from '../../../utils/base-icon';
+import { canDefine } from '../../../utils';
 import { ICON_PREFIX } from '../../../utils/tags';
-
-const attrs: IIconAttrs = {
-  xmlns: 'http://www.w3.org/2000/svg',
-  viewBox: '0 0 32 32',
-  fill: 'currentColor',
-  width: 32,
-  height: 32
-};
-
-const content: IIconContent[] = [
-  {
-    elem: 'path',
-    attrs: {
-      d: 'M23 14L23 12 9 12 9 14 14 14 14 16.734 10.132 23.504 11.868 24.496 15.58 18 16.42 18 20.132 24.496 21.868 23.504 18 16.734 18 14 23 14z'
-    }
-  },
-  {
-    elem: 'circle',
-    attrs: {
-      cx: '16',
-      cy: '9',
-      r: '2'
-    }
-  },
-  {
-    elem: 'path',
-    attrs: {
-      d: 'M16,30A14,14,0,1,1,30,16,14.0158,14.0158,0,0,1,16,30ZM16,4A12,12,0,1,0,28,16,12.0137,12.0137,0,0,0,16,4Z'
-    }
-  }
-];
 
 export const ICON_NAME = `${ICON_PREFIX}icon-accessibility-alt`;
 export class WebComponentIcon extends BaseIcon {
   render() {
-    return html`${createSvgIcon(content, attrs)}`;
+    return html`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="currentColor" width="32" height="32" preserveAspectRatio="xMidYMid"><path d="M23 14L23 12 9 12 9 14 14 14 14 16.734 10.132 23.504 11.868 24.496 15.58 18 16.42 18 20.132 24.496 21.868 23.504 18 16.734 18 14 23 14z" /><circle cx="16" cy="9" r="2" /><path d="M16,30A14,14,0,1,1,30,16,14.0158,14.0158,0,0,1,16,30ZM16,4A12,12,0,1,0,28,16,12.0137,12.0137,0,0,0,16,4Z" /></svg>`;
   }
 }
 

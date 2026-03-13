@@ -15,37 +15,14 @@
 
 /* auto generated file - do not edit */
 import { html } from 'lit';
-import { createSvgIcon, IIconAttrs, IIconContent, canDefine } from '../../../utils';
 import { BaseIcon } from '../../../utils/base-icon';
+import { canDefine } from '../../../utils';
 import { ICON_PREFIX } from '../../../utils/tags';
-
-const attrs: IIconAttrs = {
-  xmlns: 'http://www.w3.org/2000/svg',
-  viewBox: '0 0 32 32',
-  fill: 'currentColor',
-  width: 32,
-  height: 32
-};
-
-const content: IIconContent[] = [
-  {
-    elem: 'path',
-    attrs: {
-      d: 'M28 16v6H4V6H15V4H4A2 2 0 002 6V22a2 2 0 002 2h8v4H8v2H24V28H20V24h8a2 2 0 002-2V16zM18 28H14V24h4zM18 4H30V6H18z'
-    }
-  },
-  {
-    elem: 'path',
-    attrs: {
-      d: 'M18 8H30V10H18zM18 12H24V14H18z'
-    }
-  }
-];
 
 export const ICON_NAME = `${ICON_PREFIX}icon-cloud-logging`;
 export class WebComponentIcon extends BaseIcon {
   render() {
-    return html`${createSvgIcon(content, attrs)}`;
+    return html`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="currentColor" width="32" height="32" preserveAspectRatio="xMidYMid"><path d="M28 16v6H4V6H15V4H4A2 2 0 002 6V22a2 2 0 002 2h8v4H8v2H24V28H20V24h8a2 2 0 002-2V16zM18 28H14V24h4zM18 4H30V6H18z" /><path d="M18 8H30V10H18zM18 12H24V14H18z" /></svg>`;
   }
 }
 

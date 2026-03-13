@@ -15,31 +15,14 @@
 
 /* auto generated file - do not edit */
 import { html } from 'lit';
-import { createSvgIcon, IIconAttrs, IIconContent, canDefine } from '../../../utils';
 import { BaseIcon } from '../../../utils/base-icon';
+import { canDefine } from '../../../utils';
 import { ICON_PREFIX } from '../../../utils/tags';
-
-const attrs: IIconAttrs = {
-  xmlns: 'http://www.w3.org/2000/svg',
-  viewBox: '0 0 32 32',
-  fill: 'currentColor',
-  width: 32,
-  height: 32
-};
-
-const content: IIconContent[] = [
-  {
-    elem: 'path',
-    attrs: {
-      d: 'M30,15h-6.07A8.0076,8.0076,0,0,0,17,8.0693V2H15V8.0693A8.0076,8.0076,0,0,0,8.07,15H2v2H8.07A8.0076,8.0076,0,0,0,15,23.9307V30h2V23.9307A8.0076,8.0076,0,0,0,23.9305,17H30ZM16,22a6,6,0,1,1,6-6A6.0066,6.0066,0,0,1,16,22Z'
-    }
-  }
-];
 
 export const ICON_NAME = `${ICON_PREFIX}icon-airport-location`;
 export class WebComponentIcon extends BaseIcon {
   render() {
-    return html`${createSvgIcon(content, attrs)}`;
+    return html`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="currentColor" width="32" height="32" preserveAspectRatio="xMidYMid"><path d="M30,15h-6.07A8.0076,8.0076,0,0,0,17,8.0693V2H15V8.0693A8.0076,8.0076,0,0,0,8.07,15H2v2H8.07A8.0076,8.0076,0,0,0,15,23.9307V30h2V23.9307A8.0076,8.0076,0,0,0,23.9305,17H30ZM16,22a6,6,0,1,1,6-6A6.0066,6.0066,0,0,1,16,22Z" /></svg>`;
   }
 }
 

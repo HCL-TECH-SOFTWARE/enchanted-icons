@@ -15,31 +15,14 @@
 
 /* auto generated file - do not edit */
 import { html } from 'lit';
-import { createSvgIcon, IIconAttrs, IIconContent, canDefine } from '../../../utils';
 import { BaseIcon } from '../../../utils/base-icon';
+import { canDefine } from '../../../utils';
 import { ICON_PREFIX } from '../../../utils/tags';
-
-const attrs: IIconAttrs = {
-  xmlns: 'http://www.w3.org/2000/svg',
-  viewBox: '0 0 32 32',
-  fill: 'currentColor',
-  width: 32,
-  height: 32
-};
-
-const content: IIconContent[] = [
-  {
-    elem: 'path',
-    attrs: {
-      d: 'M12 6H10A2 2 0 008 8V24a2 2 0 002 2h2a2 2 0 002-2V8a2 2 0 00-2-2zM22 6H20a2 2 0 00-2 2V24a2 2 0 002 2h2a2 2 0 002-2V8a2 2 0 00-2-2z'
-    }
-  }
-];
 
 export const ICON_NAME = `${ICON_PREFIX}icon-pause-filled`;
 export class WebComponentIcon extends BaseIcon {
   render() {
-    return html`${createSvgIcon(content, attrs)}`;
+    return html`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="currentColor" width="32" height="32" preserveAspectRatio="xMidYMid"><path d="M12 6H10A2 2 0 008 8V24a2 2 0 002 2h2a2 2 0 002-2V8a2 2 0 00-2-2zM22 6H20a2 2 0 00-2 2V24a2 2 0 002 2h2a2 2 0 002-2V8a2 2 0 00-2-2z" /></svg>`;
   }
 }
 
