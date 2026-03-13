@@ -13,71 +13,8 @@
  * limitations under the License.                                           *
  * ======================================================================== */
 
-export interface IIconContent {
-  elem: string;
-  attrs: {
-    [key: string]: string | number;
-  };
-  content?: IIconContent[];
-}
-
-export interface IIconAttrs {
-  xmlns: string;
-  viewBox: string;
-  width: number;
-  height: number;
-  fill?: string;
-}
-
-const toKebabCase = (str: string) => {
-  if (str === 'viewBox' || str === 'xmlns') {
-    return str;
-  }
-  return str.replace(/([a-z0-9]|(?=[A-Z]))([A-Z])/g, '$1-$2').toLowerCase();
-};
-
-const applySvgAttributes = (element: Element, attrs: IIconAttrs) => {
-  for (const key in attrs) {
-    if (Object.hasOwnProperty.call(attrs, key)) {
-      const value = attrs[key as keyof IIconAttrs];
-      if (value !== undefined) {
-        element.setAttribute(key, String(value));
-      }
-    }
-  }
-}
-
-const appendChildren = (parent: Element, children: IIconContent[], xmlns: string) => {
-  children.forEach(item => {
-    const childElement = document.createElementNS(xmlns, item.elem);
-    if (item.attrs) {
-      for (const key in item.attrs) {
-        if (Object.hasOwnProperty.call(item.attrs, key)) {
-          const value = item.attrs[key as keyof IIconContent];
-          if (value !== undefined) {
-            childElement.setAttribute(toKebabCase(key), String(value));
-          }
-        }
-      }
-    }
-    if (item.content) {
-      appendChildren(childElement, item.content, xmlns);
-    }
-    parent.appendChild(childElement);
-  });
-};
-
-const createSvgIcon = (content: IIconContent[], attrs: IIconAttrs) => {
-  const svgElement = document.createElementNS(attrs.xmlns, 'svg') as SVGSVGElement;
-  applySvgAttributes(svgElement, attrs)
-  appendChildren(svgElement, content, attrs.xmlns);
-
-  return svgElement;
-};
-
 const canDefine = typeof globalThis !== 'undefined' && 'customElements' in globalThis;
 
 export {
-  createSvgIcon,
   canDefine
 };
