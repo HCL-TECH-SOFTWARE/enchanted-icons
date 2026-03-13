@@ -180,7 +180,7 @@ const processCustomIconDirectory = (
           ? creationYear 
           : `${creationYear}, ${lastModifiedYear}`;
 
-        const wcContent = createCustomWebComponentIcon(iconName, sizeInt, content, attrs, wcUtilsImportPath, finalCopyright);
+        const wcContent = createCustomWebComponentIcon(iconName, content, attrs, wcUtilsImportPath, finalCopyright);
         ensureDirSync(wcIconDir);
         fs.writeFileSync(wcDestFile, wcContent);
         generatedPaths.wc.add(path.resolve(wcDestFile));
