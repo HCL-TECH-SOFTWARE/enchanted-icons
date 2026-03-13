@@ -15,34 +15,14 @@
 
 /* auto generated file - do not edit */
 import { html } from 'lit';
-import { createSvgIcon, IIconAttrs, IIconContent, canDefine } from '../../../utils';
 import { BaseIcon } from '../../../utils/base-icon';
+import { canDefine } from '../../../utils';
 import { ICON_PREFIX } from '../../../utils/tags';
-
-const attrs: IIconAttrs = {
-  xmlns: 'http://www.w3.org/2000/svg',
-  viewBox: '0 0 32 32',
-  width: 24,
-  height: 24
-};
-
-const content: IIconContent[] = [
-  {
-    elem: 'rect',
-    attrs: {
-      x: -3.38,
-      y: 15,
-      width: 38.77,
-      height: 2,
-      transform: 'translate(-6.63 16) rotate(-45)'
-    }
-  }
-];
 
 export const ICON_NAME = `${ICON_PREFIX}icon-line-straight`;
 export class WebComponentIcon extends BaseIcon {
   render() {
-    return html`${createSvgIcon(content, attrs)}`;
+    return html`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="24" height="24"><rect x="-3.38" y="15" width="38.77" height="2" transform="translate(-6.63 16) rotate(-45)" /></svg>`;
   }
 }
 

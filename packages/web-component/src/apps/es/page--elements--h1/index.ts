@@ -15,46 +15,14 @@
 
 /* auto generated file - do not edit */
 import { html } from 'lit';
-import { createSvgIcon, IIconAttrs, IIconContent, canDefine } from '../../../utils';
 import { BaseIcon } from '../../../utils/base-icon';
+import { canDefine } from '../../../utils';
 import { ICON_PREFIX } from '../../../utils/tags';
-
-const attrs: IIconAttrs = {
-  xmlns: 'http://www.w3.org/2000/svg',
-  viewBox: '0 0 24 24',
-  width: 24,
-  height: 24
-};
-
-const content: IIconContent[] = [
-  {
-    elem: 'path',
-    attrs: {
-      d: 'M17.25 6.75H13.5V8.25H15.75V15.75H13.5V17.25H19.5V15.75H17.25V6.75Z',
-      fill: 'currentColor',
-      stroke: 'none',
-      strokeLinejoin: 'round',
-      strokeMiterlimit: 10,
-      fillRule: 'evenodd',
-      clipRule: 'evenodd'
-    }
-  },
-  {
-    elem: 'path',
-    attrs: {
-      d: 'M9 6.75V11.25H6V6.75H4.5V17.25H6V12.75H9V17.25H10.5V6.75H9Z',
-      fill: 'currentColor',
-      stroke: 'none',
-      strokeLinejoin: 'round',
-      strokeMiterlimit: 10
-    }
-  }
-];
 
 export const ICON_NAME = `${ICON_PREFIX}icon-page-elements-h1`;
 export class WebComponentIcon extends BaseIcon {
   render() {
-    return html`${createSvgIcon(content, attrs)}`;
+    return html`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path d="M17.25 6.75H13.5V8.25H15.75V15.75H13.5V17.25H19.5V15.75H17.25V6.75Z" fill="currentColor" stroke="none" stroke-linejoin="round" stroke-miterlimit="10" fill-rule="evenodd" clip-rule="evenodd" /><path d="M9 6.75V11.25H6V6.75H4.5V17.25H6V12.75H9V17.25H10.5V6.75H9Z" fill="currentColor" stroke="none" stroke-linejoin="round" stroke-miterlimit="10" /></svg>`;
   }
 }
 
