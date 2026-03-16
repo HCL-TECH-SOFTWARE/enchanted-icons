@@ -24,7 +24,7 @@ export class WebComponentIcon extends BaseIcon {
   render() {
     /**
      * The following HTML markup was generated using @carbon/icons 11.27.0.
-     * @carbon/icons is licensed under Apache 2.0 (see NOTICE for details).
+     * @carbon/icons is licensed under Apache 2.0.
      * Source: https://github.com/carbon-design-system/carbon
      */
     return html`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="currentColor" width="32" height="32" preserveAspectRatio="xMidYMid"><path d="M28,20H26v2h2v6H4V22H6V20H4a2.0024,2.0024,0,0,0-2,2v6a2.0024,2.0024,0,0,0,2,2H28a2.0024,2.0024,0,0,0,2-2V22A2.0024,2.0024,0,0,0,28,20Z" /><circle cx="7" cy="25" r="1" /><path d="M13 4H15V12H13zM9 4H11V12H9zM21 12H19a2.0021 2.0021 0 01-2-2V6a2.0021 2.0021 0 012-2h2a2.0021 2.0021 0 012 2v4A2.0021 2.0021 0 0121 12zM19 6v4h2V6zM21 14H23V22H21zM9 14H11V22H9zM17 22H15a2.0021 2.0021 0 01-2-2V16a2.0021 2.0021 0 012-2h2a2.0021 2.0021 0 012 2v4A2.0021 2.0021 0 0117 22zm-2-6v4h2V16z" /></svg>`;
