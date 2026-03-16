@@ -32,6 +32,7 @@ import {
 } from './utils/copyrightYears.js';
 
 const carbonSourcePath = path.resolve(process.cwd(), 'node_modules/@carbon/icons/es');
+const carbonPkgJsonPath = path.resolve(process.cwd(), 'node_modules/@carbon/icons/package.json');
 const carbonReactDestPath = path.resolve(process.cwd(), '../react/src/carbon/es');
 const carbonWcDestPath = path.resolve(process.cwd(), '../web-component/src/carbon/es');
 
@@ -231,6 +232,7 @@ const buildIcons = async () => {
 
   // Generate Carbon Icons
   console.log('Generating Carbon icons...');
+  const carbonVersion = JSON.parse(fs.readFileSync(carbonPkgJsonPath, 'utf8')).version;
   const files = fs.readdirSync(carbonSourcePath);
 
   for (const originalName of files) {
@@ -281,7 +283,7 @@ const buildIcons = async () => {
         const carbonIconModule = await import(`@carbon/icons/es/${originalName}/32.js`);
         const iconDescriptor = carbonIconModule.default;
 
-        const wcContent = createCarbonWebComponentIcon(iconName, iconDescriptor, year);
+        const wcContent = createCarbonWebComponentIcon(iconName, iconDescriptor, year, carbonVersion);
         ensureDirSync(wcFilePath);
         fs.writeFileSync(indexFile, wcContent);
 

@@ -110,9 +110,10 @@ const renderContentElements = (content) => {
  * @param {string} iconName - The name of the icon.
  * @param {object} iconDescriptor - The full carbon icon descriptor ({ elem, attrs, content }).
  * @param {string} copyrightYear - The copyright year.
+ * @param {string} carbonVersion - The version of @carbon/icons used to generate the SVG.
  * @returns {string} The Web Component icon template.
  */
-export const createCarbonWebComponentIcon = (iconName, iconDescriptor, copyrightYear) => {
+export const createCarbonWebComponentIcon = (iconName, iconDescriptor, copyrightYear, carbonVersion) => {
   const iconNameConstant = `icon-${iconName.toLowerCase().replace(/-+/g, '-')}`;
   const copyrightLine = formatCopyrightLine(copyrightYear);
 
@@ -145,6 +146,11 @@ import { ICON_PREFIX } from '../../../utils/tags';
 export const ICON_NAME = \`\${ICON_PREFIX}${iconNameConstant}\`;
 export class WebComponentIcon extends BaseIcon {
   render() {
+    /**
+     * The following HTML markup was generated using @carbon/icons ${carbonVersion}.
+     * @carbon/icons is licensed under Apache 2.0 (see NOTICE for details).
+     * Source: https://github.com/carbon-design-system/carbon
+     */
     return html\`<svg ${svgAttrsStr}>${svgChildren}</svg>\`;
   }
 }
