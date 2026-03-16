@@ -1,5 +1,5 @@
 /* ======================================================================== *
- * Copyright 2025 HCL America Inc.                                          *
+ * Copyright 2026 HCL America Inc.                                          *
  * Licensed under the Apache License, Version 2.0 (the "License");          *
  * you may not use this file except in compliance with the License.         *
  * You may obtain a copy of the License at                                  *
@@ -15,8 +15,6 @@
 
 /* auto generated file - do not edit */
 import { html } from 'lit';
-import Icon from '@carbon/icons/es/center--square/32';
-import { toSVG } from '@carbon/icon-helpers';
 import { BaseIcon } from '../../../utils/base-icon';
 import { canDefine } from '../../../utils';
 import { ICON_PREFIX } from '../../../utils/tags';
@@ -24,13 +22,19 @@ import { ICON_PREFIX } from '../../../utils/tags';
 export const ICON_NAME = `${ICON_PREFIX}icon-center-square`;
 export class WebComponentIcon extends BaseIcon {
   render() {
-    return html`${toSVG({...Icon, attrs: { ...Icon.attrs, preserveAspectRatio: 'xMidYMid'}})}`;
+    /**
+     * The following HTML markup was generated using @carbon/icons 11.27.0.
+     * @carbon/icons is licensed under Apache 2.0.
+     * Source: https://github.com/carbon-design-system/carbon
+     */
+    return html`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="currentColor" width="32" height="32" preserveAspectRatio="xMidYMid"><path d="M6 12L4 12 4 4 12 4 12 6 6 6 6 12zM28 12L26 12 26 6 20 6 20 4 28 4 28 12zM12 28L4 28 4 20 6 20 6 26 12 26 12 28zM28 28L20 28 20 26 26 26 26 20 28 20 28 28zM15 10H17V14H15zM10 15H14V17H10zM18 15H22V17H18zM15 18H17V22H15z" /></svg>`;
   }
-} 
+}
 
 if (canDefine && !customElements.get(ICON_NAME)) {
   customElements.define(ICON_NAME, WebComponentIcon);
 }
+
 declare global {
   interface HTMLElementTagNameMap {
     [ICON_NAME]: WebComponentIcon;

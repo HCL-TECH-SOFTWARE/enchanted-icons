@@ -1,5 +1,5 @@
 /* ======================================================================== *
- * Copyright 2025 HCL America Inc.                                          *
+ * Copyright 2026 HCL America Inc.                                          *
  * Licensed under the Apache License, Version 2.0 (the "License");          *
  * you may not use this file except in compliance with the License.         *
  * You may obtain a copy of the License at                                  *
@@ -15,8 +15,6 @@
 
 /* auto generated file - do not edit */
 import { html } from 'lit';
-import Icon from '@carbon/icons/es/globe/32';
-import { toSVG } from '@carbon/icon-helpers';
 import { BaseIcon } from '../../../utils/base-icon';
 import { canDefine } from '../../../utils';
 import { ICON_PREFIX } from '../../../utils/tags';
@@ -24,13 +22,19 @@ import { ICON_PREFIX } from '../../../utils/tags';
 export const ICON_NAME = `${ICON_PREFIX}icon-globe`;
 export class WebComponentIcon extends BaseIcon {
   render() {
-    return html`${toSVG({...Icon, attrs: { ...Icon.attrs, preserveAspectRatio: 'xMidYMid'}})}`;
+    /**
+     * The following HTML markup was generated using @carbon/icons 11.27.0.
+     * @carbon/icons is licensed under Apache 2.0.
+     * Source: https://github.com/carbon-design-system/carbon
+     */
+    return html`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="currentColor" width="32" height="32" preserveAspectRatio="xMidYMid"><path d="M14,4a7,7,0,1,1-7,7,7,7,0,0,1,7-7m0-2a9,9,0,1,0,9,9A9,9,0,0,0,14,2Z" /><path d="M28,11a13.9563,13.9563,0,0,0-4.1051-9.8949L22.4813,2.5187A11.9944,11.9944,0,0,1,5.5568,19.5194l-.0381-.0381L4.1051,20.8949A13.9563,13.9563,0,0,0,14,25v3H10v2H20V28H16V24.84A14.0094,14.0094,0,0,0,28,11Z" /></svg>`;
   }
-} 
+}
 
 if (canDefine && !customElements.get(ICON_NAME)) {
   customElements.define(ICON_NAME, WebComponentIcon);
 }
+
 declare global {
   interface HTMLElementTagNameMap {
     [ICON_NAME]: WebComponentIcon;

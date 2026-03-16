@@ -1,5 +1,5 @@
 /* ======================================================================== *
- * Copyright 2025 HCL America Inc.                                          *
+ * Copyright 2026 HCL America Inc.                                          *
  * Licensed under the Apache License, Version 2.0 (the "License");          *
  * you may not use this file except in compliance with the License.         *
  * You may obtain a copy of the License at                                  *
@@ -15,8 +15,6 @@
 
 /* auto generated file - do not edit */
 import { html } from 'lit';
-import Icon from '@carbon/icons/es/chart--river/32';
-import { toSVG } from '@carbon/icon-helpers';
 import { BaseIcon } from '../../../utils/base-icon';
 import { canDefine } from '../../../utils';
 import { ICON_PREFIX } from '../../../utils/tags';
@@ -24,13 +22,19 @@ import { ICON_PREFIX } from '../../../utils/tags';
 export const ICON_NAME = `${ICON_PREFIX}icon-chart-river`;
 export class WebComponentIcon extends BaseIcon {
   render() {
-    return html`${toSVG({...Icon, attrs: { ...Icon.attrs, preserveAspectRatio: 'xMidYMid'}})}`;
+    /**
+     * The following HTML markup was generated using @carbon/icons 11.27.0.
+     * @carbon/icons is licensed under Apache 2.0.
+     * Source: https://github.com/carbon-design-system/carbon
+     */
+    return html`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="currentColor" width="32" height="32" preserveAspectRatio="xMidYMid"><path d="M12.4326,20.0171l8.0376,4.68a1.958,1.958,0,0,0,1.0508.3012,2.2412,2.2412,0,0,0,.4888-.0556l7.2532-1.9769A1,1,0,0,0,30,22.0007V7.996A1,1,0,0,0,28.74,7.0305L21.5034,8.9829l-8.0371-4.68a1.9917,1.9917,0,0,0-1.8652-.1352L4,7.4727V2H2V28a2,2,0,0,0,2,2H30V28H4V23.6577ZM28,21.2344l-6.4966,1.75-8.0371-4.68a1.9931,1.9931,0,0,0-1.8652-.1353L4,21.4746V16.6572l8.4326-3.6416L20.47,17.6968a1.962,1.962,0,0,0,1.0508.3008,2.2112,2.2112,0,0,0,.4888-.0557L28,16.31ZM12.4326,6.0156l8.0376,4.68a2.0091,2.0091,0,0,0,1.54.2451L28,9.3081v4.9258l-6.4966,1.7505-8.0371-4.6812a1.9917,1.9917,0,0,0-1.8652-.1352L4,14.4736V9.6562Z" /></svg>`;
   }
-} 
+}
 
 if (canDefine && !customElements.get(ICON_NAME)) {
   customElements.define(ICON_NAME, WebComponentIcon);
 }
+
 declare global {
   interface HTMLElementTagNameMap {
     [ICON_NAME]: WebComponentIcon;

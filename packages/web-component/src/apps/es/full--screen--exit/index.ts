@@ -15,64 +15,14 @@
 
 /* auto generated file - do not edit */
 import { html } from 'lit';
-import { createSvgIcon, IIconAttrs, IIconContent, canDefine } from '../../../utils';
 import { BaseIcon } from '../../../utils/base-icon';
+import { canDefine } from '../../../utils';
 import { ICON_PREFIX } from '../../../utils/tags';
-
-const attrs: IIconAttrs = {
-  xmlns: 'http://www.w3.org/2000/svg',
-  viewBox: '0 0 24 24',
-  width: 24,
-  height: 24
-};
-
-const content: IIconContent[] = [
-  {
-    elem: 'path',
-    attrs: {
-      d: 'M22.5 15H15V22.5H16.5V16.5H22.5V15Z',
-      fill: 'currentColor',
-      stroke: 'none',
-      strokeLinejoin: 'round',
-      strokeMiterlimit: 10
-    }
-  },
-  {
-    elem: 'path',
-    attrs: {
-      d: 'M1.5 15H9V22.5H7.5V16.5H1.5V15Z',
-      fill: 'currentColor',
-      stroke: 'none',
-      strokeLinejoin: 'round',
-      strokeMiterlimit: 10
-    }
-  },
-  {
-    elem: 'path',
-    attrs: {
-      d: 'M22.5 9H15V1.5H16.5V7.5H22.5V9Z',
-      fill: 'currentColor',
-      stroke: 'none',
-      strokeLinejoin: 'round',
-      strokeMiterlimit: 10
-    }
-  },
-  {
-    elem: 'path',
-    attrs: {
-      d: 'M1.5 9H9V1.5H7.5V7.5H1.5V9Z',
-      fill: 'currentColor',
-      stroke: 'none',
-      strokeLinejoin: 'round',
-      strokeMiterlimit: 10
-    }
-  }
-];
 
 export const ICON_NAME = `${ICON_PREFIX}icon-full-screen-exit`;
 export class WebComponentIcon extends BaseIcon {
   render() {
-    return html`${createSvgIcon(content, attrs)}`;
+    return html`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path d="M22.5 15H15V22.5H16.5V16.5H22.5V15Z" fill="currentColor" stroke="none" stroke-linejoin="round" stroke-miterlimit="10" /><path d="M1.5 15H9V22.5H7.5V16.5H1.5V15Z" fill="currentColor" stroke="none" stroke-linejoin="round" stroke-miterlimit="10" /><path d="M22.5 9H15V1.5H16.5V7.5H22.5V9Z" fill="currentColor" stroke="none" stroke-linejoin="round" stroke-miterlimit="10" /><path d="M1.5 9H9V1.5H7.5V7.5H1.5V9Z" fill="currentColor" stroke="none" stroke-linejoin="round" stroke-miterlimit="10" /></svg>`;
   }
 }
 

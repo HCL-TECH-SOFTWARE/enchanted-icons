@@ -1,5 +1,5 @@
 /* ======================================================================== *
- * Copyright 2025 HCL America Inc.                                          *
+ * Copyright 2026 HCL America Inc.                                          *
  * Licensed under the Apache License, Version 2.0 (the "License");          *
  * you may not use this file except in compliance with the License.         *
  * You may obtain a copy of the License at                                  *
@@ -15,8 +15,6 @@
 
 /* auto generated file - do not edit */
 import { html } from 'lit';
-import Icon from '@carbon/icons/es/face--neutral/32';
-import { toSVG } from '@carbon/icon-helpers';
 import { BaseIcon } from '../../../utils/base-icon';
 import { canDefine } from '../../../utils';
 import { ICON_PREFIX } from '../../../utils/tags';
@@ -24,13 +22,19 @@ import { ICON_PREFIX } from '../../../utils/tags';
 export const ICON_NAME = `${ICON_PREFIX}icon-face-neutral`;
 export class WebComponentIcon extends BaseIcon {
   render() {
-    return html`${toSVG({...Icon, attrs: { ...Icon.attrs, preserveAspectRatio: 'xMidYMid'}})}`;
+    /**
+     * The following HTML markup was generated using @carbon/icons 11.27.0.
+     * @carbon/icons is licensed under Apache 2.0.
+     * Source: https://github.com/carbon-design-system/carbon
+     */
+    return html`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="currentColor" width="32" height="32" preserveAspectRatio="xMidYMid"><path d="M16,2A14,14,0,1,0,30,16,14,14,0,0,0,16,2Zm0,26A12,12,0,1,1,28,16,12,12,0,0,1,16,28Z" /><path d="M11.5 11A2.5 2.5 0 1014 13.5 2.5 2.5 0 0011.5 11zM20.5 11A2.5 2.5 0 1023 13.5 2.5 2.5 0 0020.5 11zM10 20H22V22H10z" /></svg>`;
   }
-} 
+}
 
 if (canDefine && !customElements.get(ICON_NAME)) {
   customElements.define(ICON_NAME, WebComponentIcon);
 }
+
 declare global {
   interface HTMLElementTagNameMap {
     [ICON_NAME]: WebComponentIcon;

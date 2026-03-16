@@ -1,5 +1,5 @@
 /* ======================================================================== *
- * Copyright 2025 HCL America Inc.                                          *
+ * Copyright 2026 HCL America Inc.                                          *
  * Licensed under the Apache License, Version 2.0 (the "License");          *
  * you may not use this file except in compliance with the License.         *
  * You may obtain a copy of the License at                                  *
@@ -15,8 +15,6 @@
 
 /* auto generated file - do not edit */
 import { html } from 'lit';
-import Icon from '@carbon/icons/es/gas-station/32';
-import { toSVG } from '@carbon/icon-helpers';
 import { BaseIcon } from '../../../utils/base-icon';
 import { canDefine } from '../../../utils';
 import { ICON_PREFIX } from '../../../utils/tags';
@@ -24,13 +22,19 @@ import { ICON_PREFIX } from '../../../utils/tags';
 export const ICON_NAME = `${ICON_PREFIX}icon-gas-station`;
 export class WebComponentIcon extends BaseIcon {
   render() {
-    return html`${toSVG({...Icon, attrs: { ...Icon.attrs, preserveAspectRatio: 'xMidYMid'}})}`;
+    /**
+     * The following HTML markup was generated using @carbon/icons 11.27.0.
+     * @carbon/icons is licensed under Apache 2.0.
+     * Source: https://github.com/carbon-design-system/carbon
+     */
+    return html`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="currentColor" width="32" height="32" preserveAspectRatio="xMidYMid"><path d="M8 10H15V12H8z" /><path d="M28.4142,8l-5-5L22,4.4141l3,3V12a2.0023,2.0023,0,0,0,2,2V24.5a1.5,1.5,0,0,1-3,0V16a1,1,0,0,0-1-1H19V5a1,1,0,0,0-1-1H5A1,1,0,0,0,4,5V26H2v2H21V26H19V17h3v7.4a3.5644,3.5644,0,0,0,2.7654,3.5251A3.5062,3.5062,0,0,0,29,24.5V9.4144A2,2,0,0,0,28.4142,8ZM17,26H6V6H17Z" /></svg>`;
   }
-} 
+}
 
 if (canDefine && !customElements.get(ICON_NAME)) {
   customElements.define(ICON_NAME, WebComponentIcon);
 }
+
 declare global {
   interface HTMLElementTagNameMap {
     [ICON_NAME]: WebComponentIcon;

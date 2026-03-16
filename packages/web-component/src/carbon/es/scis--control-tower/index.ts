@@ -1,5 +1,5 @@
 /* ======================================================================== *
- * Copyright 2025 HCL America Inc.                                          *
+ * Copyright 2026 HCL America Inc.                                          *
  * Licensed under the Apache License, Version 2.0 (the "License");          *
  * you may not use this file except in compliance with the License.         *
  * You may obtain a copy of the License at                                  *
@@ -15,8 +15,6 @@
 
 /* auto generated file - do not edit */
 import { html } from 'lit';
-import Icon from '@carbon/icons/es/scis--control-tower/32';
-import { toSVG } from '@carbon/icon-helpers';
 import { BaseIcon } from '../../../utils/base-icon';
 import { canDefine } from '../../../utils';
 import { ICON_PREFIX } from '../../../utils/tags';
@@ -24,13 +22,19 @@ import { ICON_PREFIX } from '../../../utils/tags';
 export const ICON_NAME = `${ICON_PREFIX}icon-scis-control-tower`;
 export class WebComponentIcon extends BaseIcon {
   render() {
-    return html`${toSVG({...Icon, attrs: { ...Icon.attrs, preserveAspectRatio: 'xMidYMid'}})}`;
+    /**
+     * The following HTML markup was generated using @carbon/icons 11.27.0.
+     * @carbon/icons is licensed under Apache 2.0.
+     * Source: https://github.com/carbon-design-system/carbon
+     */
+    return html`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="currentColor" width="32" height="32" preserveAspectRatio="xMidYMid"><path d="M27,19c-0.3,0-0.7,0.1-1,0.2L20.4,12c1-1.1,1.6-2.5,1.6-4c0-3.3-2.7-6-6-6s-6,2.7-6,6c0,1.6,0.6,3,1.6,4L6,19.2	C5.7,19.1,5.3,19,5,19c-1.7,0-3,1.3-3,3s1.3,3,3,3s3-1.3,3-3c0-0.6-0.2-1.1-0.5-1.6l5.6-7.1c0.6,0.3,1.2,0.5,1.9,0.6v10.3	c-1.2,0.4-2,1.5-2,2.8c0,1.7,1.3,3,3,3s3-1.3,3-3c0-1.3-0.8-2.4-2-2.8V13.9c0.7-0.1,1.3-0.3,1.9-0.6l5.6,7.1c-0.3,0.5-0.5,1-0.5,1.6	c0,1.7,1.3,3,3,3s3-1.3,3-3S28.7,19,27,19z M16,4c2.2,0,4,1.8,4,4s-1.8,4-4,4s-4-1.8-4-4S13.8,4,16,4z M5,23c-0.6,0-1-0.4-1-1	s0.4-1,1-1s1,0.4,1,1S5.6,23,5,23z M16,28c-0.6,0-1-0.4-1-1s0.4-1,1-1s1,0.4,1,1S16.6,28,16,28z M27,23c-0.6,0-1-0.4-1-1s0.4-1,1-1	s1,0.4,1,1S27.6,23,27,23z" /></svg>`;
   }
-} 
+}
 
 if (canDefine && !customElements.get(ICON_NAME)) {
   customElements.define(ICON_NAME, WebComponentIcon);
 }
+
 declare global {
   interface HTMLElementTagNameMap {
     [ICON_NAME]: WebComponentIcon;

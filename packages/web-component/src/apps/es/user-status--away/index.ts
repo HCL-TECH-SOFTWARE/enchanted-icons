@@ -15,41 +15,14 @@
 
 /* auto generated file - do not edit */
 import { html } from 'lit';
-import { createSvgIcon, IIconAttrs, IIconContent, canDefine } from '../../../utils';
 import { BaseIcon } from '../../../utils/base-icon';
+import { canDefine } from '../../../utils';
 import { ICON_PREFIX } from '../../../utils/tags';
-
-const attrs: IIconAttrs = {
-  xmlns: 'http://www.w3.org/2000/svg',
-  viewBox: '0 0 32 32',
-  width: 32,
-  height: 32
-};
-
-const content: IIconContent[] = [
-  {
-    elem: 'circle',
-    attrs: {
-      cx: 16,
-      cy: 16,
-      fill: 'currentColor',
-      r: 14
-    }
-  },
-  {
-    elem: 'path',
-    attrs: {
-      d: 'M20.59 22L15 16.41V7h2v8.58l5 5.01L20.59 22z',
-      stroke: '#FFF',
-      strokeWidth: 3
-    }
-  }
-];
 
 export const ICON_NAME = `${ICON_PREFIX}icon-user-status-away`;
 export class WebComponentIcon extends BaseIcon {
   render() {
-    return html`${createSvgIcon(content, attrs)}`;
+    return html`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32"><circle cx="16" cy="16" fill="currentColor" r="14" /><path d="M20.59 22L15 16.41V7h2v8.58l5 5.01L20.59 22z" stroke="#FFF" stroke-width="3" /></svg>`;
   }
 }
 

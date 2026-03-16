@@ -32,6 +32,7 @@ import {
 } from './utils/copyrightYears.js';
 
 const carbonSourcePath = path.resolve(process.cwd(), 'node_modules/@carbon/icons/es');
+const carbonPkgJsonPath = path.resolve(process.cwd(), 'node_modules/@carbon/icons/package.json');
 const carbonReactDestPath = path.resolve(process.cwd(), '../react/src/carbon/es');
 const carbonWcDestPath = path.resolve(process.cwd(), '../web-component/src/carbon/es');
 
@@ -180,7 +181,7 @@ const processCustomIconDirectory = (
           ? creationYear 
           : `${creationYear}, ${lastModifiedYear}`;
 
-        const wcContent = createCustomWebComponentIcon(iconName, sizeInt, content, attrs, wcUtilsImportPath, finalCopyright);
+        const wcContent = createCustomWebComponentIcon(iconName, content, attrs, wcUtilsImportPath, finalCopyright);
         ensureDirSync(wcIconDir);
         fs.writeFileSync(wcDestFile, wcContent);
         generatedPaths.wc.add(path.resolve(wcDestFile));
@@ -203,7 +204,7 @@ const processCustomIconDirectory = (
   }
 }
 
-const buildIcons = () => {
+const buildIcons = async () => {
   console.log('START - Generating icons...');
 
   const counters = {
@@ -231,6 +232,7 @@ const buildIcons = () => {
 
   // Generate Carbon Icons
   console.log('Generating Carbon icons...');
+  const carbonVersion = JSON.parse(fs.readFileSync(carbonPkgJsonPath, 'utf8')).version;
   const files = fs.readdirSync(carbonSourcePath);
 
   for (const originalName of files) {
@@ -264,11 +266,9 @@ const buildIcons = () => {
 
     // Create web components
     if (!wcExcludes.has(originalName) && fs.existsSync(path.join(carbonSourcePath, originalName, '32.js'))) {
-      let isRenamed = false;
       let iconName = originalName;
       if (wcRenames.has(originalName)) {
         iconName = wcRenames.get(originalName);
-        isRenamed = true;
       }
       
       try {
@@ -279,7 +279,11 @@ const buildIcons = () => {
         const existingYear = getCopyrightYear(indexFile, null);
         const year = existingYear || new Date().getFullYear().toString();
 
-        const wcContent = createCarbonWebComponentIcon(iconName, 32, originalName, year);
+        // Read carbon icon descriptor at build time to pre-render SVG markup
+        const carbonIconModule = await import(`@carbon/icons/es/${originalName}/32.js`);
+        const iconDescriptor = carbonIconModule.default;
+
+        const wcContent = createCarbonWebComponentIcon(iconName, iconDescriptor, year, carbonVersion);
         ensureDirSync(wcFilePath);
         fs.writeFileSync(indexFile, wcContent);
 

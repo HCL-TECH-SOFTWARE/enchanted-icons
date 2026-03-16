@@ -7,6 +7,7 @@
 ### Fixed
 
 ### Changed
+- Adjusting the web component icon generation logic for carbon and custom icons. The `SVG` tag is now pre-generated and directly part for the Icon web component.
 
 #### Breaking changes
 

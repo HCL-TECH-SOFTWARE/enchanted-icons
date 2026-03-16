@@ -15,44 +15,14 @@
 
 /* auto generated file - do not edit */
 import { html } from 'lit';
-import { createSvgIcon, IIconAttrs, IIconContent, canDefine } from '../../../utils';
 import { BaseIcon } from '../../../utils/base-icon';
+import { canDefine } from '../../../utils';
 import { ICON_PREFIX } from '../../../utils/tags';
-
-const attrs: IIconAttrs = {
-  xmlns: 'http://www.w3.org/2000/svg',
-  viewBox: '0 0 24 24',
-  width: 24,
-  height: 24
-};
-
-const content: IIconContent[] = [
-  {
-    elem: 'path',
-    attrs: {
-      d: 'M12 3L6 9H18L12 3Z',
-      fill: 'currentColor',
-      stroke: 'none',
-      strokeLinejoin: 'round',
-      strokeMiterlimit: 10
-    }
-  },
-  {
-    elem: 'path',
-    attrs: {
-      d: 'M12 21L18 15H6L12 21Z',
-      fill: 'currentColor',
-      stroke: 'none',
-      strokeLinejoin: 'round',
-      strokeMiterlimit: 10
-    }
-  }
-];
 
 export const ICON_NAME = `${ICON_PREFIX}icon-caret-sort-alt`;
 export class WebComponentIcon extends BaseIcon {
   render() {
-    return html`${createSvgIcon(content, attrs)}`;
+    return html`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path d="M12 3L6 9H18L12 3Z" fill="currentColor" stroke="none" stroke-linejoin="round" stroke-miterlimit="10" /><path d="M12 21L18 15H6L12 21Z" fill="currentColor" stroke="none" stroke-linejoin="round" stroke-miterlimit="10" /></svg>`;
   }
 }
 

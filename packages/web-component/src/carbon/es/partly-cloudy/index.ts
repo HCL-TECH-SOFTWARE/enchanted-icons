@@ -1,5 +1,5 @@
 /* ======================================================================== *
- * Copyright 2025 HCL America Inc.                                          *
+ * Copyright 2026 HCL America Inc.                                          *
  * Licensed under the Apache License, Version 2.0 (the "License");          *
  * you may not use this file except in compliance with the License.         *
  * You may obtain a copy of the License at                                  *
@@ -15,8 +15,6 @@
 
 /* auto generated file - do not edit */
 import { html } from 'lit';
-import Icon from '@carbon/icons/es/partly-cloudy/32';
-import { toSVG } from '@carbon/icon-helpers';
 import { BaseIcon } from '../../../utils/base-icon';
 import { canDefine } from '../../../utils';
 import { ICON_PREFIX } from '../../../utils/tags';
@@ -24,13 +22,19 @@ import { ICON_PREFIX } from '../../../utils/tags';
 export const ICON_NAME = `${ICON_PREFIX}icon-partly-cloudy`;
 export class WebComponentIcon extends BaseIcon {
   render() {
-    return html`${toSVG({...Icon, attrs: { ...Icon.attrs, preserveAspectRatio: 'xMidYMid'}})}`;
+    /**
+     * The following HTML markup was generated using @carbon/icons 11.27.0.
+     * @carbon/icons is licensed under Apache 2.0.
+     * Source: https://github.com/carbon-design-system/carbon
+     */
+    return html`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="currentColor" width="32" height="32" preserveAspectRatio="xMidYMid"><path d="M27 15H31V17H27z" /><path d="M23.086 5.794H27.329V7.794H23.086z" transform="rotate(-45 25.207 6.794)" /><path d="M15 1H17V5H15z" /><path d="M4.672 24.208H8.915V26.208H4.672z" transform="rotate(-45 6.793 25.208)" /><path d="M5.793 4.672H7.793V8.915H5.793z" transform="rotate(-45 6.793 6.794)" /><path d="M1 15H5V17H1zM26.7939 20.3418a6.9617 6.9617 0 00-1.8681-3.2671A8.485 8.485 0 0025 16a9 9 0 10-14.585 7.0332A4.9771 4.9771 0 0015 30H25a4.9947 4.9947 0 001.7939-9.6582zM9 16a6.9955 6.9955 0 0113.9849-.2969A6.8883 6.8883 0 0020 15a7.04 7.04 0 00-6.7944 5.3418A4.986 4.986 0 0011.5618 21.39 6.9675 6.9675 0 019 16zM25 28H15a2.9945 2.9945 0 01-.6963-5.9082l.6587-.1572.0986-.67a4.9923 4.9923 0 019.878 0l.0986.6695.6587.1572A2.9945 2.9945 0 0125 28z" /></svg>`;
   }
-} 
+}
 
 if (canDefine && !customElements.get(ICON_NAME)) {
   customElements.define(ICON_NAME, WebComponentIcon);
 }
+
 declare global {
   interface HTMLElementTagNameMap {
     [ICON_NAME]: WebComponentIcon;

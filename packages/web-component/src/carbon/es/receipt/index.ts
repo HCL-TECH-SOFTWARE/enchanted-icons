@@ -1,5 +1,5 @@
 /* ======================================================================== *
- * Copyright 2025 HCL America Inc.                                          *
+ * Copyright 2026 HCL America Inc.                                          *
  * Licensed under the Apache License, Version 2.0 (the "License");          *
  * you may not use this file except in compliance with the License.         *
  * You may obtain a copy of the License at                                  *
@@ -15,8 +15,6 @@
 
 /* auto generated file - do not edit */
 import { html } from 'lit';
-import Icon from '@carbon/icons/es/receipt/32';
-import { toSVG } from '@carbon/icon-helpers';
 import { BaseIcon } from '../../../utils/base-icon';
 import { canDefine } from '../../../utils';
 import { ICON_PREFIX } from '../../../utils/tags';
@@ -24,13 +22,19 @@ import { ICON_PREFIX } from '../../../utils/tags';
 export const ICON_NAME = `${ICON_PREFIX}icon-receipt`;
 export class WebComponentIcon extends BaseIcon {
   render() {
-    return html`${toSVG({...Icon, attrs: { ...Icon.attrs, preserveAspectRatio: 'xMidYMid'}})}`;
+    /**
+     * The following HTML markup was generated using @carbon/icons 11.27.0.
+     * @carbon/icons is licensed under Apache 2.0.
+     * Source: https://github.com/carbon-design-system/carbon
+     */
+    return html`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="currentColor" width="32" height="32" preserveAspectRatio="xMidYMid"><path d="M21 16H23V18H21zM9 16H17V18H9zM21 12H23V14H21zM9 12H17V14H9zM9 8H23V10H9z" /><path d="M25,2H7A2.002,2.002,0,0,0,5,4V29a1,1,0,0,0,1,1H7a.9987.9987,0,0,0,.8-.4L10,26.667,12.2,29.6a1.0353,1.0353,0,0,0,1.6,0L16,26.667,18.2,29.6a1.0353,1.0353,0,0,0,1.6,0L22,26.667,24.2,29.6a.9993.9993,0,0,0,.8.4h1a1,1,0,0,0,1-1V4A2.0023,2.0023,0,0,0,25,2Zm0,25.333L22.8,24.4a1.0353,1.0353,0,0,0-1.6,0L19,27.333,16.8,24.4a1.0353,1.0353,0,0,0-1.6,0L13,27.333,10.8,24.4a1.0353,1.0353,0,0,0-1.6,0L7,27.333V4H25Z" /></svg>`;
   }
-} 
+}
 
 if (canDefine && !customElements.get(ICON_NAME)) {
   customElements.define(ICON_NAME, WebComponentIcon);
 }
+
 declare global {
   interface HTMLElementTagNameMap {
     [ICON_NAME]: WebComponentIcon;
