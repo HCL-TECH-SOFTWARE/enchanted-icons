@@ -22,6 +22,11 @@ import { ICON_PREFIX } from '../../../utils/tags';
 export const ICON_NAME = `${ICON_PREFIX}icon-chart-win-loss`;
 export class WebComponentIcon extends BaseIcon {
   render() {
+    /**
+     * The following HTML markup was generated using @carbon/icons 11.27.0.
+     * @carbon/icons is licensed under Apache 2.0 (see NOTICE for details).
+     * Source: https://github.com/carbon-design-system/carbon
+     */
     return html`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="currentColor" width="32" height="32" preserveAspectRatio="xMidYMid"><path d="M30,15H16V6a2.0023,2.0023,0,0,0-2-2H6A2.0023,2.0023,0,0,0,4,6v9H2v2H16v9a2.0023,2.0023,0,0,0,2,2h8a2.0023,2.0023,0,0,0,2-2V17h2ZM6,6h8v9H6ZM26,26H18V17h8Z" /></svg>`;
   }
 }

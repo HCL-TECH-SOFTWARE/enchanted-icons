@@ -22,6 +22,11 @@ import { ICON_PREFIX } from '../../../utils/tags';
 export const ICON_NAME = `${ICON_PREFIX}icon-pan-vertical`;
 export class WebComponentIcon extends BaseIcon {
   render() {
+    /**
+     * The following HTML markup was generated using @carbon/icons 11.27.0.
+     * @carbon/icons is licensed under Apache 2.0 (see NOTICE for details).
+     * Source: https://github.com/carbon-design-system/carbon
+     */
     return html`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="currentColor" width="32" height="32" preserveAspectRatio="xMidYMid"><path d="M10 8L11.414 9.414 15 5.828 15 26.172 11.414 22.586 10 24 16 30 22 24 20.586 22.586 17 26.172 17 5.828 20.586 9.414 22 8 16 2 10 8z" /></svg>`;
   }
 }

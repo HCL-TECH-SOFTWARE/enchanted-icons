@@ -22,6 +22,11 @@ import { ICON_PREFIX } from '../../../utils/tags';
 export const ICON_NAME = `${ICON_PREFIX}icon-chart-error-bar`;
 export class WebComponentIcon extends BaseIcon {
   render() {
+    /**
+     * The following HTML markup was generated using @carbon/icons 11.27.0.
+     * @carbon/icons is licensed under Apache 2.0 (see NOTICE for details).
+     * Source: https://github.com/carbon-design-system/carbon
+     */
     return html`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="currentColor" width="32" height="32" preserveAspectRatio="xMidYMid"><path d="M22,28V12H18V8h2V6H14V8h2v4H12V28H4V2H2V28a2,2,0,0,0,2,2H30V28ZM14,14h2v4H14Zm6,14H14V20h6Zm0-10H18V14h2Z" /></svg>`;
   }
 }

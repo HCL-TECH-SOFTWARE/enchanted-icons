@@ -22,6 +22,11 @@ import { ICON_PREFIX } from '../../../utils/tags';
 export const ICON_NAME = `${ICON_PREFIX}icon-letter-qq`;
 export class WebComponentIcon extends BaseIcon {
   render() {
+    /**
+     * The following HTML markup was generated using @carbon/icons 11.27.0.
+     * @carbon/icons is licensed under Apache 2.0 (see NOTICE for details).
+     * Source: https://github.com/carbon-design-system/carbon
+     */
     return html`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="currentColor" width="32" height="32" preserveAspectRatio="xMidYMid"><path d="M19 13a2 2 0 00-2 2v6a2 2 0 002 2h4v4h2V13zm4 8H19V15h4zM13 9H9a2 2 0 00-2 2V21a2 2 0 002 2h1v2a2 2 0 002 2h2V25H12V23h1a2 2 0 002-2V11A2 2 0 0013 9zM9 21V11h4V21z" /></svg>`;
   }
 }

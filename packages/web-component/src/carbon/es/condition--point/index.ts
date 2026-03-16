@@ -22,6 +22,11 @@ import { ICON_PREFIX } from '../../../utils/tags';
 export const ICON_NAME = `${ICON_PREFIX}icon-condition-point`;
 export class WebComponentIcon extends BaseIcon {
   render() {
+    /**
+     * The following HTML markup was generated using @carbon/icons 11.27.0.
+     * @carbon/icons is licensed under Apache 2.0 (see NOTICE for details).
+     * Source: https://github.com/carbon-design-system/carbon
+     */
     return html`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="currentColor" width="32" height="32" preserveAspectRatio="xMidYMid"><path d="M10.343 10.343H21.657V21.657H10.343z" transform="rotate(-45 16 16)" /><path d="M29.3906,14.5269,17.4731,2.6094a2.0852,2.0852,0,0,0-2.9462,0L2.6094,14.5269a2.0852,2.0852,0,0,0,0,2.9462L14.5269,29.3906a2.0852,2.0852,0,0,0,2.9462,0L29.3906,17.4731a2.0852,2.0852,0,0,0,0-2.9462ZM16,28.0356,3.9646,16,16,3.9644,28.0356,16Z" /></svg>`;
   }
 }

@@ -22,6 +22,11 @@ import { ICON_PREFIX } from '../../../utils/tags';
 export const ICON_NAME = `${ICON_PREFIX}icon-media-library-filled`;
 export class WebComponentIcon extends BaseIcon {
   render() {
+    /**
+     * The following HTML markup was generated using @carbon/icons 11.27.0.
+     * @carbon/icons is licensed under Apache 2.0 (see NOTICE for details).
+     * Source: https://github.com/carbon-design-system/carbon
+     */
     return html`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="currentColor" width="32" height="32" preserveAspectRatio="xMidYMid"><path fill="none" d="M13 15L13 23 13 23 20 19 13 15z" data-icon-path="inner-path" /><path d="M26 10H6a2.0023 2.0023 0 00-2 2V26a2.0023 2.0023 0 002 2H26a2.0023 2.0023 0 002-2V12A2.0023 2.0023 0 0026 10zM13 23h0V15l7 4zM6 6H26V8H6zM8 2H24V4H8z" /></svg>`;
   }
 }

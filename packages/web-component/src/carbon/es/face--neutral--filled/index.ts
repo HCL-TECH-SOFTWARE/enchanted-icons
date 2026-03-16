@@ -22,6 +22,11 @@ import { ICON_PREFIX } from '../../../utils/tags';
 export const ICON_NAME = `${ICON_PREFIX}icon-face-neutral-filled`;
 export class WebComponentIcon extends BaseIcon {
   render() {
+    /**
+     * The following HTML markup was generated using @carbon/icons 11.27.0.
+     * @carbon/icons is licensed under Apache 2.0 (see NOTICE for details).
+     * Source: https://github.com/carbon-design-system/carbon
+     */
     return html`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="currentColor" width="32" height="32" preserveAspectRatio="xMidYMid"><path d="M16,2A14,14,0,1,0,30,16,14,14,0,0,0,16,2ZM9,13.5A2.5,2.5,0,1,1,11.5,16,2.5,2.5,0,0,1,9,13.5ZM22,22H10V20H22Zm-1.5-6A2.5,2.5,0,1,1,23,13.5,2.5,2.5,0,0,1,20.5,16Z" /></svg>`;
   }
 }

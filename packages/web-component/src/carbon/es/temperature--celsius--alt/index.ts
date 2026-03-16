@@ -22,6 +22,11 @@ import { ICON_PREFIX } from '../../../utils/tags';
 export const ICON_NAME = `${ICON_PREFIX}icon-temperature-celsius-alt`;
 export class WebComponentIcon extends BaseIcon {
   render() {
+    /**
+     * The following HTML markup was generated using @carbon/icons 11.27.0.
+     * @carbon/icons is licensed under Apache 2.0 (see NOTICE for details).
+     * Source: https://github.com/carbon-design-system/carbon
+     */
     return html`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="currentColor" width="32" height="32" preserveAspectRatio="xMidYMid"><path d="M26 27H17a2.0023 2.0023 0 01-2-2V11a2.002 2.002 0 012-2h9v2H17V25h9zM8 13a4 4 0 114-4h0A4.0118 4.0118 0 018 13zM8 7a2 2 0 102 2h0A2.0059 2.0059 0 008 7z" /></svg>`;
   }
 }

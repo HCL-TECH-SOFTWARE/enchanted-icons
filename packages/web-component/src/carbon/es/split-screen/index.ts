@@ -22,6 +22,11 @@ import { ICON_PREFIX } from '../../../utils/tags';
 export const ICON_NAME = `${ICON_PREFIX}icon-split-screen`;
 export class WebComponentIcon extends BaseIcon {
   render() {
+    /**
+     * The following HTML markup was generated using @carbon/icons 11.27.0.
+     * @carbon/icons is licensed under Apache 2.0 (see NOTICE for details).
+     * Source: https://github.com/carbon-design-system/carbon
+     */
     return html`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="currentColor" width="32" height="32" preserveAspectRatio="xMidYMid"><path d="M15 4H17V28H15zM10 7V25H4V7h6m0-2H4A2 2 0 002 7V25a2 2 0 002 2h6a2 2 0 002-2V7a2 2 0 00-2-2zM28 7V25H22V7h6m0-2H22a2 2 0 00-2 2V25a2 2 0 002 2h6a2 2 0 002-2V7a2 2 0 00-2-2z" /></svg>`;
   }
 }

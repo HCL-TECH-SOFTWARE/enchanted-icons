@@ -22,6 +22,11 @@ import { ICON_PREFIX } from '../../../utils/tags';
 export const ICON_NAME = `${ICON_PREFIX}icon-sort-remove`;
 export class WebComponentIcon extends BaseIcon {
   render() {
+    /**
+     * The following HTML markup was generated using @carbon/icons 11.27.0.
+     * @carbon/icons is licensed under Apache 2.0 (see NOTICE for details).
+     * Source: https://github.com/carbon-design-system/carbon
+     */
     return html`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="currentColor" width="32" height="32" preserveAspectRatio="xMidYMid"><path d="M30 19.415L28.586 18 25 21.587 21.414 18 20 19.415 23.586 23 20 26.586 21.414 28 25 24.414 28.586 28 30 26.586 26.414 23 30 19.415zM10 18H16V20H10zM2 6H16V8H2zM6 12H16V14H6z" /></svg>`;
   }
 }

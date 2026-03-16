@@ -22,6 +22,11 @@ import { ICON_PREFIX } from '../../../utils/tags';
 export const ICON_NAME = `${ICON_PREFIX}icon-letter-yy`;
 export class WebComponentIcon extends BaseIcon {
   render() {
+    /**
+     * The following HTML markup was generated using @carbon/icons 11.27.0.
+     * @carbon/icons is licensed under Apache 2.0 (see NOTICE for details).
+     * Source: https://github.com/carbon-design-system/carbon
+     */
     return html`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="currentColor" width="32" height="32" preserveAspectRatio="xMidYMid"><path d="M15 9L13 9 11 16 9 9 7 9 10 18 10 23 12 23 12 18 12 18 15 9zM23 13l-2 7.52L19.08 13H17l3.15 9.87L19.53 25H17v2h2.26a2 2 0 001.91-1.42L25 13z" /></svg>`;
   }
 }

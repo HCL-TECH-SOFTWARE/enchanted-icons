@@ -22,6 +22,11 @@ import { ICON_PREFIX } from '../../../utils/tags';
 export const ICON_NAME = `${ICON_PREFIX}icon-box-plot`;
 export class WebComponentIcon extends BaseIcon {
   render() {
+    /**
+     * The following HTML markup was generated using @carbon/icons 11.27.0.
+     * @carbon/icons is licensed under Apache 2.0 (see NOTICE for details).
+     * Source: https://github.com/carbon-design-system/carbon
+     */
     return html`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="currentColor" width="32" height="32" preserveAspectRatio="xMidYMid"><path d="M22,6V4H12V6h4V8H12V20h4v2H12v2H22V22H18V20h4V8H18V6ZM14,18V15h6v3Zm6-5H14V10h6Z" /><path d="M30,30H4a2,2,0,0,1-2-2V2H4V28H30Z" /></svg>`;
   }
 }

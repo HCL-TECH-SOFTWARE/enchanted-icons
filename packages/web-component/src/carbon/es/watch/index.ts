@@ -22,6 +22,11 @@ import { ICON_PREFIX } from '../../../utils/tags';
 export const ICON_NAME = `${ICON_PREFIX}icon-watch`;
 export class WebComponentIcon extends BaseIcon {
   render() {
+    /**
+     * The following HTML markup was generated using @carbon/icons 11.27.0.
+     * @carbon/icons is licensed under Apache 2.0 (see NOTICE for details).
+     * Source: https://github.com/carbon-design-system/carbon
+     */
     return html`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="currentColor" width="32" height="32" preserveAspectRatio="xMidYMid"><path d="M22 8H21V2H19V8H13V2H11V8H10a2 2 0 00-2 2V22a2 2 0 002 2h1v6h2V24h6v6h2V24h1a2 2 0 002-2V10A2 2 0 0022 8zM10 22V10H22V22zM25 14H27V18H25z" /></svg>`;
   }
 }

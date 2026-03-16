@@ -22,6 +22,11 @@ import { ICON_PREFIX } from '../../../utils/tags';
 export const ICON_NAME = `${ICON_PREFIX}icon-face-wink-filled`;
 export class WebComponentIcon extends BaseIcon {
   render() {
+    /**
+     * The following HTML markup was generated using @carbon/icons 11.27.0.
+     * @carbon/icons is licensed under Apache 2.0 (see NOTICE for details).
+     * Source: https://github.com/carbon-design-system/carbon
+     */
     return html`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="currentColor" width="32" height="32" preserveAspectRatio="xMidYMid"><path d="M16,2A14,14,0,1,0,30,16,14,14,0,0,0,16,2ZM8,13h6v2H8Zm8,11a8,8,0,0,1-6.85-3.89l1.71-1a6,6,0,0,0,10.28,0l1.71,1A8,8,0,0,1,16,24Zm4.5-8a2.5,2.5,0,0,1,0-5h0a2.5,2.5,0,0,1,0,5Z" /></svg>`;
   }
 }
