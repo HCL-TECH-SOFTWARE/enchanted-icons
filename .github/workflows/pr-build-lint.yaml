@@ -27,6 +27,8 @@ jobs:
         with:
           node-version: '20.x'
           registry-url: 'https://registry.npmjs.org'
+      # Ensure that the build and publish CMD are running with the same NPM version
+      - run: npm install -g npm@latest
       - run: npm ci
       - run: npm run ci
       - run: npm run build
