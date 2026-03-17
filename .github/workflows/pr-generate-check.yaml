@@ -22,15 +22,13 @@ jobs:
     name: PR check if all generated files are up to date
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-        with:
-          node-version: '24.x'
-          registry-url: 'https://registry.npmjs.org'
-          fetch-depth: 0 # required for git log history
       - uses: actions/setup-node@v4
         with:
           node-version: '24.x'
           registry-url: 'https://registry.npmjs.org'
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0 # required for git log history
       # Ensure that the generate and publish CMD are running with the same NPM version
       - run: npm install -g npm@latest
       - run: npm ci
