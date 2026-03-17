@@ -26,7 +26,6 @@ jobs:
         with:
           node-version: '24.x'
           registry-url: 'https://registry.npmjs.org'
-        with:
           fetch-depth: 0 # required for git log history
       - uses: actions/setup-node@v4
         with:
