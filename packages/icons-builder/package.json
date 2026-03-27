@@ -1,6 +1,6 @@
 {
   "name": "@hcl-software/icons-builder",
-  "version": "1.9.2",
+  "version": "1.9.1",
   "private": true,
   "description": "Internal build script for generating React and Web Component icons.",
   "main": "src/generate.js",
