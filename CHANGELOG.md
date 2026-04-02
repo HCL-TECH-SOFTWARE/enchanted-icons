@@ -4,6 +4,10 @@
 
 ### Added
 
+new custom icons:
+- mail--delegation
+- set--tasks
+
 ### Fixed
 
 ### Changed
