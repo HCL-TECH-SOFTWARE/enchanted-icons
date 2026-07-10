@@ -10,6 +10,13 @@
 
 #### Breaking changes
 
+## 1.10.0
+
+### Added
+- Added new custom icons:
+  mail--delegation
+  set--tasks
+
 ## 1.9.1
 
 ### Changed
