@@ -65,9 +65,6 @@
     "@types/debug": "^4.1.12",
     "debug": "^4.4.3"
   },
-  "engines": {
-    "node": ">=20.x"
-  },
   "files": [
     "dist/**/*"
   ]
