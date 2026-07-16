@@ -54,11 +54,11 @@
   },
   "dependencies": {
     "@carbon/icons": "11.27.0",
-    "@emotion/react": "11.11.4",
-    "@emotion/styled": "11.11.5"
+    "@emotion/react": "^11.13.5",
+    "@emotion/styled": "^11.13.5"
   },
   "peerDependencies": {
-    "@mui/material": "^5.10.10",
+    "@mui/material": "^7.3.11",
     "react": "^18.2.0"
   },
   "files": [
