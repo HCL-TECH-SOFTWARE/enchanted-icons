@@ -31,8 +31,8 @@ export interface IIconAttrs {
   fill?: string;
 }
 
-const createElements = (id: string, content: IIconContent[]): JSX.Element => {
-  const elements: JSX.Element[] = content.map((item: IIconContent, index: number) => {
+const createElements = (id: string, content: IIconContent[]): React.JSX.Element => {
+  const elements: React.JSX.Element[] = content.map((item: IIconContent, index: number) => {
     const props = { ...item.attrs, key: `${id}-${index}` };
     // the attribute 'fill-rule' are nor supported, remove this attribute form the properties
     Object.keys(props).forEach((key: string) => {
