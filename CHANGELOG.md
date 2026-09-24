@@ -10,6 +10,13 @@
 
 #### Breaking changes
 
+## 2.0.0
+
+#### Breaking changes
+- Updated MUI to version v7 (https://mui.com/material-ui/migration/upgrade-to-v7/)
+- Updated the react to version 19 and also some other dependencies related to react
+- Updated the react dom to version 19
+
 ## 1.10.0
 
 ### Added
