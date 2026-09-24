@@ -14,7 +14,9 @@
  * ======================================================================== */
 
 /* auto generated file - do not edit */
+import * as React from 'react';
+import type { SvgIconProps } from '@mui/material/SvgIcon';
 import Icon from '@carbon/icons/es/ibm-watson--orders/32';
 import { createSvgIcon } from '../../../utils';
 
-export default createSvgIcon(Icon.name, Icon.size, Icon.content, Icon.attrs);
+export default createSvgIcon(Icon.name, Icon.size, Icon.content, Icon.attrs) as React.FC<SvgIconProps>;

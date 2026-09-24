@@ -14,6 +14,8 @@
  * ======================================================================== */
 
 /* auto generated file - do not edit */
+import * as React from 'react';
+import type { SvgIconProps } from '@mui/material/SvgIcon';
 import { createSvgIcon, IIconAttrs, IIconContent } from '../../../utils';
 
 const attrs: IIconAttrs = {
@@ -226,4 +228,9 @@ const content: IIconContent[] = [
   },
 ];
 
-export default createSvgIcon('layout--on', 24, content, attrs);
+export default createSvgIcon(
+  'layout--on',
+  24,
+  content,
+  attrs,
+) as React.FC<SvgIconProps>;

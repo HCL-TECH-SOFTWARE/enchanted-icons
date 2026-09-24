@@ -31,8 +31,8 @@ export interface IIconAttrs {
   fill?: string;
 }
 
-const createElements = (id: string, content: IIconContent[]): JSX.Element => {
-  const elements: JSX.Element[] = content.map((item: IIconContent, index: number) => {
+const createElements = (id: string, content: IIconContent[]): React.JSX.Element => {
+  const elements: React.JSX.Element[] = content.map((item: IIconContent, index: number) => {
     const props = { ...item.attrs, key: `${id}-${index}` };
     // the attribute 'fill-rule' are nor supported, remove this attribute form the properties
     Object.keys(props).forEach((key: string) => {
@@ -49,11 +49,11 @@ const createElements = (id: string, content: IIconContent[]): JSX.Element => {
   );
 };
 
-const createSvgIcon = (displayName: string, size: number, content: IIconContent[], attrs: IIconAttrs) => {
+const createSvgIcon = (displayName: string, size: number, content: IIconContent[], attrs: IIconAttrs): React.FC<SvgIconProps> => {
   const Component = React.memo(
     // eslint-why - because ref is a unknown type
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    React.forwardRef<SvgIconProps>((props: SvgIconProps, ref: any) => {
+    React.forwardRef<SVGSVGElement, SvgIconProps>((props, ref) => {
       return (
         // eslint-why Syntax is necessary for implementation
         // eslint-disable-next-line react/jsx-props-no-spreading
@@ -63,7 +63,8 @@ const createSvgIcon = (displayName: string, size: number, content: IIconContent[
       );
     }),
   );
-  return Component as React.ComponentType<SvgIconProps>;
+  Component.displayName = displayName;
+  return Component;
 };
 
 export {

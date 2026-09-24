@@ -1,5 +1,5 @@
 /* ======================================================================== *
- * Copyright 2024 HCL America Inc.                                          *
+ * Copyright 2026 HCL America Inc.                                          *
  * Licensed under the Apache License, Version 2.0 (the "License");          *
  * you may not use this file except in compliance with the License.         *
  * You may obtain a copy of the License at                                  *
@@ -14,7 +14,9 @@
  * ======================================================================== */
 
 /* auto generated file - do not edit */
+import * as React from 'react';
+import type { SvgIconProps } from '@mui/material/SvgIcon';
 import Icon from '@carbon/icons/es/container-services/32';
 import { createSvgIcon } from '../../../utils';
 
-export default createSvgIcon(Icon.name, Icon.size, Icon.content, Icon.attrs);
+export default createSvgIcon(Icon.name, Icon.size, Icon.content, Icon.attrs) as React.FC<SvgIconProps>;
