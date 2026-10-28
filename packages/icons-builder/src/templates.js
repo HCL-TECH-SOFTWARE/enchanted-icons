@@ -270,3 +270,91 @@ declare global {
   }
 }`;
 };
+
+/**
+ * Converts an SVG attribute name to its React prop name (e.g. fill-rule -> fillRule).
+ * data-* and aria-* attributes are valid in React as-is and are kept untouched.
+ * @param {string} key - The attribute name.
+ * @returns {string} The React prop name.
+ */
+const toReactPropName = (key) => {
+  if (key === 'class') {
+    return 'className';
+  }
+  if (key.startsWith('data-') || key.startsWith('aria-')) {
+    return key;
+  }
+  return key.replace(/[-:]([a-z])/g, (_match, char) => char.toUpperCase());
+};
+
+/**
+ * Recursively converts an icon content tree into plain React friendly data.
+ * Only elem, attrs and (nested) content are kept.
+ * @param {Array} content - The content array from the icon descriptor.
+ * @returns {Array} The normalized content array.
+ */
+const normalizeContentForReact = (content) => {
+  return content.map(item => {
+    const normalized = { elem: item.elem };
+    if (item.attrs) {
+      normalized.attrs = Object.fromEntries(
+        Object.entries(item.attrs).map(([key, value]) => [toReactPropName(key), value]),
+      );
+    }
+    if (item.content && item.content.length > 0) {
+      normalized.content = normalizeContentForReact(item.content);
+    }
+    return normalized;
+  });
+};
+
+/**
+ * Creates a plain React icon template (no Material-UI dependency).
+ * The SVG data is generated at build time, eliminating runtime dependencies on
+ * @carbon/icons. The output is ESM, therefore the utils import carries a file extension.
+ * @param {string} iconName - The name of the icon.
+ * @param {Array} content - The content array of the icon (Carbon descriptor or parsed custom SVG).
+ * @param {object} attrs - The SVG attributes of the icon, only the viewBox is used.
+ * @param {string} utilsImportPath - The relative path to the utils directory.
+ * @param {string} copyrightString - The copyright string.
+ * @param {string} [carbonVersion] - The version of @carbon/icons used for generation, only set for carbon icons.
+ * @returns {string} The plain React icon template.
+ */
+export const createReactPlainIcon = (iconName, content, attrs, utilsImportPath, copyrightString, carbonVersion) => {
+  const stringifyOptions = {
+    indent: '  ',
+  };
+  const contentString = stringifyObject(normalizeContentForReact(content), stringifyOptions);
+  const copyrightLine = formatCopyrightLine(copyrightString);
+  const carbonNotice = carbonVersion
+    ? `/**
+ * The following SVG data was generated using @carbon/icons ${carbonVersion}.
+ * @carbon/icons is licensed under Apache 2.0.
+ * Source: https://github.com/carbon-design-system/carbon
+ */
+`
+    : '';
+
+  return `/* ======================================================================== *
+${copyrightLine}
+ * Licensed under the Apache License, Version 2.0 (the "License");          *
+ * you may not use this file except in compliance with the License.         *
+ * You may obtain a copy of the License at                                  *
+ *                                                                          *
+ * http://www.apache.org/licenses/LICENSE-2.0                               *
+ *                                                                          *
+ * Unless required by applicable law or agreed to in writing, software      *
+ * distributed under the License is distributed on an "AS IS" BASIS,        *
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. *
+ * See the License for the specific language governing permissions and      *
+ * limitations under the License.                                           *
+ * ======================================================================== */
+
+/* auto generated file - do not edit */
+import { createSvgIcon, IIconContent } from '${utilsImportPath}/index.js';
+
+${carbonNotice}const content: IIconContent[] = ${contentString};
+
+export default createSvgIcon('${iconName}', '${attrs.viewBox}', content);
+`;
+};

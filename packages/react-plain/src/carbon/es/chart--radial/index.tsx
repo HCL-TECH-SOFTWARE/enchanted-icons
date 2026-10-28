@@ -1,0 +1,45 @@
+/* ======================================================================== *
+ * Copyright 2026 HCL America Inc.                                          *
+ * Licensed under the Apache License, Version 2.0 (the "License");          *
+ * you may not use this file except in compliance with the License.         *
+ * You may obtain a copy of the License at                                  *
+ *                                                                          *
+ * http://www.apache.org/licenses/LICENSE-2.0                               *
+ *                                                                          *
+ * Unless required by applicable law or agreed to in writing, software      *
+ * distributed under the License is distributed on an "AS IS" BASIS,        *
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. *
+ * See the License for the specific language governing permissions and      *
+ * limitations under the License.                                           *
+ * ======================================================================== */
+
+/* auto generated file - do not edit */
+import { createSvgIcon, IIconContent } from '../../../utils/index.js';
+
+/**
+ * The following SVG data was generated using @carbon/icons 11.27.0.
+ * @carbon/icons is licensed under Apache 2.0.
+ * Source: https://github.com/carbon-design-system/carbon
+ */
+const content: IIconContent[] = [
+  {
+    elem: 'path',
+    attrs: {
+      d: 'M16,30A14.0158,14.0158,0,0,1,2,16H4A12,12,0,1,0,16,4V2a14,14,0,0,1,0,28Z'
+    }
+  },
+  {
+    elem: 'path',
+    attrs: {
+      d: 'M16,26A10.0115,10.0115,0,0,1,6,16H8a8,8,0,1,0,8-8V6a10,10,0,0,1,0,20Z'
+    }
+  },
+  {
+    elem: 'path',
+    attrs: {
+      d: 'M16,22a6.0069,6.0069,0,0,1-6-6h2a4,4,0,1,0,4-4V10a6,6,0,0,1,0,12Z'
+    }
+  }
+];
+
+export default createSvgIcon('chart--radial', '0 0 32 32', content);

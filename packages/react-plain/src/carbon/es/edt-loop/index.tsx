@@ -1,0 +1,33 @@
+/* ======================================================================== *
+ * Copyright 2026 HCL America Inc.                                          *
+ * Licensed under the Apache License, Version 2.0 (the "License");          *
+ * you may not use this file except in compliance with the License.         *
+ * You may obtain a copy of the License at                                  *
+ *                                                                          *
+ * http://www.apache.org/licenses/LICENSE-2.0                               *
+ *                                                                          *
+ * Unless required by applicable law or agreed to in writing, software      *
+ * distributed under the License is distributed on an "AS IS" BASIS,        *
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. *
+ * See the License for the specific language governing permissions and      *
+ * limitations under the License.                                           *
+ * ======================================================================== */
+
+/* auto generated file - do not edit */
+import { createSvgIcon, IIconContent } from '../../../utils/index.js';
+
+/**
+ * The following SVG data was generated using @carbon/icons 11.27.0.
+ * @carbon/icons is licensed under Apache 2.0.
+ * Source: https://github.com/carbon-design-system/carbon
+ */
+const content: IIconContent[] = [
+  {
+    elem: 'path',
+    attrs: {
+      d: 'M23.625,22.5875a6.1287,6.1287,0,0,1-4.5-1.9l-3.1-3.2-3.1,3.2a6.4582,6.4582,0,0,1-9.1,0,7.028,7.028,0,0,1-1.8-4.7,6.6547,6.6547,0,0,1,1.9-4.7,6.3375,6.3375,0,0,1,9,0l3.1,3.2,3.1-3.2a6.3375,6.3375,0,0,1,9,0,6.8282,6.8282,0,0,1,0,9.4A6.5418,6.5418,0,0,1,23.625,22.5875Zm-6.2-6.6,3.1,3.3a4.4061,4.4061,0,0,0,6.2,0,4.9077,4.9077,0,0,0,0-6.6,4.4061,4.4061,0,0,0-6.2,0Zm-9-4.6a4.1582,4.1582,0,0,0-3.1,1.3,4.8385,4.8385,0,0,0,0,6.6,4.4061,4.4061,0,0,0,6.2,0l3.1-3.3-3.1-3.3A4.7706,4.7706,0,0,0,8.425,11.3875Z'
+    }
+  }
+];
+
+export default createSvgIcon('edt-loop', '0 0 32 32', content);

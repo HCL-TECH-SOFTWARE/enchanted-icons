@@ -1,15 +1,17 @@
 # HCL Software Enchanted Icons
 
-Enchanted Icons is a collection of icons used in HCL Software products. This repository is a monorepo that provides two sets of icon packages:
+Enchanted Icons is a collection of icons used in HCL Software products. This repository is a monorepo that provides three sets of icon packages:
 
-1.  **React Components:** Ready-to-use Material-UI components for React applications.
-2.  **Web Components:** Standard, framework-agnostic web components for use in any web application (Lit, Angular, Vue, plain HTML, etc.).
+1.  **React Components (plain):** Ready-to-use React components without any UI library dependency.
+2.  **React Components (Material-UI):** Ready-to-use Material-UI components for React applications.
+3.  **Web Components:** Standard, framework-agnostic web components for use in any web application (Lit, Angular, Vue, plain HTML, etc.).
 
 This package exposes HCL Software's own creations as well as icons from the [Carbon Icons Package](https://github.com/carbon-design-system/carbon/tree/main/packages/icons).
 
 (C) 2024 HCL America Inc. Apache-2.0 license [https://www.apache.org/licenses/LICENSE-2.0](https://www.apache.org/licenses/LICENSE-2.0)
 
 [![npm](https://nodei.co/npm/@hcl-software/enchanted-icons.png)](https://www.npmjs.com/package/@hcl-software/enchanted-icons)
+[![npm](https://nodei.co/npm/@hcl-software/enchanted-icons-react.png)](https://www.npmjs.com/package/@hcl-software/enchanted-icons-react)
 [![npm](https://nodei.co/npm/@hcl-software/enchanted-icons-web-component.png)](https://www.npmjs.com/package/@hcl-software/enchanted-icons-web-component)
 
 ## Packages
@@ -18,6 +20,7 @@ This repository contains the following packages:
 
 | Package | Description |
 | :--- | :--- |
+| **`@hcl-software/enchanted-icons-react`** | Plain React components (ESM, no Material-UI). |
 | **`@hcl-software/enchanted-icons`** | React (Material-UI) components. |
 | **`@hcl-software/enchanted-icons-web-component`** | Standard Web Components. |
 
@@ -51,6 +54,7 @@ The `npm run generate` command in `packages/icons-builder` performs two main tas
 4. **Run the Build:** Run `npm run generate`.
 5. **Check the Output**: Your new icon component will be generated in:
     - `packages/react/src/apps/es/my-new-icon/index.tsx`
+    - `packages/react-plain/src/apps/es/my-new-icon/index.tsx`
     - `packages/web-component/src/apps/es/my-new-icon/index.ts`
 
 > **CRITICAL:** Each icon directory must contain only one `.svg` file (e.g., `my-new-icon/my-new-icon.svg`). The build script is not designed to handle multiple SVGs in a single directory.
@@ -68,7 +72,7 @@ To exclude or rename an icon from `@carbon/icons`, edit the `packages/icons-buil
 ```
 - **To Rename an Icon:** Add a key-value pair to one of the renames objects.
   - `common.renames`: Renames the icon for both React and Web Components.
-  - `react.renames`: Renames the icon for React *only*.
+  - `react.renames`: Renames the icon for React *only* (applies to the Material-UI and the plain React package).
   - `wc.renames`: Renames the icon for Web Components *only*.
 
   **Note on Precedence**: If a rename key exists in both `common.renames` and a platform-specific object (e.g., `react.renames` or `wc.renames`), the **platform-specific rename will be used** for that platform, overriding the `common` setting.

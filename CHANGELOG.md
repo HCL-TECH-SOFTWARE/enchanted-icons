@@ -3,6 +3,7 @@
 ## Unreleased
 
 ### Added
+- New package `@hcl-software/enchanted-icons-react`: plain React icons without a Material-UI dependency, published as ES module with one entry point per icon (`@hcl-software/enchanted-icons-react/carbon/es/<name>`, `.../apps/es/<name>`). The `icons-builder` generates it alongside the existing outputs, icon names are identical to `@hcl-software/enchanted-icons`.
 
 ### Fixed
 

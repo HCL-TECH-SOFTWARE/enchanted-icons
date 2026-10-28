@@ -1,0 +1,57 @@
+{
+  "name": "@hcl-software/enchanted-icons-react",
+  "version": "2.0.0",
+  "description": "Enchanted Icons is a collection of plain React icons (no Material-UI required) that are used in HCL Software products.",
+  "type": "module",
+  "sideEffects": false,
+  "exports": {
+    "./carbon/es/*": {
+      "types": "./dist/carbon/es/*/index.d.ts",
+      "default": "./dist/carbon/es/*/index.js"
+    },
+    "./apps/es/*": {
+      "types": "./dist/apps/es/*/index.d.ts",
+      "default": "./dist/apps/es/*/index.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "author": "Mridul Shrivastava <mridul.shrivastava@hcl.com>",
+  "license": "Apache-2.0",
+  "private": false,
+  "homepage": "https://github.com/HCL-TECH-SOFTWARE/enchanted-icons#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HCL-TECH-SOFTWARE/enchanted-icons.git"
+  },
+  "bugs": {
+    "url": "https://github.com/HCL-TECH-SOFTWARE/enchanted-icons/issues"
+  },
+  "keywords": [
+    "react",
+    "carbon",
+    "esm",
+    "ts"
+  ],
+  "contributors": [
+    "Angelo rick Asoy <angelorick.asoy@hcl.com>",
+    "Hanjo Hagemeier <hanjo.hagemeier@hcl.com>",
+    "Ruby ann Matias <rubyann.matias@hcl.com>",
+    "Felix Müller <felix.muller@hcl.com>",
+    "Elsa Pascual <elsa.pascual@hcl.com>",
+    "Utkarsh Srivastava <utkarshsr@hcl.com>"
+  ],
+  "scripts": {
+    "build": "tsc"
+  },
+  "devDependencies": {
+    "@types/react": "^19.2.7",
+    "react": "^19.2.7",
+    "typescript": "^5.9.3"
+  },
+  "peerDependencies": {
+    "react": ">=18"
+  },
+  "files": [
+    "dist/**/*"
+  ]
+}
