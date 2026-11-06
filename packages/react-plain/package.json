@@ -13,6 +13,10 @@
       "types": "./dist/apps/es/*/index.d.ts",
       "default": "./dist/apps/es/*/index.js"
     },
+    "./apps/logos/*": {
+      "types": "./dist/apps/logos/*.d.ts",
+      "default": "./dist/apps/logos/*.js"
+    },
     "./package.json": "./package.json"
   },
   "author": "Mridul Shrivastava <mridul.shrivastava@hcl.com>",
