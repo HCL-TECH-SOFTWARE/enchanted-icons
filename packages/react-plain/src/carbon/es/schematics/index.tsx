@@ -1,0 +1,33 @@
+/* ======================================================================== *
+ * Copyright 2026 HCL America Inc.                                          *
+ * Licensed under the Apache License, Version 2.0 (the "License");          *
+ * you may not use this file except in compliance with the License.         *
+ * You may obtain a copy of the License at                                  *
+ *                                                                          *
+ * http://www.apache.org/licenses/LICENSE-2.0                               *
+ *                                                                          *
+ * Unless required by applicable law or agreed to in writing, software      *
+ * distributed under the License is distributed on an "AS IS" BASIS,        *
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. *
+ * See the License for the specific language governing permissions and      *
+ * limitations under the License.                                           *
+ * ======================================================================== */
+
+/* auto generated file - do not edit */
+import { createSvgIcon, IIconContent } from '../../../utils/index.js';
+
+/**
+ * The following SVG data was generated using @carbon/icons 11.27.0.
+ * @carbon/icons is licensed under Apache 2.0.
+ * Source: https://github.com/carbon-design-system/carbon
+ */
+const content: IIconContent[] = [
+  {
+    elem: 'path',
+    attrs: {
+      d: 'M27,19.001A4.0056,4.0056,0,0,0,22.9991,15H9.0011A2.0031,2.0031,0,0,1,7,12.9991V9.858A3.9949,3.9949,0,0,0,9.8581,7h12.284a4,4,0,1,0,0-2H9.8581A3.9916,3.9916,0,1,0,5,9.858v3.1411A4.0057,4.0057,0,0,0,9.0011,17h13.998A2.003,2.003,0,0,1,25,19.001V22H22v3H9.8581a4,4,0,1,0,0,2H22v3h8V22H27ZM26,4a2,2,0,1,1-2,2A2.0019,2.0019,0,0,1,26,4ZM4,6A2,2,0,1,1,6,8,2.0019,2.0019,0,0,1,4,6ZM6,28a2,2,0,1,1,2-2A2.002,2.002,0,0,1,6,28Zm22-4v4H24V24Z'
+    }
+  }
+];
+
+export default createSvgIcon('schematics', '0 0 32 32', content);

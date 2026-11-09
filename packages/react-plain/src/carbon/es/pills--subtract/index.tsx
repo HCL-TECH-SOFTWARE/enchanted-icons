@@ -1,0 +1,39 @@
+/* ======================================================================== *
+ * Copyright 2026 HCL America Inc.                                          *
+ * Licensed under the Apache License, Version 2.0 (the "License");          *
+ * you may not use this file except in compliance with the License.         *
+ * You may obtain a copy of the License at                                  *
+ *                                                                          *
+ * http://www.apache.org/licenses/LICENSE-2.0                               *
+ *                                                                          *
+ * Unless required by applicable law or agreed to in writing, software      *
+ * distributed under the License is distributed on an "AS IS" BASIS,        *
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. *
+ * See the License for the specific language governing permissions and      *
+ * limitations under the License.                                           *
+ * ======================================================================== */
+
+/* auto generated file - do not edit */
+import { createSvgIcon, IIconContent } from '../../../utils/index.js';
+
+/**
+ * The following SVG data was generated using @carbon/icons 11.27.0.
+ * @carbon/icons is licensed under Apache 2.0.
+ * Source: https://github.com/carbon-design-system/carbon
+ */
+const content: IIconContent[] = [
+  {
+    elem: 'path',
+    attrs: {
+      d: 'M22,14a7.94,7.94,0,0,0-4,1.0825V9A7,7,0,0,0,4,9V23a6.9857,6.9857,0,0,0,12.2756,4.5768A7.9966,7.9966,0,1,0,22,14ZM11,4a5.0059,5.0059,0,0,1,5,5v6H6V9A5.0059,5.0059,0,0,1,11,4Zm0,24a5.0059,5.0059,0,0,1-5-5V17h9.765a7.9564,7.9564,0,0,0-.7239,8.9319A5.0147,5.0147,0,0,1,11,28Zm11,0a6,6,0,1,1,6-6A6.0066,6.0066,0,0,1,22,28Z'
+    }
+  },
+  {
+    elem: 'path',
+    attrs: {
+      d: 'M19 21H25V23H19z'
+    }
+  }
+];
+
+export default createSvgIcon('pills--subtract', '0 0 32 32', content);

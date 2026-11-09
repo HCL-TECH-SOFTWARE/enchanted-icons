@@ -1,0 +1,33 @@
+/* ======================================================================== *
+ * Copyright 2026 HCL America Inc.                                          *
+ * Licensed under the Apache License, Version 2.0 (the "License");          *
+ * you may not use this file except in compliance with the License.         *
+ * You may obtain a copy of the License at                                  *
+ *                                                                          *
+ * http://www.apache.org/licenses/LICENSE-2.0                               *
+ *                                                                          *
+ * Unless required by applicable law or agreed to in writing, software      *
+ * distributed under the License is distributed on an "AS IS" BASIS,        *
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. *
+ * See the License for the specific language governing permissions and      *
+ * limitations under the License.                                           *
+ * ======================================================================== */
+
+/* auto generated file - do not edit */
+import { createSvgIcon, IIconContent } from '../../../utils/index.js';
+
+/**
+ * The following SVG data was generated using @carbon/icons 11.27.0.
+ * @carbon/icons is licensed under Apache 2.0.
+ * Source: https://github.com/carbon-design-system/carbon
+ */
+const content: IIconContent[] = [
+  {
+    elem: 'path',
+    attrs: {
+      d: 'M29 9L27 22 25 9 23 9 25.52 23 28.48 23 31 9 29 9zM19 9L17.48 14 17 15.98 16.54 14 15 9 13 9 13 23 15 23 15 15 14.84 13 15.42 15 17 19.63 18.58 15 19.16 13 19 15 19 23 21 23 21 9 19 9zM9.2 9L8.86 17 8.6 21.54 8.19 18 7.51 12.54 5.49 12.54 4.81 18 4.4 21.54 4.14 17 3.8 9 2 9 3 23 5.27 23 6.03 18.07 6.49 14 6.5 13.97 6.51 14 6.97 18.07 7.73 23 10 23 11 9 9.2 9z'
+    }
+  }
+];
+
+export default createSvgIcon('WMV', '0 0 32 32', content);

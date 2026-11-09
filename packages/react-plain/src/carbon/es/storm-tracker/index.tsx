@@ -1,0 +1,33 @@
+/* ======================================================================== *
+ * Copyright 2026 HCL America Inc.                                          *
+ * Licensed under the Apache License, Version 2.0 (the "License");          *
+ * you may not use this file except in compliance with the License.         *
+ * You may obtain a copy of the License at                                  *
+ *                                                                          *
+ * http://www.apache.org/licenses/LICENSE-2.0                               *
+ *                                                                          *
+ * Unless required by applicable law or agreed to in writing, software      *
+ * distributed under the License is distributed on an "AS IS" BASIS,        *
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. *
+ * See the License for the specific language governing permissions and      *
+ * limitations under the License.                                           *
+ * ======================================================================== */
+
+/* auto generated file - do not edit */
+import { createSvgIcon, IIconContent } from '../../../utils/index.js';
+
+/**
+ * The following SVG data was generated using @carbon/icons 11.27.0.
+ * @carbon/icons is licensed under Apache 2.0.
+ * Source: https://github.com/carbon-design-system/carbon
+ */
+const content: IIconContent[] = [
+  {
+    elem: 'path',
+    attrs: {
+      d: 'M16,2a1,1,0,0,0-.9736.771l-1.7229,7.3223a10.0653,10.0653,0,1,0,8.6032,8.603l7.3223-1.7227A1,1,0,0,0,30,16,14.0158,14.0158,0,0,0,16,2ZM11.293,20.707A1,1,0,0,0,12,21a1.013,1.013,0,0,0,.229-.0264l3.7622-.8852a3.996,3.996,0,1,1-4.08-4.08l-.8852,3.7622A1,1,0,0,0,11.293,20.707Zm2.05-2.0508,2.271-9.65a7.5018,7.5018,0,0,1,7.38,7.38ZM20,20a8,8,0,1,1-8-8,8.1017,8.1017,0,0,1,.8438.0469L12.38,14.019C12.2532,14.0107,12.127,14,12,14a6,6,0,1,0,6,6c0-.127-.011-.2534-.019-.38l1.9721-.4643A8.1048,8.1048,0,0,1,20,20Zm4.9707-4.0791a9.4981,9.4981,0,0,0-8.8914-8.8916l.7068-3.0039A12.0193,12.0193,0,0,1,27.9746,15.2139Z'
+    }
+  }
+];
+
+export default createSvgIcon('storm-tracker', '0 0 32 32', content);

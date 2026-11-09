@@ -1,0 +1,39 @@
+/* ======================================================================== *
+ * Copyright 2026 HCL America Inc.                                          *
+ * Licensed under the Apache License, Version 2.0 (the "License");          *
+ * you may not use this file except in compliance with the License.         *
+ * You may obtain a copy of the License at                                  *
+ *                                                                          *
+ * http://www.apache.org/licenses/LICENSE-2.0                               *
+ *                                                                          *
+ * Unless required by applicable law or agreed to in writing, software      *
+ * distributed under the License is distributed on an "AS IS" BASIS,        *
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. *
+ * See the License for the specific language governing permissions and      *
+ * limitations under the License.                                           *
+ * ======================================================================== */
+
+/* auto generated file - do not edit */
+import { createSvgIcon, IIconContent } from '../../../utils/index.js';
+
+/**
+ * The following SVG data was generated using @carbon/icons 11.27.0.
+ * @carbon/icons is licensed under Apache 2.0.
+ * Source: https://github.com/carbon-design-system/carbon
+ */
+const content: IIconContent[] = [
+  {
+    elem: 'path',
+    attrs: {
+      d: 'M16 19H24V21H16z'
+    }
+  },
+  {
+    elem: 'path',
+    attrs: {
+      d: 'M31 29.5859l-4.6885-4.6884a8.028 8.028 0 10-1.414 1.414L29.5859 31zM20 26a6 6 0 116-6A6.0066 6.0066 0 0120 26zM4 8H2V4A2.0021 2.0021 0 014 2H8V4H4zM26 8H24V4H20V2h4a2.0021 2.0021 0 012 2zM12 2H16V4H12zM8 26H4a2.0021 2.0021 0 01-2-2V20H4v4H8zM2 12H4V16H2z'
+    }
+  }
+];
+
+export default createSvgIcon('zoom--out-area', '0 0 32 32', content);

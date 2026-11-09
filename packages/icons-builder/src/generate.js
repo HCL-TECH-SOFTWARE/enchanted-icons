@@ -24,6 +24,7 @@ import {
   createCarbonWebComponentIcon,
   createCustomReactIcon,
   createCustomWebComponentIcon,
+  createReactPlainIcon,
 } from './templates.js';
 import {
   getCopyrightYear,
@@ -39,6 +40,9 @@ const carbonWcDestPath = path.resolve(process.cwd(), '../web-component/src/carbo
 const customSourcePath = path.resolve(process.cwd(), 'svg');
 const customReactDestPath = path.resolve(process.cwd(), '../react/src/apps/es');
 const customWcDestPath = path.resolve(process.cwd(), '../web-component/src/apps/es');
+const carbonReactPlainDestPath = path.resolve(process.cwd(), '../react-plain/src/carbon/es');
+const customReactPlainDestPath = path.resolve(process.cwd(), '../react-plain/src/apps/es');
+const reactPlainUtilsPath = path.resolve(carbonReactPlainDestPath, '../../utils');
 const reactUtilsPath = path.resolve(carbonReactDestPath, '../../utils');
 const wcUtilsPath = path.resolve(carbonWcDestPath, '../../utils');
 
@@ -114,6 +118,7 @@ const processCustomIconDirectory = (
     console.error(`[BUILDER] ERROR: Found multiple .svg files in directory: ${currentDir}`);
     counters.failedIcons.push(`${path.basename(currentDir)} (Build Error)`);
     counters.reactFailed += 1;
+    counters.reactPlainFailed += 1;
     counters.wcFailed += 1;
     return;
 
@@ -137,6 +142,7 @@ const processCustomIconDirectory = (
     } catch (err) {
       console.error(`[BUILDER] Failed to parse SVG ${fullSvgPath}: ${err.message}`);
       counters.reactFailed += 1;
+      counters.reactPlainFailed += 1;
       return;
     }
 
@@ -192,6 +198,29 @@ const processCustomIconDirectory = (
         console.error(`[BUILDER] Failed to create custom WC icon ${iconName}: ${err.message}`);
       }
     }
+
+    if (!reactExcludes.has(iconName)) {
+      try {
+        const reactPlainIconDir = path.join(customReactPlainDestPath, relativeDir);
+        const reactPlainDestFile = path.join(reactPlainIconDir, 'index.tsx');
+        const reactPlainUtilsImportPath = path.relative(reactPlainIconDir, reactPlainUtilsPath).replace(/\\/g, '/');
+
+        const lastModifiedYear = getLastModifiedYearFromGit(fullSvgPath);
+        const finalCopyright = (creationYear === lastModifiedYear) 
+          ? creationYear 
+          : `${creationYear}, ${lastModifiedYear}`;
+
+        const reactPlainContent = createReactPlainIcon(iconName, content, attrs, reactPlainUtilsImportPath, finalCopyright);
+        ensureDirSync(reactPlainIconDir);
+        fs.writeFileSync(reactPlainDestFile, reactPlainContent);
+        generatedPaths.reactPlain.add(path.resolve(reactPlainDestFile));
+        counters.reactPlainSuccess += 1;
+      } catch (err) {
+        counters.reactPlainFailed += 1;
+        counters.failedIcons.push(`${iconName} (Custom React plain)`);
+        console.error(`[BUILDER] Failed to create custom React plain icon ${iconName}: ${err.message}`);
+      }
+    }
   } else {
     // This is a container directory
     // No .svg file here (e.g., "elements").
@@ -210,6 +239,8 @@ const buildIcons = async () => {
   const counters = {
     reactSuccess: 0,
     reactFailed: 0,
+    reactPlainSuccess: 0,
+    reactPlainFailed: 0,
     wcSuccess: 0,
     wcFailed: 0,
     failedIcons: [],
@@ -217,6 +248,8 @@ const buildIcons = async () => {
   
   ensureDirSync(carbonReactDestPath);
   ensureDirSync(carbonWcDestPath);
+  ensureDirSync(carbonReactPlainDestPath);
+  ensureDirSync(customReactPlainDestPath);
   ensureDirSync(customReactDestPath);
   ensureDirSync(customWcDestPath);
 
@@ -226,8 +259,10 @@ const buildIcons = async () => {
   const wcExcludes = new Set([ ...config.common.excludes, ...(config.wc.excludes || []) ]);
 
   const generatedReactCarbonPaths = new Set();
+  const generatedReactPlainCarbonPaths = new Set();
   const generatedWCCarbonPaths = new Set();
   const generatedCustomReactPaths = new Set();
+  const generatedCustomReactPlainPaths = new Set();
   const generatedCustomWCPaths = new Set();
 
   // Generate Carbon Icons
@@ -264,6 +299,36 @@ const buildIcons = async () => {
       }
     }
 
+    // Create plain React components (no MUI), shares renames and excludes with the MUI React components
+    if (!reactExcludes.has(originalName) && fs.existsSync(path.join(carbonSourcePath, originalName, '32.js'))) {
+      const iconName = reactRenames.has(originalName) ? reactRenames.get(originalName) : originalName;
+
+      try {
+        const reactPlainFilePath = path.join(carbonReactPlainDestPath, iconName);
+        const indexFile = path.join(reactPlainFilePath, 'index.tsx');
+
+        // New icons will default to current year if not found
+        const existingYear = getCopyrightYear(indexFile, null);
+        const year = existingYear || new Date().getFullYear().toString();
+
+        // Read carbon icon descriptor at build time to pre-render the SVG data
+        const carbonIconModule = await import(`@carbon/icons/es/${originalName}/32.js`);
+        const iconDescriptor = carbonIconModule.default;
+
+        const utilsImportPath = path.relative(reactPlainFilePath, reactPlainUtilsPath).replace(/\\/g, '/');
+        const reactPlainContent = createReactPlainIcon(iconName, iconDescriptor.content, iconDescriptor.attrs, utilsImportPath, year, carbonVersion);
+        ensureDirSync(reactPlainFilePath);
+        fs.writeFileSync(indexFile, reactPlainContent);
+
+        generatedReactPlainCarbonPaths.add(path.resolve(indexFile));
+        counters.reactPlainSuccess += 1;
+      } catch (err) {
+        counters.reactPlainFailed += 1;
+        counters.failedIcons.push(`${originalName} (Carbon React plain)`);
+        console.error(`[BUILDER] Failed to create carbon React plain icon ${originalName}: ${err.message}`);
+      }
+    }
+
     // Create web components
     if (!wcExcludes.has(originalName) && fs.existsSync(path.join(carbonSourcePath, originalName, '32.js'))) {
       let iconName = originalName;
@@ -297,6 +362,7 @@ const buildIcons = async () => {
 
   console.log('Cleaning up orphaned Carbon icons...');
   cleanOrphanedFiles(carbonReactDestPath, generatedReactCarbonPaths);
+  cleanOrphanedFiles(carbonReactPlainDestPath, generatedReactPlainCarbonPaths);
   cleanOrphanedFiles(carbonWcDestPath, generatedWCCarbonPaths);
 
   console.log('Generating Custom icons...');
@@ -306,15 +372,18 @@ const buildIcons = async () => {
     counters,
   }, {
     react: generatedCustomReactPaths,
+    reactPlain: generatedCustomReactPlainPaths,
     wc: generatedCustomWCPaths
   });
 
   console.log('Cleaning up orphaned Custom icons...');
   cleanOrphanedFiles(customReactDestPath, generatedCustomReactPaths);
+  cleanOrphanedFiles(customReactPlainDestPath, generatedCustomReactPlainPaths);
   cleanOrphanedFiles(customWcDestPath, generatedCustomWCPaths);
 
   console.log('\n-- Build Summary ---');
   console.info(`✅ React Icons: ${counters.reactSuccess} created, ${counters.reactFailed} failed.`);
+  console.info(`✅ React Plain Icons: ${counters.reactPlainSuccess} created, ${counters.reactPlainFailed} failed.`);
   console.info(`✅ Web Components: ${counters.wcSuccess} created, ${counters.wcFailed} failed.`);
 
   if (counters.failedIcons.length > 0) {

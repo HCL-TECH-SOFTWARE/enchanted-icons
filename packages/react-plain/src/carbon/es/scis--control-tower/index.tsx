@@ -1,0 +1,33 @@
+/* ======================================================================== *
+ * Copyright 2026 HCL America Inc.                                          *
+ * Licensed under the Apache License, Version 2.0 (the "License");          *
+ * you may not use this file except in compliance with the License.         *
+ * You may obtain a copy of the License at                                  *
+ *                                                                          *
+ * http://www.apache.org/licenses/LICENSE-2.0                               *
+ *                                                                          *
+ * Unless required by applicable law or agreed to in writing, software      *
+ * distributed under the License is distributed on an "AS IS" BASIS,        *
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. *
+ * See the License for the specific language governing permissions and      *
+ * limitations under the License.                                           *
+ * ======================================================================== */
+
+/* auto generated file - do not edit */
+import { createSvgIcon, IIconContent } from '../../../utils/index.js';
+
+/**
+ * The following SVG data was generated using @carbon/icons 11.27.0.
+ * @carbon/icons is licensed under Apache 2.0.
+ * Source: https://github.com/carbon-design-system/carbon
+ */
+const content: IIconContent[] = [
+  {
+    elem: 'path',
+    attrs: {
+      d: 'M27,19c-0.3,0-0.7,0.1-1,0.2L20.4,12c1-1.1,1.6-2.5,1.6-4c0-3.3-2.7-6-6-6s-6,2.7-6,6c0,1.6,0.6,3,1.6,4L6,19.2\tC5.7,19.1,5.3,19,5,19c-1.7,0-3,1.3-3,3s1.3,3,3,3s3-1.3,3-3c0-0.6-0.2-1.1-0.5-1.6l5.6-7.1c0.6,0.3,1.2,0.5,1.9,0.6v10.3\tc-1.2,0.4-2,1.5-2,2.8c0,1.7,1.3,3,3,3s3-1.3,3-3c0-1.3-0.8-2.4-2-2.8V13.9c0.7-0.1,1.3-0.3,1.9-0.6l5.6,7.1c-0.3,0.5-0.5,1-0.5,1.6\tc0,1.7,1.3,3,3,3s3-1.3,3-3S28.7,19,27,19z M16,4c2.2,0,4,1.8,4,4s-1.8,4-4,4s-4-1.8-4-4S13.8,4,16,4z M5,23c-0.6,0-1-0.4-1-1\ts0.4-1,1-1s1,0.4,1,1S5.6,23,5,23z M16,28c-0.6,0-1-0.4-1-1s0.4-1,1-1s1,0.4,1,1S16.6,28,16,28z M27,23c-0.6,0-1-0.4-1-1s0.4-1,1-1\ts1,0.4,1,1S27.6,23,27,23z'
+    }
+  }
+];
+
+export default createSvgIcon('scis--control-tower', '0 0 32 32', content);

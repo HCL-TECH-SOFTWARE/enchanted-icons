@@ -1,0 +1,66 @@
+/* ======================================================================== *
+ * Copyright 2026 HCL America Inc.                                          *
+ * Licensed under the Apache License, Version 2.0 (the "License");          *
+ * you may not use this file except in compliance with the License.         *
+ * You may obtain a copy of the License at                                  *
+ *                                                                          *
+ * http://www.apache.org/licenses/LICENSE-2.0                               *
+ *                                                                          *
+ * Unless required by applicable law or agreed to in writing, software      *
+ * distributed under the License is distributed on an "AS IS" BASIS,        *
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. *
+ * See the License for the specific language governing permissions and      *
+ * limitations under the License.                                           *
+ * ======================================================================== */
+
+/* auto generated file - do not edit */
+import { createSvgIcon, IIconContent } from '../../../utils/index.js';
+
+/**
+ * The following SVG data was generated using @carbon/icons 11.27.0.
+ * @carbon/icons is licensed under Apache 2.0.
+ * Source: https://github.com/carbon-design-system/carbon
+ */
+const content: IIconContent[] = [
+  {
+    elem: 'path',
+    attrs: {
+      d: 'M27 15H31V17H27z'
+    }
+  },
+  {
+    elem: 'path',
+    attrs: {
+      d: 'M23.086 5.794H27.329V7.794H23.086z',
+      transform: 'rotate(-45 25.207 6.794)'
+    }
+  },
+  {
+    elem: 'path',
+    attrs: {
+      d: 'M15 1H17V5H15z'
+    }
+  },
+  {
+    elem: 'path',
+    attrs: {
+      d: 'M4.672 24.208H8.915V26.208H4.672z',
+      transform: 'rotate(-45 6.793 25.208)'
+    }
+  },
+  {
+    elem: 'path',
+    attrs: {
+      d: 'M5.793 4.672H7.793V8.915H5.793z',
+      transform: 'rotate(-45 6.793 6.794)'
+    }
+  },
+  {
+    elem: 'path',
+    attrs: {
+      d: 'M1 15H5V17H1zM26.7939 20.3418a6.9617 6.9617 0 00-1.8681-3.2671A8.485 8.485 0 0025 16a9 9 0 10-14.585 7.0332A4.9771 4.9771 0 0015 30H25a4.9947 4.9947 0 001.7939-9.6582zM9 16a6.9955 6.9955 0 0113.9849-.2969A6.8883 6.8883 0 0020 15a7.04 7.04 0 00-6.7944 5.3418A4.986 4.986 0 0011.5618 21.39 6.9675 6.9675 0 019 16zM25 28H15a2.9945 2.9945 0 01-.6963-5.9082l.6587-.1572.0986-.67a4.9923 4.9923 0 019.878 0l.0986.6695.6587.1572A2.9945 2.9945 0 0125 28z'
+    }
+  }
+];
+
+export default createSvgIcon('partly-cloudy', '0 0 32 32', content);

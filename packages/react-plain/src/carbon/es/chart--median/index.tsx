@@ -1,0 +1,60 @@
+/* ======================================================================== *
+ * Copyright 2026 HCL America Inc.                                          *
+ * Licensed under the Apache License, Version 2.0 (the "License");          *
+ * you may not use this file except in compliance with the License.         *
+ * You may obtain a copy of the License at                                  *
+ *                                                                          *
+ * http://www.apache.org/licenses/LICENSE-2.0                               *
+ *                                                                          *
+ * Unless required by applicable law or agreed to in writing, software      *
+ * distributed under the License is distributed on an "AS IS" BASIS,        *
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. *
+ * See the License for the specific language governing permissions and      *
+ * limitations under the License.                                           *
+ * ======================================================================== */
+
+/* auto generated file - do not edit */
+import { createSvgIcon, IIconContent } from '../../../utils/index.js';
+
+/**
+ * The following SVG data was generated using @carbon/icons 11.27.0.
+ * @carbon/icons is licensed under Apache 2.0.
+ * Source: https://github.com/carbon-design-system/carbon
+ */
+const content: IIconContent[] = [
+  {
+    elem: 'path',
+    attrs: {
+      d: 'M16 22H18V24H16z',
+      transform: 'rotate(-90 17 23)'
+    }
+  },
+  {
+    elem: 'path',
+    attrs: {
+      d: 'M18,28V26H16v2H4V2H2V28a2,2,0,0,0,2,2H30V28Z'
+    }
+  },
+  {
+    elem: 'path',
+    attrs: {
+      d: 'M26.0532,19.6787A3.44,3.44,0,0,1,23,22c-2.17,0-3.3115-3.333-4.52-6.8623-.3557-1.0386-.7239-2.1094-1.1382-3.1377H18V10H16.4221C15.2124,7.7148,13.5811,6,11,6,7.3218,6,6.1016,9.5332,6.0513,9.6836l1.8955.6377A3.44,3.44,0,0,1,11,8c2.92,0,4.2764,3.958,5.5874,7.7861.2544.7422.5105,1.4893.7813,2.2139H16v2h2.2019c1.0828,2.2886,2.4959,4,4.7981,4,3.6782,0,4.8984-3.5332,4.9487-3.6836Z'
+    }
+  },
+  {
+    elem: 'path',
+    attrs: {
+      d: 'M16 6H18V8H16z',
+      transform: 'rotate(-90 17 7)'
+    }
+  },
+  {
+    elem: 'path',
+    attrs: {
+      d: 'M16 2H18V4H16z',
+      transform: 'rotate(-90 17 3)'
+    }
+  }
+];
+
+export default createSvgIcon('chart--median', '0 0 32 32', content);

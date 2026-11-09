@@ -1,0 +1,33 @@
+/* ======================================================================== *
+ * Copyright 2026 HCL America Inc.                                          *
+ * Licensed under the Apache License, Version 2.0 (the "License");          *
+ * you may not use this file except in compliance with the License.         *
+ * You may obtain a copy of the License at                                  *
+ *                                                                          *
+ * http://www.apache.org/licenses/LICENSE-2.0                               *
+ *                                                                          *
+ * Unless required by applicable law or agreed to in writing, software      *
+ * distributed under the License is distributed on an "AS IS" BASIS,        *
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. *
+ * See the License for the specific language governing permissions and      *
+ * limitations under the License.                                           *
+ * ======================================================================== */
+
+/* auto generated file - do not edit */
+import { createSvgIcon, IIconContent } from '../../../utils/index.js';
+
+/**
+ * The following SVG data was generated using @carbon/icons 11.27.0.
+ * @carbon/icons is licensed under Apache 2.0.
+ * Source: https://github.com/carbon-design-system/carbon
+ */
+const content: IIconContent[] = [
+  {
+    elem: 'path',
+    attrs: {
+      d: 'M16 7a3 3 0 113-3A3.0033 3.0033 0 0116 7zm0-4a1 1 0 101 1A1.001 1.001 0 0016 3zM11 30a3 3 0 113-3A3.0033 3.0033 0 0111 30zm0-4a1 1 0 101 1A1.001 1.001 0 0011 26zM7 11a3 3 0 113-3A3.0033 3.0033 0 017 11zM7 7A1 1 0 108 8 1.001 1.001 0 007 7zM21 30a3 3 0 113-3A3.0033 3.0033 0 0121 30zm0-4a1 1 0 101 1A1.001 1.001 0 0021 26zM25 11a3 3 0 113-3A3.0033 3.0033 0 0125 11zm0-4a1 1 0 101 1A1.001 1.001 0 0025 7zM4 21a3 3 0 113-3A3.0033 3.0033 0 014 21zm0-4a1 1 0 101 1A1.001 1.001 0 004 17zM28 21a3 3 0 113-3A3.0033 3.0033 0 0128 21zm0-4a1 1 0 101 1A1.001 1.001 0 0028 17zM16 22a6 6 0 116-6A6.0069 6.0069 0 0116 22zm0-10a4 4 0 104 4A4.0045 4.0045 0 0016 12z'
+    }
+  }
+];
+
+export default createSvgIcon('edge-cluster', '0 0 32 32', content);

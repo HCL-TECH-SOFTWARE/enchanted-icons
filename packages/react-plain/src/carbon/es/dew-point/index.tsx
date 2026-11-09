@@ -1,0 +1,33 @@
+/* ======================================================================== *
+ * Copyright 2026 HCL America Inc.                                          *
+ * Licensed under the Apache License, Version 2.0 (the "License");          *
+ * you may not use this file except in compliance with the License.         *
+ * You may obtain a copy of the License at                                  *
+ *                                                                          *
+ * http://www.apache.org/licenses/LICENSE-2.0                               *
+ *                                                                          *
+ * Unless required by applicable law or agreed to in writing, software      *
+ * distributed under the License is distributed on an "AS IS" BASIS,        *
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. *
+ * See the License for the specific language governing permissions and      *
+ * limitations under the License.                                           *
+ * ======================================================================== */
+
+/* auto generated file - do not edit */
+import { createSvgIcon, IIconContent } from '../../../utils/index.js';
+
+/**
+ * The following SVG data was generated using @carbon/icons 11.27.0.
+ * @carbon/icons is licensed under Apache 2.0.
+ * Source: https://github.com/carbon-design-system/carbon
+ */
+const content: IIconContent[] = [
+  {
+    elem: 'path',
+    attrs: {
+      d: 'M24 10a4 4 0 114-4A4.0045 4.0045 0 0124 10zm0-6a2 2 0 102 2A2.0021 2.0021 0 0024 4zM14.5 30A5.4962 5.4962 0 019 24.52c0-3.4426 4.3442-21.0141 4.5293-21.76a1 1 0 011.9414 0C15.6558 3.5059 20 21.0774 20 24.52A5.4962 5.4962 0 0114.5 30zm0-22.7561C13.0391 13.38 11 22.4089 11 24.52a3.5 3.5 0 007 0C18 22.4089 15.9609 13.38 14.5 7.2439z'
+    }
+  }
+];
+
+export default createSvgIcon('dew-point', '0 0 32 32', content);
