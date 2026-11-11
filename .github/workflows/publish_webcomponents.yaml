@@ -28,13 +28,14 @@ jobs:
         working-directory: packages/web-component
     steps:
       # Setup .npmrc file to publish to npm
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v7
         with:
           node-version: '24.x'
           registry-url: 'https://registry.npmjs.org'
-      - uses: actions/checkout@v4
-      # Ensure npm 11.5.1 or later is installed to support OIDC
-      - run: npm install -g npm@11 # Fixing the npm publish CMD - sigstore module is missing. Check this link: https://github.com/npm/cli/issues/9722
+      - uses: actions/checkout@v7
+      # OIDC trusted publishing needs npm >= 11.5.1. Pinned to an exact version so a new npm release can't break publishing.
+      # (npm 12.0.0 was missing the 'sigstore' module, https://github.com/npm/cli/issues/9722, fixed in 12.0.2)
+      - run: npm install -g npm@12.2.2
       - run: npm ci
       - run: npm run build
       - run: npm publish --access public

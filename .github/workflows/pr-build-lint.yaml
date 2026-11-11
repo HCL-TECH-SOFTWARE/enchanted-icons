@@ -22,11 +22,11 @@ jobs:
     name: PR check build & lint
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v7
         with:
           node-version: '24.x'
           registry-url: 'https://registry.npmjs.org'
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
       # Ensure that the build and publish CMD are running with the same NPM version
       - run: npm install -g npm@latest
       - run: npm ci
