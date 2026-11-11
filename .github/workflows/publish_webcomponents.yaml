@@ -33,8 +33,9 @@ jobs:
           node-version: '24.x'
           registry-url: 'https://registry.npmjs.org'
       - uses: actions/checkout@v7
-      # Ensure npm 11.5.1 or later is installed to support OIDC
-      - run: npm install -g npm@11 # Fixing the npm publish CMD - sigstore module is missing. Check this link: https://github.com/npm/cli/issues/9722
+      # OIDC trusted publishing needs npm >= 11.5.1; always use the latest npm.
+      # (npm 12.0.0 was missing the 'sigstore' module, https://github.com/npm/cli/issues/9722, fixed in 12.0.2)
+      - run: npm install -g npm@latest
       - run: npm ci
       - run: npm run build
       - run: npm publish --access public
